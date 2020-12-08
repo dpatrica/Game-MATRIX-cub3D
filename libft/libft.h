@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define BUFFER_SIZE 1
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -61,5 +62,6 @@ int			ft_ungitlen(unsigned int num);
 int			ft_putstr(char *str);
 int			ft_dig16len(unsigned int num);
 int			ft_digplen(unsigned long num);
+int			get_next_line(int fd, char **line);
 
 #endif
