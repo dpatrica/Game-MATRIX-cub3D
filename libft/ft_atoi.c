@@ -34,7 +34,7 @@ int	ft_atoi(const char *str)
 		num = num * 10 + (str[i] - '0');
 		i++;
 		if ((num > 2147483647) && (sign == 1))
-			return (-1);
+			return (2147483647);
 		if ((num > 2147483648) && (sign == -1))
 			return (0);
 	}

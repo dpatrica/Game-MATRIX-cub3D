@@ -7,15 +7,14 @@
 int	main(int argc, char **argv)
 {
 	t_map	param;
-	char	*cub;
 
 	if ((argc < 2) || (argc > 3))
 		return (ft_error(argc > 3 ? MANY_ARGS : NO_ARGS));
-	if (ft_strncmp((cub = ft_strrchr(argv[1], '.')) ? cub : "error", ".cub", 5))
+	if ((**(argv + 1) == '.') || (ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5)))
 		return (ft_error(MAP_CUB_ERROR));
-	if ((argc == 3) && (ft_strncmp(argv[2], "--save", 7)))
-		return (SAVE_ERROR);
 	param = ft_fornull(param);
+	if ((argc == 3) && (param.save = 1) && (ft_strncmp(argv[2], "--save", 7)))
+		return (SAVE_ERROR);
 	param = ft_parser(param, argv[1]);
-	return (0);
+	return (param.valid ? ft_error(param.valid) : 0);
 }
