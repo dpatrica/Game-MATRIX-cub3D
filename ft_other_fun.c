@@ -6,9 +6,10 @@
 
 t_map	ft_fornull(t_map param)
 {
-	param.valid = 0;
+	param.valid = VALID;
 	param.width = 0;
 	param.height = 0;
+	param.g_map = NULL;
 	param.no = NULL;
 	param.so = NULL;
 	param.we = NULL;
@@ -28,7 +29,7 @@ t_map	ft_fornull(t_map param)
 	return (param);
 }
 
-int	drop_space(char **map)
+int		drop_space(char **map)
 {
 	int	i;
 
@@ -36,4 +37,15 @@ int	drop_space(char **map)
 	while (**map == ' ')
 		(*map)++;
 	return(i);
+}
+
+char	*freesher(char *s1, char *s2, char *s3)
+{
+	if (s1)
+		free(s1);
+	if (s2)
+		free(s2);
+	if (s3)
+		free(s3);
+	return (NULL);
 }

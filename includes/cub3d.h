@@ -41,6 +41,10 @@
 # define MALLOC_EAST_ERROR 33
 # define MAP_TRASH_EAST_ERROR 34
 # define NO_EAST_ERROR 35
+# define GNL_ERROR 36
+# define NO_PARAM_ERROR 37
+# define NO_MAP_ERROR 38
+# define MALLOC_MAP_ERROR 39
 //# define NO_ERROR
 //# define SO_ERROR
 //# define WE_ERROR
@@ -64,6 +68,7 @@ typedef struct	s_struct
 	short int	valid;
 	int			width;
 	int			height;
+	char		**g_map;
 	char		*no;
 	char		*so;
 	char		*we;
@@ -87,7 +92,8 @@ t_map	ft_pars_so(t_map param, char *map);
 t_map	ft_pars_we(t_map param, char *map);
 t_map	ft_pars_ea(t_map param, char *map);
 t_map	ft_pars_s(t_map param, char *map);
-int		ft_error(int error);
+int		ft_error(t_map param, int error);
 int		drop_space(char **map);
+char	*freesher(char *s1, char *s2, char *s3);
 
 #endif
