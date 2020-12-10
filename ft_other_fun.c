@@ -14,14 +14,26 @@ t_map	ft_fornull(t_map param)
 	param.we = NULL;
 	param.ea = NULL;
 	param.s = NULL;
-	param.f.r = 0;
-	param.f.g = 0;
-	param.f.b = 0;
-	param.c.r = 0;
-	param.c.g = 0;
-	param.c.b = 0;
+	param.f.r = -1;
+	param.f.g = -1;
+	param.f.b = -1;
+	param.f.flag = 0;
+	param.c.r = -1;
+	param.c.g = -1;
+	param.c.b = -1;
+	param.c.flag = 0;
 	param.save = 0;
 	param.type = 0;
 	param.temp = 0;
 	return (param);
+}
+
+int	drop_space(char **map)
+{
+	int	i;
+
+	i = 0;
+	while (**map == ' ')
+		(*map)++;
+	return(i);
 }

@@ -21,9 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	i = 0;
 	if (start < ft_strlen(s))
-	{
 		while (len-- && s[start])
 			arr[i++] = s[start++];
-	}
 	return (arr);
 }

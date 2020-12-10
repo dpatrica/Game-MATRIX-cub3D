@@ -13,7 +13,7 @@ int	main(int argc, char **argv)
 	if ((**(argv + 1) == '.') || (ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5)))
 		return (ft_error(MAP_CUB_ERROR));
 	param = ft_fornull(param);
-	if ((argc == 3) && (param.save = 1) && (ft_strncmp(argv[2], "--save", 7)))
+	if ((argc == 3) && (++param.save) && (ft_strncmp(argv[2], "--save", 7)))
 		return (SAVE_ERROR);
 	param = ft_parser(param, argv[1]);
 	return (param.valid ? ft_error(param.valid) : 0);

@@ -26,5 +26,15 @@ int	ft_error(int error)
 		write(1, "Error!\nScreen resolution not valid.", 35);
 	else if (error == DOUBLE_FRGB_ERROR)
 		write(1, "Error!\nDual floor RGB.", 22);
+	else if (error == MAP_TRASH_FRGB_ERROR)
+		write(1, "Error!\nPlease remove trash from the map on the floor RGB.", 57);
+	else if (error == FRGB_NO_VALID_ERROR)
+		write(1, "Error!\nFloor RGB not valid.", 27);
+	else if (error == DOUBLE_CRGB_ERROR)
+		write(1, "Error!\nDual ceiling RGB.", 24);
+	else if (error == MAP_TRASH_CRGB_ERROR)
+		write(1, "Error!\nPlease remove trash from the map on the ceiling RGB.", 59);
+	else if (error == CRGB_NO_VALID_ERROR)
+		write(1, "Error!\nСeiling RGB not valid.", 29);
 	return (-1);
 }
