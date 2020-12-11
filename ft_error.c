@@ -6,12 +6,21 @@
 
 int	ft_error(t_map param, int error)
 {
+	int	i;
+
 	param.no ? free(param.no) : 0;
 	param.so ? free(param.so) : 0;
 	param.we ? free(param.we) : 0;
 	param.ea ? free(param.ea) : 0;
 	param.s ? free(param.s) : 0;
-	if (error == NO_ARGS)
+	i = 0;
+	if (param.g_map)
+		while (param.g_map[i])
+			free(param.g_map[i++]);
+	param.g_map ? free(param.g_map) : 0;
+	if (error == VALID)
+		write(1, "!!!_ALL VALID AND EZ FREED_!!!", 30);
+	else if (error == NO_ARGS)
 		write(1, "Error!\nNo arguments.", 20);
 	else if (error == MANY_ARGS)
 		write(1, "Error!\nToo many arguments.", 26);
@@ -89,5 +98,13 @@ int	ft_error(t_map param, int error)
 		write(1, "Error!\nMissing map.", 19);
 	else if (error == MALLOC_MAP_ERROR)
 		write(1, "Error!\nFailed to allocate memory for map.", 26);
+	else if (error == T_ERROR)
+		write(1, "Error!\nCouldn't open the texture.", 33);
+	else if (error == MAP_NO_VALID)
+		write(1, "Error!\nMap not valid.", 21);
+	else if (error == DOUBLE_PLAYER_ERROR)
+		write(1, "Error!\nDual player.", 19);
+	else if (error == NO_PLAYER_ERROR)
+		write(1, "Error!\nMissing player.", 22);
 	return (-1);
 }

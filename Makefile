@@ -10,7 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	./parser/ft_parser.c
+SRCS	=	./cub3d.c\
+			./parser/ft_parser.c\
+			./parser/ft_pars_r_f_c.c\
+			./parser/ft_pars_no_so_we_ea_s.c\
+			./ft_error.c\
+			./ft_other_fun.c\
+			./ft_valid.c
 
 LIBSRCS	=	./libft/ft_strlen.c\
 			./libft/ft_memset.c\
@@ -79,7 +85,7 @@ all:		$(NAME)
 			$(GCC) $(FLAG) $(C) $< $(O) $(<:.c=.o)
 
 $(NAME):	$(LIBA) $(OBJS) $(HEAD)
-			$(GCC) $(FLAG) $(NAME) $(LIBOBJS) $(OBJS)
+			$(GCC) $(FLAG) $(O) $(NAME) $(LIBOBJS) $(OBJS)
 
 $(LIBA):	$(LIBOBJS) $(LIBH)
 			$(MAKE_L)

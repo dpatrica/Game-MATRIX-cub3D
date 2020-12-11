@@ -45,6 +45,10 @@
 # define NO_PARAM_ERROR 37
 # define NO_MAP_ERROR 38
 # define MALLOC_MAP_ERROR 39
+# define T_ERROR 40
+# define MAP_NO_VALID 41
+# define DOUBLE_PLAYER_ERROR 42
+# define NO_PLAYER_ERROR 43
 //# define NO_ERROR
 //# define SO_ERROR
 //# define WE_ERROR
@@ -95,5 +99,6 @@ t_map	ft_pars_s(t_map param, char *map);
 int		ft_error(t_map param, int error);
 int		drop_space(char **map);
 char	*freesher(char *s1, char *s2, char *s3);
+t_map	ft_valid(t_map param);
 
 #endif

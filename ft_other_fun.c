@@ -34,7 +34,7 @@ int		drop_space(char **map)
 	int	i;
 
 	i = 0;
-	while (**map == ' ')
+	while ((**map == ' ') && (++i))
 		(*map)++;
 	return(i);
 }

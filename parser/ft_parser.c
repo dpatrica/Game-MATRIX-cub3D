@@ -105,7 +105,7 @@ t_map			ft_parser(t_map param, char *map)
 	short int	i;
 	int			j;
 
-	if ((open(map, fd, O_RDONLY) < 0) && (param.valid = MAP_OPEN_ERROR))
+	if (((fd = open(map, O_RDONLY)) < 0) && (param.valid = MAP_OPEN_ERROR))
 		return (param);
 	while ((i = get_next_line(fd, &map)) >= 0)
 	{
