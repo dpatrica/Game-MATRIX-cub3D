@@ -43,6 +43,8 @@ static t_map	ft_parsm(t_map param, int fd, char *map)
 	free(map);
 	while ((i = get_next_line(fd, &map)) >= 0)
 	{
+		if (!*map && i == 1 && (param.valid = MAP_EMPTY_LINE_ERROR))
+			break ;
 		if ((super_map = strjoiner(&param.valid, super_map, map)) == NULL)
 			return (param);
 		if (i == 0)

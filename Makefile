@@ -59,7 +59,8 @@ LIBSRCS	=	./libft/ft_strlen.c\
 			./libft/ft_putstr.c\
 			./libft/ft_dig16len.c\
 			./libft/ft_digplen.c\
-			./libft/get_next_line.c
+			./libft/get_next_line.c\
+			./libft/ft_rhr.c
 
 HEAD	=	./includes/cub3d.h
 NAME	= 	cub3D

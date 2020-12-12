@@ -27,7 +27,6 @@ int	main(int argc, char **argv)
 			   param.c.b, param.save, param.no, param.so, param.we, param.ea,
 			   param.s);
 		int i = 0;
-		printf("\n\n%c\n\n", param.g_map[2][2]);
 		while (param.g_map[i])
 			printf("%s\n", param.g_map[i++]);
 	}

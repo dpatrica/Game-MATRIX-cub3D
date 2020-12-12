@@ -49,6 +49,7 @@
 # define MAP_NO_VALID 41
 # define DOUBLE_PLAYER_ERROR 42
 # define NO_PLAYER_ERROR 43
+# define MAP_EMPTY_LINE_ERROR 44
 //# define NO_ERROR
 //# define SO_ERROR
 //# define WE_ERROR

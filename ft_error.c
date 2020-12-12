@@ -106,5 +106,7 @@ int	ft_error(t_map param, int error)
 		write(1, "Error!\nDual player.", 19);
 	else if (error == NO_PLAYER_ERROR)
 		write(1, "Error!\nMissing player.", 22);
+	else if (error == MAP_EMPTY_LINE_ERROR)
+		write(1, "Error!\nEmpty line in the map.", 29);
 	return (-1);
 }
