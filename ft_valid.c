@@ -37,7 +37,6 @@ static t_map	ft_validm(t_map param, int i, int j, int flag)
 {
 	while (param.g_map[i] && !param.valid)
 	{
-//		param = ft_valid(param, &param.g_map[i]);
 		while (param.g_map[i][j] == '1' || param.g_map[i][j] == ' ')
 			j++;
 		if (ft_rhr("02NSWE", param.g_map[i][j]))
@@ -53,9 +52,9 @@ static t_map	ft_validm(t_map param, int i, int j, int flag)
 			j++;
 			continue ;
 		}
-		if (!param.valid && !param.g_map[i][j] && !(j = 0))
+		if (!param.g_map[i][j] && !(j = 0))
 			i++;
-		else if (!param.valid)
+		else
 			param.valid = MAP_TRASH_ERROR;
 	}
 	param.valid = (!param.valid && !flag) ? NO_PLAYER_ERROR : param.valid;
@@ -68,17 +67,6 @@ t_map	ft_valid(t_map param)
 	int j;
 	int flag;
 
-	i = 0;
-	j = 0;
-	flag = 0;
-//	if (g_map)
-//	{
-//		while (g_map[i][j] == ' ')
-//			j++;
-//		if (!g_map[i][j])
-//			param.valid = MAP_EMPTY_LINE_ERROR;
-//		return (param);
-//	}
 	close(param.valid = (open(param.no, O_RDONLY)) < 0 ? T_ERROR : param.valid);
 	close(param.valid = (open(param.so, O_RDONLY)) < 0 ? T_ERROR : param.valid);
 	close(param.valid = (open(param.we, O_RDONLY)) < 0 ? T_ERROR : param.valid);
@@ -86,5 +74,8 @@ t_map	ft_valid(t_map param)
 	close(param.valid = (open(param.s, O_RDONLY)) < 0 ? T_ERROR : param.valid);
 	if (param.valid)
 		return (param);
+	i = 0;
+	j = 0;
+	flag = 0;
 	return (ft_validm(param, i, j, flag));
 }
