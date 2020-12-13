@@ -66,16 +66,45 @@ t_map	ft_valid(t_map param)
 	int i;
 	int j;
 	int flag;
+	int len;
 
+	i = 0;
+	j = 0;
+	flag = 0;
 	close(param.valid = (open(param.no, O_RDONLY)) < 0 ? T_ERROR : param.valid);
 	close(param.valid = (open(param.so, O_RDONLY)) < 0 ? T_ERROR : param.valid);
 	close(param.valid = (open(param.we, O_RDONLY)) < 0 ? T_ERROR : param.valid);
 	close(param.valid = (open(param.ea, O_RDONLY)) < 0 ? T_ERROR : param.valid);
 	close(param.valid = (open(param.s, O_RDONLY)) < 0 ? T_ERROR : param.valid);
+	if (!param.valid)
+		while (param.g_map[0][j])
+			if (ft_rhr("02NSWE", param.g_map[0][j++]))
+				param.valid = MAP_NO_VALID;
+		while (param.g_map[i] && !(j = 0))
+		{
+			if (!(ft_rhr("1 ", param.g_map[i][0])))
+				param.valid = MAP_NO_VALID;
+			if (param.g_map[i + 1])
+				len = ft_strlen(param.g_map[i]) - ft_strlen(param.g_map[i + 1]);
+					if ((len < 0) && (len = ft_strlen(param.g_map[i])))
+						while (param.g_map[i][len])
+							if (ft_rhr("02NSWE", param.g_map[i][len++]))
+								param.valid = MAP_NO_VALID;
+//					else ((len > 0) && (len = ft_strlen(param.g_map[i])))
+			else
+				while (param.g_map[i][j])
+					if (ft_rhr("02NSWE", param.g_map[i][j++]) && (param.valid = MAP_NO_VALID))
+						return (param);
+//			while (param.g_map[i][j] == '1' || param.g_map[i][j] == ' ')
+//				j++;
+//			if (!i)
+//				if ((len = ft_strlen(param.g_map[i - 1]) - ft_strlen(param.g_map[i])) != 0)
+
+//			if (ft_rhr("02NSWE", param.g_map[i][j]))
+//				param.valid = MAP_NO_VALID;
+//
+		}
 	if (param.valid)
 		return (param);
-	i = 0;
-	j = 0;
-	flag = 0;
 	return (ft_validm(param, i, j, flag));
 }
