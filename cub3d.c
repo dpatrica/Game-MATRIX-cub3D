@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 		return (ft_error(param, SAVE_ERROR));
 	param = ft_parser(param, argv[1]);
 	if (!param.valid)
-		param = ft_valid(param);
+		param = ft_valid(param, 0, 0, 0);
 	if (!param.valid)
 	{
 		printf("Valid:%d\nWidth:%d\nHeight:%d\nF.flag:%d\nF.r:%d\nF.g:%d\nF.b:%d\nC.flag:%d\nC.r:%d\nC.g:%d\nC.b:%d\nSave:%d\nNO:%s\nSO:%s\nWE:%s\nEA:%s\nS:%s\nGG\n\n",

@@ -100,6 +100,5 @@ t_map	ft_pars_s(t_map param, char *map);
 int		ft_error(t_map param, int error);
 int		drop_space(char **map);
 char	*freesher(char *s1, char *s2, char *s3);
-t_map	ft_valid(t_map param);
-
+t_map	ft_valid(t_map param, int flaglen, int i, int j);
 #endif
