@@ -25,7 +25,8 @@ t_map	ft_fornull(t_map param)
 	param.c.flag = 0;
 	param.save = 0;
 	param.type = 0;
-	param.temp = 0;
+	param.temp1 = 0;
+	param.temp2 = 0;
 	return (param);
 }
 

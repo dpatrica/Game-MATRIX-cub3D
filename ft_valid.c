@@ -4,41 +4,36 @@
 
 #include "./includes/cub3d.h"
 
-static t_map	ft_valyas(t_map param, int i, int j)
+static t_map	ft_valyas(t_map param, int i, int j, int flaglen)
 {
-	if (!(ft_rhr("102NSWE", param.g_map[i][j - 1])))
-		param.valid = MAP_NO_VALID;
-	else if (!(ft_rhr("102NSWE", param.g_map[i - 1][j - 1])))
-		param.valid = MAP_NO_VALID;
-	else if (!(ft_rhr("102NSWE", param.g_map[i - 1][j])))
-		param.valid = MAP_NO_VALID;
-	else if (!(ft_rhr("102NSWE", param.g_map[i - 1][j + 1])))
-		param.valid = MAP_NO_VALID;
-	else if (!(ft_rhr("102NSWE", param.g_map[i][j + 1])))
-		param.valid = MAP_NO_VALID;
-	else if (!(ft_rhr("102NSWE", param.g_map[i + 1][j + 1])))
-		param.valid = MAP_NO_VALID;
-	else if (!(ft_rhr("102NSWE", param.g_map[i + 1][j])))
-		param.valid = MAP_NO_VALID;
-	else if (!(ft_rhr("102NSWE", param.g_map[i + 1][j - 1])))
-		param.valid = MAP_NO_VALID;
-//	if (len)
-//	{
-//		len = ft_strlen(param.g_map[i]) - ft_strlen(param.g_map[i + 1]);
-//		len2 = ft_strlen(param.g_map[i]) - ft_strlen(param.g_map[i - 1]);
-//		if (((len < len2) ? len2 : len) > 0)
-//			len = ft_strlen(param.g_map[(len < len2) ? (i + 1) : (i - 1)]);
-//		else if (((len < len2) ? len2 : len) <= 0)
-//			len = -1;
-//		param = ft_valid(param, len, i, j);
-//	}
+	if (!flaglen)
+	{
+		if (!(ft_rhr("102NSWE", param.g_map[i][j - 1])) || \
+		!(ft_rhr("102NSWE", param.g_map[i - 1][j - 1])) || \
+		!(ft_rhr("102NSWE", param.g_map[i - 1][j])) || \
+		!(ft_rhr("102NSWE", param.g_map[i - 1][j + 1])) || \
+		!(ft_rhr("102NSWE", param.g_map[i][j + 1])) || \
+		!(ft_rhr("102NSWE", param.g_map[i + 1][j + 1])) || \
+		!(ft_rhr("102NSWE", param.g_map[i + 1][j])) || \
+		!(ft_rhr("102NSWE", param.g_map[i + 1][j - 1])))
+			param.valid = MAP_NO_VALID;
+		return (param);
+	}
+	while (param.g_map[i][j] && (flaglen == -1 || flaglen--))
+	{
+		if (ft_rhr("02NSWE", param.g_map[i][j]))
+			param = ft_valyas(param, i, j, 0);
+		else if (!(ft_rhr("1 ", param.g_map[i][j])))
+			param.valid = MAP_NO_VALID;
+		if (param.valid)
+			return (param);
+		j++;
+	}
 	return (param);
 }
 
 static t_map	ft_validsym(t_map param, int i, int j, int len)
 {
-	int len2;
-
 	if (!i && !(j = 0))
 		while (param.g_map[i][j])
 			if (!ft_rhr("1 ", param.g_map[i][j++]))
@@ -62,17 +57,7 @@ static t_map	ft_validsym(t_map param, int i, int j, int len)
 					param.valid = MAP_NO_VALID;
 	}
 	if (param.g_map[i + 1] && i && !param.valid && !(j = 0))
-	{
-		len = ft_strlen(param.g_map[i]) - ft_strlen(param.g_map[i + 1]);
-		len2 = ft_strlen(param.g_map[i]) - ft_strlen(param.g_map[i - 1]);
-		if (((len < len2) ? len2 : len) > 0)
-		{
-			len = ft_strlen(param.g_map[(len < len2) ? (i + 1) : (i - 1)]);
-			param = ft_valid(param, len, i, j);
-		}
-		else if (((len < len2) ? len2 : len) <= 0)
-			param = ft_valid(param, -1, i, j);
-	}
+		param = ft_valid(param, 1, i, j);
 	return (param);
 }
 
@@ -104,20 +89,20 @@ static t_map	ft_validm(t_map param, int i, int j, int flag)
 	return (param);
 }
 
-t_map	ft_valid(t_map param, int flaglen, int i, int j)
+t_map			ft_valid(t_map param, int flaglen, int i, int j)
 {
+	int len;
+	int len2;
+
 	if (flaglen)
 	{
-		while (param.g_map[i][j] && (flaglen == -1 || flaglen--))
-		{
-			if (ft_rhr("02NSWE", param.g_map[i][j]))
-				param = ft_valyas(param, i, j);
-			else if (!(ft_rhr("1 ", param.g_map[i][j])))
-				param.valid = MAP_NO_VALID;
-			if (param.valid)
-				return (param);
-			j++;
-		}
+		len = ft_strlen(param.g_map[i]) - ft_strlen(param.g_map[i + 1]);
+		len2 = ft_strlen(param.g_map[i]) - ft_strlen(param.g_map[i - 1]);
+		if (((len < len2) ? len2 : len) > 0)
+			len = ft_strlen(param.g_map[(len < len2) ? (i + 1) : (i - 1)]);
+		else if (((len < len2) ? len2 : len) <= 0)
+			len = -1;
+		param = ft_valyas(param, i, j, len);
 		return (param);
 	}
 	close(param.valid = (open(param.no, O_RDONLY)) < 0 ? T_ERROR : param.valid);

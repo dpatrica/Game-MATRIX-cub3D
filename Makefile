@@ -60,17 +60,20 @@ LIBSRCS	=	./libft/ft_strlen.c\
 			./libft/ft_dig16len.c\
 			./libft/ft_digplen.c\
 			./libft/get_next_line.c\
-			./libft/ft_rhr.c
+			./libft/ft_rhr.c\
+			./libft/ft_mstr.c
 
 HEAD	=	./includes/cub3d.h
 NAME	= 	cub3D
 LIBA	=	./libft/libft.a
 LIBH	=	./libft/libft.h
+MLX		=	./minilibx_opengl/libmlx.a
 OBJS	=	$(SRCS:.c=.o)
 LIBOBJS	=	$(LIBSRCS:.c=.o)
 
 GCC		= 	gcc
 FLAG	=	-Wall -Wextra -Werror
+FLAGMLX	=	-Wall -Wextra -Werror -framework OpenGL -framework Appkit
 RM		=	rm -f
 C		=	-c
 O		=	-o
@@ -86,7 +89,7 @@ all:		$(NAME)
 			$(GCC) $(FLAG) $(C) $< $(O) $(<:.c=.o)
 
 $(NAME):	$(LIBA) $(OBJS) $(HEAD)
-			$(GCC) $(FLAG) $(O) $(NAME) $(LIBOBJS) $(OBJS)
+			$(GCC) $(FLAGMLX) $(O) $(NAME) $(MLX) $(LIBOBJS) $(OBJS)
 
 $(LIBA):	$(LIBOBJS) $(LIBH)
 			$(MAKE_L)

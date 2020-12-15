@@ -52,7 +52,8 @@ SRCS	=	ft_strlen.c\
             ft_dig16len.c\
             ft_digplen.c\
 			get_next_line.c\
-			ft_rhr.c
+			ft_rhr.c\
+			ft_mstr.c
 
 HEAD	=	libft.h
 NAME	= 	libft.a

@@ -59,6 +59,7 @@
 //# define C_ERROR
 # include "../libft/libft.h"
 # include <fcntl.h>
+# include "../minilibx_opengl/mlx.h"
 
 typedef struct	s_f
 {
@@ -83,8 +84,16 @@ typedef struct	s_struct
 	t_f 		c;
 	short int	save;
 	int			type;
-	int			temp;
+	int			temp1;
+	int			temp2;
 }				t_map;
+
+typedef struct	s_all
+{
+	void		*mlx;
+	void		*win;
+	t_map		param;
+}				t_all;
 
 //void	cub3d(void);
 t_map	ft_fornull(t_map param);
@@ -101,4 +110,5 @@ int		ft_error(t_map param, int error);
 int		drop_space(char **map);
 char	*freesher(char *s1, char *s2, char *s3);
 t_map	ft_valid(t_map param, int flaglen, int i, int j);
+
 #endif
