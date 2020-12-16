@@ -2,7 +2,7 @@
 // Created by Daisey Patrica on 12/11/20.
 //
 
-#include "./includes/cub3d.h"
+#include "../includes/cub3d.h"
 
 static t_map	ft_valyas(t_map param, int i, int j, int flaglen)
 {

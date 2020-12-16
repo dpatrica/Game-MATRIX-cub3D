@@ -11,12 +11,13 @@
 # **************************************************************************** #
 
 SRCS	=	./cub3d.c\
-			./parser/ft_parser.c\
-			./parser/ft_pars_r_f_c.c\
-			./parser/ft_pars_no_so_we_ea_s.c\
-			./ft_error.c\
-			./ft_other_fun.c\
-			./ft_valid.c
+			./parser_and_valid/ft_parser.c\
+			./parser_and_valid/ft_pars_r_f_c.c\
+			./parser_and_valid/ft_pars_no_so_we_ea_s.c\
+			./parser_and_valid/ft_valid.c\
+			./error_list/ft_error.c\
+			./other/ft_other_fun.c\
+			./ft_drow.c
 
 LIBSRCS	=	./libft/ft_strlen.c\
 			./libft/ft_memset.c\
@@ -86,7 +87,7 @@ all:		$(NAME)
 .PHONY:		all clean fclean re
 
 .c.o:
-			$(GCC) $(FLAG) $(C) $< $(O) $(<:.c=.o)
+			$(GCC) $(C) $< $(O) $(<:.c=.o)
 
 $(NAME):	$(LIBA) $(OBJS) $(HEAD)
 			$(GCC) $(FLAGMLX) $(O) $(NAME) $(MLX) $(LIBOBJS) $(OBJS)

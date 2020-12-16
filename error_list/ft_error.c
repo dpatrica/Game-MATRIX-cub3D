@@ -2,7 +2,7 @@
 // Created by Daisey Patrica on 12/8/20.
 //
 
-#include "./includes/cub3d.h"
+#include "../includes/cub3d.h"
 
 int	ft_error(t_map param, int error)
 {
@@ -35,23 +35,23 @@ int	ft_error(t_map param, int error)
 	else if (error == MAP_TRASH_RESO_ERROR)
 		write(1, "Error!\nPlease remove trash from the map in resolution.", 54);
 	else if (error == DOUBLE_RESO_ERROR)
-		write(1, "Error!\nDual screen resolution.", 30);
+		write(1, "Error!\nToo many screen resolution.", 34);
 	else if (error == RESO_NO_VALID_ERROR)
 		write(1, "Error!\nScreen resolution not valid.", 35);
 	else if (error == DOUBLE_FRGB_ERROR)
-		write(1, "Error!\nDual floor RGB.", 22);
+		write(1, "Error!\nToo many floor RGB.", 26);
 	else if (error == MAP_TRASH_FRGB_ERROR)
 		write(1, "Error!\nPlease remove trash from the map on the floor RGB.", 57);
 	else if (error == FRGB_NO_VALID_ERROR)
 		write(1, "Error!\nFloor RGB not valid.", 27);
 	else if (error == DOUBLE_CRGB_ERROR)
-		write(1, "Error!\nDual ceiling RGB.", 24);
+		write(1, "Error!\nToo many ceiling RGB.", 28);
 	else if (error == MAP_TRASH_CRGB_ERROR)
 		write(1, "Error!\nPlease remove trash from the map on the ceiling RGB.", 59);
 	else if (error == CRGB_NO_VALID_ERROR)
 		write(1, "Error!\nСeiling RGB not valid.", 29);
 	else if (error == DOUBLE_SPRITE_ERROR)
-		write(1, "Error!\nDual sprite.", 19);
+		write(1, "Error!\nToo many sprite.", 23);
 	else if (error == MALLOC_SPRITE_ERROR)
 		write(1, "Error!\nFailed to allocate memory for sprite.", 44);
 	else if (error == MAP_TRASH_SPRITE_ERROR)
@@ -59,7 +59,7 @@ int	ft_error(t_map param, int error)
 	else if (error == NO_SPRITE_ERROR)
 		write(1, "Error!\nMissing sprite.", 22);
 	else if (error == DOUBLE_NORTH_ERROR)
-		write(1, "Error!\nDual north.", 18);
+		write(1, "Error!\nToo many north.", 22);
 	else if (error == MALLOC_NORTH_ERROR)
 		write(1, "Error!\nFailed to allocate memory for north.", 28);
 	else if (error == MAP_TRASH_NORTH_ERROR)
@@ -67,7 +67,7 @@ int	ft_error(t_map param, int error)
 	else if (error == NO_NORTH_ERROR)
 		write(1, "Error!\nMissing north.", 21);
 	else if (error == DOUBLE_SOUTH_ERROR)
-		write(1, "Error!\nDual south.", 18);
+		write(1, "Error!\nToo many south.", 22);
 	else if (error == MALLOC_SOUTH_ERROR)
 		write(1, "Error!\nFailed to allocate memory for south.", 28);
 	else if (error == MAP_TRASH_SOUTH_ERROR)
@@ -75,7 +75,7 @@ int	ft_error(t_map param, int error)
 	else if (error == NO_SOUTH_ERROR)
 		write(1, "Error!\nMissing south.", 21);
 	else if (error == DOUBLE_WEST_ERROR)
-		write(1, "Error!\nDual west.", 17);
+		write(1, "Error!\nToo many west.", 21);
 	else if (error == MALLOC_WEST_ERROR)
 		write(1, "Error!\nFailed to allocate memory for west.", 27);
 	else if (error == MAP_TRASH_WEST_ERROR)
@@ -83,7 +83,7 @@ int	ft_error(t_map param, int error)
 	else if (error == NO_WEST_ERROR)
 		write(1, "Error!\nMissing west.", 20);
 	else if (error == DOUBLE_EAST_ERROR)
-		write(1, "Error!\nDual east.", 17);
+		write(1, "Error!\nToo many east.", 21);
 	else if (error == MALLOC_EAST_ERROR)
 		write(1, "Error!\nFailed to allocate memory for east.", 27);
 	else if (error == MAP_TRASH_EAST_ERROR)
@@ -103,7 +103,7 @@ int	ft_error(t_map param, int error)
 	else if (error == MAP_NO_VALID)
 		write(1, "Error!\nMap not valid.", 21);
 	else if (error == DOUBLE_PLAYER_ERROR)
-		write(1, "Error!\nDual player.", 19);
+		write(1, "Error!\nToo many players.", 24);
 	else if (error == NO_PLAYER_ERROR)
 		write(1, "Error!\nMissing player.", 22);
 	else if (error == MAP_EMPTY_LINE_ERROR)

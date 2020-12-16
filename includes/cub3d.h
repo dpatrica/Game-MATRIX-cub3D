@@ -5,6 +5,8 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
+# define X xlm->player.x
+# define Y xlm->player.y
 # define VALID 0
 # define NO_ARGS 1
 # define MANY_ARGS 2
@@ -58,8 +60,16 @@
 //# define F_ERROR
 //# define C_ERROR
 # include "../libft/libft.h"
-# include <fcntl.h>
 # include "../minilibx_opengl/mlx.h"
+# include <fcntl.h>
+
+typedef struct	s_player
+{
+	double		x;
+	double		y;
+	int			hp;
+	int			ammo;
+}				t_player;
 
 typedef struct	s_f
 {
@@ -93,10 +103,10 @@ typedef struct	s_all
 	void		*mlx;
 	void		*win;
 	t_map		param;
+	t_player	player;
 }				t_all;
 
-//void	cub3d(void);
-t_map	ft_fornull(t_map param);
+t_all	ft_fornull(t_all xlm);
 t_map	ft_parser(t_map param, char *map);
 t_map	ft_pars_reso(t_map param, char *map);
 t_map	ft_pars_frgb(t_map param, char *map);
@@ -110,5 +120,7 @@ int		ft_error(t_map param, int error);
 int		drop_space(char **map);
 char	*freesher(char *s1, char *s2, char *s3);
 t_map	ft_valid(t_map param, int flaglen, int i, int j);
+int 	key_hook(int key, t_all *xlm);
+void	ft_drow(t_all *xlm);
 
 #endif
