@@ -87,13 +87,17 @@ all:		$(NAME)
 .PHONY:		all clean fclean re
 
 .c.o:
-			$(GCC) $(C) $< $(O) $(<:.c=.o)
+			$(GCC) $(FLAG) $(C) $< $(O) $(<:.c=.o)
 
-$(NAME):	$(LIBA) $(OBJS) $(HEAD)
+$(NAME):	$(LIBA) $(OBJS)
 			$(GCC) $(FLAGMLX) $(O) $(NAME) $(MLX) $(LIBOBJS) $(OBJS)
 
-$(LIBA):	$(LIBOBJS) $(LIBH)
+$(LIBA):	$(LIBOBJS)
 			$(MAKE_L)
+
+$(OBJS):	$(HEAD)
+
+$(LIBOBJS):	$(LIBH)
 
 clean:
 			$(RM) $(OBJS)

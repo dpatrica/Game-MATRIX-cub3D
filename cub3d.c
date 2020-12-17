@@ -39,12 +39,17 @@ int	main(int argc, char **argv)
 	xlm.param = mainik(xlm.param, argc, argv);
 	if (xlm.param.valid)
 		return (ft_error(xlm.param, xlm.param.valid));
+	save_player(&xlm);
+	printf("\nPlayer POSITION:\nX:%f\nY:%f\ndir:%c\n", xlm.player.x, xlm.player.y, xlm.player.dir);
 	xlm.mlx = mlx_init();
 	xlm.win = mlx_new_window(xlm.mlx, xlm.param.width, xlm.param.height, "dolbobob");
-	ft_drow(&xlm);
-	mlx_key_hook(xlm.win, &key_hook, &xlm);
+	ft_drow_map(&xlm, START_POS, START_POS);
+//	mlx_key_hook(xlm.win, &key_hook, &xlm);
+	mlx_hook(xlm.win, 2, 0, &key_press, &xlm);
+	mlx_hook(xlm.win, 3, 0, &key_release, &xlm);
+	mlx_loop_hook(xlm.mlx, &key_hook, &xlm);
 	mlx_loop(xlm.mlx);
-	ft_error(xlm.param, xlm.param.valid);
+//	ft_error(xlm.param, xlm.param.valid);
 	exit(0);
 }
 

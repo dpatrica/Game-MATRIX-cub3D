@@ -5,8 +5,11 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
+# define START_POS 50
+# define SQUARE xlm->width_square
 # define X xlm->player.x
 # define Y xlm->player.y
+# define SPEED 0.1
 # define VALID 0
 # define NO_ARGS 1
 # define MANY_ARGS 2
@@ -63,12 +66,21 @@
 # include "../minilibx_opengl/mlx.h"
 # include <fcntl.h>
 
+typedef struct s_move
+{
+	int 		up;
+	int			down;
+	int			right;
+	int			left;
+}				t_move;
+
 typedef struct	s_player
 {
 	double		x;
 	double		y;
 	int			hp;
 	int			ammo;
+	int			dir;
 }				t_player;
 
 typedef struct	s_f
@@ -102,8 +114,10 @@ typedef struct	s_all
 {
 	void		*mlx;
 	void		*win;
+	int 		width_square;
 	t_map		param;
 	t_player	player;
+	t_move		move;
 }				t_all;
 
 t_all	ft_fornull(t_all xlm);
@@ -120,7 +134,11 @@ int		ft_error(t_map param, int error);
 int		drop_space(char **map);
 char	*freesher(char *s1, char *s2, char *s3);
 t_map	ft_valid(t_map param, int flaglen, int i, int j);
-int 	key_hook(int key, t_all *xlm);
-void	ft_drow(t_all *xlm);
+void	ft_drow_map(t_all *xlm, int x_print, int y_print);
+void 	ft_drow_square(t_all xlm, float x, float y, unsigned int color);
+int 	key_hook(t_all *xlm);
+int		key_press(int key, t_all *xlm);
+int		key_release(int key, t_all *xlm);
+void	save_player(t_all *xlm);
 
 #endif
