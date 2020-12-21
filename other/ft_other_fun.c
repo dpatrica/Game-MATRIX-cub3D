@@ -31,13 +31,15 @@ t_all	ft_fornull(t_all xlm)
 	xlm.param.temp2 = 0;
 	xlm.player.x = 0;
 	xlm.player.y = 0;
-	xlm.player.ammo = 0;
-	xlm.player.hp = 0;
+	xlm.player.ammo = 50;
+	xlm.player.hp = 100;
 	xlm.move.up = 0;
 	xlm.move.down = 0;
 	xlm.move.right = 0;
 	xlm.move.left = 0;
-	xlm.width_square = 15;
+	xlm.width_square = 20;
+	xlm.player.plan_x = 0;
+	xlm.player.plan_y = 0.66;
 	return (xlm);
 }
 
@@ -78,6 +80,7 @@ void	save_player(t_all *xlm)
 				xlm->player.dir = xlm->param.g_map[y][x];
 				X = x;
 				Y = y;
+				dir_cos_sin(xlm);
 				return ;
 			}
 			x++;
@@ -87,6 +90,38 @@ void	save_player(t_all *xlm)
 	}
 }
 
+void	dir_cos_sin(t_all *xlm)
+{
+	if (xlm->player.dir == 'N')
+	{
+		xlm->player.dir_x = cos(M_PI / 2);
+		xlm->player.dir_y = sin(M_PI / 2);
+	}
+	else if (xlm->player.dir == 'W')
+	{
+		xlm->player.dir_x = cos(M_PI);
+		xlm->player.dir_y = sin(M_PI);
+	}
+	else if (xlm->player.dir == 'S')
+	{
+		xlm->player.dir_x = cos((3 * M_PI) / 2);
+		xlm->player.dir_y = sin((3 * M_PI) / 2);
+	}
+	else if (xlm->player.dir == 'E')
+	{
+		xlm->player.dir_x = cos(2 * M_PI);
+		xlm->player.dir_y = sin(0);
+	}
+}
+
+int		ft_render(t_all *xlm)
+{
+	mlx_hook(xlm->win, 2, 0, &key_press, &xlm);
+	mlx_hook(xlm->win, 3, 0, &key_release, &xlm);
+	return (0);
+}
+
+/*
 int		key_hook(t_all *xlm)
 {
 	xlm->param.g_map[(int)Y][(int)X] = '0';
@@ -104,7 +139,7 @@ int		key_hook(t_all *xlm)
 		X -= SPEED;
 	xlm->param.g_map[(int)Y][(int)X] = 'N';
 	mlx_clear_window(xlm->mlx, xlm->win);
-	ft_drow_map(xlm, START_POS, START_POS);
+	ft_drow_map(xlm, START_X, START_Y);
 	return (0);
 }
 
@@ -133,3 +168,4 @@ int		key_release(int key, t_all *xlm)
 		xlm->move.left = 0;
 	return (0);
 }
+*/

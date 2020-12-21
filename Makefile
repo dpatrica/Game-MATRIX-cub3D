@@ -17,7 +17,8 @@ SRCS	=	./cub3d.c\
 			./parser_and_valid/ft_valid.c\
 			./error_list/ft_error.c\
 			./other/ft_other_fun.c\
-			./ft_drow.c
+			./draws/ft_draw.c\
+			./pudge_hook/ft_hook.c
 
 LIBSRCS	=	./libft/ft_strlen.c\
 			./libft/ft_memset.c\
@@ -74,7 +75,7 @@ LIBOBJS	=	$(LIBSRCS:.c=.o)
 
 GCC		= 	gcc
 FLAG	=	-Wall -Wextra -Werror
-FLAGMLX	=	-Wall -Wextra -Werror -framework OpenGL -framework Appkit
+FLAGMLX	=	-framework OpenGL -framework Appkit
 RM		=	rm -f
 C		=	-c
 O		=	-o
@@ -90,7 +91,7 @@ all:		$(NAME)
 			$(GCC) $(FLAG) $(C) $< $(O) $(<:.c=.o)
 
 $(NAME):	$(LIBA) $(OBJS)
-			$(GCC) $(FLAGMLX) $(O) $(NAME) $(MLX) $(LIBOBJS) $(OBJS)
+			$(GCC) $(FLAG) $(FLAGMLX) $(O) $(NAME) $(MLX) $(LIBOBJS) $(OBJS)
 
 $(LIBA):	$(LIBOBJS)
 			$(MAKE_L)

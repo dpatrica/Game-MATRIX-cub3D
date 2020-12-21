@@ -1,0 +1,3 @@
+/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir
