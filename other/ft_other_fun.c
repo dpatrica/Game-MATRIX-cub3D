@@ -95,7 +95,7 @@ void	dir_cos_sin(t_all *xlm)
 	if (xlm->player.dir == 'N')
 	{
 		xlm->player.dir_x = cos(M_PI / 2);
-		xlm->player.dir_y = sin(M_PI / 2);
+		xlm->player.dir_y = sin((3 * M_PI) / 2);
 	}
 	else if (xlm->player.dir == 'W')
 	{
@@ -105,7 +105,7 @@ void	dir_cos_sin(t_all *xlm)
 	else if (xlm->player.dir == 'S')
 	{
 		xlm->player.dir_x = cos((3 * M_PI) / 2);
-		xlm->player.dir_y = sin((3 * M_PI) / 2);
+		xlm->player.dir_y = sin(M_PI / 2);
 	}
 	else if (xlm->player.dir == 'E')
 	{

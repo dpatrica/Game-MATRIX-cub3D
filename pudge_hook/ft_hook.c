@@ -6,30 +6,53 @@
 
 int		key_hook(t_all *xlm)
 {
+	double	start_dir_x;
+	double	start_plane_x;
+
 	xlm->param.g_map[(int)Y][(int)X] = '0';
 	if (xlm->move.up == 1 &&\
-	(xlm->param.g_map[(int)(Y - (SPEED * xlm->player.dir_y))][(int)(X + (SPEED * xlm->player.dir_x))]) != '1')
+	(xlm->param.g_map[(int)(Y + (SPEED * xlm->player.dir_y))][(int)(X + (SPEED * xlm->player.dir_x))]) != '1')
 	{
-		Y -= SPEED * xlm->player.dir_y;
+		Y += SPEED * xlm->player.dir_y;
 		X += SPEED * xlm->player.dir_x;
 	}
 	if (xlm->move.down == 1 &&\
-	(xlm->param.g_map[(int)(Y + (SPEED * xlm->player.dir_y))][(int)(X - (SPEED * xlm->player.dir_x))]) != '1')
+	(xlm->param.g_map[(int)(Y - (SPEED * xlm->player.dir_y))][(int)(X - (SPEED * xlm->player.dir_x))]) != '1')
 	{
-		Y += SPEED * xlm->player.dir_y;
+		Y -= SPEED * xlm->player.dir_y;
 		X -= SPEED * xlm->player.dir_x;
 	}
 	if (xlm->move.right == 1 &&\
-	(xlm->param.g_map[(int)(Y + (SPEED * xlm->player.dir_x))][(int)(X + (SPEED * xlm->player.dir_y))]) != '1')
+	(xlm->param.g_map[(int)(Y + (SPEED * xlm->player.dir_x))][(int)(X - (SPEED * xlm->player.dir_y))]) != '1')
 	{
-		X += SPEED * xlm->player.dir_y;
+		X -= SPEED * xlm->player.dir_y;
 		Y += SPEED * xlm->player.dir_x;
 	}
 	if (xlm->move.left == 1 &&\
-	(xlm->param.g_map[(int)(Y - (SPEED * xlm->player.dir_x))][(int)(X - (SPEED * xlm->player.dir_y))]) != '1')
+	(xlm->param.g_map[(int)(Y - (SPEED * xlm->player.dir_x))][(int)(X + (SPEED * xlm->player.dir_y))]) != '1')
 	{
-		X -= SPEED * xlm->player.dir_y;
+		X += SPEED * xlm->player.dir_y;
 		Y -= SPEED * xlm->player.dir_x;
+	}
+	if (xlm->move.r_rot == 1)
+	{
+		start_dir_x = xlm->player.dir_x;
+		xlm->player.dir_x = xlm->player.dir_x * cos(SPEED) - xlm->player.dir_y * sin(SPEED);
+		xlm->player.dir_y = start_dir_x * sin(SPEED) + xlm->player.dir_y * cos(SPEED);
+		start_plane_x = xlm->player.plan_x;
+		xlm->player.plan_x = xlm->player.plan_x * cos(SPEED) - xlm->player.plan_y * sin(SPEED);
+		xlm->player.plan_y = start_plane_x * sin(SPEED) + xlm->player.plan_y * cos(SPEED);
+//		printf("DIR_X:%f\nDIR_Y:%f\n", xlm->player.dir_x, xlm->player.dir_y);
+	}
+	if (xlm->move.l_rot == 1)
+	{
+		start_dir_x = xlm->player.dir_x;
+		xlm->player.dir_x = xlm->player.dir_x * cos(-SPEED) - xlm->player.dir_y * sin(-SPEED);
+		xlm->player.dir_y = start_dir_x * sin(-SPEED) + xlm->player.dir_y * cos(-SPEED);
+		start_plane_x = xlm->player.plan_x;
+		xlm->player.plan_x = xlm->player.plan_x * cos(-SPEED) - xlm->player.plan_y * sin(-SPEED);
+		xlm->player.plan_y = start_plane_x * sin(-SPEED) + xlm->player.plan_y * cos(-SPEED);
+//		printf("DIR_X:%f\nDIR_Y:%f\n", xlm->player.dir_x, xlm->player.dir_y);
 	}
 	xlm->param.g_map[(int)Y][(int)X] = 'N';
 	mlx_clear_window(xlm->mlx, xlm->win);

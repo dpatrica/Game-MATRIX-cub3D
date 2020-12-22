@@ -51,9 +51,9 @@ void	ft_draw_map(t_all *xlm, int x_print, int y_print)
 
 void	ft_draw_beam(t_all *xlm)
 {
-	int 	xx;
-	int		yy;
-	int		i = 0; // -1;
+	double	xx;
+	double	yy;
+	int		i = -1;
 	int 	x;
 	int 	y;
 	int		hit = 0;
@@ -71,9 +71,9 @@ void	ft_draw_beam(t_all *xlm)
 	double	raydir_y;
 	double	camera_x;
 	double	wall_dist;
-//	while (++i < xlm->param.width)
-//	{
-		camera_x = 2 * i / (double)xlm->param.width - 1;
+	while (++i < xlm->param.width)
+	{
+		camera_x = 2 * i / (double)(xlm->param.width - 1);
 		raydir_x = xlm->player.dir_x + xlm->player.plan_x * camera_x;
 		raydir_y = xlm->player.dir_y + xlm->player.plan_y * camera_x;
 		x = (int)X;
@@ -129,20 +129,21 @@ void	ft_draw_beam(t_all *xlm)
 		draw_e = line_len / 2 + xlm->param.height / 2;
 		if (draw_e >= xlm->param.height)
 			draw_e = xlm->param.height - 1;*/
-//	}
-	xx = START_X + (X * SQUARE);
-	yy = START_Y + (Y * SQUARE);
-	printf("wall_d:%f\n", wall_dist);
+	}
+/*	xx = (START_X + (X * SQUARE));
+	yy = (START_Y + (Y * SQUARE));
+//	printf("wall_d:%f\n", wall_dist);
+	i = 0;
 	while (i < (int)(wall_dist * SQUARE))
 	{
 //		int m = 0;
 //		printf("I:%d\n", i);
 		//while (m++ < 20)
 		mlx_pixel_put(xlm->mlx, xlm->win, xx, yy, 0x0000FF);
-		xx += SPEED * xlm->player.dir_x;
-		yy += SPEED * xlm->player.dir_y;
+		xx += 1 * xlm->player.dir_x;
+		yy += 1 * xlm->player.dir_y;
 		i++;
-	}
+	}*/
 //	side_x = X;
 //	side_y = Y;
 //	while (xlm->param.g_map[(int)yy][(int)xx] != '1')
