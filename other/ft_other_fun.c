@@ -37,9 +37,9 @@ t_all	ft_fornull(t_all xlm)
 	xlm.move.down = 0;
 	xlm.move.right = 0;
 	xlm.move.left = 0;
-	xlm.width_square = 20;
+	xlm.width_square = 10;
 	xlm.player.plan_x = 0;
-	xlm.player.plan_y = 0.66;
+	xlm.player.plan_y = 0;
 	return (xlm);
 }
 
@@ -96,21 +96,33 @@ void	dir_cos_sin(t_all *xlm)
 	{
 		xlm->player.dir_x = cos(M_PI / 2);
 		xlm->player.dir_y = sin((3 * M_PI) / 2);
+		xlm->player.plan_x = 0.66;
+		xlm->player.plan_y = 0;
+//		xlm->player.dir_x = 0;
+//		xlm->player.dir_y = -1;
+//		xlm->player.dir_y = sin(M_PI / 2);
 	}
 	else if (xlm->player.dir == 'W')
 	{
 		xlm->player.dir_x = cos(M_PI);
 		xlm->player.dir_y = sin(M_PI);
+		xlm->player.plan_x = 0;
+		xlm->player.plan_y = -0.66;
 	}
 	else if (xlm->player.dir == 'S')
 	{
 		xlm->player.dir_x = cos((3 * M_PI) / 2);
 		xlm->player.dir_y = sin(M_PI / 2);
+		xlm->player.plan_x = -0.66;
+		xlm->player.plan_y = 0;
+//		xlm->player.dir_y = sin((3 * M_PI) / 2);
 	}
 	else if (xlm->player.dir == 'E')
 	{
 		xlm->player.dir_x = cos(2 * M_PI);
 		xlm->player.dir_y = sin(0);
+		xlm->player.plan_x = 0;
+		xlm->player.plan_y = 0.66;
 	}
 }
 

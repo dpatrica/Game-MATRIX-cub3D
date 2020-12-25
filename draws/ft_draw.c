@@ -38,6 +38,8 @@ void	ft_draw_map(t_all *xlm, int x_print, int y_print)
 				ft_draw_square(*xlm, x_print, y_print, 0xAA3AAA);
 			else if (ft_rhr("0NSWE", xlm->param.g_map[y][x]))
 				ft_draw_square(*xlm, x_print, y_print, 0xFFFFFF);
+			if (xlm->param.g_map[y][x] == '2')
+				ft_draw_square(*xlm, x_print, y_print, 0x9400D3);
 			x_print += SQUARE;
 			x++;
 		}
@@ -49,14 +51,26 @@ void	ft_draw_map(t_all *xlm, int x_print, int y_print)
 	START_Y + (Y * SQUARE) - (SQUARE / 2), 0xFF0000);
 }
 
+void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm)
+{
+//	if (draw_e < 0)
+//		draw_e *= -1;
+	while (draw_s <= draw_e)
+	{
+		mlx_pixel_put(xlm->mlx, xlm->win, x, draw_s, color);
+		draw_s++;
+	}
+}
+
 void	ft_draw_beam(t_all *xlm)
 {
 	double	xx;
 	double	yy;
 	int		i = -1;
+	int		j;
 	int 	x;
 	int 	y;
-	int		hit = 0;
+	int		hit;
 	int		side;
 	int		step_x;
 	int		step_y;
@@ -71,15 +85,23 @@ void	ft_draw_beam(t_all *xlm)
 	double	raydir_y;
 	double	camera_x;
 	double	wall_dist;
-	while (++i < xlm->param.width)
+
+	while (++i < (xlm->param.width - 1))
 	{
-		camera_x = 2 * i / (double)(xlm->param.width - 1);
+		hit = 0;
+		printf("%d\n", i);
+		camera_x = 2 * i / (double)xlm->param.width - 1;
+		printf("camera_x:%12f\n", camera_x);
+//		sleep(1);
 		raydir_x = xlm->player.dir_x + xlm->player.plan_x * camera_x;
 		raydir_y = xlm->player.dir_y + xlm->player.plan_y * camera_x;
+		printf("rdyr_x:%12f\nrdyr_y:%12f\n", raydir_x, raydir_y);
 		x = (int)X;
 		y = (int)Y;
+		printf("OLDx:%d\nOLDy:%d\n", x, y);
 		delta_x = fabs(1 / raydir_x);
 		delta_y = fabs(1 / raydir_y);
+		printf("delta_x:%12f\ndelta_y:%12f\n", delta_x, delta_y);
 		if (raydir_x < 0)
 		{
 			step_x = -1;
@@ -100,6 +122,7 @@ void	ft_draw_beam(t_all *xlm)
 			step_y = 1;
 			side_y = (y + 1.0 - Y) * delta_y;
 		}
+		printf("side_x:%12f\nside_y:%12f\nstep_x:%12d\nstep_y:%12d\n", side_x, side_y, step_x, step_y);
 		while (hit == 0)
 		{
 			if (side_x < side_y)
@@ -114,21 +137,42 @@ void	ft_draw_beam(t_all *xlm)
 				y += step_y;
 				side = 1;
 			}
-			if (xlm->param.g_map[y][x] == '1')
+			if (xlm->param.g_map[y][x] == '1' || xlm->param.g_map[y][x] == '2')
+			{
+//				xlm->param.g_map[y][x] = '2';
 				hit = 1;
+			}
 		}
-//		printf("x:%d\ny:%d\n", x, y);
+		printf("x:%d\ny:%d\nNEWside_x:%12f\nNEWside_y:%12f\n", x, y, side_x, side_y);
+		printf("side:%d\n", side);
 		if (side == 0)
 			wall_dist = (x - X + (1 - step_x) / 2) / raydir_x;
 		else
 			wall_dist = (y - Y + (1 - step_y) / 2) / raydir_y;
-/*		line_len = (int)(xlm->param.height / wall_dist);
+//		printf("i:%d\n", i);
+		xx = (START_X + (X * SQUARE));
+		yy = (START_Y + (Y * SQUARE));
+		j = 0;
+//		if (wall_dist < 0)
+//			wall_dist *= -1;
+		printf("wall_d:%12f\n", wall_dist);
+//		sleep(1);
+		while (j < (int)(wall_dist * SQUARE))
+		{
+			mlx_pixel_put(xlm->mlx, xlm->win, xx, yy, 0xDAF87D);
+			xx += 1 * xlm->player.dir_x + xlm->player.plan_x * camera_x;
+			yy += 1 * xlm->player.dir_y + xlm->player.plan_y * camera_x;
+			j++;
+		}
+		line_len = (int)(xlm->param.height / wall_dist);
 		draw_s = -line_len / 2 + xlm->param.height / 2;
 		if (draw_s < 0)
 			draw_s = 0;
 		draw_e = line_len / 2 + xlm->param.height / 2;
 		if (draw_e >= xlm->param.height)
-			draw_e = xlm->param.height - 1;*/
+			draw_e = xlm->param.height - 1;
+//		printf("S:%d\nE:%d\nI:%d\n", draw_s, draw_e, i);
+		ft_draw_line(i, draw_s, draw_e, 0xFF0000, xlm);
 	}
 /*	xx = (START_X + (X * SQUARE));
 	yy = (START_Y + (Y * SQUARE));

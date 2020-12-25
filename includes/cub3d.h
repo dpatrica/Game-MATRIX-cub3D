@@ -5,12 +5,12 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# define START_X 50
-# define START_Y 50
+# define START_X 765
+# define START_Y 3
 # define SQUARE xlm->width_square
 # define X xlm->player.x
 # define Y xlm->player.y
-# define SPEED 0.1
+# define SPEED 0.05
 # define VALID 0
 # define NO_ARGS 1
 # define MANY_ARGS 2
@@ -151,5 +151,6 @@ void	save_player(t_all *xlm);
 void	ft_draw_beam(t_all *xlm);
 void	dir_cos_sin(t_all *xlm);
 int		ft_render(t_all *xlm);
+void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm);
 
 #endif
