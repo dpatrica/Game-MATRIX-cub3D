@@ -9,7 +9,7 @@ static char		*strjoiner(short int *valid, char *super_map, char *map)
 	char	*temp1;
 	char	*temp2;
 
-	if ((ft_strchr(map, '&')) != NULL)
+	if (ft_rhr(map, '&'))
 	{
 		*valid = MAP_TRASH_ERROR;
 		return (freesher(map, super_map, NULL));
@@ -65,7 +65,7 @@ static t_map	ft_check_and_parsm(t_map param, int fd, char *map)
 		param.valid = NO_PARAM_ERROR;
 		free(map);
 	}
-	else if ((ft_strchr(map, '&')) == NULL)
+	else if (!ft_rhr(map, '&'))
 		param = ft_parsm(param, fd, map);
 	else
 	{

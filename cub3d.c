@@ -6,15 +6,15 @@
 
 static t_map	mainik(t_map param, int argc, char **argv)
 {
-//	if ((argc < 2) || (argc > 3))
-//		param.valid = (argc > 3) ? MANY_ARGS : NO_ARGS;
-//	else if ((**(argv + 1) == '.') || (ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5)))
-//		param.valid = MAP_CUB_ERROR;
-//	else if ((argc == 3) && (++param.save) && (ft_strncmp(argv[2], "--save", 7)))
-//		param.valid = SAVE_ERROR;
-//	if (!param.valid)
-		param = ft_parser(param, "../maps/map.cub");
-//		param = ft_parser(param, argv[1]);
+	if ((argc < 2) || (argc > 3))
+		param.valid = (argc > 3) ? MANY_ARGS : NO_ARGS;
+	else if ((**(argv + 1) == '.') || (ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5)))
+		param.valid = MAP_CUB_ERROR;
+	else if ((argc == 3) && (++param.save) && (ft_strncmp(argv[2], "--save", 7)))
+		param.valid = SAVE_ERROR;
+	if (!param.valid)
+//		param = ft_parser(param, "../maps/map.cub");
+		param = ft_parser(param, argv[1]);
 	if (!param.valid)
 		param = ft_valid(param, 0, 0, 0);
 	if (!param.valid)
@@ -40,7 +40,8 @@ int				main(int argc, char **argv)
 	xlm.param = mainik(xlm.param, argc, argv);
 	if (xlm.param.valid)
 		return (ft_error(xlm.param, xlm.param.valid));
-	save_player(&xlm);
+//	save_player(&xlm);
+	xlm.player = xlm.param.resp_player;
 	printf("\nPlayer POSITION:\nX:%f\nY:%f\ndir:%c\n", xlm.player.x, xlm.player.y, xlm.player.dir);
 	xlm.mlx = mlx_init();
 	xlm.win = mlx_new_window(xlm.mlx, xlm.param.width, xlm.param.height, "dolbobob");

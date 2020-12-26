@@ -89,19 +89,19 @@ void	ft_draw_beam(t_all *xlm)
 	while (++i < (xlm->param.width - 1))
 	{
 		hit = 0;
-		printf("%d\n", i);
+//		printf("%d\n", i);
 		camera_x = 2 * i / (double)xlm->param.width - 1;
-		printf("camera_x:%12f\n", camera_x);
+//		printf("camera_x:%12f\n", camera_x);
 //		sleep(1);
 		raydir_x = xlm->player.dir_x + xlm->player.plan_x * camera_x;
 		raydir_y = xlm->player.dir_y + xlm->player.plan_y * camera_x;
-		printf("rdyr_x:%12f\nrdyr_y:%12f\n", raydir_x, raydir_y);
+//		printf("rdyr_x:%12f\nrdyr_y:%12f\n", raydir_x, raydir_y);
 		x = (int)X;
 		y = (int)Y;
-		printf("OLDx:%d\nOLDy:%d\n", x, y);
+//		printf("OLDx:%d\nOLDy:%d\n", x, y);
 		delta_x = fabs(1 / raydir_x);
 		delta_y = fabs(1 / raydir_y);
-		printf("delta_x:%12f\ndelta_y:%12f\n", delta_x, delta_y);
+//		printf("delta_x:%12f\ndelta_y:%12f\n", delta_x, delta_y);
 		if (raydir_x < 0)
 		{
 			step_x = -1;
@@ -122,7 +122,7 @@ void	ft_draw_beam(t_all *xlm)
 			step_y = 1;
 			side_y = (y + 1.0 - Y) * delta_y;
 		}
-		printf("side_x:%12f\nside_y:%12f\nstep_x:%12d\nstep_y:%12d\n", side_x, side_y, step_x, step_y);
+//		printf("side_x:%12f\nside_y:%12f\nstep_x:%12d\nstep_y:%12d\n", side_x, side_y, step_x, step_y);
 		while (hit == 0)
 		{
 			if (side_x < side_y)
@@ -137,14 +137,14 @@ void	ft_draw_beam(t_all *xlm)
 				y += step_y;
 				side = 1;
 			}
-			if (xlm->param.g_map[y][x] == '1' || xlm->param.g_map[y][x] == '2')
+			if (xlm->param.g_map[y][x] == '1')
 			{
 //				xlm->param.g_map[y][x] = '2';
 				hit = 1;
 			}
 		}
-		printf("x:%d\ny:%d\nNEWside_x:%12f\nNEWside_y:%12f\n", x, y, side_x, side_y);
-		printf("side:%d\n", side);
+//		printf("x:%d\ny:%d\nNEWside_x:%12f\nNEWside_y:%12f\n", x, y, side_x, side_y);
+//		printf("side:%d\n", side);
 		if (side == 0)
 			wall_dist = (x - X + (1 - step_x) / 2) / raydir_x;
 		else
@@ -155,7 +155,7 @@ void	ft_draw_beam(t_all *xlm)
 		j = 0;
 //		if (wall_dist < 0)
 //			wall_dist *= -1;
-		printf("wall_d:%12f\n", wall_dist);
+//		printf("wall_d:%12f\n", wall_dist);
 //		sleep(1);
 		while (j < (int)(wall_dist * SQUARE))
 		{

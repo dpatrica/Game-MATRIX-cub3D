@@ -87,6 +87,9 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/error_list/ft_error.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c">
 			<Option target="superCUB3D"/>
 		</Unit>

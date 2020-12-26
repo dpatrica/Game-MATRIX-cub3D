@@ -54,10 +54,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/54602A4B-5DB2-4707-93B5-480E3247E0A5/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/24376722-F66A-4586-A885-925A03A39DB3/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/54602A4B-5DB2-4707-93B5-480E3247E0A5/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/24376722-F66A-4586-A885-925A03A39DB3/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -168,9 +168,22 @@ CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c -o CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.s
 
+CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o: CMakeFiles/superCUB3D.dir/flags.make
+CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o: ../other/ft_assignment.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o   -c /Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment.c
+
+CMakeFiles/superCUB3D.dir/other/ft_assignment.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/superCUB3D.dir/other/ft_assignment.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment.c > CMakeFiles/superCUB3D.dir/other/ft_assignment.c.i
+
+CMakeFiles/superCUB3D.dir/other/ft_assignment.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/superCUB3D.dir/other/ft_assignment.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment.c -o CMakeFiles/superCUB3D.dir/other/ft_assignment.c.s
+
 CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o: CMakeFiles/superCUB3D.dir/flags.make
 CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o: ../draws/ft_draw.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o   -c /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw.c
 
 CMakeFiles/superCUB3D.dir/draws/ft_draw.c.i: cmake_force
@@ -183,7 +196,7 @@ CMakeFiles/superCUB3D.dir/draws/ft_draw.c.s: cmake_force
 
 CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o: CMakeFiles/superCUB3D.dir/flags.make
 CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o: ../pudge_hook/ft_hook.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o   -c /Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_hook.c
 
 CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.i: cmake_force
@@ -203,6 +216,7 @@ superCUB3D_OBJECTS = \
 "CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.o" \
 "CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o" \
 "CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o" \
+"CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o" \
 "CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o" \
 "CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o"
 
@@ -216,13 +230,14 @@ superCUB3D: CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_no_so_we_ea_s.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o
+superCUB3D: CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/build.make
 superCUB3D: ../libft/libft.a
 superCUB3D: ../minilibx_opengl/libmlx.a
 superCUB3D: CMakeFiles/superCUB3D.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable superCUB3D"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable superCUB3D"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/superCUB3D.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

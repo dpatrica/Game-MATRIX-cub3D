@@ -17,6 +17,7 @@ SRCS	=	./cub3d.c\
 			./parser_and_valid/ft_valid.c\
 			./error_list/ft_error.c\
 			./other/ft_other_fun.c\
+			./other/ft_assignment.c\
 			./draws/ft_draw.c\
 			./pudge_hook/ft_hook.c
 

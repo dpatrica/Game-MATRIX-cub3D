@@ -113,9 +113,7 @@ typedef struct	s_struct
 	t_f			f;
 	t_f 		c;
 	short int	save;
-	int			type;
-	int			temp1;
-	int			temp2;
+	t_player	resp_player;
 }				t_map;
 
 typedef struct	s_all
@@ -141,15 +139,15 @@ t_map	ft_pars_s(t_map param, char *map);
 int		ft_error(t_map param, int error);
 int		drop_space(char **map);
 char	*freesher(char *s1, char *s2, char *s3);
-t_map	ft_valid(t_map param, int flaglen, int i, int j);
+t_map	ft_valid(t_map param, int i, int j, int flaglen);
 void	ft_draw_map(t_all *xlm, int x_print, int y_print);
 void 	ft_draw_square(t_all xlm, int x, int y, int color);
 int 	key_hook(t_all *xlm);
 int		key_press(int key, t_all *xlm);
 int		key_release(int key, t_all *xlm);
-void	save_player(t_all *xlm);
+//void	save_player(t_all *xlm);
 void	ft_draw_beam(t_all *xlm);
-void	dir_cos_sin(t_all *xlm);
+t_map	dir_cos_sin(t_map param);
 int		ft_render(t_all *xlm);
 void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm);
 

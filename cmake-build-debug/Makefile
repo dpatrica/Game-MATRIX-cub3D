@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/54602A4B-5DB2-4707-93B5-480E3247E0A5/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/24376722-F66A-4586-A885-925A03A39DB3/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/54602A4B-5DB2-4707-93B5-480E3247E0A5/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/24376722-F66A-4586-A885-925A03A39DB3/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/54602A4B-5DB2-4707-93B5-480E3247E0A5/d/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/24376722-F66A-4586-A885-925A03A39DB3/d/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/54602A4B-5DB2-4707-93B5-480E3247E0A5/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/24376722-F66A-4586-A885-925A03A39DB3/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -223,6 +223,33 @@ error_list/ft_error.s: error_list/ft_error.c.s
 error_list/ft_error.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/error_list/ft_error.c.s
 .PHONY : error_list/ft_error.c.s
+
+other/ft_assignment.o: other/ft_assignment.c.o
+
+.PHONY : other/ft_assignment.o
+
+# target to build an object file
+other/ft_assignment.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o
+.PHONY : other/ft_assignment.c.o
+
+other/ft_assignment.i: other/ft_assignment.c.i
+
+.PHONY : other/ft_assignment.i
+
+# target to preprocess a source file
+other/ft_assignment.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_assignment.c.i
+.PHONY : other/ft_assignment.c.i
+
+other/ft_assignment.s: other/ft_assignment.c.s
+
+.PHONY : other/ft_assignment.s
+
+# target to generate assembly for a file
+other/ft_assignment.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_assignment.c.s
+.PHONY : other/ft_assignment.c.s
 
 other/ft_other_fun.o: other/ft_other_fun.c.o
 
@@ -404,6 +431,9 @@ help:
 	@echo "... error_list/ft_error.o"
 	@echo "... error_list/ft_error.i"
 	@echo "... error_list/ft_error.s"
+	@echo "... other/ft_assignment.o"
+	@echo "... other/ft_assignment.i"
+	@echo "... other/ft_assignment.s"
 	@echo "... other/ft_other_fun.o"
 	@echo "... other/ft_other_fun.i"
 	@echo "... other/ft_other_fun.s"

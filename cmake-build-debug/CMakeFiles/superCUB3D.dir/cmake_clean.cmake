@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/superCUB3D.dir/cub3d.c.o"
   "CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o"
   "CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o"
+  "CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o"
   "CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o"
   "CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_no_so_we_ea_s.c.o"
   "CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_r_f_c.c.o"

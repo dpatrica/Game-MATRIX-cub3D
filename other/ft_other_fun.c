@@ -4,45 +4,6 @@
 
 #include "../includes/cub3d.h"
 
-t_all	ft_fornull(t_all xlm)
-{
-	xlm.win = NULL;
-	xlm.mlx = NULL;
-	xlm.param.valid = VALID;
-	xlm.param.width = 0;
-	xlm.param.height = 0;
-	xlm.param.g_map = NULL;
-	xlm.param.no = NULL;
-	xlm.param.so = NULL;
-	xlm.param.we = NULL;
-	xlm.param.ea = NULL;
-	xlm.param.s = NULL;
-	xlm.param.f.r = -1;
-	xlm.param.f.g = -1;
-	xlm.param.f.b = -1;
-	xlm.param.f.flag = 0;
-	xlm.param.c.r = -1;
-	xlm.param.c.g = -1;
-	xlm.param.c.b = -1;
-	xlm.param.c.flag = 0;
-	xlm.param.save = 0;
-	xlm.param.type = 0;
-	xlm.param.temp1 = 0;
-	xlm.param.temp2 = 0;
-	xlm.player.x = 0;
-	xlm.player.y = 0;
-	xlm.player.ammo = 50;
-	xlm.player.hp = 100;
-	xlm.move.up = 0;
-	xlm.move.down = 0;
-	xlm.move.right = 0;
-	xlm.move.left = 0;
-	xlm.width_square = 10;
-	xlm.player.plan_x = 0;
-	xlm.player.plan_y = 0;
-	return (xlm);
-}
-
 int		drop_space(char **map)
 {
 	int	i;
@@ -64,7 +25,7 @@ char	*freesher(char *s1, char *s2, char *s3)
 	return (NULL);
 }
 
-void	save_player(t_all *xlm)
+/*void	save_player(t_all *xlm)
 {
 	int x;
 	int y;
@@ -88,9 +49,9 @@ void	save_player(t_all *xlm)
 		y++;
 		x = 0;
 	}
-}
+}*/
 
-void	dir_cos_sin(t_all *xlm)
+/*void	dir_cos_sin(t_all *xlm)
 {
 	if (xlm->player.dir == 'N')
 	{
@@ -124,7 +85,7 @@ void	dir_cos_sin(t_all *xlm)
 		xlm->player.plan_x = 0;
 		xlm->player.plan_y = 0.66;
 	}
-}
+}*/
 
 int		ft_render(t_all *xlm)
 {
