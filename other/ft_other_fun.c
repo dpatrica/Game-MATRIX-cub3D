@@ -25,6 +25,8 @@ char	*freesher(char *s1, char *s2, char *s3)
 	return (NULL);
 }
 
+
+
 /*void	save_player(t_all *xlm)
 {
 	int x;

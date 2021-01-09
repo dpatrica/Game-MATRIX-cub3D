@@ -4,18 +4,27 @@
 
 #include "../includes/cub3d.h"
 
-void 	ft_draw_square(t_all xlm, int x, int y, int color)
+void	my_pixel_put(t_all *xlm, int x, int y, int color)
+{
+	char *dst;
+
+	dst = xlm->img.adr + (y * xlm->img.line_len + x * (xlm->img.bpp / 8));
+	*(unsigned int*)dst = color;
+}
+
+void 	ft_draw_square(t_all *xlm, int x, int y, int color)
 {
 	int	start_x;
 	int	start_y;
 
 	start_x = x;
 	start_y = y;
-	while (y < (xlm.width_square + start_y))
+	while (y < (SQUARE + start_y))
 	{
 		x = start_x;
-		while (x < (xlm.width_square + start_x))
-			mlx_pixel_put(xlm.mlx, xlm.win, x++, y, color);
+		while (x < (SQUARE + start_x))
+			my_pixel_put(xlm, x++, y, color);
+//			mlx_pixel_put(xlm->image, xlm->win, x++, y, color);
 		y++;
 	}
 }
@@ -35,11 +44,11 @@ void	ft_draw_map(t_all *xlm, int x_print, int y_print)
 		while (xlm->param.g_map[y][x])
 		{
 			if (xlm->param.g_map[y][x] == '1')
-				ft_draw_square(*xlm, x_print, y_print, 0xAA3AAA);
+				ft_draw_square(xlm, x_print, y_print, 0xAA3AAA);
 			else if (ft_rhr("0NSWE", xlm->param.g_map[y][x]))
-				ft_draw_square(*xlm, x_print, y_print, 0xFFFFFF);
-			if (xlm->param.g_map[y][x] == '2')
-				ft_draw_square(*xlm, x_print, y_print, 0x9400D3);
+				ft_draw_square(xlm, x_print, y_print, 0xFFFFFF);
+			else if (xlm->param.g_map[y][x] == '2')
+				ft_draw_square(xlm, x_print, y_print, 0x9400D3);
 			x_print += SQUARE;
 			x++;
 		}
@@ -47,7 +56,7 @@ void	ft_draw_map(t_all *xlm, int x_print, int y_print)
 		y++;
 		x = 0;
 	}
-	ft_draw_square(*xlm, START_X + (X * SQUARE) - (SQUARE / 2),\
+	ft_draw_square(xlm, START_X + (X * SQUARE) - (SQUARE / 2),\
 	START_Y + (Y * SQUARE) - (SQUARE / 2), 0xFF0000);
 }
 
@@ -57,12 +66,92 @@ void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm)
 //		draw_e *= -1;
 	while (draw_s <= draw_e)
 	{
-		mlx_pixel_put(xlm->mlx, xlm->win, x, draw_s, color);
+		my_pixel_put(xlm, x, draw_s, color);
+//		mlx_pixel_put(xlm->image, xlm->win, x, draw_s, color);
 		draw_s++;
 	}
 }
 
 void	ft_draw_beam(t_all *xlm)
+{
+	int		i = -1;
+	int		j;
+	int		hit;
+
+	while (++i < (xlm->param.width - 1))
+	{
+		hit = 0;
+		xlm->neo.cam = 2 * i / (double)xlm->param.width - 1;
+		xlm->neo.rdir_x = xlm->player.dir_x + xlm->player.plan_x * xlm->neo.cam;
+		xlm->neo.rdir_y = xlm->player.dir_y + xlm->player.plan_y * xlm->neo.cam;
+		xlm->neo.x = (int)X;
+		xlm->neo.y = (int)Y;
+		xlm->neo.del_x = fabs(1 / xlm->neo.rdir_x);
+		xlm->neo.del_y = fabs(1 / xlm->neo.rdir_y);
+		if (xlm->neo.rdir_x < 0)
+		{
+			xlm->neo.step_x = -1;
+			xlm->neo.side_x = (X - xlm->neo.x) * xlm->neo.del_x;
+		}
+		else
+		{
+			xlm->neo.step_x = 1;
+			xlm->neo.side_x = (xlm->neo.x + 1.0 - X) * xlm->neo.del_x;
+		}
+		if (xlm->neo.rdir_y < 0)
+		{
+			xlm->neo.step_y = -1;
+			xlm->neo.side_y = (Y - xlm->neo.y) * xlm->neo.del_y;
+		}
+		else
+		{
+			xlm->neo.step_y = 1;
+			xlm->neo.side_y = (xlm->neo.y + 1.0 - Y) * xlm->neo.del_y;
+		}
+		while (hit == 0)
+		{
+			if (xlm->neo.side_x < xlm->neo.side_y)
+			{
+				xlm->neo.side_x += xlm->neo.del_x;
+				xlm->neo.x += xlm->neo.step_x;
+				xlm->neo.side = 0;
+			}
+			else
+			{
+				xlm->neo.side_y += xlm->neo.del_y;
+				xlm->neo.y += xlm->neo.step_y;
+				xlm->neo.side = 1;
+			}
+			if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '1')
+				hit = 1;
+		}
+		if (xlm->neo.side == 0)
+			xlm->neo.dist = (xlm->neo.x - X + (1 - xlm->neo.step_x) / 2) / xlm->neo.rdir_x;
+		else
+			xlm->neo.dist = (xlm->neo.y - Y + (1 - xlm->neo.step_y) / 2) / xlm->neo.rdir_y;
+		xlm->neo.l_x = (START_X + (X * SQUARE));
+		xlm->neo.l_y = (START_Y + (Y * SQUARE));
+		j = 0;
+		while (j < (int)(xlm->neo.dist * SQUARE))
+		{
+			my_pixel_put(xlm, xlm->neo.l_x, xlm->neo.l_y, 0xDAF87D);
+//			mlx_pixel_put(xlm->image, xlm->win, xlm->neo.l_x, xlm->neo.l_y, 0xDAF87D);
+			xlm->neo.l_x += 1 * xlm->player.dir_x + xlm->player.plan_x * xlm->neo.cam;
+			xlm->neo.l_y += 1 * xlm->player.dir_y + xlm->player.plan_y * xlm->neo.cam;
+			j++;
+		}
+		xlm->neo.line_len = (int)(xlm->param.height / xlm->neo.dist);
+		xlm->neo.draw_up = -xlm->neo.line_len / 2 + xlm->param.height / 2;
+		if (xlm->neo.draw_up < 0)
+			xlm->neo.draw_up = 0;
+		xlm->neo.draw_down = xlm->neo.line_len / 2 + xlm->param.height / 2;
+		if (xlm->neo.draw_down >= xlm->param.height)
+			xlm->neo.draw_down = xlm->param.height - 1;
+		ft_draw_line(i, xlm->neo.draw_up, xlm->neo.draw_down, 0xFF0000, xlm);
+	}
+}
+
+/*void	ft_draw_beam(t_all *xlm)
 {
 	double	xx;
 	double	yy;
@@ -174,7 +263,7 @@ void	ft_draw_beam(t_all *xlm)
 //		printf("S:%d\nE:%d\nI:%d\n", draw_s, draw_e, i);
 		ft_draw_line(i, draw_s, draw_e, 0xFF0000, xlm);
 	}
-/*	xx = (START_X + (X * SQUARE));
+*//*	xx = (START_X + (X * SQUARE));
 	yy = (START_Y + (Y * SQUARE));
 //	printf("wall_d:%f\n", wall_dist);
 	i = 0;
@@ -187,7 +276,7 @@ void	ft_draw_beam(t_all *xlm)
 		xx += 1 * xlm->player.dir_x;
 		yy += 1 * xlm->player.dir_y;
 		i++;
-	}*/
+	}*//*
 //	side_x = X;
 //	side_y = Y;
 //	while (xlm->param.g_map[(int)yy][(int)xx] != '1')
@@ -223,7 +312,7 @@ void	ft_draw_beam(t_all *xlm)
 //			xx += 0.05;
 //		}
 //	}
-}
+}*/
 
 //void	ft_draw(t_all *xlm)
 //{

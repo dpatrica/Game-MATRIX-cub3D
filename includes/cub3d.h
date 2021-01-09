@@ -5,7 +5,7 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# define START_X 765
+# define START_X 1750
 # define START_Y 3
 # define SQUARE xlm->width_square
 # define X xlm->player.x
@@ -68,6 +68,28 @@
 # include <fcntl.h>
 # include <math.h>
 
+typedef struct s_matrix
+{
+	int			x;
+	int			y;
+	int			step_x;
+	int			step_y;
+	int			draw_up;
+	int			draw_down;
+	int			line_len;
+	int			side;
+	double		side_x;
+	double		side_y;
+	double		l_x;
+	double		l_y;
+	double		del_x;
+	double		del_y;
+	double		rdir_x;
+	double		rdir_y;
+	double		cam;
+	double		dist;
+}				t_matrix;
+
 typedef struct s_move
 {
 	int 		up;
@@ -76,6 +98,7 @@ typedef struct s_move
 	int			left;
 	int			r_rot;
 	int			l_rot;
+	int			exit;
 }				t_move;
 
 typedef struct	s_player
@@ -116,6 +139,15 @@ typedef struct	s_struct
 	t_player	resp_player;
 }				t_map;
 
+typedef struct	s_image
+{
+	void		*img;
+	char		*adr;
+	int			bpp;
+	int 		line_len;
+	int			iend;
+}				t_image;
+
 typedef struct	s_all
 {
 	void		*mlx;
@@ -124,6 +156,8 @@ typedef struct	s_all
 	t_map		param;
 	t_player	player;
 	t_move		move;
+	t_matrix	neo;
+	t_image		img;
 }				t_all;
 
 t_all	ft_fornull(t_all xlm);
@@ -141,7 +175,7 @@ int		drop_space(char **map);
 char	*freesher(char *s1, char *s2, char *s3);
 t_map	ft_valid(t_map param, int i, int j, int flaglen);
 void	ft_draw_map(t_all *xlm, int x_print, int y_print);
-void 	ft_draw_square(t_all xlm, int x, int y, int color);
+void 	ft_draw_square(t_all *xlm, int x, int y, int color);
 int 	key_hook(t_all *xlm);
 int		key_press(int key, t_all *xlm);
 int		key_release(int key, t_all *xlm);
@@ -150,5 +184,6 @@ void	ft_draw_beam(t_all *xlm);
 t_map	dir_cos_sin(t_map param);
 int		ft_render(t_all *xlm);
 void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm);
+void	my_pixel_put(t_all *xlm, int x, int y, int color);
 
 #endif

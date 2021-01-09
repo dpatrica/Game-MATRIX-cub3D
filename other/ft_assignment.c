@@ -4,6 +4,18 @@
 
 #include "../includes/cub3d.h"
 
+static t_all	ft_fornullll(t_all xlm)
+{
+	xlm.neo.dist = 0;
+	xlm.move.exit = 0;
+	xlm.img.img = NULL;
+	xlm.img.adr = NULL;
+	xlm.img.bpp = 0;
+	xlm.img.line_len = 0;
+	xlm.img.iend = 0;
+	return (xlm);
+}
+
 static t_all	ft_fornulll(t_all xlm)
 {
 	xlm.move.up = 0;
@@ -13,7 +25,24 @@ static t_all	ft_fornulll(t_all xlm)
 	xlm.width_square = 10;
 	xlm.player.plan_x = 0;
 	xlm.player.plan_y = 0;
-	return (xlm);
+	xlm.neo.x = 0;
+	xlm.neo.y = 0;
+	xlm.neo.step_x = 0;
+	xlm.neo.step_y = 0;
+	xlm.neo.draw_up = 0;
+	xlm.neo.draw_down = 0;
+	xlm.neo.line_len = 0;
+	xlm.neo.side = 0;
+	xlm.neo.side_x = 0;
+	xlm.neo.side_y = 0;
+	xlm.neo.l_x = 0;
+	xlm.neo.l_y = 0;
+	xlm.neo.del_x = 0;
+	xlm.neo.del_y = 0;
+	xlm.neo.rdir_x = 0;
+	xlm.neo.rdir_y = 0;
+	xlm.neo.cam = 0;
+	return (ft_fornullll(xlm));
 }
 
 t_all			ft_fornull(t_all xlm)

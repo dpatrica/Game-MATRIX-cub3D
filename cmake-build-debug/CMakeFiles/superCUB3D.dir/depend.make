@@ -16,6 +16,11 @@ CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o: ../includes/cub3d.h
 CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o: ../libft/libft.h
 CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o: ../minilibx_opengl/mlx.h
 
+CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o: ../includes/cub3d.h
+CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o: ../libft/libft.h
+CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o: ../minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o: ../other/ft_assignment.c
+
 CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../includes/cub3d.h
 CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../libft/libft.h
 CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../minilibx_opengl/mlx.h
