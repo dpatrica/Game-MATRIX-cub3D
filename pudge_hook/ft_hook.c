@@ -9,30 +9,30 @@ int		key_hook(t_all *xlm)
 	double	start_dir_x;
 	double	start_plane_x;
 
-	xlm->param.g_map[(int)Y][(int)X] = '0';
+//	xlm->param.g_map[(int)Y][(int)X] = '0';
 	if (xlm->move.up == 1 &&\
-	(xlm->param.g_map[(int)(Y + (SPEED * xlm->player.dir_y))][(int)X]) != '1')
+	(xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]) != '1')
 		Y += SPEED * xlm->player.dir_y;
 	if (xlm->move.up == 1 &&\
-	(xlm->param.g_map[(int)Y][(int)(X + (SPEED * xlm->player.dir_x))]) != '1')
+	(xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]) != '1')
 		X += SPEED * xlm->player.dir_x;
 	if (xlm->move.down == 1 &&\
-	(xlm->param.g_map[(int)(Y - (SPEED * xlm->player.dir_y))][(int)X]) != '1')
+	(xlm->param.g_map[(int)(Y - ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]) != '1')
 		Y -= SPEED * xlm->player.dir_y;
 	if (xlm->move.down == 1 &&\
-	(xlm->param.g_map[(int)Y][(int)(X - (SPEED * xlm->player.dir_x))]) != '1')
+	(xlm->param.g_map[(int)Y][(int)(X - ((SPEED + 0.1) * xlm->player.dir_x))]) != '1')
 		X -= SPEED * xlm->player.dir_x;
 	if (xlm->move.right == 1 &&\
-	(xlm->param.g_map[(int)(Y + (SPEED * xlm->player.dir_x))][(int)X]) != '1')
+	(xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_x))][(int)X]) != '1')
 		Y += SPEED * xlm->player.dir_x;
 	if (xlm->move.right == 1 &&\
-	(xlm->param.g_map[(int)Y][(int)(X - (SPEED * xlm->player.dir_y))]) != '1')
+	(xlm->param.g_map[(int)Y][(int)(X - ((SPEED + 0.1) * xlm->player.dir_y))]) != '1')
 		X -= SPEED * xlm->player.dir_y;
 	if (xlm->move.left == 1 &&\
-	(xlm->param.g_map[(int)(Y - (SPEED * xlm->player.dir_x))][(int)X]) != '1')
+	(xlm->param.g_map[(int)(Y - ((SPEED + 0.1) * xlm->player.dir_x))][(int)X]) != '1')
 		Y -= SPEED * xlm->player.dir_x;
 	if (xlm->move.left == 1 &&\
-	(xlm->param.g_map[(int)Y][(int)(X + (SPEED * xlm->player.dir_y))]) != '1')
+	(xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_y))]) != '1')
 		X += SPEED * xlm->player.dir_y;
 	if (xlm->move.r_rot == 1)
 	{
@@ -60,12 +60,12 @@ int		key_hook(t_all *xlm)
 		ft_error(xlm->param, xlm->param.valid);
 		exit(0);
 	}
-	xlm->param.g_map[(int)Y][(int)X] = (char)xlm->param.resp_player.dir;
+//	xlm->param.g_map[(int)Y][(int)X] = (char)xlm->param.resp_player.dir;
 	xlm->img.img = mlx_new_image(xlm->mlx, xlm->param.width, xlm->param.height);
 	xlm->img.adr = mlx_get_data_addr(xlm->img.img, &xlm->img.bpp, &xlm->img.line_len, &xlm->img.iend);
 //	xlm->image = mlx_new_image(xlm->mlx, xlm->param.width, xlm->param.height);
-	ft_draw_map(xlm, START_X, START_Y);
 	ft_draw_beam(xlm);
+	ft_draw_map(xlm, START_X, START_Y);
 //	mlx_clear_window(xlm->mlx, xlm->win);
 	mlx_put_image_to_window(xlm->mlx, xlm->win, xlm->img.img, 0, 0);
 	mlx_destroy_image(xlm->mlx, xlm->img.img);

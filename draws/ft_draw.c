@@ -62,13 +62,25 @@ void	ft_draw_map(t_all *xlm, int x_print, int y_print)
 
 void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm)
 {
+	int i;
+	int old_draw_s;
 //	if (draw_e < 0)
 //		draw_e *= -1;
+	old_draw_s = draw_s;
+	i = -1;
 	while (draw_s <= draw_e)
 	{
 		my_pixel_put(xlm, x, draw_s, color);
 //		mlx_pixel_put(xlm->image, xlm->win, x, draw_s, color);
 		draw_s++;
+		i = 0;
+	}
+	if (!i)
+	{
+		while (i < old_draw_s)
+			my_pixel_put(xlm, x, i++, xlm->param.c.rgb);
+		while (++draw_e < (xlm->param.height - 1))
+			my_pixel_put(xlm, x, draw_e, xlm->param.f.rgb);
 	}
 }
 
@@ -147,7 +159,25 @@ void	ft_draw_beam(t_all *xlm)
 		xlm->neo.draw_down = xlm->neo.line_len / 2 + xlm->param.height / 2;
 		if (xlm->neo.draw_down >= xlm->param.height)
 			xlm->neo.draw_down = xlm->param.height - 1;
-		ft_draw_line(i, xlm->neo.draw_up, xlm->neo.draw_down, 0xFF0000, xlm);
+		if (xlm->neo.side == 0)
+			xlm->neo.wall_x = Y + xlm->neo.dist * xlm->neo.rdir_y;
+		else
+			xlm->neo.wall_x = X + xlm->neo.dist * xlm->neo.rdir_x;
+		xlm->neo.wall_x -= floor(xlm->neo.wall_x);
+		xlm->neo.tex_x = (int)(xlm->neo.wall_x * (double)(xlm->neo.tex_wid));
+		if ((xlm->neo.side == 0 && xlm->neo.rdir_x > 0) ||\
+		(xlm->neo.side == 1 && xlm->neo.rdir_y < 0))
+			xlm->neo.tex_x = xlm->neo.tex_wid - xlm->neo.tex_x - 1;
+		xlm->neo.step = 1.0 * xlm->neo.tex_hei / xlm->neo.line_len;
+		xlm->neo.tex_pos = (xlm->neo.draw_up - xlm->param.height / 2 + xlm->neo.line_len / 2) * xlm->neo.step;
+		j = xlm->neo.draw_up;
+		while (j < xlm->neo.draw_down)
+		{
+			xlm->neo.tex_y = (int)xlm->neo.tex_pos & (xlm->neo.tex_hei - 1);
+			xlm->neo.tex_pos += xlm->neo.step;
+			j++;
+		}
+		ft_draw_line(i, xlm->neo.draw_up, xlm->neo.draw_down, 0x800000, xlm);
 	}
 }
 

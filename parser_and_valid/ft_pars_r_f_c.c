@@ -51,6 +51,8 @@ t_map	ft_pars_frgb(t_map param, char *map)
 	}
 	else
 		param.valid = DOUBLE_FRGB_ERROR;
+	if (!param.valid)
+		param.f.rgb = rgb_color(param.f.r, param.f.g, param.f.b);
 	return (param);
 }
 
@@ -78,5 +80,7 @@ t_map	ft_pars_crgb(t_map param, char *map)
 	}
 	else
 		param.valid = DOUBLE_CRGB_ERROR;
+	if (!param.valid)
+		param.c.rgb = rgb_color(param.c.r, param.c.g, param.c.b);
 	return (param);
 }

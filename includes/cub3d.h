@@ -78,6 +78,12 @@ typedef struct s_matrix
 	int			draw_down;
 	int			line_len;
 	int			side;
+	int 		screen_h;
+	int 		screen_w;
+	int			tex_hei;
+	int 		tex_wid;
+	int 		tex_x;
+	int 		tex_y;
 	double		side_x;
 	double		side_y;
 	double		l_x;
@@ -88,6 +94,9 @@ typedef struct s_matrix
 	double		rdir_y;
 	double		cam;
 	double		dist;
+	double		wall_x;
+	double		step;
+	double 		tex_pos;
 }				t_matrix;
 
 typedef struct s_move
@@ -120,6 +129,7 @@ typedef struct	s_f
 	short int	g;
 	short int	b;
 	short int 	flag;
+	int 		rgb;
 }				t_f;
 
 typedef struct	s_struct
@@ -185,5 +195,6 @@ t_map	dir_cos_sin(t_map param);
 int		ft_render(t_all *xlm);
 void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm);
 void	my_pixel_put(t_all *xlm, int x, int y, int color);
+int		rgb_color(int r, int g, int b);
 
 #endif

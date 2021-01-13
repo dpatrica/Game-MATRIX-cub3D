@@ -19,11 +19,11 @@ static t_map	mainik(t_map param, int argc, char **argv)
 		param = ft_valid(param, 0, 0, 0);
 	if (!param.valid)
 	{
-		printf("Valid:%d\nWidth:%d\nHeight:%d\nF.flag:%d\nF.r:%d\nF.g:%d\nF.b:%d\nC.flag:%d\nC.r:%d\nC.g:%d\nC.b:%d\nSave:%d\nNO:%s\nSO:%s\nWE:%s\nEA:%s\nS:%s\nGG\n\n",
+		printf("Valid:%d\nWidth:%d\nHeight:%d\nF.flag:%d\nF.r:%d\nF.g:%d\nF.b:%d\nC.flag:%d\nC.r:%d\nC.g:%d\nC.b:%d\nSave:%d\nNO:%s\nSO:%s\nWE:%s\nEA:%s\nS:%s\nFRGB:%X\nCRGB:%X\nGG\n\n",
 			   param.valid, param.width, param.height, param.f.flag, param.f.r,
 			   param.f.g, param.f.b, param.c.flag, param.c.r, param.c.g,
 			   param.c.b, param.save, param.no, param.so, param.we, param.ea,
-			   param.s);
+			   param.s, param.f.rgb, param.c.rgb);
 		int i = 0;
 		while (param.g_map[i])
 			printf("%s\n", param.g_map[i++]);

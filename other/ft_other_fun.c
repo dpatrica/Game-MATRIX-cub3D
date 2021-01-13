@@ -25,7 +25,10 @@ char	*freesher(char *s1, char *s2, char *s3)
 	return (NULL);
 }
 
-
+int		rgb_color(int r, int g, int b)
+{
+	return (r << 16 | g << 8 | b);
+}
 
 /*void	save_player(t_all *xlm)
 {

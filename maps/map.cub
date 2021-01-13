@@ -1,12 +1,12 @@
 R 2000 1000
-NO ../maps/map.cub
-SO ../maps/map.cub
-WE ../maps/map.cub
-EA ../maps/map.cub
-S ../maps/map.cub
+NO ../xpm/eagle.xpm
+SO ../xpm/colorstone.xpm
+WE ../xpm/bluestone.xpm
+EA ../xpm/redbrick.xpm
+S ../xpm/barrel.xpm
 
-C 225,0,1
-F 220,1,1
+F 128,128,128
+C 0,165,255
 
 11111111111111111111111
 10000000000000000000001
