@@ -172,6 +172,38 @@ void	ft_draw_beam(t_all *xlm)
 		else
 			xlm->neo.wall_x = X + xlm->neo.dist * xlm->neo.rdir_x;
 		xlm->neo.wall_x -= floor(xlm->neo.wall_x);
+		if (xlm->neo.side == 0 && xlm->neo.step_x == 1)
+		{
+			xlm->neo.tex_wid = xlm->tex.ea.width;
+			xlm->neo.tex_hei = xlm->tex.ea.height;
+			xlm->neo.adr = xlm->tex.ea.adr;
+			xlm->neo.bpp = xlm->tex.ea.bpp;
+			xlm->neo.tex_line = xlm->tex.ea.line_len;
+		}
+		else if (xlm->neo.side == 0 && xlm->neo.step_x == -1)
+		{
+			xlm->neo.tex_wid = xlm->tex.we.width;
+			xlm->neo.tex_hei = xlm->tex.we.height;
+			xlm->neo.adr = xlm->tex.we.adr;
+			xlm->neo.bpp = xlm->tex.we.bpp;
+			xlm->neo.tex_line = xlm->tex.we.line_len;
+		}
+		else if (xlm->neo.side == 1 && xlm->neo.step_y == -1)
+		{
+			xlm->neo.tex_wid = xlm->tex.no.width;
+			xlm->neo.tex_hei = xlm->tex.no.height;
+			xlm->neo.adr = xlm->tex.no.adr;
+			xlm->neo.bpp = xlm->tex.no.bpp;
+			xlm->neo.tex_line = xlm->tex.no.line_len;
+		}
+		else if (xlm->neo.side == 1 && xlm->neo.step_y == 1)
+		{
+			xlm->neo.tex_wid = xlm->tex.so.width;
+			xlm->neo.tex_hei = xlm->tex.so.height;
+			xlm->neo.adr = xlm->tex.so.adr;
+			xlm->neo.bpp = xlm->tex.so.bpp;
+			xlm->neo.tex_line = xlm->tex.so.line_len;
+		}
 		xlm->neo.tex_x = (int)(xlm->neo.wall_x * (double)(xlm->neo.tex_wid));
 		if ((xlm->neo.side == 0 && xlm->neo.rdir_x > 0) ||\
 		(xlm->neo.side == 1 && xlm->neo.rdir_y < 0))
@@ -191,7 +223,7 @@ void	ft_draw_beam(t_all *xlm)
 			else if (xlm->neo.tex_y < 0)
 				xlm->neo.tex_y = 0;
 			xlm->neo.tex_pos += xlm->neo.step;
-			unsigned int *clr = (unsigned int*)(xlm->tex.no.adr + xlm->tex.no.line_len * xlm->neo.tex_y + xlm->neo.tex_x * (xlm->tex.no.bpp / 8));
+			unsigned int *clr = (unsigned int*)(xlm->neo.adr + xlm->neo.tex_line * xlm->neo.tex_y + xlm->neo.tex_x * (xlm->neo.bpp / 8));
 //			printf("par:%p\n", xlm->tex.no.adr);
 			my_pixel_put(xlm, i, j, (int)*clr);
 			j++;

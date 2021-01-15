@@ -85,6 +85,9 @@ typedef struct s_matrix
 	int 		tex_wid;
 	int 		tex_x;
 	int 		tex_y;
+	int			bpp;
+	int 		tex_line;
+	char 		*adr;
 	double		side_x;
 	double		side_y;
 	double		l_x;
@@ -153,7 +156,7 @@ typedef struct	s_struct
 typedef struct	s_image
 {
 	void		*img;
-	void		*adr;
+	char		*adr;
 	int			bpp;
 	int 		line_len;
 	int			iend;
@@ -162,7 +165,7 @@ typedef struct	s_image
 typedef struct	s_wht
 {
 	void 		*tex;
-	void		*adr;
+	char		*adr;
 	int 		width;
 	int 		height;
 	int			bpp;

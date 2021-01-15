@@ -46,9 +46,9 @@ int				main(int argc, char **argv)
 	xlm.mlx = mlx_init();
 	xlm.win = mlx_new_window(xlm.mlx, xlm.param.width, xlm.param.height, "dolbobob");
 	xlm.tex.no.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.no, &xlm.tex.no.width, &xlm.tex.no.height);
-	xlm.tex.so.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.no, &xlm.tex.so.width, &xlm.tex.so.height);
-	xlm.tex.we.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.no, &xlm.tex.we.width, &xlm.tex.we.height);
-	xlm.tex.ea.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.no, &xlm.tex.ea.width, &xlm.tex.ea.height);
+	xlm.tex.so.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.so, &xlm.tex.so.width, &xlm.tex.so.height);
+	xlm.tex.we.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.we, &xlm.tex.we.width, &xlm.tex.we.height);
+	xlm.tex.ea.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.ea, &xlm.tex.ea.width, &xlm.tex.ea.height);
 //	xlm.neo.tex_hei = xlm.tex.no.height;
 //	xlm.neo.tex_wid = xlm.tex.no.width;
 	if (xlm.tex.no.tex == NULL || xlm.tex.so.tex == NULL || xlm.tex.we.tex == NULL || xlm.tex.ea.tex == NULL)
