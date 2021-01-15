@@ -12,6 +12,14 @@ void	my_pixel_put(t_all *xlm, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
+/*static void	ma_pixel_put(t_all *xlm, int x, int y, int color)
+{
+	char *dst;
+
+	dst = xlm->tex.no.adr + (y * xlm->img.line_len + x * (xlm->tex.no.bpp / 8));
+	*(unsigned int*)dst = color;
+}*/
+
 void 	ft_draw_square(t_all *xlm, int x, int y, int color)
 {
 	int	start_x;
@@ -68,13 +76,13 @@ void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm)
 //		draw_e *= -1;
 	old_draw_s = draw_s;
 	i = -1;
-	while (draw_s <= draw_e)
-	{
-		my_pixel_put(xlm, x, draw_s, color);
+	if (draw_s <= draw_e)
+//	{
+//		my_pixel_put(xlm, x, draw_s, color);
 //		mlx_pixel_put(xlm->image, xlm->win, x, draw_s, color);
-		draw_s++;
+//		draw_s++;
 		i = 0;
-	}
+//	}
 	if (!i)
 	{
 		while (i < old_draw_s)
@@ -144,15 +152,15 @@ void	ft_draw_beam(t_all *xlm)
 		xlm->neo.l_x = (START_X + (X * SQUARE));
 		xlm->neo.l_y = (START_Y + (Y * SQUARE));
 		j = 0;
-		while (j < (int)(xlm->neo.dist * SQUARE))
-		{
-			my_pixel_put(xlm, xlm->neo.l_x, xlm->neo.l_y, 0xDAF87D);
+//		while (j < (int)(xlm->neo.dist * SQUARE)) FIXME ОТРИСОВКА ЛУЧЕЙ ! ! !
+//		{
+//			my_pixel_put(xlm, xlm->neo.l_x, xlm->neo.l_y, 0xDAF87D);
 //			mlx_pixel_put(xlm->image, xlm->win, xlm->neo.l_x, xlm->neo.l_y, 0xDAF87D);
-			xlm->neo.l_x += 1 * xlm->player.dir_x + xlm->player.plan_x * xlm->neo.cam;
-			xlm->neo.l_y += 1 * xlm->player.dir_y + xlm->player.plan_y * xlm->neo.cam;
-			j++;
-		}
-		xlm->neo.line_len = (int)(xlm->param.height / xlm->neo.dist);
+//			xlm->neo.l_x += 1 * xlm->player.dir_x + xlm->player.plan_x * xlm->neo.cam;
+//			xlm->neo.l_y += 1 * xlm->player.dir_y + xlm->player.plan_y * xlm->neo.cam;
+//			j++;
+//		}
+		xlm->neo.line_len = (int)(xlm->param.height / fabs(xlm->neo.dist));
 		xlm->neo.draw_up = -xlm->neo.line_len / 2 + xlm->param.height / 2;
 		if (xlm->neo.draw_up < 0)
 			xlm->neo.draw_up = 0;
@@ -168,16 +176,32 @@ void	ft_draw_beam(t_all *xlm)
 		if ((xlm->neo.side == 0 && xlm->neo.rdir_x > 0) ||\
 		(xlm->neo.side == 1 && xlm->neo.rdir_y < 0))
 			xlm->neo.tex_x = xlm->neo.tex_wid - xlm->neo.tex_x - 1;
+		if (xlm->neo.tex_x >= xlm->neo.tex_wid)
+			xlm->neo.tex_x = xlm->neo.tex_wid - 1;
+		else if (xlm->neo.tex_x < 0)
+			xlm->neo.tex_x = 0;
 		xlm->neo.step = 1.0 * xlm->neo.tex_hei / xlm->neo.line_len;
 		xlm->neo.tex_pos = (xlm->neo.draw_up - xlm->param.height / 2 + xlm->neo.line_len / 2) * xlm->neo.step;
 		j = xlm->neo.draw_up;
 		while (j < xlm->neo.draw_down)
 		{
-			xlm->neo.tex_y = (int)xlm->neo.tex_pos & (xlm->neo.tex_hei - 1);
+			xlm->neo.tex_y = (int)xlm->neo.tex_pos;// & (xlm->neo.tex_hei - 1);
+			if (xlm->neo.tex_y >= xlm->neo.tex_hei)
+				xlm->neo.tex_y = xlm->neo.tex_hei - 1;
+			else if (xlm->neo.tex_y < 0)
+				xlm->neo.tex_y = 0;
 			xlm->neo.tex_pos += xlm->neo.step;
+			unsigned int *clr = (unsigned int*)(xlm->tex.no.adr + xlm->tex.no.line_len * xlm->neo.tex_y + xlm->neo.tex_x * (xlm->tex.no.bpp / 8));
+//			printf("par:%p\n", xlm->tex.no.adr);
+			my_pixel_put(xlm, i, j, (int)*clr);
 			j++;
 		}
 		ft_draw_line(i, xlm->neo.draw_up, xlm->neo.draw_down, 0x800000, xlm);
+//		printf("side_x:%f\nside_y:%f\n", xlm->neo.side_x, xlm->neo.side_y); //wall:%ftex_pos:%f xlm->neo.wall_x, xlm->neo.tex_pos,
+//		printf("side:%d\n", xlm->neo.side);
+//		printf("stepX:%d\nstepY:%d\n", xlm->neo.step_x, xlm->neo.step_y);
+//		printf("cam:%f\n", xlm->neo.cam);
+//		printf("wall_x:%f\n", xlm->neo.wall_x);
 	}
 }
 

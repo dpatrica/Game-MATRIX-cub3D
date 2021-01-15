@@ -108,5 +108,7 @@ int	ft_error(t_map param, int error)
 		write(1, "Error!\nMissing player.", 22);
 	else if (error == MAP_EMPTY_LINE_ERROR)
 		write(1, "Error!\nEmpty line in the map.", 29);
+	else if (error == UN_ERROR)
+		write(1, "kakaya-to owibka!", 17);
 	return (-1);
 }

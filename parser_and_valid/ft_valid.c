@@ -38,8 +38,8 @@ static t_map	ft_validm(t_map param, int i, int j, int flag)
 	if (flag)
 	{
 		param.resp_player.dir = (int)param.g_map[i][j];
-		param.resp_player.x = j;
-		param.resp_player.y = i;
+		param.resp_player.x = j + 0.5;
+		param.resp_player.y = i + 0.5;
 		return (dir_cos_sin(param));
 	}
 	while (param.g_map[i])

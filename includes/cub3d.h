@@ -5,7 +5,7 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# define START_X 1750
+# define START_X 1700
 # define START_Y 3
 # define SQUARE xlm->width_square
 # define X xlm->player.x
@@ -56,6 +56,7 @@
 # define DOUBLE_PLAYER_ERROR 42
 # define NO_PLAYER_ERROR 43
 # define MAP_EMPTY_LINE_ERROR 44
+# define UN_ERROR 45
 //# define NO_ERROR
 //# define SO_ERROR
 //# define WE_ERROR
@@ -152,11 +153,30 @@ typedef struct	s_struct
 typedef struct	s_image
 {
 	void		*img;
-	char		*adr;
+	void		*adr;
 	int			bpp;
 	int 		line_len;
 	int			iend;
 }				t_image;
+
+typedef struct	s_wht
+{
+	void 		*tex;
+	void		*adr;
+	int 		width;
+	int 		height;
+	int			bpp;
+	int 		line_len;
+	int			iend;
+}				t_wht;
+
+typedef struct	s_tex
+{
+	t_wht		no;
+	t_wht		so;
+	t_wht		we;
+	t_wht		ea;
+}				t_tex;
 
 typedef struct	s_all
 {
@@ -168,6 +188,7 @@ typedef struct	s_all
 	t_move		move;
 	t_matrix	neo;
 	t_image		img;
+	t_tex		tex;
 }				t_all;
 
 t_all	ft_fornull(t_all xlm);

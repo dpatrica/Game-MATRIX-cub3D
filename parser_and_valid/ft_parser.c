@@ -119,10 +119,10 @@ t_map			ft_parser(t_map param, char *map)
 			param = ft_check_and_parsm(param, fd, map - j);
 			break ;
 		}
+		if (!*map && j)
+			param.valid = MAP_TRASH_ERROR;
 		free(map - j);
-		if (param.valid)
-			break ;
-		if ((i == 0) && (param.valid = NO_MAP_ERROR))
+		if (param.valid || (!i && (param.valid = NO_MAP_ERROR)))
 			break ;
 	}
 	close(fd);

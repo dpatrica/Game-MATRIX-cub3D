@@ -45,6 +45,22 @@ int				main(int argc, char **argv)
 	printf("\nPlayer POSITION:\nX:%f\nY:%f\ndir:%c\n", xlm.player.x, xlm.player.y, xlm.player.dir);
 	xlm.mlx = mlx_init();
 	xlm.win = mlx_new_window(xlm.mlx, xlm.param.width, xlm.param.height, "dolbobob");
+	xlm.tex.no.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.no, &xlm.tex.no.width, &xlm.tex.no.height);
+	xlm.tex.so.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.no, &xlm.tex.so.width, &xlm.tex.so.height);
+	xlm.tex.we.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.no, &xlm.tex.we.width, &xlm.tex.we.height);
+	xlm.tex.ea.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.no, &xlm.tex.ea.width, &xlm.tex.ea.height);
+//	xlm.neo.tex_hei = xlm.tex.no.height;
+//	xlm.neo.tex_wid = xlm.tex.no.width;
+	if (xlm.tex.no.tex == NULL || xlm.tex.so.tex == NULL || xlm.tex.we.tex == NULL || xlm.tex.ea.tex == NULL)
+	{
+		ft_error(xlm.param, UN_ERROR);
+		exit(0);
+	}
+	xlm.tex.no.adr = mlx_get_data_addr(xlm.tex.no.tex, &xlm.tex.no.bpp, &xlm.tex.no.line_len, &xlm.tex.no.iend);
+//	printf("%d\n%d\n", xlm.tex.no.width, xlm.tex.no.height);
+	xlm.tex.so.adr = mlx_get_data_addr(xlm.tex.so.tex, &xlm.tex.so.bpp, &xlm.tex.so.line_len, &xlm.tex.so.iend);
+	xlm.tex.we.adr = mlx_get_data_addr(xlm.tex.we.tex, &xlm.tex.we.bpp, &xlm.tex.we.line_len, &xlm.tex.we.iend);
+	xlm.tex.ea.adr = mlx_get_data_addr(xlm.tex.ea.tex, &xlm.tex.ea.bpp, &xlm.tex.ea.line_len, &xlm.tex.ea.iend);
 //	xlm.img.img = mlx_new_image(xlm.mlx, xlm.param.width, xlm.param.height);
 //	xlm.img.adr = mlx_get_data_addr(xlm.img.img, &xlm.img.bpp, &xlm.img.line_len, &xlm.img.iend);
 //	ft_draw_map(&xlm, START_X, START_Y);
@@ -56,7 +72,7 @@ int				main(int argc, char **argv)
 	mlx_loop_hook(xlm.mlx, &key_hook, &xlm);
 //	mlx_put_image_to_window(xlm.mlx, xlm.win, xlm.image, xlm.param.width, xlm.param.height);
 	mlx_loop(xlm.mlx);
-//	ft_error(xlm.param, xlm.param.valid);
+	ft_error(xlm.param, xlm.param.valid);
 	exit(0);
 }
 
