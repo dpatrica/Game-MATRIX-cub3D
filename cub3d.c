@@ -49,9 +49,10 @@ int				main(int argc, char **argv)
 	xlm.tex.so.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.so, &xlm.tex.so.width, &xlm.tex.so.height);
 	xlm.tex.we.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.we, &xlm.tex.we.width, &xlm.tex.we.height);
 	xlm.tex.ea.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.ea, &xlm.tex.ea.width, &xlm.tex.ea.height);
+	xlm.sprite.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.s, &xlm.sprite.width, &xlm.sprite.height);
 //	xlm.neo.tex_hei = xlm.tex.no.height;
 //	xlm.neo.tex_wid = xlm.tex.no.width;
-	if (xlm.tex.no.tex == NULL || xlm.tex.so.tex == NULL || xlm.tex.we.tex == NULL || xlm.tex.ea.tex == NULL)
+	if (xlm.tex.no.tex == NULL || xlm.tex.so.tex == NULL || xlm.tex.we.tex == NULL || xlm.tex.ea.tex == NULL || xlm.sprite.tex == NULL)
 	{
 		ft_error(xlm.param, UN_ERROR);
 		exit(0);
@@ -61,6 +62,26 @@ int				main(int argc, char **argv)
 	xlm.tex.so.adr = mlx_get_data_addr(xlm.tex.so.tex, &xlm.tex.so.bpp, &xlm.tex.so.line_len, &xlm.tex.so.iend);
 	xlm.tex.we.adr = mlx_get_data_addr(xlm.tex.we.tex, &xlm.tex.we.bpp, &xlm.tex.we.line_len, &xlm.tex.we.iend);
 	xlm.tex.ea.adr = mlx_get_data_addr(xlm.tex.ea.tex, &xlm.tex.ea.bpp, &xlm.tex.ea.line_len, &xlm.tex.ea.iend);
+	xlm.sprite.adr = mlx_get_data_addr(xlm.sprite.tex, &xlm.sprite.bpp, &xlm.sprite.line_len, &xlm.sprite.iend);
+	sprite_len(&xlm);
+	printf("spr_lenw:%d\n", xlm.sprite.spr_len);
+	printf("sprPOSX0:%f\n", xlm.sprite.pos[0].x);
+	printf("sprPOSY0:%f\n", xlm.sprite.pos[0].y);
+	printf("sprPOSX1:%f\n", xlm.sprite.pos[1].x);
+	printf("sprPOSY1:%f\n", xlm.sprite.pos[1].y);
+	printf("sprPOSX2:%f\n", xlm.sprite.pos[2].x);
+	printf("sprPOSY2:%f\n", xlm.sprite.pos[2].y);
+//	if (xlm.sprite.spr_len)
+//	{
+//		if (!(xlm.sprite.wid_buf = malloc(xlm.param.width * sizeof(double))))
+//			exit(0);
+//		if (!(xlm.sprite.spr = malloc(xlm.sprite.spr_len * sizeof(int))))
+//			exit(0);
+//		if (!(xlm.sprite.spr_dist = malloc(xlm.sprite.spr_len * sizeof(double))))
+//			exit(0);
+//		if (!(xlm.sprite.pos = malloc(xlm.sprite.spr_len * sizeof(t_pos))))
+//			exit(0);
+//	}
 //	xlm.img.img = mlx_new_image(xlm.mlx, xlm.param.width, xlm.param.height);
 //	xlm.img.adr = mlx_get_data_addr(xlm.img.img, &xlm.img.bpp, &xlm.img.line_len, &xlm.img.iend);
 //	ft_draw_map(&xlm, START_X, START_Y);

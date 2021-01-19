@@ -30,6 +30,39 @@ int		rgb_color(int r, int g, int b)
 	return (r << 16 | g << 8 | b);
 }
 
+void	sprite_len(t_all *xlm)
+{
+	int i;
+	int j;
+
+	i = -1;
+	while (xlm->param.g_map[++i] && !(j = 0))
+		while (xlm->param.g_map[i][j])
+			if (xlm->param.g_map[i][j++] == '2')
+				xlm->sprite.spr_len++;
+	if (xlm->sprite.spr_len)
+	{
+		if (!(xlm->sprite.wid_buf = malloc(xlm->param.width * sizeof(double))))
+			exit(0);
+		if (!(xlm->sprite.spr = malloc(xlm->sprite.spr_len * sizeof(int))))
+			exit(0);
+		if (!(xlm->sprite.spr_dist = malloc(xlm->sprite.spr_len * sizeof(double))))
+			exit(0);
+		if (!(xlm->sprite.pos = malloc(xlm->sprite.spr_len * sizeof(t_pos))))
+			exit(0);
+		i = -1;
+		xlm->sprite.spr_len = 0;
+		while (xlm->param.g_map[++i] && (j = -1))
+			while (xlm->param.g_map[i][++j])
+				if (xlm->param.g_map[i][j] == '2')
+				{
+					xlm->sprite.pos[xlm->sprite.spr_len].x = j + 0.5;
+					xlm->sprite.pos[xlm->sprite.spr_len].y = i + 0.5;
+					xlm->sprite.spr_len++;
+				}
+	}
+}
+
 /*void	save_player(t_all *xlm)
 {
 	int x;

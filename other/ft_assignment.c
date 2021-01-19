@@ -15,6 +15,7 @@ static t_all	ft_fornullll(t_all xlm)
 	xlm.img.iend = 0;
 	xlm.param.f.rgb = 0;
 	xlm.param.c.rgb = 0;
+	xlm.sprite.spr_len = 0;
 	return (xlm);
 }
 

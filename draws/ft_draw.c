@@ -97,6 +97,9 @@ void	ft_draw_beam(t_all *xlm)
 	int		i = -1;
 	int		j;
 	int		hit;
+	int 	hit2;
+	int		n;
+	int		d;
 
 	while (++i < (xlm->param.width - 1))
 	{
@@ -229,11 +232,62 @@ void	ft_draw_beam(t_all *xlm)
 			j++;
 		}
 		ft_draw_line(i, xlm->neo.draw_up, xlm->neo.draw_down, 0x800000, xlm);
+		xlm->sprite.wid_buf[i] = xlm->neo.dist;
 //		printf("side_x:%f\nside_y:%f\n", xlm->neo.side_x, xlm->neo.side_y); //wall:%ftex_pos:%f xlm->neo.wall_x, xlm->neo.tex_pos,
 //		printf("side:%d\n", xlm->neo.side);
 //		printf("stepX:%d\nstepY:%d\n", xlm->neo.step_x, xlm->neo.step_y);
 //		printf("cam:%f\n", xlm->neo.cam);
 //		printf("wall_x:%f\n", xlm->neo.wall_x);
+	}
+	i = -1;
+	while (++i < xlm->sprite.spr_len)
+	{
+		xlm->sprite.spr[i] = i;
+		xlm->sprite.spr_dist[i] = pow(X - xlm->sprite.pos[i].x, 2) + pow(Y - xlm->sprite.pos[i].y, 2);
+	}
+	// FIXME ДОБАВИТЬ СОРТИРОВКУ
+	i = -1;
+	while (++i < xlm->sprite.spr_len)
+	{
+		xlm->sprite.spr_x = xlm->sprite.pos[xlm->sprite.spr[i]].x - xlm->sprite.pos->x;
+		xlm->sprite.spr_y = xlm->sprite.pos[xlm->sprite.spr[i]].y - xlm->sprite.pos->y;
+		xlm->sprite.inde = 1.0 / (xlm->player.plan_x * xlm->player.dir_y - xlm->player.dir_x * xlm->player.plan_y);
+		xlm->sprite.trans_x = xlm->sprite.inde * (xlm->player.dir_y * xlm->sprite.spr_x - xlm->player.dir_x * xlm->sprite.spr_y);
+		xlm->sprite.trans_y = xlm->sprite.inde * (-xlm->player.plan_y * xlm->sprite.spr_x + xlm->player.plan_x * xlm->sprite.spr_y);
+		xlm->sprite.spr_scr = (int)((xlm->param.width / 2) * (1 + xlm->sprite.trans_x / xlm->sprite.trans_y));
+		xlm->sprite.move_scr = (int)(0.0 / xlm->sprite.trans_y);
+		xlm->sprite.spr_hi = abs((int)(xlm->param.height / xlm->sprite.trans_y)) / 1;
+		xlm->sprite.draw_up_y = -xlm->sprite.spr_hi / 2 + xlm->param.height / 2 + xlm->sprite.move_scr;
+		if (xlm->sprite.draw_up_y < 0)
+			xlm->sprite.draw_up_y = 0;
+		xlm->sprite.draw_down_y = xlm->sprite.spr_hi / 2 + xlm->param.height / 2 + xlm->sprite.move_scr;
+		if (xlm->sprite.draw_down_y >= xlm->param.height)
+			xlm->sprite.draw_down_y = xlm->param.height - 1;
+		xlm->sprite.spr_wi = abs((int)(xlm->param.height / xlm->sprite.trans_y)) / 1;
+		xlm->sprite.draw_up_x = -xlm->sprite.spr_wi / 2 + xlm->sprite.spr_scr;
+		if (xlm->sprite.draw_up_x < 0)
+			xlm->sprite.draw_up_x = 0;
+		xlm->sprite.draw_down_x = xlm->sprite.spr_wi / 2 + xlm->sprite.spr_scr;
+		if (xlm->sprite.draw_down_x >= xlm->param.width)
+			xlm->sprite.draw_down_x = xlm->param.width - 1;
+		j = xlm->sprite.draw_up_x - 1;
+		hit = 0;
+		while (++j < xlm->sprite.draw_down_x)
+		{
+			hit = (int)(hit - (j - (-xlm->sprite.spr_wi / 2 + xlm->sprite.spr_scr)) * xlm->sprite.width / xlm->sprite.spr_wi);
+			if (xlm->sprite.trans_y > 0 && j > 0 && j < xlm->param.width && xlm->sprite.trans_y < xlm->sprite.wid_buf[j])
+			{
+				n = xlm->sprite.draw_up_y - 1;
+				while (++n < xlm->sprite.draw_down_y)
+				{
+					d = (n - xlm->sprite.move_scr) * 256 - xlm->param.height * 128 + xlm->sprite.height * 128;
+					hit2 = ((d * xlm->sprite.height) / xlm->sprite.spr_hi) / 256;
+//					unsigned int *clr2 = (unsigned int*)()
+					unsigned int *clr2 = (unsigned int*)(xlm->sprite.adr + xlm->sprite.line_len * hit2 + hit * (xlm->sprite.bpp / 8));
+					my_pixel_put(xlm, i, j, (int)*clr2);
+				}
+			}
+		}
 	}
 }
 

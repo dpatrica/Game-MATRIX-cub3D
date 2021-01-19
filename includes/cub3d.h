@@ -173,6 +173,41 @@ typedef struct	s_wht
 	int			iend;
 }				t_wht;
 
+typedef struct	s_pos
+{
+	double		x;
+	double		y;
+}				t_pos;
+
+typedef struct	s_sprite
+{
+	t_pos		*pos;
+	double		spr_x;
+	double		spr_y;
+	double		inde;
+	double		trans_x;
+	double		trans_y;
+	int			spr_scr;
+	int 		move_scr;
+	int 		spr_hi;
+	int 		spr_wi;
+	int			draw_up_x;
+	int			draw_up_y;
+	int 		draw_down_x;
+	int 		draw_down_y;
+	int 		spr_len;
+	int 		width;
+	int 		height;
+	int 		*spr;
+	double		*spr_dist;
+	void 		*tex;
+	char		*adr;
+	double		*wid_buf;
+	int			bpp;
+	int 		line_len;
+	int			iend;
+}				t_sprite;
+
 typedef struct	s_tex
 {
 	t_wht		no;
@@ -192,6 +227,7 @@ typedef struct	s_all
 	t_matrix	neo;
 	t_image		img;
 	t_tex		tex;
+	t_sprite	sprite;
 }				t_all;
 
 t_all	ft_fornull(t_all xlm);
@@ -220,5 +256,6 @@ int		ft_render(t_all *xlm);
 void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm);
 void	my_pixel_put(t_all *xlm, int x, int y, int color);
 int		rgb_color(int r, int g, int b);
+void	sprite_len(t_all *xlm);
 
 #endif

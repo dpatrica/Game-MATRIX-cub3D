@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
+/Users/dpatrica/CLionProjects/superCUB3D/cub3d.c
+./includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+
 /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw.c
+../includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+
+/Users/dpatrica/CLionProjects/superCUB3D/error_list/ft_error.c
 ../includes/cub3d.h
 /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
 
@@ -35,4 +43,32 @@ stddef.h
 -
 
 /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+
+/Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment.c
+../includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+
+/Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c
+../includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+
+/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_pars_no_so_we_ea_s.c
+../includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+
+/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_pars_r_f_c.c
+../includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+
+/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_parser.c
+../includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+
+/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_valid.c
+../includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+
+/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_hook.c
+../includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
 
