@@ -10,29 +10,37 @@ int		key_hook(t_all *xlm)
 	double	start_plane_x;
 
 //	xlm->param.g_map[(int)Y][(int)X] = '0';
-	if (xlm->move.up == 1 &&\
-	(xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]) != '1')
+	if ((xlm->move.up == 1 &&\
+	(xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]) != '1') &&\
+	(xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]) != '2')
 		Y += SPEED * xlm->player.dir_y;
-	if (xlm->move.up == 1 &&\
-	(xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]) != '1')
+	if ((xlm->move.up == 1 &&\
+	(xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]) != '1') &&\
+	(xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]) != '2')
 		X += SPEED * xlm->player.dir_x;
 	if (xlm->move.down == 1 &&\
-	(xlm->param.g_map[(int)(Y - ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]) != '1')
+	((xlm->param.g_map[(int)(Y - ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]) != '1') &&\
+	(xlm->param.g_map[(int)(Y - ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]) != '2')
 		Y -= SPEED * xlm->player.dir_y;
 	if (xlm->move.down == 1 &&\
-	(xlm->param.g_map[(int)Y][(int)(X - ((SPEED + 0.1) * xlm->player.dir_x))]) != '1')
+	((xlm->param.g_map[(int)Y][(int)(X - ((SPEED + 0.1) * xlm->player.dir_x))]) != '1') &&\
+	(xlm->param.g_map[(int)Y][(int)(X - ((SPEED + 0.1) * xlm->player.dir_x))]) != '2')
 		X -= SPEED * xlm->player.dir_x;
 	if (xlm->move.right == 1 &&\
-	(xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_x))][(int)X]) != '1')
+	((xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_x))][(int)X]) != '1') &&\
+	(xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_x))][(int)X]) != '2')
 		Y += SPEED * xlm->player.dir_x;
 	if (xlm->move.right == 1 &&\
-	(xlm->param.g_map[(int)Y][(int)(X - ((SPEED + 0.1) * xlm->player.dir_y))]) != '1')
+	((xlm->param.g_map[(int)Y][(int)(X - ((SPEED + 0.1) * xlm->player.dir_y))]) != '1') &&\
+	(xlm->param.g_map[(int)Y][(int)(X - ((SPEED + 0.1) * xlm->player.dir_y))]) != '2')
 		X -= SPEED * xlm->player.dir_y;
 	if (xlm->move.left == 1 &&\
-	(xlm->param.g_map[(int)(Y - ((SPEED + 0.1) * xlm->player.dir_x))][(int)X]) != '1')
+	((xlm->param.g_map[(int)(Y - ((SPEED + 0.1) * xlm->player.dir_x))][(int)X]) != '1') &&\
+	(xlm->param.g_map[(int)(Y - ((SPEED + 0.1) * xlm->player.dir_x))][(int)X]) != '2')
 		Y -= SPEED * xlm->player.dir_x;
 	if (xlm->move.left == 1 &&\
-	(xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_y))]) != '1')
+	((xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_y))]) != '1') &&\
+	(xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_y))]) != '2')
 		X += SPEED * xlm->player.dir_y;
 	if (xlm->move.r_rot == 1)
 	{
