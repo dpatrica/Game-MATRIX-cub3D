@@ -65,12 +65,12 @@ int				main(int argc, char **argv)
 	xlm.sprite.adr = mlx_get_data_addr(xlm.sprite.tex, &xlm.sprite.bpp, &xlm.sprite.line_len, &xlm.sprite.iend);
 	sprite_len(&xlm);
 	printf("spr_lenw:%d\n", xlm.sprite.spr_len);
-	printf("sprPOSX0:%f\n", xlm.sprite.pos[0].x);
-	printf("sprPOSY0:%f\n", xlm.sprite.pos[0].y);
-	printf("sprPOSX1:%f\n", xlm.sprite.pos[1].x);
-	printf("sprPOSY1:%f\n", xlm.sprite.pos[1].y);
-	printf("sprPOSX2:%f\n", xlm.sprite.pos[2].x);
-	printf("sprPOSY2:%f\n", xlm.sprite.pos[2].y);
+//	printf("sprPOSX0:%f\n", xlm.sprite.pos[0].x);
+//	printf("sprPOSY0:%f\n", xlm.sprite.pos[0].y);
+//	printf("sprPOSX1:%f\n", xlm.sprite.pos[1].x);
+//	printf("sprPOSY1:%f\n", xlm.sprite.pos[1].y);
+//	printf("sprPOSX2:%f\n", xlm.sprite.pos[2].x);
+//	printf("sprPOSY2:%f\n", xlm.sprite.pos[2].y);
 //	if (xlm.sprite.spr_len)
 //	{
 //		if (!(xlm.sprite.wid_buf = malloc(xlm.param.width * sizeof(double))))

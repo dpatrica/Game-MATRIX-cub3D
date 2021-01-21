@@ -76,7 +76,7 @@ int		key_hook(t_all *xlm)
 	ft_draw_map(xlm, START_X, START_Y);
 //	mlx_clear_window(xlm->mlx, xlm->win);
 	mlx_put_image_to_window(xlm->mlx, xlm->win, xlm->img.img, 0, 0);
-//	mlx_destroy_image(xlm->mlx, xlm->img.img);
+	mlx_destroy_image(xlm->mlx, xlm->img.img);
 	return (0);
 }
 

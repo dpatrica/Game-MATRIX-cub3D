@@ -8,8 +8,11 @@ void	my_pixel_put(t_all *xlm, int x, int y, int color)
 {
 	char *dst;
 
-	dst = xlm->img.adr + (y * xlm->img.line_len + x * (xlm->img.bpp / 8));
-	*(unsigned int*)dst = color;
+	if (color != 0)
+	{
+		dst = xlm->img.adr + (y * xlm->img.line_len + x * (xlm->img.bpp / 8));
+		*(unsigned int *) dst = color;
+	}
 }
 
 /*static void	ma_pixel_put(t_all *xlm, int x, int y, int color)
@@ -245,13 +248,13 @@ void	ft_draw_beam(t_all *xlm)
 		xlm->sprite.spr[i] = i;
 		xlm->sprite.spr_dist[i] = pow(X - xlm->sprite.pos[i].x, 2) + pow(Y - xlm->sprite.pos[i].y, 2);
 	}
-	// FIXME ДОБАВИТЬ СОРТИРОВКУ
+	sprite_sort(xlm);
 //	printf("X:%f\nY:%f\n", X, Y);
 	i = -1;
 	while (++i < xlm->sprite.spr_len)
 	{
-		xlm->sprite.spr_x = xlm->sprite.pos[xlm->sprite.spr[i]].x - xlm->sprite.pos->x;
-		xlm->sprite.spr_y = xlm->sprite.pos[xlm->sprite.spr[i]].y - xlm->sprite.pos->y;
+		xlm->sprite.spr_x = xlm->sprite.pos[xlm->sprite.spr[i]].x - X;
+		xlm->sprite.spr_y = xlm->sprite.pos[xlm->sprite.spr[i]].y - Y;
 		xlm->sprite.inde = 1.0 / (xlm->player.plan_x * xlm->player.dir_y - xlm->player.dir_x * xlm->player.plan_y);
 		xlm->sprite.trans_x = xlm->sprite.inde * (xlm->player.dir_y * xlm->sprite.spr_x - xlm->player.dir_x * xlm->sprite.spr_y);
 		xlm->sprite.trans_y = xlm->sprite.inde * (-xlm->player.plan_y * xlm->sprite.spr_x + xlm->player.plan_x * xlm->sprite.spr_y);
@@ -271,26 +274,28 @@ void	ft_draw_beam(t_all *xlm)
 		xlm->sprite.draw_down_x = xlm->sprite.spr_wi / 2 + xlm->sprite.spr_scr;
 		if (xlm->sprite.draw_down_x >= xlm->param.width)
 			xlm->sprite.draw_down_x = xlm->param.width - 1;
-		j = xlm->sprite.draw_up_x - 1;
-		printf("J:%d\n", j);
+		j = xlm->sprite.draw_up_x;
+//		printf("J:%d\n", j);
 		hit = 0;
-		while (++j < xlm->sprite.draw_down_x)
+		while (j < xlm->sprite.draw_down_x - 1)
 		{
-			hit = (int)(hit - (-xlm->sprite.spr_wi / 2 + xlm->sprite.spr_scr)) * xlm->sprite.width / xlm->sprite.spr_wi;
-			printf("h1:%d\n", hit);
+			hit = (int)(j - (-xlm->sprite.spr_wi / 2 + xlm->sprite.spr_scr)) * xlm->sprite.width / xlm->sprite.spr_wi;
+//			printf("h1:%d\n", hit);
 			if (xlm->sprite.trans_y > 0 && j > 0 && j < xlm->param.width && xlm->sprite.trans_y < xlm->sprite.wid_buf[j])
 			{
-				n = xlm->sprite.draw_up_y - 1;
-				while (++n < xlm->sprite.draw_down_y)
+				n = xlm->sprite.draw_up_y;
+				while (n < xlm->sprite.draw_down_y - 1)
 				{
-					d = (n - xlm->sprite.move_scr) * 256 - xlm->param.height * 128 + xlm->sprite.height * 128;
+					d = (n - xlm->sprite.move_scr) * 256 - xlm->param.height * 128 + xlm->sprite.spr_hi * 128;
 					hit2 = ((d * xlm->sprite.height) / xlm->sprite.spr_hi) / 256;
-					printf("h2:%d\n", hit2);
+//					printf("h2:%d\n", hit2);
 //					unsigned int *clr2 = (unsigned int*)()
 					unsigned int *clr2 = (unsigned int*)(xlm->sprite.adr + xlm->sprite.line_len * hit2 + hit * (xlm->sprite.bpp / 8));
-					my_pixel_put(xlm, n, j, *(int*)clr2);
+					my_pixel_put(xlm, j, n, *(int*)clr2);
+					n++;
 				}
 			}
+			j++;
 		}
 	}
 }

@@ -63,6 +63,24 @@ void	sprite_len(t_all *xlm)
 	}
 }
 
+void	sprite_sort(t_all *xlm)
+{
+	int	i;
+	int	j;
+	i = -1;
+
+	while (++i < (xlm->sprite.spr_len - 1))
+	{
+		if (xlm->sprite.spr_dist[xlm->sprite.spr[i]] < xlm->sprite.spr_dist[xlm->sprite.spr[i + 1]])
+		{
+			j = xlm->sprite.spr[i];
+			xlm->sprite.spr[i] = xlm->sprite.spr[i + 1];
+			xlm->sprite.spr[i + 1] = j;
+			i = -1;
+		}
+	}
+}
+
 /*void	save_player(t_all *xlm)
 {
 	int x;

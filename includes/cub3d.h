@@ -257,5 +257,6 @@ void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm);
 void	my_pixel_put(t_all *xlm, int x, int y, int color);
 int		rgb_color(int r, int g, int b);
 void	sprite_len(t_all *xlm);
+void	sprite_sort(t_all *xlm);
 
 #endif
