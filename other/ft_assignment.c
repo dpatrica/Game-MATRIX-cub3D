@@ -21,6 +21,10 @@ static t_all	ft_fornullll(t_all xlm)
 	xlm.move.l_m_rot = 0;
 	xlm.move.r_m_rot = 0;
 	xlm.move.mouse_cam = 2;
+	xlm.sprite.wid_buf = NULL;
+	xlm.sprite.spr = NULL;
+	xlm.sprite.spr_dist = NULL;
+	xlm.sprite.pos = NULL;
 	return (xlm);
 }
 

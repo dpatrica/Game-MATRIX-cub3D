@@ -278,6 +278,33 @@ other/ft_other_fun.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.s
 .PHONY : other/ft_other_fun.c.s
 
+other/ft_sprite.o: other/ft_sprite.c.o
+
+.PHONY : other/ft_sprite.o
+
+# target to build an object file
+other/ft_sprite.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o
+.PHONY : other/ft_sprite.c.o
+
+other/ft_sprite.i: other/ft_sprite.c.i
+
+.PHONY : other/ft_sprite.i
+
+# target to preprocess a source file
+other/ft_sprite.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_sprite.c.i
+.PHONY : other/ft_sprite.c.i
+
+other/ft_sprite.s: other/ft_sprite.c.s
+
+.PHONY : other/ft_sprite.s
+
+# target to generate assembly for a file
+other/ft_sprite.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_sprite.c.s
+.PHONY : other/ft_sprite.c.s
+
 parser_and_valid/ft_pars_no_so_we_ea_s.o: parser_and_valid/ft_pars_no_so_we_ea_s.c.o
 
 .PHONY : parser_and_valid/ft_pars_no_so_we_ea_s.o
@@ -464,6 +491,9 @@ help:
 	@echo "... other/ft_other_fun.o"
 	@echo "... other/ft_other_fun.i"
 	@echo "... other/ft_other_fun.s"
+	@echo "... other/ft_sprite.o"
+	@echo "... other/ft_sprite.i"
+	@echo "... other/ft_sprite.s"
 	@echo "... parser_and_valid/ft_pars_no_so_we_ea_s.o"
 	@echo "... parser_and_valid/ft_pars_no_so_we_ea_s.i"
 	@echo "... parser_and_valid/ft_pars_no_so_we_ea_s.s"

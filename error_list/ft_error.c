@@ -4,20 +4,24 @@
 
 #include "../includes/cub3d.h"
 
-int	ft_error(t_map param, int error)
+int	ft_error(t_all xlm, int error)
 {
 	int	i;
 
-	param.no ? free(param.no) : 0;
-	param.so ? free(param.so) : 0;
-	param.we ? free(param.we) : 0;
-	param.ea ? free(param.ea) : 0;
-	param.s ? free(param.s) : 0;
+	xlm.param.no ? free(xlm.param.no) : 0;
+	xlm.param.so ? free(xlm.param.so) : 0;
+	xlm.param.we ? free(xlm.param.we) : 0;
+	xlm.param.ea ? free(xlm.param.ea) : 0;
+	xlm.param.s ? free(xlm.param.s) : 0;
+	xlm.sprite.wid_buf ? free(xlm.sprite.wid_buf) : 0;
+	xlm.sprite.spr ? free(xlm.sprite.spr) : 0;
+	xlm.sprite.spr_dist ? free(xlm.sprite.spr_dist) : 0;
+	xlm.sprite.pos ? free(xlm.sprite.pos) : 0;
 	i = 0;
-	if (param.g_map)
-		while (param.g_map[i])
-			free(param.g_map[i++]);
-	param.g_map ? free(param.g_map) : 0;
+	if (xlm.param.g_map)
+		while (xlm.param.g_map[i])
+			free(xlm.param.g_map[i++]);
+	xlm.param.g_map ? free(xlm.param.g_map) : 0;
 	if (error == VALID)
 		write(1, "!!!_ALL VALID AND EZ FREED_!!!", 30);
 	else if (error == NO_ARGS)
@@ -110,5 +114,7 @@ int	ft_error(t_map param, int error)
 		write(1, "Error!\nEmpty line in the map.", 29);
 	else if (error == TEXTURE_ERROR)
 		write(1, "Error!\nFailed to load texture.", 30);
+	else if (error == SPR_MALLOC_ERROR)
+		write(1, "Error!\nFailed to allocate memory for sprite.", 44);
 	return (-1);
 }

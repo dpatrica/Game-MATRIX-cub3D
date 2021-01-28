@@ -31,6 +31,12 @@ CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../other/ft_other_fun.c
 
+CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o: ../includes/cub3d.h
+CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o: ../libft/libft.h
+CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o: ../minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o: ../other/ft_sprite.c
+
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_no_so_we_ea_s.c.o: ../includes/cub3d.h
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_no_so_we_ea_s.c.o: ../libft/libft.h
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_no_so_we_ea_s.c.o: ../minilibx_mms_20200219/mlx.h

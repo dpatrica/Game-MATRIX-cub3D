@@ -21,7 +21,7 @@ static void	get_agr(t_all *xlm)
 	if (!xlm->tex.no.adr || !xlm->tex.so.adr || !xlm->tex.we.adr ||\
 	!xlm->tex.ea.adr || !xlm->sprite.adr || !xlm->tex.skybox.adr)
 	{
-		ft_error(xlm->param, TEXTURE_ERROR);
+		ft_error(*xlm, TEXTURE_ERROR);
 		exit(0);
 	}
 }
@@ -38,11 +38,11 @@ void		ft_texture(t_all *xlm)
 	&xlm->tex.ea.width, &xlm->tex.ea.height);
 	xlm->sprite.tex = mlx_xpm_file_to_image(xlm->mlx, xlm->param.s,\
 	&xlm->sprite.width, &xlm->sprite.height);
-	xlm->tex.skybox.tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/matrix.xpm", &xlm->tex.skybox.width, &xlm->tex.skybox.height);
+	xlm->tex.skybox.tex = mlx_xpm_file_to_image(xlm->mlx, "./xpm/matrix.xpm", &xlm->tex.skybox.width, &xlm->tex.skybox.height);
 	if (!xlm->tex.no.tex || !xlm->tex.so.tex || !xlm->tex.we.tex ||\
 	!xlm->tex.ea.tex || !xlm->sprite.tex || !xlm->tex.skybox.tex)
 	{
-		ft_error(xlm->param, TEXTURE_ERROR);
+		ft_error(*xlm, TEXTURE_ERROR);
 		exit(0);
 	}
 	get_agr(xlm);

@@ -6,15 +6,15 @@
 
 static t_map	mainik(t_map param, int argc, char **argv)
 {
-//	if ((argc < 2) || (argc > 3))
-//		param.valid = (argc > 3) ? MANY_ARGS : NO_ARGS;
-//	else if ((**(argv + 1) == '.') || (ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5)))
-//		param.valid = MAP_CUB_ERROR;
-//	else if ((argc == 3) && (++param.save) && (ft_strncmp(argv[2], "--save", 7)))
-//		param.valid = SAVE_ERROR;
+	if ((argc < 2) || (argc > 3))
+		param.valid = (argc > 3) ? MANY_ARGS : NO_ARGS;
+	else if ((**(argv + 1) == '.') || (ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5)))
+		param.valid = MAP_CUB_ERROR;
+	else if ((argc == 3) && (++param.save) && (ft_strncmp(argv[2], "--save", 7)))
+		param.valid = SAVE_ERROR;
 	if (!param.valid)
-		param = ft_parser(param, "../maps/map.cub");
-//		param = ft_parser(param, argv[1]);
+//		param = ft_parser(param, "../maps/map.cub");
+		param = ft_parser(param, argv[1]);
 	if (!param.valid)
 		param = ft_valid(param, 0, 0, 0);
 	if (!param.valid)
@@ -39,70 +39,26 @@ int				main(int argc, char **argv)
 	xlm = ft_fornull(xlm);
 	xlm.param = mainik(xlm.param, argc, argv);
 	if (xlm.param.valid)
-		return (ft_error(xlm.param, xlm.param.valid));
-//	save_player(&xlm);
+		return (ft_error(xlm, xlm.param.valid));
 	xlm.player = xlm.param.resp_player;
 	printf("\nPlayer POSITION:\nX:%f\nY:%f\ndir:%c\n", xlm.player.x, xlm.player.y, xlm.player.dir);
 	xlm.mlx = mlx_init();
-//	chek_screen(&xlm);
+	chek_screen(&xlm);
 	xlm.win = mlx_new_window(xlm.mlx, xlm.param.width, xlm.param.height, "dolbobob");
 	ft_texture(&xlm);
-/*	xlm.tex.no.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.no, &xlm.tex.no.width, &xlm.tex.no.height);
-	xlm.tex.so.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.so, &xlm.tex.so.width, &xlm.tex.so.height);
-	xlm.tex.we.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.we, &xlm.tex.we.width, &xlm.tex.we.height);
-	xlm.tex.ea.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.ea, &xlm.tex.ea.width, &xlm.tex.ea.height);
-	xlm.sprite.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.s, &xlm.sprite.width, &xlm.sprite.height);
-	xlm.tex.skybox.tex = mlx_xpm_file_to_image(xlm.mlx, "../xpm/matrix.xpm", &xlm.tex.skybox.width, &xlm.tex.skybox.height);
-//	xlm.neo.tex_hei = xlm.tex.no.height;
-//	xlm.neo.tex_wid = xlm.tex.no.width;
-	if (xlm.tex.no.tex == NULL || xlm.tex.so.tex == NULL || xlm.tex.we.tex == NULL || xlm.tex.ea.tex == NULL || xlm.sprite.tex == NULL)
-	{
-		ft_error(xlm.param, TEXTURE_ERROR);
-		exit(0);
-	}
-	xlm.tex.no.adr = mlx_get_data_addr(xlm.tex.no.tex, &xlm.tex.no.bpp, &xlm.tex.no.line_len, &xlm.tex.no.iend);
-//	printf("%d\n%d\n", xlm.tex.no.width, xlm.tex.no.height);
-	xlm.tex.so.adr = mlx_get_data_addr(xlm.tex.so.tex, &xlm.tex.so.bpp, &xlm.tex.so.line_len, &xlm.tex.so.iend);
-	xlm.tex.we.adr = mlx_get_data_addr(xlm.tex.we.tex, &xlm.tex.we.bpp, &xlm.tex.we.line_len, &xlm.tex.we.iend);
-	xlm.tex.ea.adr = mlx_get_data_addr(xlm.tex.ea.tex, &xlm.tex.ea.bpp, &xlm.tex.ea.line_len, &xlm.tex.ea.iend);
-	xlm.sprite.adr = mlx_get_data_addr(xlm.sprite.tex, &xlm.sprite.bpp, &xlm.sprite.line_len, &xlm.sprite.iend);
-	xlm.tex.skybox.adr = mlx_get_data_addr(xlm.tex.skybox.tex, &xlm.tex.skybox.bpp, &xlm.tex.skybox.line_len, &xlm.tex.skybox.iend);*/
 	sprite_len(&xlm);
 	printf("spr_len:%d\n", xlm.sprite.spr_len);
 	mlx_mouse_hide();
 	xlm.xxx = xlm.player.x;
 	xlm.yyy = xlm.player.y;
 
-//	printf("sprPOSX0:%f\n", xlm.sprite.pos[0].x);
-//	printf("sprPOSY0:%f\n", xlm.sprite.pos[0].y);
-//	printf("sprPOSX1:%f\n", xlm.sprite.pos[1].x);
-//	printf("sprPOSY1:%f\n", xlm.sprite.pos[1].y);
-//	printf("sprPOSX2:%f\n", xlm.sprite.pos[2].x);
-//	printf("sprPOSY2:%f\n", xlm.sprite.pos[2].y);
-//	if (xlm.sprite.spr_len)
-//	{
-//		if (!(xlm.sprite.wid_buf = malloc(xlm.param.width * sizeof(double))))
-//			exit(0);
-//		if (!(xlm.sprite.spr = malloc(xlm.sprite.spr_len * sizeof(int))))
-//			exit(0);
-//		if (!(xlm.sprite.spr_dist = malloc(xlm.sprite.spr_len * sizeof(double))))
-//			exit(0);
-//		if (!(xlm.sprite.pos = malloc(xlm.sprite.spr_len * sizeof(t_pos))))
-//			exit(0);
-//	}
-//	xlm.img.img = mlx_new_image(xlm.mlx, xlm.param.width, xlm.param.height);
-//	xlm.img.adr = mlx_get_data_addr(xlm.img.img, &xlm.img.bpp, &xlm.img.line_len, &xlm.img.iend);
-//	ft_draw_map(&xlm, START_X, START_Y);
-//	ft_draw_beam(&xlm);
-//	mlx_key_hook(xlm.win, &key_hook, &xlm);
 	mlx_hook(xlm.win, 2, 0, &key_press, &xlm);
 	mlx_hook(xlm.win, 3, 0, &key_release, &xlm);
 	mlx_hook(xlm.win, 6, 0, &mouse, &xlm);
 //	ft_render(&xlm);
 	mlx_loop_hook(xlm.mlx, &key_hook, &xlm);
-//	mlx_put_image_to_window(xlm.mlx, xlm.win, xlm.image, xlm.param.width, xlm.param.height);
 	mlx_loop(xlm.mlx);
-	ft_error(xlm.param, xlm.param.valid);
+	ft_error(xlm, xlm.param.valid);
 	exit(0);
 }
 

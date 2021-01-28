@@ -93,6 +93,9 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_sprite.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_pars_no_so_we_ea_s.c">
 			<Option target="superCUB3D"/>
 		</Unit>

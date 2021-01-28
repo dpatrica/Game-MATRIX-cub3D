@@ -91,7 +91,7 @@ int		key_hook(t_all *xlm)
 	if (xlm->move.exit == 1)
 	{
 		mlx_destroy_window(xlm->mlx, xlm->win);
-		ft_error(xlm->param, xlm->param.valid);
+		ft_error(*xlm, xlm->param.valid);
 		exit(0);
 	}
 //	xlm->param.g_map[(int)Y][(int)X] = (char)xlm->param.resp_player.dir;

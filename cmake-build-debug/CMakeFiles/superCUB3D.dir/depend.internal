@@ -31,6 +31,12 @@ CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c
+CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/other/ft_sprite.c
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_no_so_we_ea_s.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h

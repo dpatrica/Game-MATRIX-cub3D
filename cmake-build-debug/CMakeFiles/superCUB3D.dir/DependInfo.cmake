@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/dpatrica/CLionProjects/superCUB3D/error_list/ft_error.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o"
+  "/Users/dpatrica/CLionProjects/superCUB3D/other/ft_sprite.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_pars_no_so_we_ea_s.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_no_so_we_ea_s.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_pars_r_f_c.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_r_f_c.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_parser.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/parser_and_valid/ft_parser.c.o"

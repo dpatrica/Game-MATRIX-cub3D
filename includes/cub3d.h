@@ -57,6 +57,7 @@
 # define NO_PLAYER_ERROR 43
 # define MAP_EMPTY_LINE_ERROR 44
 # define TEXTURE_ERROR 45
+# define SPR_MALLOC_ERROR 46
 //# define NO_ERROR
 //# define SO_ERROR
 //# define WE_ERROR
@@ -261,7 +262,7 @@ t_map	ft_pars_so(t_map param, char *map);
 t_map	ft_pars_we(t_map param, char *map);
 t_map	ft_pars_ea(t_map param, char *map);
 t_map	ft_pars_s(t_map param, char *map);
-int		ft_error(t_map param, int error);
+int		ft_error(t_all xlm, int error);
 int		drop_space(char **map);
 char	*freesher(char *s1, char *s2, char *s3);
 t_map	ft_valid(t_map param, int i, int j, int flaglen);
@@ -279,7 +280,7 @@ void	my_pixel_put(t_all *xlm, int x, int y, int color);
 int		rgb_color(int r, int g, int b);
 void	sprite_len(t_all *xlm);
 void	sprite_sort(t_all *xlm);
-//void 	chek_screen(t_all *xlm);
+void 	chek_screen(t_all *xlm);
 int 	mouse(int x, int y, t_all *xlm);
 void	ft_texture(t_all *xlm);
 
