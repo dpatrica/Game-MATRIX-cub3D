@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/Users/dpatrica/CLionProjects/superCUB3D/cub3d.c
+./includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+
 /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
 ../libft/libft.h
 /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
 ../minilibx_opengl/mlx.h
 /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+../minilibx_mms_20200219/mlx.h
+/Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
 fcntl.h
 -
 math.h
@@ -30,9 +36,7 @@ ctype.h
 stddef.h
 -
 
-/Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+/Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
 
-/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_hook.c
-../includes/cub3d.h
-/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
 

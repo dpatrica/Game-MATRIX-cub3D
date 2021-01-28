@@ -108,7 +108,7 @@ int	ft_error(t_map param, int error)
 		write(1, "Error!\nMissing player.", 22);
 	else if (error == MAP_EMPTY_LINE_ERROR)
 		write(1, "Error!\nEmpty line in the map.", 29);
-	else if (error == UN_ERROR)
-		write(1, "kakaya-to owibka!", 17);
+	else if (error == TEXTURE_ERROR)
+		write(1, "Error!\nFailed to load texture.", 30);
 	return (-1);
 }

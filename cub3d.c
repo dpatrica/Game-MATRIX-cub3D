@@ -44,17 +44,20 @@ int				main(int argc, char **argv)
 	xlm.player = xlm.param.resp_player;
 	printf("\nPlayer POSITION:\nX:%f\nY:%f\ndir:%c\n", xlm.player.x, xlm.player.y, xlm.player.dir);
 	xlm.mlx = mlx_init();
+//	chek_screen(&xlm);
 	xlm.win = mlx_new_window(xlm.mlx, xlm.param.width, xlm.param.height, "dolbobob");
-	xlm.tex.no.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.no, &xlm.tex.no.width, &xlm.tex.no.height);
+	ft_texture(&xlm);
+/*	xlm.tex.no.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.no, &xlm.tex.no.width, &xlm.tex.no.height);
 	xlm.tex.so.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.so, &xlm.tex.so.width, &xlm.tex.so.height);
 	xlm.tex.we.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.we, &xlm.tex.we.width, &xlm.tex.we.height);
 	xlm.tex.ea.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.ea, &xlm.tex.ea.width, &xlm.tex.ea.height);
 	xlm.sprite.tex = mlx_xpm_file_to_image(xlm.mlx, xlm.param.s, &xlm.sprite.width, &xlm.sprite.height);
+	xlm.tex.skybox.tex = mlx_xpm_file_to_image(xlm.mlx, "../xpm/matrix.xpm", &xlm.tex.skybox.width, &xlm.tex.skybox.height);
 //	xlm.neo.tex_hei = xlm.tex.no.height;
 //	xlm.neo.tex_wid = xlm.tex.no.width;
 	if (xlm.tex.no.tex == NULL || xlm.tex.so.tex == NULL || xlm.tex.we.tex == NULL || xlm.tex.ea.tex == NULL || xlm.sprite.tex == NULL)
 	{
-		ft_error(xlm.param, UN_ERROR);
+		ft_error(xlm.param, TEXTURE_ERROR);
 		exit(0);
 	}
 	xlm.tex.no.adr = mlx_get_data_addr(xlm.tex.no.tex, &xlm.tex.no.bpp, &xlm.tex.no.line_len, &xlm.tex.no.iend);
@@ -63,8 +66,13 @@ int				main(int argc, char **argv)
 	xlm.tex.we.adr = mlx_get_data_addr(xlm.tex.we.tex, &xlm.tex.we.bpp, &xlm.tex.we.line_len, &xlm.tex.we.iend);
 	xlm.tex.ea.adr = mlx_get_data_addr(xlm.tex.ea.tex, &xlm.tex.ea.bpp, &xlm.tex.ea.line_len, &xlm.tex.ea.iend);
 	xlm.sprite.adr = mlx_get_data_addr(xlm.sprite.tex, &xlm.sprite.bpp, &xlm.sprite.line_len, &xlm.sprite.iend);
+	xlm.tex.skybox.adr = mlx_get_data_addr(xlm.tex.skybox.tex, &xlm.tex.skybox.bpp, &xlm.tex.skybox.line_len, &xlm.tex.skybox.iend);*/
 	sprite_len(&xlm);
-	printf("spr_lenw:%d\n", xlm.sprite.spr_len);
+	printf("spr_len:%d\n", xlm.sprite.spr_len);
+	mlx_mouse_hide();
+	xlm.xxx = xlm.player.x;
+	xlm.yyy = xlm.player.y;
+
 //	printf("sprPOSX0:%f\n", xlm.sprite.pos[0].x);
 //	printf("sprPOSY0:%f\n", xlm.sprite.pos[0].y);
 //	printf("sprPOSX1:%f\n", xlm.sprite.pos[1].x);
@@ -89,6 +97,7 @@ int				main(int argc, char **argv)
 //	mlx_key_hook(xlm.win, &key_hook, &xlm);
 	mlx_hook(xlm.win, 2, 0, &key_press, &xlm);
 	mlx_hook(xlm.win, 3, 0, &key_release, &xlm);
+	mlx_hook(xlm.win, 6, 0, &mouse, &xlm);
 //	ft_render(&xlm);
 	mlx_loop_hook(xlm.mlx, &key_hook, &xlm);
 //	mlx_put_image_to_window(xlm.mlx, xlm.win, xlm.image, xlm.param.width, xlm.param.height);

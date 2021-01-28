@@ -103,7 +103,70 @@ void	ft_draw_beam(t_all *xlm)
 	int 	hit2;
 	int		n;
 	int		d;
+	unsigned int *clr;
+//	int		*cllr;
 
+	i = xlm->param.height / xlm->move.mouse_cam + 1;
+	while (i < (xlm->param.height - 1))
+	{
+		xlm->neo.rdir_x = xlm->player.dir_x - xlm->player.plan_x;
+		xlm->neo.rdir_y = xlm->player.dir_y - xlm->player.plan_y;
+		xlm->neo.rdir2_x = xlm->player.dir_x + xlm->player.plan_x;
+		xlm->neo.rdir2_y = xlm->player.dir_y + xlm->player.plan_y;
+		hit = i - xlm->param.height / xlm->move.mouse_cam;
+		xlm->neo.z_pos = 0.5 * xlm->param.height;
+		xlm->neo.dist_row = xlm->neo.z_pos / hit;
+		xlm->neo.f_step_x = xlm->neo.dist_row * (xlm->neo.rdir2_x - xlm->neo.rdir_x) / xlm->param.width;
+		xlm->neo.f_step_y = xlm->neo.dist_row * (xlm->neo.rdir2_y - xlm->neo.rdir_y) / xlm->param.width;
+		xlm->neo.floor_x = X + xlm->neo.dist_row * xlm->neo.rdir_x;
+		xlm->neo.floor_y = Y + xlm->neo.dist_row * xlm->neo.rdir_y;
+		j = 0;
+		while (j < (xlm->param.width - 1))
+		{
+			xlm->neo.celling_x = (int)xlm->neo.floor_x;
+			xlm->neo.celling_y = (int)xlm->neo.floor_y;
+			n = (int)(xlm->tex.we.width * (xlm->neo.floor_x - xlm->neo.celling_x)) & (xlm->tex.we.width - 1);
+			d = (int)(xlm->tex.we.height * (xlm->neo.floor_y - xlm->neo.celling_y)) & (xlm->tex.we.height - 1);
+			xlm->neo.floor_x += xlm->neo.f_step_x;
+			xlm->neo.floor_y += xlm->neo.f_step_y;
+			clr = (unsigned int*)(xlm->tex.we.adr + xlm->tex.we.line_len * d + n * (xlm->tex.we.bpp / 8));
+			my_pixel_put(xlm, j, i, (int)*clr);
+//			my_pixel_put(xlm, j, xlm->param.height - i - 1, (int)*clr);
+			j++;
+		}
+		i++;
+	}
+//	i = xlm->param.height / xlm->move.mouse_cam - 1;
+	i = 0;
+	while (i < (xlm->param.height / xlm->move.mouse_cam - 1))
+	{
+		xlm->neo.rdir_x = xlm->player.dir_x - xlm->player.plan_x;
+		xlm->neo.rdir_y = xlm->player.dir_y - xlm->player.plan_y;
+		xlm->neo.rdir2_x = xlm->player.dir_x + xlm->player.plan_x;
+		xlm->neo.rdir2_y = xlm->player.dir_y + xlm->player.plan_y;
+		hit = i - xlm->param.height / 50;
+		xlm->neo.z_pos = xlm->param.height / xlm->move.mouse_cam;
+		xlm->neo.dist_row = xlm->neo.z_pos / (i * xlm->move.mouse_cam);
+		xlm->neo.f_step_x = xlm->neo.dist_row * (xlm->neo.rdir2_x - xlm->neo.rdir_x) / xlm->param.width;
+		xlm->neo.f_step_y = xlm->neo.dist_row * (xlm->neo.rdir2_y - xlm->neo.rdir_y) / xlm->param.width;
+		xlm->neo.floor_x = xlm->xxx + xlm->neo.dist_row * xlm->neo.rdir_x;
+		xlm->neo.floor_y = xlm->yyy + xlm->neo.dist_row * xlm->neo.rdir_y;
+		j = 0;
+		while (j < (xlm->param.width - 1))
+		{
+			xlm->neo.celling_x = (int)xlm->neo.floor_x;
+			xlm->neo.celling_y = (int)xlm->neo.floor_y;
+			n = (int)(xlm->tex.skybox.width * (xlm->neo.floor_x - xlm->neo.celling_x)) & (xlm->tex.skybox.width - 1);
+			d = (int)(xlm->tex.skybox.height * (xlm->neo.floor_y - xlm->neo.celling_y)) & (xlm->tex.skybox.height - 1);
+			xlm->neo.floor_x += xlm->neo.f_step_x;
+			xlm->neo.floor_y += xlm->neo.f_step_y;
+			clr = (unsigned int*)(xlm->tex.skybox.adr + xlm->tex.skybox.line_len * d + n * (xlm->tex.skybox.bpp / 8));
+			my_pixel_put(xlm, j, i, (int)*clr);
+			j++;
+		}
+		i++;
+	}
+	i = -1;
 	while (++i < (xlm->param.width - 1))
 	{
 		hit = 0;
@@ -167,10 +230,12 @@ void	ft_draw_beam(t_all *xlm)
 //			j++;
 //		}
 		xlm->neo.line_len = (int)(xlm->param.height / fabs(xlm->neo.dist));
-		xlm->neo.draw_up = -xlm->neo.line_len / 2 + xlm->param.height / 2;
+//		printf("MC:%f\n", xlm->move.mouse_cam);
+//		xlm->move.mouse_cam = 2;
+		xlm->neo.draw_up = -xlm->neo.line_len / 2 + xlm->param.height / xlm->move.mouse_cam;
 		if (xlm->neo.draw_up < 0)
 			xlm->neo.draw_up = 0;
-		xlm->neo.draw_down = xlm->neo.line_len / 2 + xlm->param.height / 2;
+		xlm->neo.draw_down = xlm->neo.line_len / 2 + xlm->param.height / xlm->move.mouse_cam;
 		if (xlm->neo.draw_down >= xlm->param.height)
 			xlm->neo.draw_down = xlm->param.height - 1;
 		if (xlm->neo.side == 0)
@@ -219,7 +284,7 @@ void	ft_draw_beam(t_all *xlm)
 		else if (xlm->neo.tex_x < 0)
 			xlm->neo.tex_x = 0;
 		xlm->neo.step = 1.0 * xlm->neo.tex_hei / xlm->neo.line_len;
-		xlm->neo.tex_pos = (xlm->neo.draw_up - xlm->param.height / 2 + xlm->neo.line_len / 2) * xlm->neo.step;
+		xlm->neo.tex_pos = (xlm->neo.draw_up - xlm->param.height / xlm->move.mouse_cam + xlm->neo.line_len / 2) * xlm->neo.step;
 		j = xlm->neo.draw_up;
 		while (j < xlm->neo.draw_down)
 		{
@@ -229,12 +294,12 @@ void	ft_draw_beam(t_all *xlm)
 			else if (xlm->neo.tex_y < 0)
 				xlm->neo.tex_y = 0;
 			xlm->neo.tex_pos += xlm->neo.step;
-			unsigned int *clr = (unsigned int*)(xlm->neo.adr + xlm->neo.tex_line * xlm->neo.tex_y + xlm->neo.tex_x * (xlm->neo.bpp / 8));
+			clr = (unsigned int*)(xlm->neo.adr + xlm->neo.tex_line * xlm->neo.tex_y + xlm->neo.tex_x * (xlm->neo.bpp / 8));
 //			printf("par:%p\n", xlm->tex.no.adr);
 			my_pixel_put(xlm, i, j, (int)*clr);
 			j++;
 		}
-		ft_draw_line(i, xlm->neo.draw_up, xlm->neo.draw_down, 0x800000, xlm);
+//		ft_draw_line(i, xlm->neo.draw_up, xlm->neo.draw_down, 0x800000, xlm);
 		xlm->sprite.wid_buf[i] = xlm->neo.dist;
 //		printf("side_x:%f\nside_y:%f\n", xlm->neo.side_x, xlm->neo.side_y); //wall:%ftex_pos:%f xlm->neo.wall_x, xlm->neo.tex_pos,
 //		printf("side:%d\n", xlm->neo.side);
@@ -261,10 +326,10 @@ void	ft_draw_beam(t_all *xlm)
 		xlm->sprite.spr_scr = (int)((xlm->param.width / 2) * (1 + xlm->sprite.trans_x / xlm->sprite.trans_y));
 		xlm->sprite.move_scr = (int)(0.0 / xlm->sprite.trans_y);
 		xlm->sprite.spr_hi = abs((int)(xlm->param.height / xlm->sprite.trans_y)) / 1;
-		xlm->sprite.draw_up_y = -xlm->sprite.spr_hi / 2 + xlm->param.height / 2 + xlm->sprite.move_scr;
+		xlm->sprite.draw_up_y = -xlm->sprite.spr_hi / 2 + xlm->param.height / xlm->move.mouse_cam + xlm->sprite.move_scr;
 		if (xlm->sprite.draw_up_y < 0)
 			xlm->sprite.draw_up_y = 0;
-		xlm->sprite.draw_down_y = xlm->sprite.spr_hi / 2 + xlm->param.height / 2 + xlm->sprite.move_scr;
+		xlm->sprite.draw_down_y = xlm->sprite.spr_hi / 2 + xlm->param.height / xlm->move.mouse_cam + xlm->sprite.move_scr;
 		if (xlm->sprite.draw_down_y >= xlm->param.height)
 			xlm->sprite.draw_down_y = xlm->param.height - 1;
 		xlm->sprite.spr_wi = abs((int)(xlm->param.height / xlm->sprite.trans_y)) / 1;
@@ -286,12 +351,12 @@ void	ft_draw_beam(t_all *xlm)
 				n = xlm->sprite.draw_up_y;
 				while (n < xlm->sprite.draw_down_y - 1)
 				{
-					d = (n - xlm->sprite.move_scr) * 256 - xlm->param.height * 128 + xlm->sprite.spr_hi * 128;
+					d = (n - xlm->sprite.move_scr) * 256 - xlm->param.height / xlm->move.mouse_cam * 256 + xlm->sprite.spr_hi * 128;
 					hit2 = ((d * xlm->sprite.height) / xlm->sprite.spr_hi) / 256;
 //					printf("h2:%d\n", hit2);
 //					unsigned int *clr2 = (unsigned int*)()
-					unsigned int *clr2 = (unsigned int*)(xlm->sprite.adr + xlm->sprite.line_len * hit2 + hit * (xlm->sprite.bpp / 8));
-					my_pixel_put(xlm, j, n, *(int*)clr2);
+					clr = (unsigned int*)(xlm->sprite.adr + xlm->sprite.line_len * hit2 + hit * (xlm->sprite.bpp / 8));
+					my_pixel_put(xlm, j, n, (int)*clr);
 					n++;
 				}
 			}
@@ -522,4 +587,64 @@ void	ft_draw_beam(t_all *xlm)
 //		xxx = 50;
 //		yy += 15;
 //	}
+//}
+//	i = xlm->param.height / xlm->move.mouse_cam - 1;
+//i = 0;
+//while (i < (xlm->param.height / xlm->move.mouse_cam - 1))
+//{
+//xlm->neo.rdir_x = xlm->player.dir_x - xlm->player.plan_x;
+//xlm->neo.rdir_y = xlm->player.dir_y - xlm->player.plan_y;
+//xlm->neo.rdir2_x = xlm->player.dir_x + xlm->player.plan_x;
+//xlm->neo.rdir2_y = xlm->player.dir_y + xlm->player.plan_y;
+//hit = i - xlm->param.height;
+//xlm->neo.z_pos = xlm->param.height / xlm->move.mouse_cam;
+//xlm->neo.dist_row = xlm->neo.z_pos / xlm->move.mouse_cam;
+//xlm->neo.f_step_x = xlm->neo.dist_row * (xlm->neo.rdir2_x - xlm->neo.rdir_x) / xlm->param.width;
+//xlm->neo.f_step_y = xlm->neo.dist_row * (xlm->neo.rdir2_y - xlm->neo.rdir_y) / xlm->param.width;
+//xlm->neo.floor_x = Y + xlm->neo.dist_row * xlm->neo.rdir_x;
+//xlm->neo.floor_y = X + xlm->neo.dist_row * xlm->neo.rdir_y;
+//j = 0;
+//while (j < (xlm->param.width - 1))
+//{
+//xlm->neo.celling_x = (int)xlm->neo.floor_x;
+//xlm->neo.celling_y = (int)xlm->neo.floor_y;
+//n = (int)(xlm->tex.skybox.width * (xlm->neo.floor_x - xlm->neo.celling_x)) & (xlm->tex.skybox.width - 1);
+//d = (int)(xlm->tex.skybox.height * (xlm->neo.floor_y - xlm->neo.celling_y)) & (xlm->tex.skybox.height - 1);
+//xlm->neo.floor_x += xlm->neo.f_step_x;
+//xlm->neo.floor_y += xlm->neo.f_step_y;
+//clr = (unsigned int*)(xlm->tex.skybox.adr + xlm->tex.skybox.line_len * d + n * (xlm->tex.skybox.bpp / 8));
+//my_pixel_put(xlm, j, i, (int)*clr);
+//j++;
+//}
+//i++;
+//}
+//	i = xlm->param.height / xlm->move.mouse_cam - 1;
+//i = 0;
+//while (i < (xlm->param.height / xlm->move.mouse_cam - 1))
+//{
+//xlm->neo.rdir_x = xlm->player.dir_x - xlm->player.plan_x;
+//xlm->neo.rdir_y = xlm->player.dir_y - xlm->player.plan_y;
+//xlm->neo.rdir2_x = xlm->player.dir_x + xlm->player.plan_x;
+//xlm->neo.rdir2_y = xlm->player.dir_y + xlm->player.plan_y;
+//hit = i - xlm->param.height / 50;
+//xlm->neo.z_pos = xlm->param.height / xlm->move.mouse_cam;
+//xlm->neo.dist_row = xlm->neo.z_pos / hit;
+//xlm->neo.f_step_x = xlm->neo.dist_row * (xlm->neo.rdir2_x - xlm->neo.rdir_x) / xlm->param.width;
+//xlm->neo.f_step_y = xlm->neo.dist_row * (xlm->neo.rdir2_y - xlm->neo.rdir_y) / xlm->param.width;
+//xlm->neo.floor_x = Y + xlm->neo.dist_row * xlm->neo.rdir_x;
+//xlm->neo.floor_y = X + xlm->neo.dist_row * xlm->neo.rdir_y;
+//j = 0;
+//while (j < (xlm->param.width - 1))
+//{
+//xlm->neo.celling_x = (int)xlm->neo.floor_x;
+//xlm->neo.celling_y = (int)xlm->neo.floor_y;
+//n = (int)(xlm->tex.skybox.width * (xlm->neo.floor_x - xlm->neo.celling_x)) & (xlm->tex.skybox.width - 1);
+//d = (int)(xlm->tex.skybox.height * (xlm->neo.floor_y - xlm->neo.celling_y)) & (xlm->tex.skybox.height - 1);
+//xlm->neo.floor_x += xlm->neo.f_step_x;
+//xlm->neo.floor_y += xlm->neo.f_step_y;
+//clr = (unsigned int*)(xlm->tex.skybox.adr + xlm->tex.skybox.line_len * d + n * (xlm->tex.skybox.bpp / 8));
+//my_pixel_put(xlm, j, i, (int)*clr);
+//j++;
+//}
+//i++;
 //}

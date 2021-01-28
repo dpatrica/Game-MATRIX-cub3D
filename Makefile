@@ -19,7 +19,8 @@ SRCS	=	./cub3d.c\
 			./other/ft_other_fun.c\
 			./other/ft_assignment.c\
 			./draws/ft_draw.c\
-			./pudge_hook/ft_hook.c
+			./pudge_hook/ft_hook.c\
+			./texture/ft_texture.c
 
 LIBSRCS	=	./libft/ft_strlen.c\
 			./libft/ft_memset.c\
@@ -70,12 +71,12 @@ HEAD	=	./includes/cub3d.h
 NAME	= 	cub3D
 LIBA	=	./libft/libft.a
 LIBH	=	./libft/libft.h
-MLX		=	./minilibx_opengl/libmlx.a
+MLX		=	./minilibx_opengl/libmlx.a libmlx.dylib
 OBJS	=	$(SRCS:.c=.o)
 LIBOBJS	=	$(LIBSRCS:.c=.o)
 
 GCC		= 	gcc
-FLAG	=	-Wall -Wextra -Werror
+FLAG	=	-Wall -Wextra# -Werror
 FLAGMLX	=	-framework OpenGL -framework Appkit
 RM		=	rm -f
 C		=	-c

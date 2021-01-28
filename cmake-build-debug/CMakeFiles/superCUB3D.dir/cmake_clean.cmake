@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/superCUB3D.dir/parser_and_valid/ft_parser.c.o"
   "CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.o"
   "CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o"
+  "CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o"
   "superCUB3D"
   "superCUB3D.pdb"
 )

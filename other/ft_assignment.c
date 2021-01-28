@@ -16,6 +16,11 @@ static t_all	ft_fornullll(t_all xlm)
 	xlm.param.f.rgb = 0;
 	xlm.param.c.rgb = 0;
 	xlm.sprite.spr_len = 0;
+	xlm.param.scr_swap_w = 0;
+	xlm.param.scr_swap_h = 0;
+	xlm.move.l_m_rot = 0;
+	xlm.move.r_m_rot = 0;
+	xlm.move.mouse_cam = 2;
 	return (xlm);
 }
 

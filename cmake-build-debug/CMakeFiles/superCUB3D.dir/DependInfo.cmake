@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_parser.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/parser_and_valid/ft_parser.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_valid.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_hook.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o"
+  "/Users/dpatrica/CLionProjects/superCUB3D/texture/ft_texture.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

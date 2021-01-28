@@ -81,6 +81,46 @@ void	sprite_sort(t_all *xlm)
 	}
 }
 
+/*void 	chek_screen(t_all *xlm)
+{
+	int	swap;
+
+	mlx_get_screen_size(xlm->mlx, &xlm->param.scr_width, &xlm->param.scr_height);
+	if (xlm->param.scr_width < xlm->param.width)
+	{
+		swap = xlm->param.scr_width;
+		xlm->param.scr_width = xlm->param.width;
+		xlm->param.width = swap;
+		xlm->param.scr_swap_w = 1;
+	}
+	if (xlm->param.scr_height < xlm->param.height)
+	{
+		swap = xlm->param.scr_height;
+		xlm->param.scr_height = xlm->param.height;
+		xlm->param.height = swap;
+		xlm->param.scr_swap_h = 1;
+	}
+}*/
+
+/*int 	mouse(int x, int y, t_all *xlm)
+{
+	if (x > (X / 2))
+	{
+		xlm->move.l_m_rot = x - (X / 2);
+		xlm->move.r_m_rot = 1;
+	}
+	if (x > (X / 2))
+	{
+		xlm->move.r_m_rot = (X / 2) - x;
+		xlm->move.l_m_rot = 1;
+	}
+//	if (y != (Y / 2))
+//	{
+//		xlm->move.mouse_cam = (y - (Y / 2));
+//	}
+	return (0);
+}*/
+
 /*void	save_player(t_all *xlm)
 {
 	int x;

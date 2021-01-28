@@ -1,16 +1,16 @@
 R  800 600
 
-NO ../xpm/bluestone.xpm
-SO ../xpm/colorstone.xpm
-WE ../xpm/eagle.xpm
-EA ../xpm/redbrick.xpm
+NO ../xpm/matrix.xpm
+SO ../xpm/matrix.xpm
+WE ../xpm/matrix.xpm
+EA ../xpm/matrix.xpm
 S ../xpm/barrel.xpm
 
 F 128 , 128, 128
 C 0, 165, 255
 
    11111111111111111111111
-11110000000000000000000001
+11110000000000000000000021
 11110010000022222000000001
 10000000000000111111111111
 10000000000000000000001

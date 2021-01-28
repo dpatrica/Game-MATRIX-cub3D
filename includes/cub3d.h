@@ -56,7 +56,7 @@
 # define DOUBLE_PLAYER_ERROR 42
 # define NO_PLAYER_ERROR 43
 # define MAP_EMPTY_LINE_ERROR 44
-# define UN_ERROR 45
+# define TEXTURE_ERROR 45
 //# define NO_ERROR
 //# define SO_ERROR
 //# define WE_ERROR
@@ -66,6 +66,7 @@
 //# define C_ERROR
 # include "../libft/libft.h"
 # include "../minilibx_opengl/mlx.h"
+# include "../minilibx_mms_20200219/mlx.h"
 # include <fcntl.h>
 # include <math.h>
 
@@ -95,7 +96,17 @@ typedef struct s_matrix
 	double		del_x;
 	double		del_y;
 	double		rdir_x;
+	double		rdir2_x;
 	double		rdir_y;
+	double		rdir2_y;
+	double		z_pos;
+	double		dist_row;
+	double		f_step_x;
+	double		f_step_y;
+	double		floor_x;
+	double		floor_y;
+	int			celling_x;
+	int			celling_y;
 	double		cam;
 	double		dist;
 	double		wall_x;
@@ -111,6 +122,9 @@ typedef struct s_move
 	int			left;
 	int			r_rot;
 	int			l_rot;
+	double 		r_m_rot;
+	double 		l_m_rot;
+	double 		mouse_cam;
 	int			exit;
 }				t_move;
 
@@ -141,6 +155,10 @@ typedef struct	s_struct
 	short int	valid;
 	int			width;
 	int			height;
+	int			scr_width;
+	int			scr_height;
+	int 		scr_swap_w;
+	int 		scr_swap_h;
 	char		**g_map;
 	char		*no;
 	char		*so;
@@ -214,10 +232,13 @@ typedef struct	s_tex
 	t_wht		so;
 	t_wht		we;
 	t_wht		ea;
+	t_wht		skybox;
 }				t_tex;
 
 typedef struct	s_all
 {
+	double		xxx;
+	double		yyy;
 	void		*mlx;
 	void		*win;
 	int 		width_square;
@@ -258,5 +279,8 @@ void	my_pixel_put(t_all *xlm, int x, int y, int color);
 int		rgb_color(int r, int g, int b);
 void	sprite_len(t_all *xlm);
 void	sprite_sort(t_all *xlm);
+//void 	chek_screen(t_all *xlm);
+int 	mouse(int x, int y, t_all *xlm);
+void	ft_texture(t_all *xlm);
 
 #endif

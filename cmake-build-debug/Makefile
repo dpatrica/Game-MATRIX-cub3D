@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/F28E0EF8-C2DB-4E6C-ADB0-5B5B25421472/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Volumes/DPATRICA_42/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/F28E0EF8-C2DB-4E6C-ADB0-5B5B25421472/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
+RM = /Volumes/DPATRICA_42/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/F28E0EF8-C2DB-4E6C-ADB0-5B5B25421472/d/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Volumes/DPATRICA_42/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n003vg6400yvsj/T/AppTranslocation/F28E0EF8-C2DB-4E6C-ADB0-5B5B25421472/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Volumes/DPATRICA_42/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -413,6 +413,33 @@ pudge_hook/ft_hook.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.s
 .PHONY : pudge_hook/ft_hook.c.s
 
+texture/ft_texture.o: texture/ft_texture.c.o
+
+.PHONY : texture/ft_texture.o
+
+# target to build an object file
+texture/ft_texture.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o
+.PHONY : texture/ft_texture.c.o
+
+texture/ft_texture.i: texture/ft_texture.c.i
+
+.PHONY : texture/ft_texture.i
+
+# target to preprocess a source file
+texture/ft_texture.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_texture.c.i
+.PHONY : texture/ft_texture.c.i
+
+texture/ft_texture.s: texture/ft_texture.c.s
+
+.PHONY : texture/ft_texture.s
+
+# target to generate assembly for a file
+texture/ft_texture.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_texture.c.s
+.PHONY : texture/ft_texture.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -452,6 +479,9 @@ help:
 	@echo "... pudge_hook/ft_hook.o"
 	@echo "... pudge_hook/ft_hook.i"
 	@echo "... pudge_hook/ft_hook.s"
+	@echo "... texture/ft_texture.o"
+	@echo "... texture/ft_texture.i"
+	@echo "... texture/ft_texture.s"
 .PHONY : help
 
 

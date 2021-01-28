@@ -5,49 +5,65 @@ CMakeFiles/superCUB3D.dir/cub3d.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/cub3d.c
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw.c
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/error_list/ft_error.c
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment.c
 CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_no_so_we_ea_s.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_pars_no_so_we_ea_s.c
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_r_f_c.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_pars_r_f_c.c
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_parser.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_parser.c
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_valid.c
 CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_hook.c
+CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/texture/ft_texture.c
