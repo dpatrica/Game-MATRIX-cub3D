@@ -84,6 +84,15 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_cefl.c">
+			<Option target="superCUB3D"/>
+		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_tex.c">
+			<Option target="superCUB3D"/>
+		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_select_texture_for_draw.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/error_list/ft_error.c">
 			<Option target="superCUB3D"/>
 		</Unit>
@@ -115,6 +124,9 @@
 			<Option target="superCUB3D"/>
 		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_key_and_mouse.c">
+			<Option target="superCUB3D"/>
+		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_move.c">
 			<Option target="superCUB3D"/>
 		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/texture/ft_texture.c">

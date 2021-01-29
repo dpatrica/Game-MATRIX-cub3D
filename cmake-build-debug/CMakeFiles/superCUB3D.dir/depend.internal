@@ -13,6 +13,24 @@ CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_cefl.c
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/draws/ft_draw_tex.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_tex.c
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/draws/ft_select_texture_for_draw.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_select_texture_for_draw.c
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/error_list/ft_error.c
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
@@ -79,6 +97,12 @@ CMakeFiles/superCUB3D.dir/pudge_hook/ft_key_and_mouse.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_key_and_mouse.c
+CMakeFiles/superCUB3D.dir/pudge_hook/ft_move.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_move.c
 CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h

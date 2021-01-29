@@ -143,12 +143,12 @@ void	my_pixel_put(t_all *xlm, int x, int y, int color)
 	}
 }*/
 
-int		ft_render(t_all *xlm)
+/*int		ft_render(t_all *xlm)
 {
 	mlx_hook(xlm->win, 2, 0, &key_press, &xlm);
 	mlx_hook(xlm->win, 3, 0, &key_release, &xlm);
 	return (0);
-}
+}*/
 
 /*
 int		key_hook(t_all *xlm)

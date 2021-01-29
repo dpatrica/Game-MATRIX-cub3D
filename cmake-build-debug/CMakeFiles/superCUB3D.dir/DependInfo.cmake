@@ -6,6 +6,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/dpatrica/CLionProjects/superCUB3D/cub3d.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/cub3d.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o"
+  "/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_cefl.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.o"
+  "/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_tex.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/draws/ft_draw_tex.c.o"
+  "/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_select_texture_for_draw.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/draws/ft_select_texture_for_draw.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/error_list/ft_error.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment_2.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.o"
@@ -17,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_valid.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_hook.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_key_and_mouse.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/pudge_hook/ft_key_and_mouse.c.o"
+  "/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_move.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/pudge_hook/ft_move.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/texture/ft_texture.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

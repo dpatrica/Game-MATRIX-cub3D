@@ -275,7 +275,7 @@ int		key_release(int key, t_all *xlm);
 //void	save_player(t_all *xlm);
 void	ft_draw_beam(t_all *xlm);
 t_map	dir_cos_sin(t_map param);
-int		ft_render(t_all *xlm);
+//int		ft_render(t_all *xlm);
 void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm);
 void	my_pixel_put(t_all *xlm, int x, int y, int color);
 int		rgb_color(int r, int g, int b);
@@ -284,5 +284,10 @@ void	sprite_sort(t_all *xlm);
 //void 	chek_screen(t_all *xlm);
 int 	mouse(int x, int y, t_all *xlm);
 void	ft_texture(t_all *xlm);
+void	ft_move(t_all *xlm);
+//void	ft_render(t_all *xlm);
+void	ft_draw_cefl(t_all *xlm);
+void	ft_draw_tex(t_all *xlm);
+void	ft_select_texture(t_all *xlm);
 
 #endif

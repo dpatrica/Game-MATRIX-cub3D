@@ -197,6 +197,87 @@ draws/ft_draw.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw.c.s
 .PHONY : draws/ft_draw.c.s
 
+draws/ft_draw_cefl.o: draws/ft_draw_cefl.c.o
+
+.PHONY : draws/ft_draw_cefl.o
+
+# target to build an object file
+draws/ft_draw_cefl.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.o
+.PHONY : draws/ft_draw_cefl.c.o
+
+draws/ft_draw_cefl.i: draws/ft_draw_cefl.c.i
+
+.PHONY : draws/ft_draw_cefl.i
+
+# target to preprocess a source file
+draws/ft_draw_cefl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.i
+.PHONY : draws/ft_draw_cefl.c.i
+
+draws/ft_draw_cefl.s: draws/ft_draw_cefl.c.s
+
+.PHONY : draws/ft_draw_cefl.s
+
+# target to generate assembly for a file
+draws/ft_draw_cefl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.s
+.PHONY : draws/ft_draw_cefl.c.s
+
+draws/ft_draw_tex.o: draws/ft_draw_tex.c.o
+
+.PHONY : draws/ft_draw_tex.o
+
+# target to build an object file
+draws/ft_draw_tex.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_tex.c.o
+.PHONY : draws/ft_draw_tex.c.o
+
+draws/ft_draw_tex.i: draws/ft_draw_tex.c.i
+
+.PHONY : draws/ft_draw_tex.i
+
+# target to preprocess a source file
+draws/ft_draw_tex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_tex.c.i
+.PHONY : draws/ft_draw_tex.c.i
+
+draws/ft_draw_tex.s: draws/ft_draw_tex.c.s
+
+.PHONY : draws/ft_draw_tex.s
+
+# target to generate assembly for a file
+draws/ft_draw_tex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_tex.c.s
+.PHONY : draws/ft_draw_tex.c.s
+
+draws/ft_select_texture_for_draw.o: draws/ft_select_texture_for_draw.c.o
+
+.PHONY : draws/ft_select_texture_for_draw.o
+
+# target to build an object file
+draws/ft_select_texture_for_draw.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_select_texture_for_draw.c.o
+.PHONY : draws/ft_select_texture_for_draw.c.o
+
+draws/ft_select_texture_for_draw.i: draws/ft_select_texture_for_draw.c.i
+
+.PHONY : draws/ft_select_texture_for_draw.i
+
+# target to preprocess a source file
+draws/ft_select_texture_for_draw.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_select_texture_for_draw.c.i
+.PHONY : draws/ft_select_texture_for_draw.c.i
+
+draws/ft_select_texture_for_draw.s: draws/ft_select_texture_for_draw.c.s
+
+.PHONY : draws/ft_select_texture_for_draw.s
+
+# target to generate assembly for a file
+draws/ft_select_texture_for_draw.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_select_texture_for_draw.c.s
+.PHONY : draws/ft_select_texture_for_draw.c.s
+
 error_list/ft_error.o: error_list/ft_error.c.o
 
 .PHONY : error_list/ft_error.o
@@ -494,6 +575,33 @@ pudge_hook/ft_key_and_mouse.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_key_and_mouse.c.s
 .PHONY : pudge_hook/ft_key_and_mouse.c.s
 
+pudge_hook/ft_move.o: pudge_hook/ft_move.c.o
+
+.PHONY : pudge_hook/ft_move.o
+
+# target to build an object file
+pudge_hook/ft_move.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_move.c.o
+.PHONY : pudge_hook/ft_move.c.o
+
+pudge_hook/ft_move.i: pudge_hook/ft_move.c.i
+
+.PHONY : pudge_hook/ft_move.i
+
+# target to preprocess a source file
+pudge_hook/ft_move.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_move.c.i
+.PHONY : pudge_hook/ft_move.c.i
+
+pudge_hook/ft_move.s: pudge_hook/ft_move.c.s
+
+.PHONY : pudge_hook/ft_move.s
+
+# target to generate assembly for a file
+pudge_hook/ft_move.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_move.c.s
+.PHONY : pudge_hook/ft_move.c.s
+
 texture/ft_texture.o: texture/ft_texture.c.o
 
 .PHONY : texture/ft_texture.o
@@ -536,6 +644,15 @@ help:
 	@echo "... draws/ft_draw.o"
 	@echo "... draws/ft_draw.i"
 	@echo "... draws/ft_draw.s"
+	@echo "... draws/ft_draw_cefl.o"
+	@echo "... draws/ft_draw_cefl.i"
+	@echo "... draws/ft_draw_cefl.s"
+	@echo "... draws/ft_draw_tex.o"
+	@echo "... draws/ft_draw_tex.i"
+	@echo "... draws/ft_draw_tex.s"
+	@echo "... draws/ft_select_texture_for_draw.o"
+	@echo "... draws/ft_select_texture_for_draw.i"
+	@echo "... draws/ft_select_texture_for_draw.s"
 	@echo "... error_list/ft_error.o"
 	@echo "... error_list/ft_error.i"
 	@echo "... error_list/ft_error.s"
@@ -569,6 +686,9 @@ help:
 	@echo "... pudge_hook/ft_key_and_mouse.o"
 	@echo "... pudge_hook/ft_key_and_mouse.i"
 	@echo "... pudge_hook/ft_key_and_mouse.s"
+	@echo "... pudge_hook/ft_move.o"
+	@echo "... pudge_hook/ft_move.i"
+	@echo "... pudge_hook/ft_move.s"
 	@echo "... texture/ft_texture.o"
 	@echo "... texture/ft_texture.i"
 	@echo "... texture/ft_texture.s"
