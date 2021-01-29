@@ -1,10 +1,10 @@
-R  88347509283475098234705974230957823409857034298570934827509834700 60052347598723465789623498756239487569283475698234765982345
+R  800 600
 
-NO ./xpm/matrix.xpm
-SO ./xpm/matrix.xpm
-WE ./xpm/matrix.xpm
-EA ./xpm/matrix.xpm
-S ./xpm/barrel.xpm
+NO ../xpm/matrix.xpm
+SO ../xpm/matrix.xpm
+WE ../xpm/matrix.xpm
+EA ../xpm/matrix.xpm
+S ../xpm/barrel.xpm
 
 F 128 , 128, 128
 C 0, 165, 255

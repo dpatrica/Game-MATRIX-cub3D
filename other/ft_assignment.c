@@ -6,6 +6,8 @@
 
 static t_all	ft_fornullll(t_all xlm)
 {
+	xlm.xxx = 0;
+	xlm.yyy = 0;
 	xlm.neo.dist = 0;
 	xlm.move.exit = 0;
 	xlm.img.img = NULL;
@@ -13,11 +15,7 @@ static t_all	ft_fornullll(t_all xlm)
 	xlm.img.bpp = 0;
 	xlm.img.line_len = 0;
 	xlm.img.iend = 0;
-	xlm.param.f.rgb = 0;
-	xlm.param.c.rgb = 0;
 	xlm.sprite.spr_len = 0;
-	xlm.param.scr_swap_w = 0;
-	xlm.param.scr_swap_h = 0;
 	xlm.move.l_m_rot = 0;
 	xlm.move.r_m_rot = 0;
 	xlm.move.mouse_cam = 2;
@@ -25,7 +23,14 @@ static t_all	ft_fornullll(t_all xlm)
 	xlm.sprite.spr = NULL;
 	xlm.sprite.spr_dist = NULL;
 	xlm.sprite.pos = NULL;
-	return (xlm);
+	xlm.player.x = 0;
+	xlm.player.y = 0;
+	xlm.player.hp = 0;
+	xlm.player.ammo = 0;
+	xlm.player.dir = 0;
+	xlm.player.dir_x = 0;
+	xlm.player.dir_y = 0;
+	return (ft_fornull_2(xlm));
 }
 
 static t_all	ft_fornulll(t_all xlm)

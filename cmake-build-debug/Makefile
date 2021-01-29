@@ -251,6 +251,33 @@ other/ft_assignment.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_assignment.c.s
 .PHONY : other/ft_assignment.c.s
 
+other/ft_assignment_2.o: other/ft_assignment_2.c.o
+
+.PHONY : other/ft_assignment_2.o
+
+# target to build an object file
+other/ft_assignment_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.o
+.PHONY : other/ft_assignment_2.c.o
+
+other/ft_assignment_2.i: other/ft_assignment_2.c.i
+
+.PHONY : other/ft_assignment_2.i
+
+# target to preprocess a source file
+other/ft_assignment_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.i
+.PHONY : other/ft_assignment_2.c.i
+
+other/ft_assignment_2.s: other/ft_assignment_2.c.s
+
+.PHONY : other/ft_assignment_2.s
+
+# target to generate assembly for a file
+other/ft_assignment_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.s
+.PHONY : other/ft_assignment_2.c.s
+
 other/ft_other_fun.o: other/ft_other_fun.c.o
 
 .PHONY : other/ft_other_fun.o
@@ -440,6 +467,33 @@ pudge_hook/ft_hook.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.s
 .PHONY : pudge_hook/ft_hook.c.s
 
+pudge_hook/ft_key_and_mouse.o: pudge_hook/ft_key_and_mouse.c.o
+
+.PHONY : pudge_hook/ft_key_and_mouse.o
+
+# target to build an object file
+pudge_hook/ft_key_and_mouse.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_key_and_mouse.c.o
+.PHONY : pudge_hook/ft_key_and_mouse.c.o
+
+pudge_hook/ft_key_and_mouse.i: pudge_hook/ft_key_and_mouse.c.i
+
+.PHONY : pudge_hook/ft_key_and_mouse.i
+
+# target to preprocess a source file
+pudge_hook/ft_key_and_mouse.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_key_and_mouse.c.i
+.PHONY : pudge_hook/ft_key_and_mouse.c.i
+
+pudge_hook/ft_key_and_mouse.s: pudge_hook/ft_key_and_mouse.c.s
+
+.PHONY : pudge_hook/ft_key_and_mouse.s
+
+# target to generate assembly for a file
+pudge_hook/ft_key_and_mouse.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_key_and_mouse.c.s
+.PHONY : pudge_hook/ft_key_and_mouse.c.s
+
 texture/ft_texture.o: texture/ft_texture.c.o
 
 .PHONY : texture/ft_texture.o
@@ -488,6 +542,9 @@ help:
 	@echo "... other/ft_assignment.o"
 	@echo "... other/ft_assignment.i"
 	@echo "... other/ft_assignment.s"
+	@echo "... other/ft_assignment_2.o"
+	@echo "... other/ft_assignment_2.i"
+	@echo "... other/ft_assignment_2.s"
 	@echo "... other/ft_other_fun.o"
 	@echo "... other/ft_other_fun.i"
 	@echo "... other/ft_other_fun.s"
@@ -509,6 +566,9 @@ help:
 	@echo "... pudge_hook/ft_hook.o"
 	@echo "... pudge_hook/ft_hook.i"
 	@echo "... pudge_hook/ft_hook.s"
+	@echo "... pudge_hook/ft_key_and_mouse.o"
+	@echo "... pudge_hook/ft_key_and_mouse.i"
+	@echo "... pudge_hook/ft_key_and_mouse.s"
 	@echo "... texture/ft_texture.o"
 	@echo "... texture/ft_texture.i"
 	@echo "... texture/ft_texture.s"

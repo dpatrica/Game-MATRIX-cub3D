@@ -90,6 +90,9 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment_2.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c">
 			<Option target="superCUB3D"/>
 		</Unit>
@@ -109,6 +112,9 @@
 			<Option target="superCUB3D"/>
 		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_hook.c">
+			<Option target="superCUB3D"/>
+		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_key_and_mouse.c">
 			<Option target="superCUB3D"/>
 		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/texture/ft_texture.c">

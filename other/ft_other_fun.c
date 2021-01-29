@@ -30,7 +30,18 @@ int		rgb_color(int r, int g, int b)
 	return (r << 16 | g << 8 | b);
 }
 
-void 	chek_screen(t_all *xlm)
+void	my_pixel_put(t_all *xlm, int x, int y, int color)
+{
+	char *dst;
+
+	if (color != 0)
+	{
+		dst = xlm->img.adr + (y * xlm->img.line_len + x * (xlm->img.bpp / 8));
+		*(unsigned int *) dst = color;
+	}
+}
+
+/*void 	chek_screen(t_all *xlm)
 {
 	int	swap;
 
@@ -49,7 +60,7 @@ void 	chek_screen(t_all *xlm)
 		xlm->param.height = swap;
 		xlm->param.scr_swap_h = 1;
 	}
-}
+}*/
 
 /*int 	mouse(int x, int y, t_all *xlm)
 {

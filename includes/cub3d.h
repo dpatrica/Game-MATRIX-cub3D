@@ -253,6 +253,7 @@ typedef struct	s_all
 }				t_all;
 
 t_all	ft_fornull(t_all xlm);
+t_all	ft_fornull_2(t_all xlm);
 t_map	ft_parser(t_map param, char *map);
 t_map	ft_pars_reso(t_map param, char *map);
 t_map	ft_pars_frgb(t_map param, char *map);
@@ -280,7 +281,7 @@ void	my_pixel_put(t_all *xlm, int x, int y, int color);
 int		rgb_color(int r, int g, int b);
 void	sprite_len(t_all *xlm);
 void	sprite_sort(t_all *xlm);
-void 	chek_screen(t_all *xlm);
+//void 	chek_screen(t_all *xlm);
 int 	mouse(int x, int y, t_all *xlm);
 void	ft_texture(t_all *xlm);
 

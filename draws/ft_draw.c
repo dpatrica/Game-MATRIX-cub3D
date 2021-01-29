@@ -4,25 +4,6 @@
 
 #include "../includes/cub3d.h"
 
-void	my_pixel_put(t_all *xlm, int x, int y, int color)
-{
-	char *dst;
-
-	if (color != 0)
-	{
-		dst = xlm->img.adr + (y * xlm->img.line_len + x * (xlm->img.bpp / 8));
-		*(unsigned int *) dst = color;
-	}
-}
-
-/*static void	ma_pixel_put(t_all *xlm, int x, int y, int color)
-{
-	char *dst;
-
-	dst = xlm->tex.no.adr + (y * xlm->img.line_len + x * (xlm->tex.no.bpp / 8));
-	*(unsigned int*)dst = color;
-}*/
-
 void 	ft_draw_square(t_all *xlm, int x, int y, int color)
 {
 	int	start_x;

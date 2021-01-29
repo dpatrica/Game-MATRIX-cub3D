@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw.c
+../includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+
 /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
 ../libft/libft.h
 /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
@@ -36,7 +40,7 @@ stddef.h
 
 /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
 
-/Users/dpatrica/CLionProjects/superCUB3D/other/ft_sprite.c
+/Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c
 ../includes/cub3d.h
 /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
 
