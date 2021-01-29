@@ -38,7 +38,7 @@ void		ft_texture(t_all *xlm)
 	&xlm->tex.ea.width, &xlm->tex.ea.height);
 	xlm->sprite.tex = mlx_xpm_file_to_image(xlm->mlx, xlm->param.s,\
 	&xlm->sprite.width, &xlm->sprite.height);
-	xlm->tex.skybox.tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/matrix.xpm", &xlm->tex.skybox.width, &xlm->tex.skybox.height);
+	xlm->tex.skybox.tex = mlx_xpm_file_to_image(xlm->mlx, "./xpm/matrix.xpm", &xlm->tex.skybox.width, &xlm->tex.skybox.height);
 	if (!xlm->tex.no.tex || !xlm->tex.so.tex || !xlm->tex.we.tex ||\
 	!xlm->tex.ea.tex || !xlm->sprite.tex || !xlm->tex.skybox.tex)
 	{

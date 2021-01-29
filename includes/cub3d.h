@@ -289,5 +289,6 @@ void	ft_move(t_all *xlm);
 void	ft_draw_cefl(t_all *xlm);
 void	ft_draw_tex(t_all *xlm);
 void	ft_select_texture(t_all *xlm);
+void	ft_draw_sprite(t_all *xlm);
 
 #endif

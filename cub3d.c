@@ -6,15 +6,15 @@
 
 static t_map	mainik(t_map param, int argc, char **argv)
 {
-//	if ((argc < 2) || (argc > 3))
-//		param.valid = (argc > 3) ? MANY_ARGS : NO_ARGS;
-//	else if ((**(argv + 1) == '.') || (ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5)))
-//		param.valid = MAP_CUB_ERROR;
-//	else if ((argc == 3) && (++param.save) && (ft_strncmp(argv[2], "--save", 7)))
-//		param.valid = SAVE_ERROR;
+	if ((argc < 2) || (argc > 3))
+		param.valid = (argc > 3) ? MANY_ARGS : NO_ARGS;
+	else if ((**(argv + 1) == '.') || (ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5)))
+		param.valid = MAP_CUB_ERROR;
+	else if ((argc == 3) && (++param.save) && (ft_strncmp(argv[2], "--save", 7)))
+		param.valid = SAVE_ERROR;
 	if (!param.valid)
-		param = ft_parser(param, "../maps/map.cub");
-//		param = ft_parser(param, argv[1]);
+//		param = ft_parser(param, "../maps/map.cub");
+		param = ft_parser(param, argv[1]);
 	if (!param.valid)
 		param = ft_valid(param, 0, 0, 0);
 	if (!param.valid)

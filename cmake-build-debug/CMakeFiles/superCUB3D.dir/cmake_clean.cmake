@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/superCUB3D.dir/cub3d.c.o"
   "CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o"
   "CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.o"
+  "CMakeFiles/superCUB3D.dir/draws/ft_draw_sprite.c.o"
   "CMakeFiles/superCUB3D.dir/draws/ft_draw_tex.c.o"
   "CMakeFiles/superCUB3D.dir/draws/ft_select_texture_for_draw.c.o"
   "CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o"

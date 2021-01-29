@@ -1,10 +1,10 @@
 R  800 600
 
-NO ../xpm/matrix.xpm
-SO ../xpm/matrix.xpm
-WE ../xpm/matrix.xpm
-EA ../xpm/matrix.xpm
-S ../xpm/barrel.xpm
+NO ./xpm/matrix.xpm
+SO ./xpm/matrix.xpm
+WE ./xpm/matrix.xpm
+EA ./xpm/matrix.xpm
+S ./xpm/barrel.xpm
 
 F 128 , 128, 128
 C 0, 165, 255

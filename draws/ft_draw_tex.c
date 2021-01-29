@@ -34,11 +34,8 @@ static void computation_draws_wall(t_all *xlm)
 	xlm->neo.wall_x -= floor(xlm->neo.wall_x);
 }
 
-static void computation_distance(t_all *xlm)
+static void computation_distance(t_all *xlm, int collision, int x)
 {
-	int collision;
-
-	collision = 0;
 	while (collision == 0)
 	{
 		if (xlm->neo.side_x < xlm->neo.side_y)
@@ -57,9 +54,12 @@ static void computation_distance(t_all *xlm)
 			collision = 1;
 	}
 	if (xlm->neo.side == 0)
-		xlm->neo.dist = (xlm->neo.x - X + (1 - xlm->neo.step_x) / 2) / xlm->neo.rdir_x;
+		xlm->neo.dist =\
+		(xlm->neo.x - X + (1 - xlm->neo.step_x) / 2) / xlm->neo.rdir_x;
 	else
-		xlm->neo.dist = (xlm->neo.y - Y + (1 - xlm->neo.step_y) / 2) / xlm->neo.rdir_y;
+		xlm->neo.dist =\
+		(xlm->neo.y - Y + (1 - xlm->neo.step_y) / 2) / xlm->neo.rdir_y;
+	xlm->sprite.wid_buf[x] = xlm->neo.dist;
 }
 
 static void computation_side_step(t_all *xlm, int x)
@@ -83,20 +83,20 @@ static void computation_side_step(t_all *xlm, int x)
 
 void	ft_draw_tex(t_all *xlm)
 {
-	int		x;
-	int		y;
-	unsigned int *clr;
+	int				x;
+	int				y;
+	unsigned int	*color;
 
 	x = -1;
 	while (++x < (xlm->param.width - 1))
 	{
 		computation_side_step(xlm, x);
-		computation_distance(xlm);
+		computation_distance(xlm, 0, x);
 		computation_draws_wall(xlm);
 		ft_select_texture(xlm);
 		computation_tex_pos(xlm);
-		y = xlm->neo.draw_up;
-		while (y < xlm->neo.draw_down)
+		y = xlm->neo.draw_up - 1;
+		while (++y < xlm->neo.draw_down)
 		{
 			xlm->neo.tex_y = (int)xlm->neo.tex_pos;
 			if (xlm->neo.tex_y >= xlm->neo.tex_hei)
@@ -104,11 +104,10 @@ void	ft_draw_tex(t_all *xlm)
 			else if (xlm->neo.tex_y < 0)
 				xlm->neo.tex_y = 0;
 			xlm->neo.tex_pos += xlm->neo.step;
-			clr = (unsigned int*)(xlm->neo.adr + xlm->neo.tex_line * xlm->neo.tex_y + xlm->neo.tex_x * (xlm->neo.bpp / 8));
-			my_pixel_put(xlm, x, y, (int)*clr);
-			y++;
+			color = (unsigned int*)(xlm->neo.adr + xlm->neo.tex_line *\
+			xlm->neo.tex_y + xlm->neo.tex_x * (xlm->neo.bpp / 8));
+			my_pixel_put(xlm, x, y, (int)*color);
 		}
 //		ft_draw_line(i, xlm->neo.draw_up, xlm->neo.draw_down, 0x800000, xlm);
-		xlm->sprite.wid_buf[x] = xlm->neo.dist;
 	}
 }

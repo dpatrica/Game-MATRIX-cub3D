@@ -23,11 +23,12 @@ SRCS	=	./cub3d.c\
 			./texture/ft_texture.c\
 			./other/ft_sprite.c\
 			./other/ft_assignment_2.c\
-			./pudge_hook/ft_key_and_mouse\
+			./pudge_hook/ft_key_and_mouse.c\
 			./pudge_hook/ft_move.c\
 			./draws/ft_draw_tex.c\
 			./draws/ft_draw_cefl.c\
-			./draws/ft_select_texture_for_draw.c
+			./draws/ft_select_texture_for_draw.c\
+			./draws/ft_draw_sprite.c
 
 LIBSRCS	=	./libft/ft_strlen.c\
 			./libft/ft_memset.c\
