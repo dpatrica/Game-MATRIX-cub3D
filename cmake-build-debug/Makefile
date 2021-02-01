@@ -629,6 +629,33 @@ pudge_hook/ft_move.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_move.c.s
 .PHONY : pudge_hook/ft_move.c.s
 
+rendering/ft_rendering.o: rendering/ft_rendering.c.o
+
+.PHONY : rendering/ft_rendering.o
+
+# target to build an object file
+rendering/ft_rendering.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/rendering/ft_rendering.c.o
+.PHONY : rendering/ft_rendering.c.o
+
+rendering/ft_rendering.i: rendering/ft_rendering.c.i
+
+.PHONY : rendering/ft_rendering.i
+
+# target to preprocess a source file
+rendering/ft_rendering.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/rendering/ft_rendering.c.i
+.PHONY : rendering/ft_rendering.c.i
+
+rendering/ft_rendering.s: rendering/ft_rendering.c.s
+
+.PHONY : rendering/ft_rendering.s
+
+# target to generate assembly for a file
+rendering/ft_rendering.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/rendering/ft_rendering.c.s
+.PHONY : rendering/ft_rendering.c.s
+
 texture/ft_texture.o: texture/ft_texture.c.o
 
 .PHONY : texture/ft_texture.o
@@ -719,6 +746,9 @@ help:
 	@echo "... pudge_hook/ft_move.o"
 	@echo "... pudge_hook/ft_move.i"
 	@echo "... pudge_hook/ft_move.s"
+	@echo "... rendering/ft_rendering.o"
+	@echo "... rendering/ft_rendering.i"
+	@echo "... rendering/ft_rendering.s"
 	@echo "... texture/ft_texture.o"
 	@echo "... texture/ft_texture.i"
 	@echo "... texture/ft_texture.s"

@@ -23,6 +23,11 @@ static t_all	ft_fornulllll_2(t_all xlm)
 	xlm.neo.wall_x = 0;
 	xlm.neo.step = 0;
 	xlm.neo.tex_pos = 0;
+	xlm.param.resp_player.map = 0;
+	xlm.player.map = 0;
+	xlm.sprite.flag_spr_len = 0;
+	xlm.player.digl = 0;
+	xlm.player.super_stvol = 0;
 	return (xlm);
 }
 

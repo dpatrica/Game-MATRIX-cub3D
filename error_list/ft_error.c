@@ -119,24 +119,24 @@ static int	ft_errorr(int error)
 	return (ft_errorrr(error));
 }
 
-int			ft_error(t_all xlm, int error)
+int			ft_error(t_all *xlm, int error)
 {
 	int	i;
 
-	xlm.param.no ? free(xlm.param.no) : 0;
-	xlm.param.so ? free(xlm.param.so) : 0;
-	xlm.param.we ? free(xlm.param.we) : 0;
-	xlm.param.ea ? free(xlm.param.ea) : 0;
-	xlm.param.s ? free(xlm.param.s) : 0;
-	xlm.sprite.wid_buf ? free(xlm.sprite.wid_buf) : 0;
-	xlm.sprite.spr ? free(xlm.sprite.spr) : 0;
-	xlm.sprite.spr_dist ? free(xlm.sprite.spr_dist) : 0;
-	xlm.sprite.pos ? free(xlm.sprite.pos) : 0;
+	xlm->param.no ? free(xlm->param.no) : 0;
+	xlm->param.so ? free(xlm->param.so) : 0;
+	xlm->param.we ? free(xlm->param.we) : 0;
+	xlm->param.ea ? free(xlm->param.ea) : 0;
+	xlm->param.s ? free(xlm->param.s) : 0;
+	xlm->sprite.wid_buf ? free(xlm->sprite.wid_buf) : 0;
+	xlm->sprite.spr ? free(xlm->sprite.spr) : 0;
+	xlm->sprite.spr_dist ? free(xlm->sprite.spr_dist) : 0;
+	xlm->sprite.pos ? free(xlm->sprite.pos) : 0;
 	i = 0;
-	if (xlm.param.g_map)
-		while (xlm.param.g_map[i])
-			free(xlm.param.g_map[i++]);
-	xlm.param.g_map ? free(xlm.param.g_map) : 0;
+	if (xlm->param.g_map)
+		while (xlm->param.g_map[i])
+			free(xlm->param.g_map[i++]);
+	xlm->param.g_map ? free(xlm->param.g_map) : 0;
 	if (error == VALID)
 		write(1, "!!!_ALL VALID AND EZ FREED_!!!", 30);
 	else if (error == NO_ARGS)

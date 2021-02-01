@@ -1,0 +1,18 @@
+R  800 600
+
+NO ../xpm/matrix.xpm
+SO ../xpm/matrix.xpm
+WE ../xpm/matrix.xpm
+EA ../xpm/matrix.xpm
+S ../xpm/pillar.xpm
+
+F 128 , 128, 128
+C 0, 165, 255
+
+1111111111111
+100000Y000021
+1000000000001
+100000N000001
+1000000000001
+1000002000001
+1111111111111

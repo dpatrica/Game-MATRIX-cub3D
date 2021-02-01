@@ -17,6 +17,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o"
   "CMakeFiles/superCUB3D.dir/pudge_hook/ft_key_and_mouse.c.o"
   "CMakeFiles/superCUB3D.dir/pudge_hook/ft_move.c.o"
+  "CMakeFiles/superCUB3D.dir/rendering/ft_rendering.c.o"
   "CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o"
   "superCUB3D"
   "superCUB3D.pdb"

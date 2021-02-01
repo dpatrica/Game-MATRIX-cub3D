@@ -76,15 +76,6 @@ void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm)
 	}
 }
 
-void	ft_draw_beam(t_all *xlm)
-{
-	ft_draw_cefl(xlm);
-	ft_draw_tex(xlm);
-	sprite_sort(xlm);
-	if (xlm->sprite.spr_len)
-		ft_draw_sprite(xlm);
-}
-
 //		ft_draw_line(i, xlm->neo.draw_up, xlm->neo.draw_down, 0x800000, xlm); FIXME НЕ ЗАБУДЬ !
 
 /*void	ft_draw_beam(t_all *xlm)

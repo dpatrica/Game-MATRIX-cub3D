@@ -132,6 +132,9 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_move.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/rendering/ft_rendering.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/texture/ft_texture.c">
 			<Option target="superCUB3D"/>
 		</Unit>

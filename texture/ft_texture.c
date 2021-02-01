@@ -14,14 +14,28 @@ static void	get_agr(t_all *xlm)
 	&xlm->tex.we.line_len, &xlm->tex.we.iend);
 	xlm->tex.ea.adr = mlx_get_data_addr(xlm->tex.ea.tex, &xlm->tex.ea.bpp,\
 	&xlm->tex.ea.line_len, &xlm->tex.ea.iend);
-	xlm->sprite.adr = mlx_get_data_addr(xlm->sprite.tex, &xlm->sprite.bpp,\
-	&xlm->sprite.line_len, &xlm->sprite.iend);
+	xlm->sprite.all_tex[0].adr = mlx_get_data_addr(xlm->sprite.all_tex[0].tex, &xlm->sprite.all_tex[0].bpp,\
+	&xlm->sprite.all_tex[0].line_len, &xlm->sprite.all_tex[0].iend);
+	xlm->sprite.all_tex[1].adr = mlx_get_data_addr(xlm->sprite.all_tex[1].tex, &xlm->sprite.all_tex[1].bpp,\
+	&xlm->sprite.all_tex[1].line_len, &xlm->sprite.all_tex[1].iend);
+	xlm->sprite.all_tex[2].adr = mlx_get_data_addr(xlm->sprite.all_tex[2].tex, &xlm->sprite.all_tex[2].bpp,\
+	&xlm->sprite.all_tex[2].line_len, &xlm->sprite.all_tex[2].iend);
+	xlm->sprite.all_tex[3].adr = mlx_get_data_addr(xlm->sprite.all_tex[3].tex, &xlm->sprite.all_tex[3].bpp,\
+	&xlm->sprite.all_tex[3].line_len, &xlm->sprite.all_tex[3].iend);
+	xlm->sprite.all_tex[4].adr = mlx_get_data_addr(xlm->sprite.all_tex[4].tex, &xlm->sprite.all_tex[4].bpp,\
+	&xlm->sprite.all_tex[4].line_len, &xlm->sprite.all_tex[4].iend);
+//	xlm->sprite.all_tex[5].adr = mlx_get_data_addr(xlm->sprite.all_tex[5].tex, &xlm->sprite.all_tex[5].bpp,\
+//	&xlm->sprite.all_tex[5].line_len, &xlm->sprite.all_tex[5].iend);
+//	xlm->sprite.all_tex[6].adr = mlx_get_data_addr(xlm->sprite.all_tex[6].tex, &xlm->sprite.all_tex[6].bpp,\
+//	&xlm->sprite.all_tex[6].line_len, &xlm->sprite.all_tex[6].iend);
+//	xlm->sprite.all_tex[7].adr = mlx_get_data_addr(xlm->sprite.all_tex[7].tex, &xlm->sprite.all_tex[7].bpp,\
+	&xlm->sprite.all_tex[7].line_len, &xlm->sprite.all_tex[7].iend);
 	xlm->tex.skybox.adr = mlx_get_data_addr(xlm->tex.skybox.tex,\
 	&xlm->tex.skybox.bpp, &xlm->tex.skybox.line_len, &xlm->tex.skybox.iend);
 	if (!xlm->tex.no.adr || !xlm->tex.so.adr || !xlm->tex.we.adr ||\
-	!xlm->tex.ea.adr || !xlm->sprite.adr || !xlm->tex.skybox.adr)
+	!xlm->tex.ea.adr || !xlm->tex.skybox.adr)
 	{
-		ft_error(*xlm, TEXTURE_ERROR);
+		ft_error(xlm, TEXTURE_ERROR);
 		exit(0);
 	}
 }
@@ -36,13 +50,27 @@ void		ft_texture(t_all *xlm)
 	&xlm->tex.we.width, &xlm->tex.we.height);
 	xlm->tex.ea.tex = mlx_xpm_file_to_image(xlm->mlx, xlm->param.ea,\
 	&xlm->tex.ea.width, &xlm->tex.ea.height);
-	xlm->sprite.tex = mlx_xpm_file_to_image(xlm->mlx, xlm->param.s,\
-	&xlm->sprite.width, &xlm->sprite.height);
-	xlm->tex.skybox.tex = mlx_xpm_file_to_image(xlm->mlx, "./xpm/matrix.xpm", &xlm->tex.skybox.width, &xlm->tex.skybox.height);
+	xlm->sprite.all_tex[0].tex = mlx_xpm_file_to_image(xlm->mlx, xlm->param.s,\
+	&xlm->sprite.all_tex[0].width, &xlm->sprite.all_tex[0].height);
+	xlm->sprite.all_tex[1].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/morpheus.xpm",\
+	&xlm->sprite.all_tex[1].width, &xlm->sprite.all_tex[1].height);
+	xlm->sprite.all_tex[2].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/pils1.xpm",\
+	&xlm->sprite.all_tex[2].width, &xlm->sprite.all_tex[2].height);
+	xlm->sprite.all_tex[3].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/pils0.xpm",\
+	&xlm->sprite.all_tex[3].width, &xlm->sprite.all_tex[3].height);
+	xlm->sprite.all_tex[4].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/bullets56.xpm",\
+	&xlm->sprite.all_tex[4].width, &xlm->sprite.all_tex[4].height);
+//	xlm->sprite.all_tex[5].tex = mlx_xpm_file_to_image(xlm->mlx, xlm->param.s,\
+//	&xlm->sprite.all_tex[5].width, &xlm->sprite.all_tex[5].height);
+//	xlm->sprite.all_tex[6].tex = mlx_xpm_file_to_image(xlm->mlx, xlm->param.s,\
+//	&xlm->sprite.all_tex[6].width, &xlm->sprite.all_tex[6].height);
+//	xlm->sprite.all_tex[7].tex = mlx_xpm_file_to_image(xlm->mlx, xlm->param.s,\
+//	&xlm->sprite.all_tex[7].width, &xlm->sprite.all_tex[7].height);
+	xlm->tex.skybox.tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/matrix.xpm", &xlm->tex.skybox.width, &xlm->tex.skybox.height);
 	if (!xlm->tex.no.tex || !xlm->tex.so.tex || !xlm->tex.we.tex ||\
-	!xlm->tex.ea.tex || !xlm->sprite.tex || !xlm->tex.skybox.tex)
+	!xlm->tex.ea.tex || !xlm->tex.skybox.tex)
 	{
-		ft_error(*xlm, TEXTURE_ERROR);
+		ft_error(xlm, TEXTURE_ERROR);
 		exit(0);
 	}
 	get_agr(xlm);

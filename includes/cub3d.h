@@ -135,6 +135,9 @@ typedef struct	s_player
 	double		y;
 	int			hp;
 	int			ammo;
+	int			map;
+	int 		digl;
+	int 		super_stvol;
 	int			dir;
 	double		dir_x;
 	double		dir_y;
@@ -194,18 +197,33 @@ typedef struct	s_wht
 
 typedef struct	s_pos
 {
+	int 		dir;
+	int 		hp;
 	double		x;
 	double		y;
 }				t_pos;
 
+typedef struct	s_all_spr
+{
+	void 		*tex;
+	char		*adr;
+	int 		width;
+	int 		height;
+	int			bpp;
+	int 		line_len;
+	int			iend;
+}				t_all_spr;
+
 typedef struct	s_sprite
 {
+	int			flag_spr_len;
 	t_pos		*pos;
 	double		spr_x;
 	double		spr_y;
 	double		inde;
 	double		trans_x;
 	double		trans_y;
+	t_all_spr	all_tex[8];
 	int			spr_scr;
 	int 		move_scr;
 	int 		spr_hi;
@@ -252,6 +270,7 @@ typedef struct	s_all
 	t_sprite	sprite;
 }				t_all;
 
+int		cub3d(int argc, char **argv, int flag);
 t_all	ft_fornull(t_all xlm);
 t_all	ft_fornull_2(t_all xlm);
 t_map	ft_parser(t_map param, char *map);
@@ -263,7 +282,7 @@ t_map	ft_pars_so(t_map param, char *map);
 t_map	ft_pars_we(t_map param, char *map);
 t_map	ft_pars_ea(t_map param, char *map);
 t_map	ft_pars_s(t_map param, char *map);
-int		ft_error(t_all xlm, int error);
+int		ft_error(t_all *xlm, int error);
 int		drop_space(char **map);
 char	*freesher(char *s1, char *s2, char *s3);
 t_map	ft_valid(t_map param, int i, int j, int flaglen);
@@ -273,7 +292,7 @@ int 	key_hook(t_all *xlm);
 int		key_press(int key, t_all *xlm);
 int		key_release(int key, t_all *xlm);
 //void	save_player(t_all *xlm);
-void	ft_draw_beam(t_all *xlm);
+//void	ft_draw_beam(t_all *xlm);
 t_map	dir_cos_sin(t_map param);
 //int		ft_render(t_all *xlm);
 void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm);
@@ -285,7 +304,7 @@ void	sprite_sort(t_all *xlm);
 int 	mouse(int x, int y, t_all *xlm);
 void	ft_texture(t_all *xlm);
 void	ft_move(t_all *xlm);
-//void	ft_render(t_all *xlm);
+void	ft_render(t_all *xlm);
 void	ft_draw_cefl(t_all *xlm);
 void	ft_draw_tex(t_all *xlm);
 void	ft_select_texture(t_all *xlm);

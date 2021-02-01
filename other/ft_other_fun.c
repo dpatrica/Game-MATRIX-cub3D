@@ -34,7 +34,7 @@ void	my_pixel_put(t_all *xlm, int x, int y, int color)
 {
 	char *dst;
 
-	if (color != 0)
+	if (color >= 0)
 	{
 		dst = xlm->img.adr + (y * xlm->img.line_len + x * (xlm->img.bpp / 8));
 		*(unsigned int *) dst = color;
