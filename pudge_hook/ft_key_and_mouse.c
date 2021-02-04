@@ -19,8 +19,12 @@ int		key_press(int key, t_all *xlm)
 		xlm->move.r_rot = 1;
 	if (key == 123)
 		xlm->move.l_rot = 1;
+	if (key == 46)
+		xlm->move.map = 1;
 	if (key == 53)
 		xlm->move.exit = 1;
+	if (key == 12)
+		xlm->move.rpm = 1;
 	return (0);
 }
 
@@ -38,8 +42,12 @@ int		key_release(int key, t_all *xlm)
 		xlm->move.r_rot = 0;
 	if (key == 123)
 		xlm->move.l_rot = 0;
+	if (key == 46)
+		xlm->move.map = 0;
 	if (key == 53)
 		xlm->move.exit = 0;
+	if (key == 12)
+		xlm->move.rpm = 0;
 	return (0);
 }
 
@@ -63,10 +71,38 @@ int 	mouse(int x, int y, t_all *xlm)
 	{
 		mouse = (y - (xlm->param.height / 2));
 		xlm->move.mouse_cam += mouse * 0.003;
-		if (xlm->move.mouse_cam > 3)
-			xlm->move.mouse_cam = 3;
-		if (xlm->move.mouse_cam < 1)
-			xlm->move.mouse_cam = 1;
+		if (xlm->move.mouse_cam > 2.9)
+			xlm->move.mouse_cam = 2.9;
+		if (xlm->move.mouse_cam < 1.1)
+			xlm->move.mouse_cam = 1.1;
 	}
+	return (0);
+}
+
+int		button_press(int key, t_move *move)
+{
+	printf("press:%d\n", key);
+	printf("%p\n", move);
+/*	if (move != NULL)
+	{
+		if (key == 1)
+			move->rpm = 1;
+		if (key == 2)
+			move->rpm = 1;
+	}*/
+	return (0);
+}
+
+int		button_release(int key, t_move *move)
+{
+	printf("release:%d\n", key);
+	printf("%p\n", move);
+/*	if (move != NULL)
+	{
+		if (key == 1)
+			move->rpm = 0;
+		if (key == 2)
+			move->rpm = 0;
+	}*/
 	return (0);
 }

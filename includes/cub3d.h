@@ -5,9 +5,10 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# define START_X 1700
-# define START_Y 3
-# define SQUARE xlm->width_square
+# define START_X xlm->start_x
+# define START_Y xlm->start_y
+# define SQUARE_X xlm->width_square
+# define SQUARE_Y xlm->height_square
 # define X xlm->player.x
 # define Y xlm->player.y
 # define SPEED 0.05
@@ -123,6 +124,9 @@ typedef struct s_move
 	int			left;
 	int			r_rot;
 	int			l_rot;
+	int			map;
+	int			rpm;
+	int			lpm;
 	double 		r_m_rot;
 	double 		l_m_rot;
 	double 		mouse_cam;
@@ -156,6 +160,7 @@ typedef struct	s_f
 
 typedef struct	s_struct
 {
+	int 		lvl;
 	short int	valid;
 	int			width;
 	int			height;
@@ -163,6 +168,8 @@ typedef struct	s_struct
 	int			scr_height;
 	int 		scr_swap_w;
 	int 		scr_swap_h;
+	int			map_x;
+	int			map_y;
 	char		**g_map;
 	char		*no;
 	char		*so;
@@ -216,14 +223,13 @@ typedef struct	s_all_spr
 
 typedef struct	s_sprite
 {
-	int			flag_spr_len;
 	t_pos		*pos;
 	double		spr_x;
 	double		spr_y;
 	double		inde;
 	double		trans_x;
 	double		trans_y;
-	t_all_spr	all_tex[8];
+	t_all_spr	all_tex[16];
 	int			spr_scr;
 	int 		move_scr;
 	int 		spr_hi;
@@ -256,11 +262,16 @@ typedef struct	s_tex
 
 typedef struct	s_all
 {
+	int 		damage;
+	int			kill;
 	double		xxx;
 	double		yyy;
 	void		*mlx;
 	void		*win;
-	int 		width_square;
+	double 		width_square;
+	double 		height_square;
+	int			start_x;
+	int			start_y;
 	t_map		param;
 	t_player	player;
 	t_move		move;
@@ -270,7 +281,7 @@ typedef struct	s_all
 	t_sprite	sprite;
 }				t_all;
 
-int		cub3d(int argc, char **argv, int flag);
+int		cub3d(int argc, char **argv, int lvl);
 t_all	ft_fornull(t_all xlm);
 t_all	ft_fornull_2(t_all xlm);
 t_map	ft_parser(t_map param, char *map);
@@ -286,8 +297,8 @@ int		ft_error(t_all *xlm, int error);
 int		drop_space(char **map);
 char	*freesher(char *s1, char *s2, char *s3);
 t_map	ft_valid(t_map param, int i, int j, int flaglen);
-void	ft_draw_map(t_all *xlm, int x_print, int y_print);
-void 	ft_draw_square(t_all *xlm, int x, int y, int color);
+void	ft_draw_map(t_all *xlm, double x_print, double y_print);
+void 	ft_draw_square(t_all *xlm, double x, double y, int color);
 int 	key_hook(t_all *xlm);
 int		key_press(int key, t_all *xlm);
 int		key_release(int key, t_all *xlm);
@@ -298,9 +309,10 @@ t_map	dir_cos_sin(t_map param);
 void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm);
 void	my_pixel_put(t_all *xlm, int x, int y, int color);
 int		rgb_color(int r, int g, int b);
-void	sprite_len(t_all *xlm);
+void	sprite_check(t_all *xlm);
+void	sprite_map_len(t_all *xlm);
 void	sprite_sort(t_all *xlm);
-//void 	chek_screen(t_all *xlm);
+//void 	check_screen(t_all *xlm);
 int 	mouse(int x, int y, t_all *xlm);
 void	ft_texture(t_all *xlm);
 void	ft_move(t_all *xlm);
@@ -309,5 +321,10 @@ void	ft_draw_cefl(t_all *xlm);
 void	ft_draw_tex(t_all *xlm);
 void	ft_select_texture(t_all *xlm);
 void	ft_draw_sprite(t_all *xlm);
+void	check_map(t_all *xlm);
+void	ft_draw_aim(t_all *xlm);
+void	sprite_init(t_all *xlm);
+int		button_press(int key, t_move *move);
+int		button_release(int key, t_move *move);
 
 #endif

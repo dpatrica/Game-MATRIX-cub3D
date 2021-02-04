@@ -108,6 +108,7 @@ void	ft_draw_tex(t_all *xlm)
 			xlm->neo.tex_y + xlm->neo.tex_x * (xlm->neo.bpp / 8));
 			my_pixel_put(xlm, x, y, (int)*color);
 		}
-//		ft_draw_line(i, xlm->neo.draw_up, xlm->neo.draw_down, 0x800000, xlm);
+		if (xlm->param.lvl == 2)
+			ft_draw_line(x, xlm->neo.draw_up, xlm->neo.draw_down, 0x800000, xlm);
 	}
 }

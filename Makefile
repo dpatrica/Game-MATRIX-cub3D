@@ -85,7 +85,7 @@ OBJS	=	$(SRCS:.c=.o)
 LIBOBJS	=	$(LIBSRCS:.c=.o)
 
 GCC		= 	gcc
-FLAG	=	-Wall -Wextra# -Werror
+FLAG	=	-Wall -Wextra -Werror
 FLAGMLX	=	-framework OpenGL -framework Appkit
 RM		=	rm -f
 C		=	-c

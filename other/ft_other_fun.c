@@ -41,7 +41,36 @@ void	my_pixel_put(t_all *xlm, int x, int y, int color)
 	}
 }
 
-/*void 	chek_screen(t_all *xlm)
+void	check_map(t_all *xlm)
+{
+	double temp;
+
+	SQUARE_X = (double)(xlm->param.width - 3) / (xlm->param.map_x + 3);
+	SQUARE_Y = (double)(xlm->param.height - 3) / (xlm->param.map_y + 3);
+	SQUARE_X -= 0.1;
+	SQUARE_Y -= 0.1;
+	if (SQUARE_X <= 0.3 || SQUARE_Y <= 0.3)
+	{
+		SQUARE_X = 0;
+		SQUARE_Y = 0;
+	}
+	else
+	{
+		temp = SQUARE_Y - SQUARE_X;
+		if (temp < 0)
+			SQUARE_X = SQUARE_Y;
+		if (temp > 0)
+			SQUARE_Y = SQUARE_X;
+		if (temp > 1)
+			SQUARE_Y = SQUARE_X + 1;
+		if (temp > 2)
+			SQUARE_Y = SQUARE_X + 2;
+		if (temp > 3)
+			SQUARE_Y = SQUARE_X + 3;
+	}
+}
+
+/*void 	check_screen(t_all *xlm)
 {
 	int	swap;
 

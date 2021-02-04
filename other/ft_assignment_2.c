@@ -4,6 +4,21 @@
 
 #include "../includes/cub3d.h"
 
+static t_all	ft_fornulllll_3(t_all xlm)
+{
+	xlm.start_x = 3;
+	xlm.start_y = 3;
+	xlm.param.map_x = 0;
+	xlm.param.map_y = 0;
+	xlm.move.rpm = 0;
+	xlm.move.lpm = 0;
+	xlm.kill = -1;
+	xlm.damage = 0;
+	xlm.param.resp_player.digl = 0;
+	xlm.param.resp_player.super_stvol = 0;
+	return (xlm);
+}
+
 static t_all	ft_fornulllll_2(t_all xlm)
 {
 	xlm.neo.tex_y = 0;
@@ -25,10 +40,12 @@ static t_all	ft_fornulllll_2(t_all xlm)
 	xlm.neo.tex_pos = 0;
 	xlm.param.resp_player.map = 0;
 	xlm.player.map = 0;
-	xlm.sprite.flag_spr_len = 0;
 	xlm.player.digl = 0;
 	xlm.player.super_stvol = 0;
-	return (xlm);
+	xlm.param.valid = VALID;
+	xlm.height_square = 0;
+	xlm.move.map = 0;
+	return (ft_fornulllll_3(xlm));
 }
 
 static t_all	ft_fornullll_2(t_all xlm)

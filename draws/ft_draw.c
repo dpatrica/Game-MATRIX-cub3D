@@ -4,28 +4,46 @@
 
 #include "../includes/cub3d.h"
 
-void 	ft_draw_square(t_all *xlm, int x, int y, int color)
+void	ft_draw_aim(t_all *xlm)
 {
-	int	start_x;
-	int	start_y;
+	int x;
+	int y;
+	int i;
+
+	i = 10;
+	x = (xlm->param.width / 2) - 5;
+	y = (xlm->param.height / 2);
+	while (i--)
+		my_pixel_put(xlm, x++, y, 0xFF0000);
+	i = 10;
+	x = (xlm->param.width / 2);
+	y -= 5;
+	while (i--)
+		my_pixel_put(xlm, x, y++, 0xFF0000);
+}
+
+void 	ft_draw_square(t_all *xlm, double x, double y, int color)
+{
+	double 	start_x;
+	double 	start_y;
 
 	start_x = x;
 	start_y = y;
-	while (y < (SQUARE + start_y))
+	while (y < (SQUARE_Y + start_y))
 	{
 		x = start_x;
-		while (x < (SQUARE + start_x))
+		while (x < (SQUARE_X + start_x))
 			my_pixel_put(xlm, x++, y, color);
 //			mlx_pixel_put(xlm->image, xlm->win, x++, y, color);
 		y++;
 	}
 }
 
-void	ft_draw_map(t_all *xlm, int x_print, int y_print)
+void	ft_draw_map(t_all *xlm, double x_print, double y_print)
 {
 	int	x;
 	int	y;
-	int start_x;
+	double start_x;
 
 	start_x = x_print;
 	x = 0;
@@ -41,19 +59,20 @@ void	ft_draw_map(t_all *xlm, int x_print, int y_print)
 				ft_draw_square(xlm, x_print, y_print, 0xFFFFFF);
 			else if (xlm->param.g_map[y][x] == '2')
 				ft_draw_square(xlm, x_print, y_print, 0x9400D3);
-			x_print += SQUARE;
+			x_print += SQUARE_X;
 			x++;
 		}
-		y_print += SQUARE;
+		y_print += SQUARE_Y;
 		y++;
 		x = 0;
 	}
-	ft_draw_square(xlm, START_X + (X * SQUARE) - (SQUARE / 2),\
-	START_Y + (Y * SQUARE) - (SQUARE / 2), 0xFF0000);
+	ft_draw_square(xlm, START_X + (X * SQUARE_X) - (SQUARE_X / 2),\
+	START_Y + (Y * SQUARE_Y) - (SQUARE_Y / 2), 0xFF0000);
 }
 
 void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm)
 {
+	(void)color;
 	int i;
 	int old_draw_s;
 //	if (draw_e < 0)

@@ -68,16 +68,23 @@ static void move_player_2(t_all *xlm)
 		X += SPEED * xlm->player.dir_y;
 	if (xlm->param.g_map[(int)Y][(int)X] == 'P')
 	{
-		X = 15.5;
+//		mlx_destroy_image(xlm->mlx, xlm->img.img);
+		mlx_destroy_window(xlm->mlx, xlm->win);
+		ft_error(xlm, VALID);
+		char *map;
+		map = "../maps/map3.cub";
+		cub3d(2, &map, 2);
+		exit(0);
+/*		X = 15.5;
 		Y = 3.5;
 		xlm->player.dir_x = cos(2 * M_PI);
 		xlm->player.dir_y = sin(0);
 		xlm->player.plan_x = 0;
-		xlm->player.plan_y = 0.66;
+		xlm->player.plan_y = 0.66;*/
 	}
 	if (xlm->param.g_map[(int)Y][(int)X] == 'X')
 	{
-		mlx_destroy_image(xlm->mlx, xlm->img.img);
+//		mlx_destroy_image(xlm->mlx, xlm->img.img);
 		mlx_destroy_window(xlm->mlx, xlm->win);
 		ft_error(xlm, VALID);
 		char *map;
@@ -89,31 +96,51 @@ static void move_player_2(t_all *xlm)
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
 		xlm->player.map = 1;
-		sprite_len(xlm);
+		xlm->kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
+		sprite_init(xlm);
+		xlm->kill = -1;
+//		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
+//		sprite_check(xlm);
 	}
 	if (xlm->param.g_map[(int)Y][(int)X] == 'H')
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
 		xlm->player.hp += 10;
-		sprite_len(xlm);
+		xlm->kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
+		sprite_init(xlm);
+		xlm->kill = -1;
+//		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
+//		sprite_check(xlm);
 	}
 	if (xlm->param.g_map[(int)Y][(int)X] == 'A')
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
 		xlm->player.ammo += 10;
-		sprite_len(xlm);
+		xlm->kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
+		sprite_init(xlm);
+		xlm->kill = -1;
+//		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
+//		sprite_check(xlm);
 	}
 	if (xlm->param.g_map[(int)Y][(int)X] == 'D')
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
 		xlm->player.digl = 1;
-		sprite_len(xlm);
+		xlm->kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
+		sprite_init(xlm);
+		xlm->kill = -1;
+//		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
+//		sprite_check(xlm);
 	}
 	if (xlm->param.g_map[(int)Y][(int)X] == 'Z')
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
 		xlm->player.super_stvol = 1;
-		sprite_len(xlm);
+		xlm->kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
+		sprite_init(xlm);
+		xlm->kill = -1;
+//		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
+//		sprite_check(xlm);
 	}
 }
 
@@ -147,7 +174,7 @@ void	ft_move(t_all *xlm)
 	turn_player_2(xlm, xlm->player.dir_x, xlm->player.plan_x);
 	if (xlm->move.exit == 1)
 	{
-		mlx_destroy_image(xlm->mlx, xlm->img.img);
+//		mlx_destroy_image(xlm->mlx, xlm->img.img);
 		mlx_destroy_window(xlm->mlx, xlm->win);
 		ft_error(xlm, xlm->param.valid);
 		exit(0);

@@ -16,7 +16,7 @@ static void	chek_tex_spr(t_all *xlm, int i)
 		xlm->sprite.line_len = xlm->sprite.all_tex[0].line_len;
 		xlm->sprite.iend = xlm->sprite.all_tex[0].iend;
 	}
-	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'Y')
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'Y')
 	{
 		xlm->sprite.tex = xlm->sprite.all_tex[1].tex;
 		xlm->sprite.width = xlm->sprite.all_tex[1].width;
@@ -26,7 +26,7 @@ static void	chek_tex_spr(t_all *xlm, int i)
 		xlm->sprite.line_len = xlm->sprite.all_tex[1].line_len;
 		xlm->sprite.iend = xlm->sprite.all_tex[1].iend;
 	}
-	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'P')
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'P')
 	{
 		xlm->sprite.tex = xlm->sprite.all_tex[2].tex;
 		xlm->sprite.width = xlm->sprite.all_tex[2].width;
@@ -36,7 +36,7 @@ static void	chek_tex_spr(t_all *xlm, int i)
 		xlm->sprite.line_len = xlm->sprite.all_tex[2].line_len;
 		xlm->sprite.iend = xlm->sprite.all_tex[2].iend;
 	}
-	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'X')
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'X')
 	{
 		xlm->sprite.tex = xlm->sprite.all_tex[3].tex;
 		xlm->sprite.width = xlm->sprite.all_tex[3].width;
@@ -46,7 +46,7 @@ static void	chek_tex_spr(t_all *xlm, int i)
 		xlm->sprite.line_len = xlm->sprite.all_tex[3].line_len;
 		xlm->sprite.iend = xlm->sprite.all_tex[3].iend;
 	}
-	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'M')
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'M')
 	{
 		xlm->sprite.tex = xlm->sprite.all_tex[4].tex;
 		xlm->sprite.width = xlm->sprite.all_tex[4].width;
@@ -56,9 +56,49 @@ static void	chek_tex_spr(t_all *xlm, int i)
 		xlm->sprite.line_len = xlm->sprite.all_tex[4].line_len;
 		xlm->sprite.iend = xlm->sprite.all_tex[4].iend;
 	}
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'D')
+	{
+		xlm->sprite.tex = xlm->sprite.all_tex[5].tex;
+		xlm->sprite.width = xlm->sprite.all_tex[5].width;
+		xlm->sprite.height = xlm->sprite.all_tex[5].height;
+		xlm->sprite.adr = xlm->sprite.all_tex[5].adr;
+		xlm->sprite.bpp = xlm->sprite.all_tex[5].bpp;
+		xlm->sprite.line_len = xlm->sprite.all_tex[5].line_len;
+		xlm->sprite.iend = xlm->sprite.all_tex[5].iend;
+	}
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'A')
+	{
+		xlm->sprite.tex = xlm->sprite.all_tex[6].tex;
+		xlm->sprite.width = xlm->sprite.all_tex[6].width;
+		xlm->sprite.height = xlm->sprite.all_tex[6].height;
+		xlm->sprite.adr = xlm->sprite.all_tex[6].adr;
+		xlm->sprite.bpp = xlm->sprite.all_tex[6].bpp;
+		xlm->sprite.line_len = xlm->sprite.all_tex[6].line_len;
+		xlm->sprite.iend = xlm->sprite.all_tex[6].iend;
+	}
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'H')
+	{
+		xlm->sprite.tex = xlm->sprite.all_tex[7].tex;
+		xlm->sprite.width = xlm->sprite.all_tex[7].width;
+		xlm->sprite.height = xlm->sprite.all_tex[7].height;
+		xlm->sprite.adr = xlm->sprite.all_tex[7].adr;
+		xlm->sprite.bpp = xlm->sprite.all_tex[7].bpp;
+		xlm->sprite.line_len = xlm->sprite.all_tex[7].line_len;
+		xlm->sprite.iend = xlm->sprite.all_tex[7].iend;
+	}
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'Z')
+	{
+		xlm->sprite.tex = xlm->sprite.all_tex[8].tex;
+		xlm->sprite.width = xlm->sprite.all_tex[8].width;
+		xlm->sprite.height = xlm->sprite.all_tex[8].height;
+		xlm->sprite.adr = xlm->sprite.all_tex[8].adr;
+		xlm->sprite.bpp = xlm->sprite.all_tex[8].bpp;
+		xlm->sprite.line_len = xlm->sprite.all_tex[8].line_len;
+		xlm->sprite.iend = xlm->sprite.all_tex[8].iend;
+	}
 }
 
-static int	draw_sprite(t_all *xlm, int x_t, int x, int y)
+static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
 {
 	unsigned int	*color;
 	int				y_t;
@@ -67,8 +107,22 @@ static int	draw_sprite(t_all *xlm, int x_t, int x, int y)
 	temp = (y - xlm->sprite.move_scr) * 256 -\
 	xlm->param.height / xlm->move.mouse_cam * 256 + xlm->sprite.spr_hi * 128;
 	y_t = ((temp * xlm->sprite.height) / xlm->sprite.spr_hi) / 256;
+	y_t = y_t < 0 ? 0 : y_t;
 	color = (unsigned int*)(xlm->sprite.adr + xlm->sprite.line_len * y_t +\
 	x_t * (xlm->sprite.bpp / 8));
+	if (xlm->player.digl && (x == (xlm->param.width / 2) && y == (xlm->param.height / 2) && (int)*color >= 0))
+	{
+		if (xlm->move.rpm == 1 && xlm->damage)
+		{
+			xlm->sprite.pos[xlm->sprite.spr[i]].hp -= xlm->damage;
+			if (!xlm->sprite.pos[xlm->sprite.spr[i]].hp)
+			{
+				xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y - 0.5)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x - 0.5)] = '0';
+				xlm->kill = xlm->sprite.spr[i];
+			}
+			xlm->damage = 0;
+		}
+	}
 	my_pixel_put(xlm, x, y, (int)*color);
 	return (1);
 }
@@ -126,12 +180,13 @@ void	ft_draw_sprite(t_all *xlm)
 		{
 			x_t = (int)(x - (-xlm->sprite.spr_wi / 2 + xlm->sprite.spr_scr)) *\
 			xlm->sprite.width / xlm->sprite.spr_wi;
+			x_t = x_t < 0 ? 0 : x_t;
 			if (xlm->sprite.trans_y > 0 && x > 0 && x < xlm->param.width &&\
 			xlm->sprite.trans_y < xlm->sprite.wid_buf[x])
 			{
 				y = xlm->sprite.draw_up_y;
 				while (y < (xlm->sprite.draw_down_y - 1))
-					y += draw_sprite(xlm, x_t, x, y);
+					y += draw_sprite(xlm, x_t, x, y, i);
 			}
 			x++;
 		}

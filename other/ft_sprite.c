@@ -26,49 +26,69 @@ static void	sprite_malloc(t_all *xlm)
 		ft_error(xlm, SPR_MALLOC_ERROR);
 		exit(0);
 	}
-	xlm->sprite.flag_spr_len = 1;
 }
 
-static void	sprite_init(t_all *xlm)
+void		sprite_init(t_all *xlm)
 {
 	int i;
 
-	i = -1;
-	while (++i < xlm->sprite.spr_len)
+	if (xlm->kill == -1)
 	{
-		xlm->sprite.pos[i].hp = 10000;
-		if (xlm->sprite.pos[i].dir == '2')
-			xlm->sprite.pos[i].hp = 5;
+		i = -1;
+		while (++i < xlm->sprite.spr_len)
+		{
+			xlm->sprite.pos[i].hp = 10000;
+			if (xlm->sprite.pos[i].dir == '2')
+				xlm->sprite.pos[i].hp = 5;
+		}
+	}
+	else
+	{
+		xlm->sprite.spr_len--;
+		while (xlm->kill < xlm->sprite.spr_len)
+			xlm->sprite.pos[xlm->kill] = xlm->sprite.pos[++xlm->kill];
 	}
 }
 
-void		sprite_len(t_all *xlm)
+void		sprite_check(t_all *xlm)
 {
 	int i;
 	int j;
 
 	i = -1;
-	while (xlm->param.g_map[++i] && !(j = 0))
-		while (xlm->param.g_map[i][j])
-			if (ft_rhr("2MYPXHDZ", xlm->param.g_map[i][j++])) // 2 - обычный спрайт / M - мапа / Y - Морфиус / P - синяя пилюля / X - красная пилюля / H - ХП / A - патроны / D - дигл / Z - суперствол
+	xlm->sprite.spr_len = 0;
+	while (xlm->param.g_map[++i] && (j = -1))
+		while (xlm->param.g_map[i][++j])
+			if (ft_rhr("2AMYPXHDZ", xlm->param.g_map[i][j]))
+			{
+				xlm->sprite.pos[xlm->sprite.spr_len].dir =\
+				(int)xlm->param.g_map[i][j];
+				xlm->sprite.pos[xlm->sprite.spr_len].x = j + 0.5;
+				xlm->sprite.pos[xlm->sprite.spr_len].y = i + 0.5;
 				xlm->sprite.spr_len++;
-	if (xlm->sprite.spr_len)
+			}
+	sprite_init(xlm);
+}
+
+void		sprite_map_len(t_all *xlm)
+{
+	int i;
+	int j;
+
+	i = -1;
+	while (xlm->param.g_map[++i])
 	{
-		!xlm->sprite.flag_spr_len ? sprite_malloc(xlm) : 0;
-		i = -1;
-		xlm->sprite.spr_len = 0;
-		while (xlm->param.g_map[++i] && (j = -1))
-			while (xlm->param.g_map[i][++j])
-				if (ft_rhr("2MYPXHDZ", xlm->param.g_map[i][j]))
-				{
-					xlm->sprite.pos[xlm->sprite.spr_len].dir =\
-					(int)xlm->param.g_map[i][j];
-					xlm->sprite.pos[xlm->sprite.spr_len].x = j + 0.5;
-					xlm->sprite.pos[xlm->sprite.spr_len].y = i + 0.5;
-					xlm->sprite.spr_len++;
-				}
-		sprite_init(xlm);
+		j = 0;
+		while (xlm->param.g_map[i][j])
+			if (ft_rhr("2AMYPXHDZ", xlm->param.g_map[i][j++])) // 2 - обычный спрайт / M - мапа / Y - Морфиус / P - синяя пилюля / X - красная пилюля / H - ХП / A - патроны / G - армор / D - дигл / Z - суперствол
+				xlm->sprite.spr_len++;
+		if (j > xlm->param.map_x)
+			xlm->param.map_x = j;
+		if (i > xlm->param.map_y)
+			xlm->param.map_y = i;
 	}
+	if (xlm->sprite.spr_len)
+		sprite_malloc(xlm);
 }
 
 void		sprite_sort(t_all *xlm)

@@ -39,7 +39,7 @@ static t_all	ft_fornulll(t_all xlm)
 	xlm.move.down = 0;
 	xlm.move.right = 0;
 	xlm.move.left = 0;
-	xlm.width_square = 10;
+	xlm.width_square = 0;
 	xlm.player.plan_x = 0;
 	xlm.player.plan_y = 0;
 	xlm.neo.x = 0;

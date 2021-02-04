@@ -60,20 +60,20 @@ static t_map	ft_valyas(t_map param, int i, int j, int flaglen)
 {
 	while (param.g_map[i][j] && (flaglen == -1 || flaglen--))
 	{
-		if (ft_rhr("02MYPXHDZNSWE", param.g_map[i][j]))
+		if (ft_rhr("02AMYPXHDZNSWE", param.g_map[i][j]))
 		{
 			if (!param.resp_player.dir && ft_rhr("NSWE", param.g_map[i][j]))
 				param = ft_validm(param, i, j, 1);
 			else if (param.resp_player.dir && ft_rhr("NSWE", param.g_map[i][j]))
 				param.valid = DOUBLE_PLAYER_ERROR;
-			if (!(ft_rhr("102MYPXHDZNSWE", param.g_map[i][j - 1])) ||\
-			!(ft_rhr("102MYPXHDZNSWE", param.g_map[i - 1][j - 1])) ||\
-			!(ft_rhr("102MYPXHDZNSWE", param.g_map[i - 1][j])) ||\
-			!(ft_rhr("102MYPXHDZNSWE", param.g_map[i - 1][j + 1])) ||\
-			!(ft_rhr("102MYPXHDZNSWE", param.g_map[i][j + 1])) ||\
-			!(ft_rhr("102MYPXHDZNSWE", param.g_map[i + 1][j + 1])) ||\
-			!(ft_rhr("102MYPXHDZNSWE", param.g_map[i + 1][j])) ||\
-			!(ft_rhr("102MYPXHDZNSWE", param.g_map[i + 1][j - 1])))
+			if (!(ft_rhr("102AMYPXHDZNSWE", param.g_map[i][j - 1])) ||\
+			!(ft_rhr("102AMYPXHDZNSWE", param.g_map[i - 1][j - 1])) ||\
+			!(ft_rhr("102AMYPXHDZNSWE", param.g_map[i - 1][j])) ||\
+			!(ft_rhr("102AMYPXHDZNSWE", param.g_map[i - 1][j + 1])) ||\
+			!(ft_rhr("102AMYPXHDZNSWE", param.g_map[i][j + 1])) ||\
+			!(ft_rhr("102AMYPXHDZNSWE", param.g_map[i + 1][j + 1])) ||\
+			!(ft_rhr("102AMYPXHDZNSWE", param.g_map[i + 1][j])) ||\
+			!(ft_rhr("102AMYPXHDZNSWE", param.g_map[i + 1][j - 1])))
 				param.valid = MAP_NO_VALID;
 		}
 		else if (!(ft_rhr("1 ", param.g_map[i][j])))
