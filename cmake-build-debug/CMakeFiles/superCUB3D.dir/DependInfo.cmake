@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_cefl.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_sprite.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/draws/ft_draw_sprite.c.o"
+  "/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_stvol.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/draws/ft_draw_stvol.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_tex.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/draws/ft_draw_tex.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_select_texture_for_draw.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/draws/ft_select_texture_for_draw.c.o"
   "/Users/dpatrica/CLionProjects/superCUB3D/error_list/ft_error.c" "/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles/superCUB3D.dir/error_list/ft_error.c.o"

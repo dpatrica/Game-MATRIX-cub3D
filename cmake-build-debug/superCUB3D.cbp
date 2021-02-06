@@ -90,6 +90,9 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_sprite.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_stvol.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_tex.c">
 			<Option target="superCUB3D"/>
 		</Unit>

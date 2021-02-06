@@ -42,12 +42,23 @@ static void select_so(t_all *xlm)
 
 void 		ft_select_texture(t_all *xlm)
 {
-	if (xlm->neo.side == 0 && xlm->neo.step_x == 1)
-		select_ea(xlm);
-	else if (xlm->neo.side == 0 && xlm->neo.step_x == -1)
-		select_we(xlm);
-	else if (xlm->neo.side == 1 && xlm->neo.step_y == -1)
-		select_no(xlm);
-	else if (xlm->neo.side == 1 && xlm->neo.step_y == 1)
-		select_so(xlm);
+	if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '1')
+	{
+		if (xlm->neo.side == 0 && xlm->neo.step_x == 1)
+			select_ea(xlm);
+		else if (xlm->neo.side == 0 && xlm->neo.step_x == -1)
+			select_we(xlm);
+		else if (xlm->neo.side == 1 && xlm->neo.step_y == -1)
+			select_no(xlm);
+		else if (xlm->neo.side == 1 && xlm->neo.step_y == 1)
+			select_so(xlm);
+	}
+	else if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '3')
+	{
+		xlm->neo.tex_wid = xlm->sprite.all_tex[10].width;
+		xlm->neo.tex_hei = xlm->sprite.all_tex[10].height;
+		xlm->neo.adr = xlm->sprite.all_tex[10].adr;
+		xlm->neo.bpp = xlm->sprite.all_tex[10].bpp;
+		xlm->neo.tex_line = xlm->sprite.all_tex[10].line_len;
+	}
 }

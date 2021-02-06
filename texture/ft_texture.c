@@ -32,10 +32,10 @@ static void	get_agr(t_all *xlm)
 	&xlm->sprite.all_tex[7].line_len, &xlm->sprite.all_tex[7].iend);
 	xlm->sprite.all_tex[8].adr = mlx_get_data_addr(xlm->sprite.all_tex[8].tex, &xlm->sprite.all_tex[8].bpp,\
 	&xlm->sprite.all_tex[8].line_len, &xlm->sprite.all_tex[8].iend);
-//	xlm->sprite.all_tex[9].adr = mlx_get_data_addr(xlm->sprite.all_tex[9].tex, &xlm->sprite.all_tex[9].bpp,\
-//	&xlm->sprite.all_tex[9].line_len, &xlm->sprite.all_tex[9].iend);
-//	xlm->sprite.all_tex[10].adr = mlx_get_data_addr(xlm->sprite.all_tex[10].tex, &xlm->sprite.all_tex[10].bpp,\
-//	&xlm->sprite.all_tex[10].line_len, &xlm->sprite.all_tex[10].iend);
+	xlm->sprite.all_tex[9].adr = mlx_get_data_addr(xlm->sprite.all_tex[9].tex, &xlm->sprite.all_tex[9].bpp,\
+	&xlm->sprite.all_tex[9].line_len, &xlm->sprite.all_tex[9].iend);
+	xlm->sprite.all_tex[10].adr = mlx_get_data_addr(xlm->sprite.all_tex[10].tex, &xlm->sprite.all_tex[10].bpp,\
+	&xlm->sprite.all_tex[10].line_len, &xlm->sprite.all_tex[10].iend);
 //	xlm->sprite.all_tex[11].adr = mlx_get_data_addr(xlm->sprite.all_tex[11].tex, &xlm->sprite.all_tex[11].bpp,\
 //	&xlm->sprite.all_tex[11].line_len, &xlm->sprite.all_tex[11].iend);
 //	xlm->sprite.all_tex[12].adr = mlx_get_data_addr(xlm->sprite.all_tex[12].tex, &xlm->sprite.all_tex[12].bpp,\
@@ -84,10 +84,10 @@ void		ft_texture(t_all *xlm)
 	&xlm->sprite.all_tex[7].width, &xlm->sprite.all_tex[7].height);
 	xlm->sprite.all_tex[8].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/superstvol.xpm",\
 	&xlm->sprite.all_tex[8].width, &xlm->sprite.all_tex[8].height);
-//	xlm->sprite.all_tex[9].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
-//	&xlm->sprite.all_tex[9].width, &xlm->sprite.all_tex[9].height);
-//	xlm->sprite.all_tex[10].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
-//	&xlm->sprite.all_tex[10].width, &xlm->sprite.all_tex[10].height);
+	xlm->sprite.all_tex[9].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/diglruka.xpm",\
+	&xlm->sprite.all_tex[9].width, &xlm->sprite.all_tex[9].height);
+	xlm->sprite.all_tex[10].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/oboi4.xpm",\
+	&xlm->sprite.all_tex[10].width, &xlm->sprite.all_tex[10].height);
 //	xlm->sprite.all_tex[11].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
 //	&xlm->sprite.all_tex[11].width, &xlm->sprite.all_tex[11].height);
 //	xlm->sprite.all_tex[12].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\

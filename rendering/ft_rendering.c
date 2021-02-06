@@ -24,5 +24,8 @@ void ft_render(t_all *xlm)
 	if (xlm->player.map && xlm->move.map && xlm->height_square && xlm->width_square)
 		ft_draw_map(xlm, START_X, START_Y);
 	if (xlm->player.digl)
+	{
 		ft_draw_aim(xlm);
+		ft_draw_stvol(xlm);
+	}
 }

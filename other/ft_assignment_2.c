@@ -16,6 +16,7 @@ static t_all	ft_fornulllll_3(t_all xlm)
 	xlm.damage = 0;
 	xlm.param.resp_player.digl = 0;
 	xlm.param.resp_player.super_stvol = 0;
+	xlm.move.open = 0;
 	return (xlm);
 }
 

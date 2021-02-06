@@ -130,6 +130,7 @@ typedef struct s_move
 	double 		r_m_rot;
 	double 		l_m_rot;
 	double 		mouse_cam;
+	int			open;
 	int			exit;
 }				t_move;
 
@@ -326,5 +327,6 @@ void	ft_draw_aim(t_all *xlm);
 void	sprite_init(t_all *xlm);
 int		button_press(int key, t_move *move);
 int		button_release(int key, t_move *move);
+void	ft_draw_stvol(t_all *xlm);
 
 #endif

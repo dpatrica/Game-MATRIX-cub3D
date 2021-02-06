@@ -50,7 +50,7 @@ static void computation_distance(t_all *xlm, int collision, int x)
 			xlm->neo.y += xlm->neo.step_y;
 			xlm->neo.side = 1;
 		}
-		if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '1')
+		if (ft_rhr("13", xlm->param.g_map[xlm->neo.y][xlm->neo.x]))
 			collision = 1;
 	}
 	if (xlm->neo.side == 0)
@@ -59,7 +59,8 @@ static void computation_distance(t_all *xlm, int collision, int x)
 	else
 		xlm->neo.dist =\
 		(xlm->neo.y - Y + (1 - xlm->neo.step_y) / 2) / xlm->neo.rdir_y;
-	xlm->sprite.wid_buf[x] = xlm->neo.dist;
+	if (xlm->sprite.spr_len)
+		xlm->sprite.wid_buf[x] = xlm->neo.dist;
 }
 
 static void computation_side_step(t_all *xlm, int x)

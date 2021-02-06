@@ -25,6 +25,8 @@ int		key_press(int key, t_all *xlm)
 		xlm->move.exit = 1;
 	if (key == 12)
 		xlm->move.rpm = 1;
+	if (key == 49)
+		xlm->move.open = 1;
 	return (0);
 }
 
@@ -48,6 +50,8 @@ int		key_release(int key, t_all *xlm)
 		xlm->move.exit = 0;
 	if (key == 12)
 		xlm->move.rpm = 0;
+	if (key == 49)
+		xlm->move.open = 0;
 	return (0);
 }
 
