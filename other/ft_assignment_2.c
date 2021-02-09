@@ -12,11 +12,14 @@ static t_all	ft_fornulllll_3(t_all xlm)
 	xlm.param.map_y = 0;
 	xlm.move.rpm = 0;
 	xlm.move.lpm = 0;
-	xlm.kill = -1;
-	xlm.damage = 0;
 	xlm.param.resp_player.digl = 0;
 	xlm.param.resp_player.super_stvol = 0;
 	xlm.move.open = 0;
+	xlm.action.damage = 0;
+	xlm.action.kill = -1;
+	xlm.action.shot = 0;
+	xlm.param.resp_player.cartridges = 10;
+	xlm.player.cartridges = 0;
 	return (xlm);
 }
 

@@ -224,6 +224,33 @@ draws/ft_draw_cefl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.s
 .PHONY : draws/ft_draw_cefl.c.s
 
+draws/ft_draw_hud.o: draws/ft_draw_hud.c.o
+
+.PHONY : draws/ft_draw_hud.o
+
+# target to build an object file
+draws/ft_draw_hud.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o
+.PHONY : draws/ft_draw_hud.c.o
+
+draws/ft_draw_hud.i: draws/ft_draw_hud.c.i
+
+.PHONY : draws/ft_draw_hud.i
+
+# target to preprocess a source file
+draws/ft_draw_hud.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.i
+.PHONY : draws/ft_draw_hud.c.i
+
+draws/ft_draw_hud.s: draws/ft_draw_hud.c.s
+
+.PHONY : draws/ft_draw_hud.s
+
+# target to generate assembly for a file
+draws/ft_draw_hud.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.s
+.PHONY : draws/ft_draw_hud.c.s
+
 draws/ft_draw_sprite.o: draws/ft_draw_sprite.c.o
 
 .PHONY : draws/ft_draw_sprite.o
@@ -728,6 +755,9 @@ help:
 	@echo "... draws/ft_draw_cefl.o"
 	@echo "... draws/ft_draw_cefl.i"
 	@echo "... draws/ft_draw_cefl.s"
+	@echo "... draws/ft_draw_hud.o"
+	@echo "... draws/ft_draw_hud.i"
+	@echo "... draws/ft_draw_hud.s"
 	@echo "... draws/ft_draw_sprite.o"
 	@echo "... draws/ft_draw_sprite.i"
 	@echo "... draws/ft_draw_sprite.s"

@@ -29,7 +29,8 @@ SRCS	=	./cub3d.c\
 			./draws/ft_draw_cefl.c\
 			./draws/ft_select_texture_for_draw.c\
 			./draws/ft_draw_sprite.c\
-			./rendering/ft_rendering.c
+			./rendering/ft_rendering.c\
+			./draws/ft_draw_hud.c
 
 LIBSRCS	=	./libft/ft_strlen.c\
 			./libft/ft_memset.c\

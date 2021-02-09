@@ -87,6 +87,9 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_cefl.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_hud.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_sprite.c">
 			<Option target="superCUB3D"/>
 		</Unit>

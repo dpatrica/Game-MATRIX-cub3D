@@ -140,6 +140,7 @@ typedef struct	s_player
 	double		y;
 	int			hp;
 	int			ammo;
+	int 		cartridges;
 	int			map;
 	int 		digl;
 	int 		super_stvol;
@@ -206,7 +207,7 @@ typedef struct	s_wht
 typedef struct	s_pos
 {
 	int 		dir;
-	int 		hp;
+	double		hp;
 	double		x;
 	double		y;
 }				t_pos;
@@ -230,7 +231,7 @@ typedef struct	s_sprite
 	double		inde;
 	double		trans_x;
 	double		trans_y;
-	t_all_spr	all_tex[16];
+	t_all_spr	all_tex[32];
 	int			spr_scr;
 	int 		move_scr;
 	int 		spr_hi;
@@ -261,10 +262,15 @@ typedef struct	s_tex
 	t_wht		skybox;
 }				t_tex;
 
-typedef struct	s_all
+typedef struct	s_action
 {
+	int			shot;
 	int 		damage;
 	int			kill;
+}				t_action;
+
+typedef struct	s_all
+{
 	double		xxx;
 	double		yyy;
 	void		*mlx;
@@ -280,6 +286,7 @@ typedef struct	s_all
 	t_image		img;
 	t_tex		tex;
 	t_sprite	sprite;
+	t_action	action;
 }				t_all;
 
 int		cub3d(int argc, char **argv, int lvl);
@@ -328,5 +335,7 @@ void	sprite_init(t_all *xlm);
 int		button_press(int key, t_move *move);
 int		button_release(int key, t_move *move);
 void	ft_draw_stvol(t_all *xlm);
+void	ft_draw_super_stvol(t_all *xlm);
+void	ft_draw_hud(t_all *xlm);
 
 #endif

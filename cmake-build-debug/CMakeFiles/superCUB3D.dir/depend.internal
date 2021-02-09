@@ -19,6 +19,12 @@ CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_hud.c
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/draws/ft_draw_sprite.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_sprite.c
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h

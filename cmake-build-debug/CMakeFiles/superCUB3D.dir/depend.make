@@ -19,6 +19,12 @@ CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.o: ../libft/libft.h
 CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/superCUB3D.dir/draws/ft_draw_cefl.c.o: ../minilibx_opengl/mlx.h
 
+CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o: ../draws/ft_draw_hud.c
+CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o: ../includes/cub3d.h
+CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o: ../libft/libft.h
+CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o: ../minilibx_opengl/mlx.h
+
 CMakeFiles/superCUB3D.dir/draws/ft_draw_sprite.c.o: ../draws/ft_draw_sprite.c
 CMakeFiles/superCUB3D.dir/draws/ft_draw_sprite.c.o: ../includes/cub3d.h
 CMakeFiles/superCUB3D.dir/draws/ft_draw_sprite.c.o: ../libft/libft.h

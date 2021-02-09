@@ -55,10 +55,10 @@ void 		ft_select_texture(t_all *xlm)
 	}
 	else if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '3')
 	{
-		xlm->neo.tex_wid = xlm->sprite.all_tex[10].width;
-		xlm->neo.tex_hei = xlm->sprite.all_tex[10].height;
-		xlm->neo.adr = xlm->sprite.all_tex[10].adr;
-		xlm->neo.bpp = xlm->sprite.all_tex[10].bpp;
-		xlm->neo.tex_line = xlm->sprite.all_tex[10].line_len;
+		xlm->neo.tex_wid = xlm->sprite.all_tex[11].width;
+		xlm->neo.tex_hei = xlm->sprite.all_tex[11].height;
+		xlm->neo.adr = xlm->sprite.all_tex[11].adr;
+		xlm->neo.bpp = xlm->sprite.all_tex[11].bpp;
+		xlm->neo.tex_line = xlm->sprite.all_tex[11].line_len;
 	}
 }

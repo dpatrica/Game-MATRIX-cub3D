@@ -96,9 +96,9 @@ static void move_player_2(t_all *xlm)
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
 		xlm->player.map = 1;
-		xlm->kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
+		xlm->action.kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
 		sprite_init(xlm);
-		xlm->kill = -1;
+		xlm->action.kill = -1;
 //		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
 //		sprite_check(xlm);
 	}
@@ -106,19 +106,22 @@ static void move_player_2(t_all *xlm)
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
 		xlm->player.hp += 10;
-		xlm->kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
+		if (xlm->player.hp > 100)
+			xlm->player.hp = 100;
+		xlm->action.kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
 		sprite_init(xlm);
-		xlm->kill = -1;
+		xlm->action.kill = -1;
 //		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
 //		sprite_check(xlm);
 	}
 	if (xlm->param.g_map[(int)Y][(int)X] == 'A')
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
-		xlm->player.ammo += 10;
-		xlm->kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
+		xlm->player.cartridges += 10;
+		xlm->player.hp -= 7;
+		xlm->action.kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
 		sprite_init(xlm);
-		xlm->kill = -1;
+		xlm->action.kill = -1;
 //		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
 //		sprite_check(xlm);
 	}
@@ -126,9 +129,9 @@ static void move_player_2(t_all *xlm)
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
 		xlm->player.digl = 1;
-		xlm->kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
+		xlm->action.kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
 		sprite_init(xlm);
-		xlm->kill = -1;
+		xlm->action.kill = -1;
 //		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
 //		sprite_check(xlm);
 	}
@@ -136,9 +139,9 @@ static void move_player_2(t_all *xlm)
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
 		xlm->player.super_stvol = 1;
-		xlm->kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
+		xlm->action.kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
 		sprite_init(xlm);
-		xlm->kill = -1;
+		xlm->action.kill = -1;
 //		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
 //		sprite_check(xlm);
 	}

@@ -110,17 +110,26 @@ static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
 	y_t = y_t < 0 ? 0 : y_t;
 	color = (unsigned int*)(xlm->sprite.adr + xlm->sprite.line_len * y_t +\
 	x_t * (xlm->sprite.bpp / 8));
-	if (xlm->player.digl && (x == (xlm->param.width / 2) && y == (xlm->param.height / 2) && (int)*color >= 0))
+	if (xlm->player.digl && !xlm->player.super_stvol && (x == (xlm->param.width / 2) && y == (xlm->param.height / 2) && (int)*color >= 0))
 	{
-		if (xlm->move.rpm == 1 && xlm->damage)
+		if (xlm->move.rpm && xlm->action.damage > 0 && xlm->player.cartridges)
 		{
-			xlm->sprite.pos[xlm->sprite.spr[i]].hp -= xlm->damage;
+			xlm->sprite.pos[xlm->sprite.spr[i]].hp -= xlm->action.damage;
 			if (!xlm->sprite.pos[xlm->sprite.spr[i]].hp)
 			{
 				xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y - 0.5)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x - 0.5)] = '0';
-				xlm->kill = xlm->sprite.spr[i];
+				xlm->action.kill = xlm->sprite.spr[i];
 			}
-			xlm->damage = 0;
+			xlm->action.damage = 0;
+		}
+	}
+	else if (xlm->player.super_stvol && xlm->move.rpm && (int)*color)
+	{
+		xlm->sprite.pos[xlm->sprite.spr[i]].hp -= 0.005;
+		if (xlm->sprite.pos[xlm->sprite.spr[i]].hp <= 0)
+		{
+			xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y - 0.5)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x - 0.5)] = '0';
+			xlm->action.kill = xlm->sprite.spr[i];
 		}
 	}
 	my_pixel_put(xlm, x, y, (int)*color);

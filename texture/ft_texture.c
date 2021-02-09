@@ -6,6 +6,9 @@
 
 static void	get_agr(t_all *xlm)
 {
+	int i;
+
+	i = 0;
 	xlm->tex.no.adr = mlx_get_data_addr(xlm->tex.no.tex, &xlm->tex.no.bpp,\
 	&xlm->tex.no.line_len, &xlm->tex.no.iend);
 	xlm->tex.so.adr = mlx_get_data_addr(xlm->tex.so.tex, &xlm->tex.so.bpp,\
@@ -14,9 +17,15 @@ static void	get_agr(t_all *xlm)
 	&xlm->tex.we.line_len, &xlm->tex.we.iend);
 	xlm->tex.ea.adr = mlx_get_data_addr(xlm->tex.ea.tex, &xlm->tex.ea.bpp,\
 	&xlm->tex.ea.line_len, &xlm->tex.ea.iend);
-	xlm->sprite.all_tex[0].adr = mlx_get_data_addr(xlm->sprite.all_tex[0].tex, &xlm->sprite.all_tex[0].bpp,\
-	&xlm->sprite.all_tex[0].line_len, &xlm->sprite.all_tex[0].iend);
-	xlm->sprite.all_tex[1].adr = mlx_get_data_addr(xlm->sprite.all_tex[1].tex, &xlm->sprite.all_tex[1].bpp,\
+	xlm->tex.skybox.adr = mlx_get_data_addr(xlm->tex.skybox.tex,\
+	&xlm->tex.skybox.bpp, &xlm->tex.skybox.line_len, &xlm->tex.skybox.iend);
+	while (i <= 17)
+	{
+		xlm->sprite.all_tex[i].adr = mlx_get_data_addr(xlm->sprite.all_tex[i].tex, &xlm->sprite.all_tex[i].bpp,\
+		&xlm->sprite.all_tex[i].line_len, &xlm->sprite.all_tex[i].iend);
+		i++;
+	}
+/*	xlm->sprite.all_tex[1].adr = mlx_get_data_addr(xlm->sprite.all_tex[1].tex, &xlm->sprite.all_tex[1].bpp,\
 	&xlm->sprite.all_tex[1].line_len, &xlm->sprite.all_tex[1].iend);
 	xlm->sprite.all_tex[2].adr = mlx_get_data_addr(xlm->sprite.all_tex[2].tex, &xlm->sprite.all_tex[2].bpp,\
 	&xlm->sprite.all_tex[2].line_len, &xlm->sprite.all_tex[2].iend);
@@ -36,18 +45,32 @@ static void	get_agr(t_all *xlm)
 	&xlm->sprite.all_tex[9].line_len, &xlm->sprite.all_tex[9].iend);
 	xlm->sprite.all_tex[10].adr = mlx_get_data_addr(xlm->sprite.all_tex[10].tex, &xlm->sprite.all_tex[10].bpp,\
 	&xlm->sprite.all_tex[10].line_len, &xlm->sprite.all_tex[10].iend);
-//	xlm->sprite.all_tex[11].adr = mlx_get_data_addr(xlm->sprite.all_tex[11].tex, &xlm->sprite.all_tex[11].bpp,\
-//	&xlm->sprite.all_tex[11].line_len, &xlm->sprite.all_tex[11].iend);
-//	xlm->sprite.all_tex[12].adr = mlx_get_data_addr(xlm->sprite.all_tex[12].tex, &xlm->sprite.all_tex[12].bpp,\
-//	&xlm->sprite.all_tex[12].line_len, &xlm->sprite.all_tex[12].iend);
-//	xlm->sprite.all_tex[13].adr = mlx_get_data_addr(xlm->sprite.all_tex[13].tex, &xlm->sprite.all_tex[13].bpp,\
-//	&xlm->sprite.all_tex[13].line_len, &xlm->sprite.all_tex[13].iend);
-//	xlm->sprite.all_tex[14].adr = mlx_get_data_addr(xlm->sprite.all_tex[14].tex, &xlm->sprite.all_tex[14].bpp,\
-//	&xlm->sprite.all_tex[14].line_len, &xlm->sprite.all_tex[14].iend);
-//	xlm->sprite.all_tex[15].adr = mlx_get_data_addr(xlm->sprite.all_tex[15].tex, &xlm->sprite.all_tex[15].bpp,\
-//	&xlm->sprite.all_tex[15].line_len, &xlm->sprite.all_tex[15].iend);
-	xlm->tex.skybox.adr = mlx_get_data_addr(xlm->tex.skybox.tex,\
-	&xlm->tex.skybox.bpp, &xlm->tex.skybox.line_len, &xlm->tex.skybox.iend);
+	xlm->sprite.all_tex[11].adr = mlx_get_data_addr(xlm->sprite.all_tex[11].tex, &xlm->sprite.all_tex[11].bpp,\
+	&xlm->sprite.all_tex[11].line_len, &xlm->sprite.all_tex[11].iend);
+	xlm->sprite.all_tex[12].adr = mlx_get_data_addr(xlm->sprite.all_tex[12].tex, &xlm->sprite.all_tex[12].bpp,\
+	&xlm->sprite.all_tex[12].line_len, &xlm->sprite.all_tex[12].iend);
+	xlm->sprite.all_tex[13].adr = mlx_get_data_addr(xlm->sprite.all_tex[13].tex, &xlm->sprite.all_tex[13].bpp,\
+	&xlm->sprite.all_tex[13].line_len, &xlm->sprite.all_tex[13].iend);
+	xlm->sprite.all_tex[14].adr = mlx_get_data_addr(xlm->sprite.all_tex[14].tex, &xlm->sprite.all_tex[14].bpp,\
+	&xlm->sprite.all_tex[14].line_len, &xlm->sprite.all_tex[14].iend);
+	xlm->sprite.all_tex[15].adr = mlx_get_data_addr(xlm->sprite.all_tex[15].tex, &xlm->sprite.all_tex[15].bpp,\
+	&xlm->sprite.all_tex[15].line_len, &xlm->sprite.all_tex[15].iend);
+	xlm->sprite.all_tex[16].adr = mlx_get_data_addr(xlm->sprite.all_tex[16].tex, &xlm->sprite.all_tex[16].bpp,\
+	&xlm->sprite.all_tex[16].line_len, &xlm->sprite.all_tex[16].iend);
+	xlm->sprite.all_tex[17].adr = mlx_get_data_addr(xlm->sprite.all_tex[17].tex, &xlm->sprite.all_tex[17].bpp,\
+	&xlm->sprite.all_tex[17].line_len, &xlm->sprite.all_tex[17].iend);
+	xlm->sprite.all_tex[18].adr = mlx_get_data_addr(xlm->sprite.all_tex[18].tex, &xlm->sprite.all_tex[18].bpp,\
+	&xlm->sprite.all_tex[18].line_len, &xlm->sprite.all_tex[18].iend);
+	xlm->sprite.all_tex[19].adr = mlx_get_data_addr(xlm->sprite.all_tex[19].tex, &xlm->sprite.all_tex[19].bpp,\
+	&xlm->sprite.all_tex[19].line_len, &xlm->sprite.all_tex[19].iend);
+	xlm->sprite.all_tex[20].adr = mlx_get_data_addr(xlm->sprite.all_tex[20].tex, &xlm->sprite.all_tex[20].bpp,\
+	&xlm->sprite.all_tex[20].line_len, &xlm->sprite.all_tex[20].iend);
+	xlm->sprite.all_tex[21].adr = mlx_get_data_addr(xlm->sprite.all_tex[21].tex, &xlm->sprite.all_tex[21].bpp,\
+	&xlm->sprite.all_tex[21].line_len, &xlm->sprite.all_tex[21].iend);
+	xlm->sprite.all_tex[22].adr = mlx_get_data_addr(xlm->sprite.all_tex[22].tex, &xlm->sprite.all_tex[22].bpp,\
+	&xlm->sprite.all_tex[22].line_len, &xlm->sprite.all_tex[22].iend);
+	xlm->sprite.all_tex[23].adr = mlx_get_data_addr(xlm->sprite.all_tex[23].tex, &xlm->sprite.all_tex[23].bpp,\
+	&xlm->sprite.all_tex[23].line_len, &xlm->sprite.all_tex[23].iend);*/
 	if (!xlm->tex.no.adr || !xlm->tex.so.adr || !xlm->tex.we.adr ||\
 	!xlm->tex.ea.adr || !xlm->tex.skybox.adr)
 	{
@@ -66,6 +89,7 @@ void		ft_texture(t_all *xlm)
 	&xlm->tex.we.width, &xlm->tex.we.height);
 	xlm->tex.ea.tex = mlx_xpm_file_to_image(xlm->mlx, xlm->param.ea,\
 	&xlm->tex.ea.width, &xlm->tex.ea.height);
+	xlm->tex.skybox.tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/matrix.xpm", &xlm->tex.skybox.width, &xlm->tex.skybox.height);
 	xlm->sprite.all_tex[0].tex = mlx_xpm_file_to_image(xlm->mlx, xlm->param.s,\
 	&xlm->sprite.all_tex[0].width, &xlm->sprite.all_tex[0].height);
 	xlm->sprite.all_tex[1].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/morf500х500.xpm",\
@@ -84,21 +108,32 @@ void		ft_texture(t_all *xlm)
 	&xlm->sprite.all_tex[7].width, &xlm->sprite.all_tex[7].height);
 	xlm->sprite.all_tex[8].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/superstvol.xpm",\
 	&xlm->sprite.all_tex[8].width, &xlm->sprite.all_tex[8].height);
-	xlm->sprite.all_tex[9].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/diglruka.xpm",\
+	xlm->sprite.all_tex[9].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/PUshkaNEW.xpm",\
 	&xlm->sprite.all_tex[9].width, &xlm->sprite.all_tex[9].height);
-	xlm->sprite.all_tex[10].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/oboi4.xpm",\
+	xlm->sprite.all_tex[10].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/PUshkaVISTRELNEW.xpm",\
 	&xlm->sprite.all_tex[10].width, &xlm->sprite.all_tex[10].height);
-//	xlm->sprite.all_tex[11].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
-//	&xlm->sprite.all_tex[11].width, &xlm->sprite.all_tex[11].height);
-//	xlm->sprite.all_tex[12].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
-//	&xlm->sprite.all_tex[12].width, &xlm->sprite.all_tex[12].height);
-//	xlm->sprite.all_tex[13].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
-//	&xlm->sprite.all_tex[13].width, &xlm->sprite.all_tex[13].height);
-//	xlm->sprite.all_tex[14].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
-//	&xlm->sprite.all_tex[14].width, &xlm->sprite.all_tex[14].height);
-//	xlm->sprite.all_tex[15].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
-//	&xlm->sprite.all_tex[15].width, &xlm->sprite.all_tex[15].height);
-	xlm->tex.skybox.tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/matrix.xpm", &xlm->tex.skybox.width, &xlm->tex.skybox.height);
+	xlm->sprite.all_tex[11].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/oboi4.xpm",\
+	&xlm->sprite.all_tex[11].width, &xlm->sprite.all_tex[11].height);
+	xlm->sprite.all_tex[12].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/superstvolNEW.xpm",\
+	&xlm->sprite.all_tex[12].width, &xlm->sprite.all_tex[12].height);
+	xlm->sprite.all_tex[13].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/superstvolNEW2_VS.xpm",\
+	&xlm->sprite.all_tex[13].width, &xlm->sprite.all_tex[13].height);
+	xlm->sprite.all_tex[14].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/superstvolNEW2_V2S.xpm",\
+	&xlm->sprite.all_tex[14].width, &xlm->sprite.all_tex[14].height);
+	xlm->sprite.all_tex[15].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/superstvolNEW2_V3S.xpm",\
+	&xlm->sprite.all_tex[15].width, &xlm->sprite.all_tex[15].height);
+	xlm->sprite.all_tex[16].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/superstvolNEW2_V4S.xpm",\
+	&xlm->sprite.all_tex[16].width, &xlm->sprite.all_tex[16].height);
+	xlm->sprite.all_tex[17].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/HUD2RGB.xpm",\
+	&xlm->sprite.all_tex[17].width, &xlm->sprite.all_tex[17].height);
+//	xlm->sprite.all_tex[18].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/superstvolNEW.xpm",\
+//	&xlm->sprite.all_tex[18].width, &xlm->sprite.all_tex[18].height);
+//	xlm->sprite.all_tex[19].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
+//	&xlm->sprite.all_tex[19].width, &xlm->sprite.all_tex[19].height);
+//	xlm->sprite.all_tex[20].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
+//	&xlm->sprite.all_tex[20].width, &xlm->sprite.all_tex[20].height);
+//	xlm->sprite.all_tex[21].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
+//	&xlm->sprite.all_tex[21].width, &xlm->sprite.all_tex[21].height);
 	if (!xlm->tex.no.tex || !xlm->tex.so.tex || !xlm->tex.we.tex ||\
 	!xlm->tex.ea.tex || !xlm->tex.skybox.tex)
 	{

@@ -32,12 +32,12 @@ void		sprite_init(t_all *xlm)
 {
 	int i;
 
-	if (xlm->kill == -1)
+	if (xlm->action.kill == -1)
 	{
 		i = -1;
 		while (++i < xlm->sprite.spr_len)
 		{
-			xlm->sprite.pos[i].hp = 10000;
+			xlm->sprite.pos[i].hp = 100000;
 			if (xlm->sprite.pos[i].dir == '2')
 				xlm->sprite.pos[i].hp = 5;
 		}
@@ -45,8 +45,8 @@ void		sprite_init(t_all *xlm)
 	else
 	{
 		xlm->sprite.spr_len--;
-		while (xlm->kill < xlm->sprite.spr_len)
-			xlm->sprite.pos[xlm->kill] = xlm->sprite.pos[++xlm->kill];
+		while (xlm->action.kill < xlm->sprite.spr_len)
+			xlm->sprite.pos[xlm->action.kill] = xlm->sprite.pos[++xlm->action.kill];
 	}
 }
 
@@ -59,7 +59,7 @@ void		sprite_check(t_all *xlm)
 	xlm->sprite.spr_len = 0;
 	while (xlm->param.g_map[++i] && (j = -1))
 		while (xlm->param.g_map[i][++j])
-			if (ft_rhr("2AMYPXHDZ", xlm->param.g_map[i][j]))
+			if (ft_rhr("2ACMYPXHDZ", xlm->param.g_map[i][j]))
 			{
 				xlm->sprite.pos[xlm->sprite.spr_len].dir =\
 				(int)xlm->param.g_map[i][j];
@@ -80,7 +80,7 @@ void		sprite_map_len(t_all *xlm)
 	{
 		j = 0;
 		while (xlm->param.g_map[i][j])
-			if (ft_rhr("2AMYPXHDZ", xlm->param.g_map[i][j++])) // 2 - обычный спрайт / M - мапа / Y - Морфиус / P - синяя пилюля / X - красная пилюля / H - ХП / A - патроны / G - армор / D - дигл / Z - суперствол
+			if (ft_rhr("2ACMYPXHDZ", xlm->param.g_map[i][j++])) // 2 - обычный спрайт / M - мапа / Y - Морфиус / P - синяя пилюля / X - красная пилюля / H - ХП / A - патроны / G - армор / D - дигл / Z - суперствол
 				xlm->sprite.spr_len++;
 		if (j > xlm->param.map_x)
 			xlm->param.map_x = j;
