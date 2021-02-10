@@ -42,7 +42,7 @@ static void select_so(t_all *xlm)
 
 void 		ft_select_texture(t_all *xlm)
 {
-	if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '1')
+	if (ft_rhr("17", xlm->param.g_map[xlm->neo.y][xlm->neo.x]) || (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '3' && xlm->param.lvl))
 	{
 		if (xlm->neo.side == 0 && xlm->neo.step_x == 1)
 			select_ea(xlm);

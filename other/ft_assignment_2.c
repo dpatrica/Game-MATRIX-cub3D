@@ -33,6 +33,8 @@ static t_all	ft_fornulllll_3(t_all xlm)
 	xlm.hud.y_start_ar = 0;
 	xlm.hud.y_end_ar = 0;
 	xlm.flag = 1;
+	xlm.action.wall_damage = 5;
+	xlm.action.wall_flag = 0;
 	return (xlm);
 }
 

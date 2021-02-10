@@ -50,7 +50,7 @@ static void computation_distance(t_all *xlm, int collision, int x)
 			xlm->neo.y += xlm->neo.step_y;
 			xlm->neo.side = 1;
 		}
-		if (ft_rhr("1345", xlm->param.g_map[xlm->neo.y][xlm->neo.x]))
+		if (ft_rhr("13457", xlm->param.g_map[xlm->neo.y][xlm->neo.x]))
 			collision = 1;
 	}
 	if (xlm->neo.side == 0)
@@ -107,9 +107,22 @@ void	ft_draw_tex(t_all *xlm)
 			xlm->neo.tex_pos += xlm->neo.step;
 			if (xlm->neo.adr)
 			{
-				color = (unsigned int *) (xlm->neo.adr + xlm->neo.tex_line * \
+				color = (unsigned int*)(xlm->neo.adr + xlm->neo.tex_line * \
                 xlm->neo.tex_y + xlm->neo.tex_x * (xlm->neo.bpp / 8));
-				my_pixel_put(xlm, x, y, (int) *color);
+                if (x == (xlm->param.width / 2) && y == (xlm->param.height / 2) && xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '7' && (int)*color >= 0)
+				{
+					if (xlm->move.rpm && xlm->action.damage && xlm->player.digl && xlm->player.cartridges && xlm->action.wall_flag)
+					{
+						xlm->action.wall_damage--;
+						if (!xlm->action.wall_damage)
+						{
+							xlm->param.g_map[xlm->neo.y][xlm->neo.x] = '0';
+							xlm->action.wall_damage = 5;
+						}
+						xlm->action.wall_flag = 0;
+					}
+				}
+				my_pixel_put(xlm, x, y, (int)*color);
 			}
 		}
 //		if (xlm->param.lvl == 2)

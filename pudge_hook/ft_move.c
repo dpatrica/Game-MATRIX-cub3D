@@ -164,6 +164,8 @@ static void move_player_2(t_all *xlm)
 		xlm->param.g_map[(int)Y + 1][(int)X] = '5';
 		xlm->flag = 0;
 	}
+	if (xlm->flag && xlm->param.g_map[(int)Y][(int)X] == 'B')
+		Y -= 1;
 }
 
 static void move_player(t_all *xlm)

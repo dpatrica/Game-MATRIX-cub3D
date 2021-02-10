@@ -266,6 +266,8 @@ typedef struct	s_action
 {
 	int			shot;
 	int 		damage;
+	int			wall_damage;
+	int			wall_flag;
 	int			kill;
 }				t_action;
 

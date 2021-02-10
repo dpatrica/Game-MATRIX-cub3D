@@ -14,7 +14,7 @@ static t_map	mainik(t_map param, int argc, char **argv)
 //	else if ((argc == 3) && (++param.save) && (ft_strncmp(argv[2], "--save", 7)))
 //		param.valid = SAVE_ERROR;
 	if (!param.valid)
-		param = ft_parser(param,(param.lvl ? *argv : "../maps/map.cub"));
+		param = ft_parser(param, (param.lvl ? *argv : "../maps/map.cub")); //"../maps/map2.cub"); //(param.lvl ? *argv : "../maps/map.cub"));
 //		param = ft_parser(param, argv[1]);
 	if (!param.valid)
 		param = ft_valid(param, 0, 0, 0);
