@@ -30,14 +30,14 @@ static int	draw_floor_2(t_all *xlm, int x, int y)
 
 	xlm->neo.celling_x = (int)xlm->neo.floor_x;
 	xlm->neo.celling_y = (int)xlm->neo.floor_y;
-	x_t = (int)(xlm->tex.we.width * (xlm->neo.floor_x - xlm->neo.celling_x)) &\
-	(xlm->tex.we.width - 1);
-	y_t = (int)(xlm->tex.we.height * (xlm->neo.floor_y - xlm->neo.celling_y)) &\
-	(xlm->tex.we.height - 1);
+	x_t = (int)(xlm->tex.skybox.width * (xlm->neo.floor_x - xlm->neo.celling_x)) &\
+	(xlm->tex.skybox.width - 1);
+	y_t = (int)(xlm->tex.skybox.height * (xlm->neo.floor_y - xlm->neo.celling_y)) &\
+	(xlm->tex.skybox.height - 1);
 	xlm->neo.floor_x += xlm->neo.f_step_x;
 	xlm->neo.floor_y += xlm->neo.f_step_y;
 	color = (unsigned int*)\
-	(xlm->tex.we.adr + xlm->tex.we.line_len * y_t + x_t * (xlm->tex.we.bpp / 8));
+	(xlm->tex.skybox.adr + xlm->tex.skybox.line_len * y_t + x_t * (xlm->tex.skybox.bpp / 8));
 	my_pixel_put(xlm, x, y, (int)*color);
 	return (1);
 }

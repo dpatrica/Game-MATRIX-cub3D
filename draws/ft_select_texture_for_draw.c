@@ -61,4 +61,19 @@ void 		ft_select_texture(t_all *xlm)
 		xlm->neo.bpp = xlm->sprite.all_tex[11].bpp;
 		xlm->neo.tex_line = xlm->sprite.all_tex[11].line_len;
 	}
+	else if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '4')
+	{
+		if (xlm->neo.side == 0 && xlm->neo.step_x == 1)
+		{
+			xlm->neo.tex_wid = xlm->sprite.all_tex[19].width;
+			xlm->neo.tex_hei = xlm->sprite.all_tex[19].height;
+			xlm->neo.adr = xlm->sprite.all_tex[19].adr;
+			xlm->neo.bpp = xlm->sprite.all_tex[19].bpp;
+			xlm->neo.tex_line = xlm->sprite.all_tex[19].line_len;
+		}
+		else
+			xlm->neo.adr = NULL;
+	}
+	else if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '5')
+		xlm->neo.adr = NULL;
 }

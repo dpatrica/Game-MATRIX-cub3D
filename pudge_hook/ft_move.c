@@ -60,10 +60,10 @@ static void turn_player(t_all *xlm, double start_dir_x, double start_plane_x)
 
 static void move_player_2(t_all *xlm)
 {
-	if (xlm->move.left == 1 && !ft_rhr("123Y", xlm->param.g_map[(int)(Y -\
+	if (xlm->move.left == 1 && !ft_rhr("12345Y", xlm->param.g_map[(int)(Y -\
 	((SPEED + 0.1) * xlm->player.dir_x))][(int)X]))
 		Y -= SPEED * xlm->player.dir_x;
-	if (xlm->move.left == 1 && !ft_rhr("123Y", xlm->param.g_map[(int)Y]\
+	if (xlm->move.left == 1 && !ft_rhr("12345Y", xlm->param.g_map[(int)Y]\
 	[(int)(X + ((SPEED + 0.1) * xlm->player.dir_y))]))
 		X += SPEED * xlm->player.dir_y;
 	if (xlm->param.g_map[(int)Y][(int)X] == 'P')
@@ -102,7 +102,7 @@ static void move_player_2(t_all *xlm)
 //		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
 //		sprite_check(xlm);
 	}
-	if (xlm->param.g_map[(int)Y][(int)X] == 'H')
+	if (xlm->param.g_map[(int)Y][(int)X] == 'H' && xlm->player.hp < 100)
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
 		xlm->player.hp += 10;
@@ -114,11 +114,12 @@ static void move_player_2(t_all *xlm)
 //		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
 //		sprite_check(xlm);
 	}
-	if (xlm->param.g_map[(int)Y][(int)X] == 'A')
+	if (xlm->param.g_map[(int)Y][(int)X] == 'C')
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
 		xlm->player.cartridges += 10;
 		xlm->player.hp -= 7;
+		xlm->player.ammo -= 7;
 		xlm->action.kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
 		sprite_init(xlm);
 		xlm->action.kill = -1;
@@ -145,6 +146,24 @@ static void move_player_2(t_all *xlm)
 //		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
 //		sprite_check(xlm);
 	}
+	if (xlm->param.g_map[(int)Y][(int)X] == 'A' && xlm->player.ammo < 100)
+	{
+		xlm->param.g_map[(int)Y][(int)X] = '0';
+		xlm->player.ammo += 10;
+		if (xlm->player.ammo > 100)
+			xlm->player.ammo = 100;
+//		xlm->player.hp -= 7;
+		xlm->action.kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
+		sprite_init(xlm);
+		xlm->action.kill = -1;
+//		xlm->sprite.pos[xlm->sprite.spr[xlm->sprite.spr_len - 1]].hp = 0;
+//		sprite_check(xlm);
+	}
+	if (xlm->flag && xlm->param.g_map[(int)Y][(int)X] == '6')
+	{
+		xlm->param.g_map[(int)Y + 1][(int)X] = '5';
+		xlm->flag = 0;
+	}
 }
 
 static void move_player(t_all *xlm)
@@ -155,22 +174,22 @@ static void move_player(t_all *xlm)
 	if (xlm->move.open == 1 && ft_rhr("3", xlm->param.g_map[(int)Y]\
 	[(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]))
 		xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))] = '0';
-	if (xlm->move.up == 1 && !ft_rhr("123Y", xlm->param.g_map[(int)(Y +\
+	if (xlm->move.up == 1 && !ft_rhr("12345Y", xlm->param.g_map[(int)(Y +\
 	((SPEED + 0.1) * xlm->player.dir_y))][(int)X]))
 		Y += SPEED * xlm->player.dir_y;
-	if (xlm->move.up == 1 && !ft_rhr("123Y", xlm->param.g_map[(int)Y]\
+	if (xlm->move.up == 1 && !ft_rhr("12345Y", xlm->param.g_map[(int)Y]\
 	[(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]))
 		X += SPEED * xlm->player.dir_x;
-	if (xlm->move.down == 1 && !ft_rhr("123Y", xlm->param.g_map[(int)(Y -\
+	if (xlm->move.down == 1 && !ft_rhr("12345Y", xlm->param.g_map[(int)(Y -\
 	((SPEED + 0.1) * xlm->player.dir_y))][(int)X]))
 		Y -= SPEED * xlm->player.dir_y;
-	if (xlm->move.down == 1 && !ft_rhr("123Y", xlm->param.g_map[(int)Y]\
+	if (xlm->move.down == 1 && !ft_rhr("12345Y", xlm->param.g_map[(int)Y]\
 	[(int)(X - ((SPEED + 0.1) * xlm->player.dir_x))]))
 		X -= SPEED * xlm->player.dir_x;
-	if (xlm->move.right == 1 && !ft_rhr("123Y", xlm->param.g_map[(int)(Y +\
+	if (xlm->move.right == 1 && !ft_rhr("12345Y", xlm->param.g_map[(int)(Y +\
 	((SPEED + 0.1) * xlm->player.dir_x))][(int)X]))
 		Y += SPEED * xlm->player.dir_x;
-	if (xlm->move.right == 1 && !ft_rhr("123Y", xlm->param.g_map[(int)Y]\
+	if (xlm->move.right == 1 && !ft_rhr("12345Y", xlm->param.g_map[(int)Y]\
 	[(int)(X - ((SPEED + 0.1) * xlm->player.dir_y))]))
 		X -= SPEED * xlm->player.dir_y;
 }

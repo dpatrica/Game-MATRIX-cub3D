@@ -70,7 +70,23 @@ void	ft_draw_map(t_all *xlm, double x_print, double y_print)
 	START_Y + (Y * SQUARE_Y) - (SQUARE_Y / 2), 0xFF0000);
 }
 
-void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm)
+void 	ft_draw_line(t_all *xlm, int x)
+{
+	int y;
+	int draw_down;
+
+	draw_down = xlm->neo.draw_down;
+	y = 0;
+	if (xlm->neo.draw_up <= xlm->neo.draw_down)
+	{
+		while (y < xlm->neo.draw_up)
+			my_pixel_put(xlm, x, y++, xlm->param.c.rgb);
+		while (draw_down < (xlm->param.height - 1))
+			my_pixel_put(xlm, x, draw_down++, xlm->param.f.rgb);
+	}
+}
+
+/*void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm)
 {
 	(void)color;
 	int i;
@@ -93,6 +109,23 @@ void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm)
 		while (++draw_e < (xlm->param.height - 1))
 			my_pixel_put(xlm, x, draw_e, xlm->param.f.rgb);
 	}
+}*/
+
+void 	ft_draw_stdcf(t_all *xlm)
+{
+	int x;
+	int y;
+	int end;
+
+	end = (int)((double)xlm->param.height / xlm->move.mouse_cam);
+	x = -1;
+	while (++x < (xlm->param.width - 1) && !(y = 0))
+		while (y < end)
+			my_pixel_put(xlm, x, y++, xlm->param.c.rgb);
+	x = -1;
+	while (++x < (xlm->param.width - 1) && (y = end))
+		while (y < (xlm->param.height - 1))
+			my_pixel_put(xlm, x, y++, xlm->param.f.rgb);
 }
 
 //		ft_draw_line(i, xlm->neo.draw_up, xlm->neo.draw_down, 0x800000, xlm); FIXME НЕ ЗАБУДЬ !

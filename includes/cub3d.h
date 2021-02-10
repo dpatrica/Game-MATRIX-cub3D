@@ -138,8 +138,8 @@ typedef struct	s_player
 {
 	double		x;
 	double		y;
-	int			hp;
-	int			ammo;
+	double 		hp;
+	double 		ammo;
 	int 		cartridges;
 	int			map;
 	int 		digl;
@@ -269,8 +269,25 @@ typedef struct	s_action
 	int			kill;
 }				t_action;
 
+typedef struct s_hud
+{
+	double		step_x;
+	double		step_y;
+	double		pos_x;
+	double		pos_y;
+	double		x_start_hp;
+	double		x_end_hp;
+	double		y_start_hp;
+	double		y_end_hp;
+	double		x_start_ar;
+	double		x_end_ar;
+	double		y_start_ar;
+	double		y_end_ar;
+}				t_hud;
+
 typedef struct	s_all
 {
+	int 		flag;
 	double		xxx;
 	double		yyy;
 	void		*mlx;
@@ -287,6 +304,7 @@ typedef struct	s_all
 	t_tex		tex;
 	t_sprite	sprite;
 	t_action	action;
+	t_hud		hud;
 }				t_all;
 
 int		cub3d(int argc, char **argv, int lvl);
@@ -314,7 +332,7 @@ int		key_release(int key, t_all *xlm);
 //void	ft_draw_beam(t_all *xlm);
 t_map	dir_cos_sin(t_map param);
 //int		ft_render(t_all *xlm);
-void 	ft_draw_line(int x, int draw_s, int draw_e, int color, t_all *xlm);
+void 	ft_draw_line(t_all *xlm, int x);
 void	my_pixel_put(t_all *xlm, int x, int y, int color);
 int		rgb_color(int r, int g, int b);
 void	sprite_check(t_all *xlm);
@@ -337,5 +355,6 @@ int		button_release(int key, t_move *move);
 void	ft_draw_stvol(t_all *xlm);
 void	ft_draw_super_stvol(t_all *xlm);
 void	ft_draw_hud(t_all *xlm);
+void 	ft_draw_stdcf(t_all *xlm);
 
 #endif

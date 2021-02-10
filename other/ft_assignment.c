@@ -86,7 +86,7 @@ t_all			ft_fornull(t_all xlm)
 	xlm.param.resp_player.x = 0;
 	xlm.param.resp_player.y = 0;
 	xlm.param.resp_player.ammo = 50;
-	xlm.param.resp_player.hp = 70;
+	xlm.param.resp_player.hp = 100;
 	xlm.param.resp_player.dir = 0;
 	return (ft_fornulll(xlm));
 }

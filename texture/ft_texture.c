@@ -19,7 +19,7 @@ static void	get_agr(t_all *xlm)
 	&xlm->tex.ea.line_len, &xlm->tex.ea.iend);
 	xlm->tex.skybox.adr = mlx_get_data_addr(xlm->tex.skybox.tex,\
 	&xlm->tex.skybox.bpp, &xlm->tex.skybox.line_len, &xlm->tex.skybox.iend);
-	while (i <= 17)
+	while (i <= 19)
 	{
 		xlm->sprite.all_tex[i].adr = mlx_get_data_addr(xlm->sprite.all_tex[i].tex, &xlm->sprite.all_tex[i].bpp,\
 		&xlm->sprite.all_tex[i].line_len, &xlm->sprite.all_tex[i].iend);
@@ -112,7 +112,7 @@ void		ft_texture(t_all *xlm)
 	&xlm->sprite.all_tex[9].width, &xlm->sprite.all_tex[9].height);
 	xlm->sprite.all_tex[10].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/PUshkaVISTRELNEW.xpm",\
 	&xlm->sprite.all_tex[10].width, &xlm->sprite.all_tex[10].height);
-	xlm->sprite.all_tex[11].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/oboi4.xpm",\
+	xlm->sprite.all_tex[11].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/dverINVERS2.xpm",\
 	&xlm->sprite.all_tex[11].width, &xlm->sprite.all_tex[11].height);
 	xlm->sprite.all_tex[12].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/superstvolNEW.xpm",\
 	&xlm->sprite.all_tex[12].width, &xlm->sprite.all_tex[12].height);
@@ -126,10 +126,10 @@ void		ft_texture(t_all *xlm)
 	&xlm->sprite.all_tex[16].width, &xlm->sprite.all_tex[16].height);
 	xlm->sprite.all_tex[17].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/HUD2RGB.xpm",\
 	&xlm->sprite.all_tex[17].width, &xlm->sprite.all_tex[17].height);
-//	xlm->sprite.all_tex[18].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/superstvolNEW.xpm",\
-//	&xlm->sprite.all_tex[18].width, &xlm->sprite.all_tex[18].height);
-//	xlm->sprite.all_tex[19].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
-//	&xlm->sprite.all_tex[19].width, &xlm->sprite.all_tex[19].height);
+	xlm->sprite.all_tex[18].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/armor.xpm",\
+	&xlm->sprite.all_tex[18].width, &xlm->sprite.all_tex[18].height);
+	xlm->sprite.all_tex[19].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/dverINVERS2.xpm",\
+	&xlm->sprite.all_tex[19].width, &xlm->sprite.all_tex[19].height);
 //	xlm->sprite.all_tex[20].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
 //	&xlm->sprite.all_tex[20].width, &xlm->sprite.all_tex[20].height);
 //	xlm->sprite.all_tex[21].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\

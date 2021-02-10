@@ -20,6 +20,19 @@ static t_all	ft_fornulllll_3(t_all xlm)
 	xlm.action.shot = 0;
 	xlm.param.resp_player.cartridges = 10;
 	xlm.player.cartridges = 0;
+	xlm.hud.step_x = 0;
+	xlm.hud.step_y = 0;
+	xlm.hud.pos_x = 0;
+	xlm.hud.pos_y = 0;
+	xlm.hud.x_start_hp = 0;
+	xlm.hud.x_end_hp = 0;
+	xlm.hud.y_start_hp = 0;
+	xlm.hud.y_end_hp = 0;
+	xlm.hud.x_start_ar = 0;
+	xlm.hud.x_end_ar = 0;
+	xlm.hud.y_start_ar = 0;
+	xlm.hud.y_end_ar = 0;
+	xlm.flag = 1;
 	return (xlm);
 }
 

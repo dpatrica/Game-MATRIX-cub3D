@@ -95,7 +95,10 @@ static	void	select_super_tex(t_all *xlm)
 		}
 		if (xlm->move.mouse_cam < 1.1)
 			xlm->move.mouse_cam = 1.1;
-
+		if (xlm->player.ammo > 0)
+			xlm->player.ammo -= 0.1;
+		else
+			xlm->player.hp -= 0.1;
 	}
 	else
 	{
@@ -112,18 +115,16 @@ void			ft_draw_stvol(t_all *xlm)
 	int				x;
 	int				y;
 	unsigned int	*color;
-	double			step_x;
-	double			pos_x;
 
 	select_tex(xlm);
-	xlm->neo.tex_pos = (double)xlm->neo.tex_hei / (double)(xlm->param.height / 2);
-	xlm->neo.step = xlm->neo.tex_pos;
-	pos_x = (double)xlm->neo.tex_wid / (double)(xlm->param.width / 2);
-	step_x = pos_x;
+	xlm->hud.pos_y = (double)xlm->neo.tex_hei / (double)(xlm->param.height / 2);
+	xlm->hud.step_y = xlm->hud.pos_y;
+	xlm->hud.pos_x = (double)xlm->neo.tex_wid / (double)(xlm->param.width / 2);
+	xlm->hud.step_x = xlm->hud.pos_x;
 	x = (xlm->param.width / 2) - 1;
 	while (++x < (xlm->param.width - 1))
 	{
-		xlm->neo.tex_x = (int)pos_x;
+		xlm->neo.tex_x = (int)xlm->hud.pos_x;
 		if (xlm->neo.tex_x >= xlm->neo.tex_wid)
 			xlm->neo.tex_x = xlm->neo.tex_wid - 1;
 		else if (xlm->neo.tex_x < 0)
@@ -131,7 +132,7 @@ void			ft_draw_stvol(t_all *xlm)
 		y = (xlm->param.height / 2) - 1;
 		while (++y < (xlm->param.height - 1))
 		{
-			xlm->neo.tex_y = (int)xlm->neo.tex_pos;
+			xlm->neo.tex_y = (int)xlm->hud.pos_y;
 			if (xlm->neo.tex_y >= xlm->neo.tex_hei)
 				xlm->neo.tex_y = xlm->neo.tex_hei - 1;
 			else if (xlm->neo.tex_y < 0)
@@ -139,10 +140,10 @@ void			ft_draw_stvol(t_all *xlm)
 			color = (unsigned int*)(xlm->neo.adr + xlm->neo.tex_line *\
 			xlm->neo.tex_y + xlm->neo.tex_x * (xlm->neo.bpp / 8));
 			my_pixel_put(xlm, x, y, (int)*color);
-			xlm->neo.tex_pos += xlm->neo.step;
+			xlm->hud.pos_y += xlm->hud.step_y;
 		}
-		pos_x += step_x;
-		xlm->neo.tex_pos = (double)xlm->neo.tex_hei / (double)(xlm->param.height / 2);
+		xlm->hud.pos_x += xlm->hud.step_x;
+		xlm->hud.pos_y = (double)xlm->neo.tex_hei / (double)(xlm->param.height / 2);
 	}
 }
 
@@ -151,18 +152,16 @@ void			ft_draw_super_stvol(t_all *xlm)
 	int				x;
 	int				y;
 	unsigned int	*color;
-	double			step_x;
-	double			pos_x;
 
 	select_super_tex(xlm);
-	xlm->neo.tex_pos = (double)xlm->neo.tex_hei / (double)(xlm->param.height / 2);
-	xlm->neo.step = xlm->neo.tex_pos;
-	pos_x = (double)xlm->neo.tex_wid / (double)xlm->param.width;
-	step_x = pos_x;
+	xlm->hud.pos_y = (double)xlm->neo.tex_hei / (double)(xlm->param.height / 2);
+	xlm->hud.step_y = xlm->hud.pos_y;
+	xlm->hud.pos_x = (double)xlm->neo.tex_wid / (double)xlm->param.width;
+	xlm->hud.step_x = xlm->hud.pos_x;
 	x = -1;
 	while (++x < (xlm->param.width - 1))
 	{
-		xlm->neo.tex_x = (int)pos_x;
+		xlm->neo.tex_x = (int)xlm->hud.pos_x;
 		if (xlm->neo.tex_x >= xlm->neo.tex_wid)
 			xlm->neo.tex_x = xlm->neo.tex_wid - 1;
 		else if (xlm->neo.tex_x < 0)
@@ -170,7 +169,7 @@ void			ft_draw_super_stvol(t_all *xlm)
 		y = (xlm->param.height / 2) - 1;
 		while (++y < (xlm->param.height - 1))
 		{
-			xlm->neo.tex_y = (int)xlm->neo.tex_pos;
+			xlm->neo.tex_y = (int)xlm->hud.pos_y;
 			if (xlm->neo.tex_y >= xlm->neo.tex_hei)
 				xlm->neo.tex_y = xlm->neo.tex_hei - 1;
 			else if (xlm->neo.tex_y < 0)
@@ -178,9 +177,9 @@ void			ft_draw_super_stvol(t_all *xlm)
 			color = (unsigned int*)(xlm->neo.adr + xlm->neo.tex_line *\
 			xlm->neo.tex_y + xlm->neo.tex_x * (xlm->neo.bpp / 8));
 			my_pixel_put(xlm, x, y, (int)*color);
-			xlm->neo.tex_pos += xlm->neo.step;
+			xlm->hud.pos_y += xlm->hud.step_y;
 		}
-		pos_x += step_x;
-		xlm->neo.tex_pos = (double)xlm->neo.tex_hei / (double)(xlm->param.height / 2);
+		xlm->hud.pos_x += xlm->hud.step_x;
+		xlm->hud.pos_y = (double)xlm->neo.tex_hei / (double)(xlm->param.height / 2);
 	}
 }

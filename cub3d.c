@@ -44,8 +44,8 @@ int				cub3d(int argc, char **argv, int lvl)
 	xlm.player = xlm.param.resp_player;
 	printf("\nPlayer POSITION:\nX:%f\nY:%f\ndir:%c\n", xlm.player.x, xlm.player.y, xlm.player.dir);
 	xlm.mlx = mlx_init();
-	xlm.img.img = mlx_new_image(xlm.mlx, xlm.param.width, xlm.param.height);
-	xlm.img.adr = mlx_get_data_addr(xlm.img.img, &xlm.img.bpp, &xlm.img.line_len, &xlm.img.iend);
+//	xlm.img.img = mlx_new_image(xlm.mlx, xlm.param.width, xlm.param.height);
+//	xlm.img.adr = mlx_get_data_addr(xlm.img.img, &xlm.img.bpp, &xlm.img.line_len, &xlm.img.iend);
 //	check_screen(&xlm);
 	sprite_map_len(&xlm);
 	printf("map_x:%d\nmap_y:%d\n", xlm.param.map_x, xlm.param.map_y);

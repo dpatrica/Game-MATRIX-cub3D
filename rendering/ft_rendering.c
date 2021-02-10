@@ -11,8 +11,10 @@ void ft_render(t_all *xlm)
 		xlm->action.damage = 1;
 		xlm->action.shot = 5;
 	}
-	if (xlm->param.lvl != 2)
+	if (xlm->param.lvl == 1)
 		ft_draw_cefl(xlm);
+	else
+		ft_draw_stdcf(xlm);
 	ft_draw_tex(xlm);
 	if (xlm->sprite.spr_len)
 	{
@@ -30,7 +32,8 @@ void ft_render(t_all *xlm)
 		ft_draw_stvol(xlm);
 	else if (xlm->player.super_stvol)
 		ft_draw_super_stvol(xlm);
-	ft_draw_hud(xlm);
+	if (xlm->param.lvl == 1)
+		ft_draw_hud(xlm);
 	if (xlm->player.map && xlm->move.map && xlm->height_square && xlm->width_square)
 		ft_draw_map(xlm, START_X, START_Y);
 }

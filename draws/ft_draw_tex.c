@@ -50,7 +50,7 @@ static void computation_distance(t_all *xlm, int collision, int x)
 			xlm->neo.y += xlm->neo.step_y;
 			xlm->neo.side = 1;
 		}
-		if (ft_rhr("13", xlm->param.g_map[xlm->neo.y][xlm->neo.x]))
+		if (ft_rhr("1345", xlm->param.g_map[xlm->neo.y][xlm->neo.x]))
 			collision = 1;
 	}
 	if (xlm->neo.side == 0)
@@ -105,11 +105,14 @@ void	ft_draw_tex(t_all *xlm)
 			else if (xlm->neo.tex_y < 0)
 				xlm->neo.tex_y = 0;
 			xlm->neo.tex_pos += xlm->neo.step;
-			color = (unsigned int*)(xlm->neo.adr + xlm->neo.tex_line *\
-			xlm->neo.tex_y + xlm->neo.tex_x * (xlm->neo.bpp / 8));
-			my_pixel_put(xlm, x, y, (int)*color);
+			if (xlm->neo.adr)
+			{
+				color = (unsigned int *) (xlm->neo.adr + xlm->neo.tex_line * \
+                xlm->neo.tex_y + xlm->neo.tex_x * (xlm->neo.bpp / 8));
+				my_pixel_put(xlm, x, y, (int) *color);
+			}
 		}
-		if (xlm->param.lvl == 2)
-			ft_draw_line(x, xlm->neo.draw_up, xlm->neo.draw_down, 0x800000, xlm);
+//		if (xlm->param.lvl == 2)
+//			ft_draw_line(xlm, x);
 	}
 }

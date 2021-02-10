@@ -66,7 +66,7 @@ static void	chek_tex_spr(t_all *xlm, int i)
 		xlm->sprite.line_len = xlm->sprite.all_tex[5].line_len;
 		xlm->sprite.iend = xlm->sprite.all_tex[5].iend;
 	}
-	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'A')
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'C')
 	{
 		xlm->sprite.tex = xlm->sprite.all_tex[6].tex;
 		xlm->sprite.width = xlm->sprite.all_tex[6].width;
@@ -95,6 +95,16 @@ static void	chek_tex_spr(t_all *xlm, int i)
 		xlm->sprite.bpp = xlm->sprite.all_tex[8].bpp;
 		xlm->sprite.line_len = xlm->sprite.all_tex[8].line_len;
 		xlm->sprite.iend = xlm->sprite.all_tex[8].iend;
+	}
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'A')
+	{
+		xlm->sprite.tex = xlm->sprite.all_tex[18].tex;
+		xlm->sprite.width = xlm->sprite.all_tex[18].width;
+		xlm->sprite.height = xlm->sprite.all_tex[18].height;
+		xlm->sprite.adr = xlm->sprite.all_tex[18].adr;
+		xlm->sprite.bpp = xlm->sprite.all_tex[18].bpp;
+		xlm->sprite.line_len = xlm->sprite.all_tex[18].line_len;
+		xlm->sprite.iend = xlm->sprite.all_tex[18].iend;
 	}
 }
 
