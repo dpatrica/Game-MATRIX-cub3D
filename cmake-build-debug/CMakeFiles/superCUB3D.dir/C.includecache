@@ -6,8 +6,8 @@
 
 #IncludeRegexTransform: 
 
-/Users/dpatrica/CLionProjects/superCUB3D/cub3d.c
-./includes/cub3d.h
+/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_sprite.c
+../includes/cub3d.h
 /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
 
 /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h

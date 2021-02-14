@@ -207,6 +207,7 @@ typedef struct	s_wht
 typedef struct	s_pos
 {
 	int 		dir;
+	double		timer;
 	double		hp;
 	double		x;
 	double		y;

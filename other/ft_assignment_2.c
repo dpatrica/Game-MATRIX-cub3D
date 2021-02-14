@@ -18,7 +18,7 @@ static t_all	ft_fornulllll_3(t_all xlm)
 	xlm.action.damage = 0;
 	xlm.action.kill = -1;
 	xlm.action.shot = 0;
-	xlm.param.resp_player.cartridges = 10;
+	xlm.param.resp_player.cartridges = 100;
 	xlm.player.cartridges = 0;
 	xlm.hud.step_x = 0;
 	xlm.hud.step_y = 0;

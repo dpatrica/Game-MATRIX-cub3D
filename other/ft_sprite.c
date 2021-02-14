@@ -40,6 +40,11 @@ void		sprite_init(t_all *xlm)
 			xlm->sprite.pos[i].hp = 100000;
 			if (xlm->sprite.pos[i].dir == '2')
 				xlm->sprite.pos[i].hp = 5;
+			else if (ft_rhr("V", xlm->sprite.pos[i].dir))
+			{
+				xlm->sprite.pos[i].hp = 7;
+				xlm->sprite.pos[i].timer = 100000;
+			}
 		}
 	}
 	else

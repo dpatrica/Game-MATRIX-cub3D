@@ -57,7 +57,7 @@ void	ft_draw_map(t_all *xlm, double x_print, double y_print)
 				ft_draw_square(xlm, x_print, y_print, 0xAA3AAA);
 			else if (ft_rhr("0NSWE", xlm->param.g_map[y][x]))
 				ft_draw_square(xlm, x_print, y_print, 0xFFFFFF);
-			else if (xlm->param.g_map[y][x] == '2')
+			else if (xlm->param.g_map[y][x] == '2' || xlm->param.g_map[y][x] == 'V')
 				ft_draw_square(xlm, x_print, y_print, 0x9400D3);
 			x_print += SQUARE_X;
 			x++;

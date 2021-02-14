@@ -19,7 +19,7 @@ static void	get_agr(t_all *xlm)
 	&xlm->tex.ea.line_len, &xlm->tex.ea.iend);
 	xlm->tex.skybox.adr = mlx_get_data_addr(xlm->tex.skybox.tex,\
 	&xlm->tex.skybox.bpp, &xlm->tex.skybox.line_len, &xlm->tex.skybox.iend);
-	while (i <= 20)
+	while (i <= 21)
 	{
 		xlm->sprite.all_tex[i].adr = mlx_get_data_addr(xlm->sprite.all_tex[i].tex, &xlm->sprite.all_tex[i].bpp,\
 		&xlm->sprite.all_tex[i].line_len, &xlm->sprite.all_tex[i].iend);
@@ -132,8 +132,8 @@ void		ft_texture(t_all *xlm)
 	&xlm->sprite.all_tex[19].width, &xlm->sprite.all_tex[19].height);
 	xlm->sprite.all_tex[20].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/morf500х500.xpm",\
 	&xlm->sprite.all_tex[20].width, &xlm->sprite.all_tex[20].height);
-//	xlm->sprite.all_tex[21].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/apt.xpm",\
-//	&xlm->sprite.all_tex[21].width, &xlm->sprite.all_tex[21].height);
+	xlm->sprite.all_tex[21].tex = mlx_xpm_file_to_image(xlm->mlx, "../xpm/meshok.xpm",\
+	&xlm->sprite.all_tex[21].width, &xlm->sprite.all_tex[21].height);
 	if (!xlm->tex.no.tex || !xlm->tex.so.tex || !xlm->tex.we.tex ||\
 	!xlm->tex.ea.tex || !xlm->tex.skybox.tex)
 	{

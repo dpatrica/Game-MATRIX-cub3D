@@ -108,13 +108,36 @@ static void	chek_tex_spr(t_all *xlm, int i)
 	}
 	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'V')
 	{
-		xlm->sprite.tex = xlm->sprite.all_tex[20].tex;
-		xlm->sprite.width = xlm->sprite.all_tex[20].width;
-		xlm->sprite.height = xlm->sprite.all_tex[20].height;
-		xlm->sprite.adr = xlm->sprite.all_tex[20].adr;
-		xlm->sprite.bpp = xlm->sprite.all_tex[20].bpp;
-		xlm->sprite.line_len = xlm->sprite.all_tex[20].line_len;
-		xlm->sprite.iend = xlm->sprite.all_tex[20].iend;
+		if (xlm->sprite.spr_dist[xlm->sprite.spr[i]] > 200)
+		{
+			xlm->sprite.tex = xlm->sprite.all_tex[3].tex;
+			xlm->sprite.width = xlm->sprite.all_tex[3].width;
+			xlm->sprite.height = xlm->sprite.all_tex[3].height;
+			xlm->sprite.adr = xlm->sprite.all_tex[3].adr;
+			xlm->sprite.bpp = xlm->sprite.all_tex[3].bpp;
+			xlm->sprite.line_len = xlm->sprite.all_tex[3].line_len;
+			xlm->sprite.iend = xlm->sprite.all_tex[3].iend;
+		}
+		else
+		{
+			xlm->sprite.tex = xlm->sprite.all_tex[20].tex;
+			xlm->sprite.width = xlm->sprite.all_tex[20].width;
+			xlm->sprite.height = xlm->sprite.all_tex[20].height;
+			xlm->sprite.adr = xlm->sprite.all_tex[20].adr;
+			xlm->sprite.bpp = xlm->sprite.all_tex[20].bpp;
+			xlm->sprite.line_len = xlm->sprite.all_tex[20].line_len;
+			xlm->sprite.iend = xlm->sprite.all_tex[20].iend;
+		}
+	}
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'v')
+	{
+		xlm->sprite.tex = xlm->sprite.all_tex[21].tex;
+		xlm->sprite.width = xlm->sprite.all_tex[21].width;
+		xlm->sprite.height = xlm->sprite.all_tex[21].height;
+		xlm->sprite.adr = xlm->sprite.all_tex[21].adr;
+		xlm->sprite.bpp = xlm->sprite.all_tex[21].bpp;
+		xlm->sprite.line_len = xlm->sprite.all_tex[21].line_len;
+		xlm->sprite.iend = xlm->sprite.all_tex[21].iend;
 	}
 }
 
@@ -135,39 +158,72 @@ static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
 		if (xlm->move.rpm && xlm->action.damage > 0 && xlm->player.cartridges)
 		{
 			xlm->sprite.pos[xlm->sprite.spr[i]].hp -= xlm->action.damage;
-			if (!xlm->sprite.pos[xlm->sprite.spr[i]].hp)
+			if (xlm->sprite.pos[xlm->sprite.spr[i]].hp <= 0) // FIXME доделай всё под эту логику, убери лишнее и оптимизируй
 			{
-				xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y - 0.5)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x - 0.5)] = '0';
+				xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x)] = '0';
+				xlm->sprite.pos[xlm->sprite.spr[i]].dir = '0';
 				xlm->action.kill = xlm->sprite.spr[i];
+				sprite_init(xlm);
+				xlm->action.kill = -1;
+				ft_draw_sprite(xlm);
+				return (0);
 			}
 			xlm->action.damage = 0;
-		}
-	}
-	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'V' && (int)*color == 0)
-	{
-		if (xlm->sprite.spr_dist[xlm->sprite.spr[i]] > 5)
-		{
-			if (xlm->sprite.spr_x > 0 && !ft_rhr("13457", xlm->param.g_map[(int)xlm->sprite.pos[xlm->sprite.spr[i]].y]\
-			[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x - 0.1)]))
-				xlm->sprite.pos[xlm->sprite.spr[i]].x -= 0.0001;
-			else if (!ft_rhr("13457", xlm->param.g_map[(int)xlm->sprite.pos[xlm->sprite.spr[i]].y]\
-			[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x + 0.1)]))
-				xlm->sprite.pos[xlm->sprite.spr[i]].x += 0.0001;
-			if (xlm->sprite.spr_y > 0 && !ft_rhr("13457", xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y - 0.1)]\
-			[(int)xlm->sprite.pos[xlm->sprite.spr[i]].x]))
-				xlm->sprite.pos[xlm->sprite.spr[i]].y -= 0.0001;
-			else if (!ft_rhr("13457", xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y + 0.1)]\
-			[(int)xlm->sprite.pos[xlm->sprite.spr[i]].x]))
-				xlm->sprite.pos[xlm->sprite.spr[i]].y += 0.0001;
 		}
 	}
 	else if (xlm->player.super_stvol && xlm->move.rpm && (int)*color)
 	{
 		xlm->sprite.pos[xlm->sprite.spr[i]].hp -= 0.005;
-		if (xlm->sprite.pos[xlm->sprite.spr[i]].hp <= 0)
+		if (xlm->sprite.pos[xlm->sprite.spr[i]].hp <= 0)  // FIXME доделай всё под эту логику, убери лишнее и оптимизируй
 		{
-			xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y - 0.5)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x - 0.5)] = '0';
+			xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x)] = '0';
+			xlm->sprite.pos[xlm->sprite.spr[i]].dir = '0';
 			xlm->action.kill = xlm->sprite.spr[i];
+			sprite_init(xlm);
+			xlm->action.kill = -1;
+			ft_draw_sprite(xlm);
+			return (0);
+		}
+	}
+	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'V' && (int)*color >= 0)
+	{
+		if (xlm->sprite.spr_dist[xlm->sprite.spr[i]] > 200)
+		{
+			xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x)] = '0';
+			if (xlm->sprite.spr_x > 0 && !ft_rhr("13457Vv", xlm->param.g_map[(int)xlm->sprite.pos[xlm->sprite.spr[i]].y]\
+			[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x - 1.1)]))
+				xlm->sprite.pos[xlm->sprite.spr[i]].x -= 0.00007;
+			else if (xlm->sprite.spr_x <= 0 && !ft_rhr("13457Vv", xlm->param.g_map[(int)xlm->sprite.pos[xlm->sprite.spr[i]].y]\
+			[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x + 1.1)]))
+				xlm->sprite.pos[xlm->sprite.spr[i]].x += 0.00007;
+			if (xlm->sprite.spr_y > 0 && !ft_rhr("13457Vv", xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y - 1.1)]\
+			[(int)xlm->sprite.pos[xlm->sprite.spr[i]].x]))
+				xlm->sprite.pos[xlm->sprite.spr[i]].y -= 0.00007;
+			else if (xlm->sprite.spr_y <= 0 && !ft_rhr("13457Vv", xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y + 1.1)]\
+			[(int)xlm->sprite.pos[xlm->sprite.spr[i]].x]))
+				xlm->sprite.pos[xlm->sprite.spr[i]].y += 0.00007;
+			xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x)] = 'V';
+		}
+		else
+		{
+			if (xlm->sprite.pos[xlm->sprite.spr[i]].timer > 0)
+				xlm->sprite.pos[xlm->sprite.spr[i]].timer--;
+			else
+			{
+				if (xlm->player.ammo > 0)
+				{
+					xlm->player.ammo--;
+					xlm->sprite.pos[xlm->sprite.spr[i]].timer = 100000;
+				}
+				else
+				{
+					xlm->player.hp--;
+					xlm->sprite.pos[xlm->sprite.spr[i]].timer = 100000;
+				}
+				xlm->sprite.pos[xlm->sprite.spr[i]].dir = 'v';
+				ft_draw_sprite(xlm);
+				return (0);
+			}
 		}
 	}
 	my_pixel_put(xlm, x, y, (int)*color);
@@ -212,6 +268,7 @@ static void computation_draw_up_down(t_all *xlm)
 
 void	ft_draw_sprite(t_all *xlm)
 {
+	int		temp;
 	int		i;
 	int		x;
 	int		y;
@@ -233,9 +290,14 @@ void	ft_draw_sprite(t_all *xlm)
 			{
 				y = xlm->sprite.draw_up_y;
 				while (y < (xlm->sprite.draw_down_y - 1))
-					y += draw_sprite(xlm, x_t, x, y, i);
+					if ((temp = draw_sprite(xlm, x_t, x, y, i)))
+						y += temp;
+					else
+						return ;
 			}
 			x++;
 		}
+		if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'v')
+			xlm->sprite.pos[xlm->sprite.spr[i]].dir = 'V';
 	}
 }
