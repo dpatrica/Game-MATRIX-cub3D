@@ -8,7 +8,7 @@ void ft_render(t_all *xlm)
 {
 	if (!xlm->move.rpm)
 	{
-		xlm->action.damage = 1;
+		xlm->action.damage = 100;
 		xlm->action.wall_flag = 1;
 		xlm->action.shot = 5;
 	}

@@ -35,6 +35,7 @@ static t_all	ft_fornulllll_3(t_all xlm)
 	xlm.flag = 1;
 	xlm.action.wall_damage = 5;
 	xlm.action.wall_flag = 0;
+	xlm.action.change_stvol = 0;
 	return (xlm);
 }
 

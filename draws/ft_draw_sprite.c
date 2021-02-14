@@ -139,6 +139,36 @@ static void	chek_tex_spr(t_all *xlm, int i)
 		xlm->sprite.line_len = xlm->sprite.all_tex[21].line_len;
 		xlm->sprite.iend = xlm->sprite.all_tex[21].iend;
 	}
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'G')
+	{
+		xlm->sprite.tex = xlm->sprite.all_tex[20].tex;
+		xlm->sprite.width = xlm->sprite.all_tex[20].width;
+		xlm->sprite.height = xlm->sprite.all_tex[20].height;
+		xlm->sprite.adr = xlm->sprite.all_tex[20].adr;
+		xlm->sprite.bpp = xlm->sprite.all_tex[20].bpp;
+		xlm->sprite.line_len = xlm->sprite.all_tex[20].line_len;
+		xlm->sprite.iend = xlm->sprite.all_tex[20].iend;
+	}
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'g')
+	{
+		xlm->sprite.tex = xlm->sprite.all_tex[21].tex;
+		xlm->sprite.width = xlm->sprite.all_tex[21].width;
+		xlm->sprite.height = xlm->sprite.all_tex[21].height;
+		xlm->sprite.adr = xlm->sprite.all_tex[21].adr;
+		xlm->sprite.bpp = xlm->sprite.all_tex[21].bpp;
+		xlm->sprite.line_len = xlm->sprite.all_tex[21].line_len;
+		xlm->sprite.iend = xlm->sprite.all_tex[21].iend;
+	}
+	else if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'i')
+	{
+		xlm->sprite.tex = xlm->sprite.all_tex[3].tex;
+		xlm->sprite.width = xlm->sprite.all_tex[3].width;
+		xlm->sprite.height = xlm->sprite.all_tex[3].height;
+		xlm->sprite.adr = xlm->sprite.all_tex[3].adr;
+		xlm->sprite.bpp = xlm->sprite.all_tex[3].bpp;
+		xlm->sprite.line_len = xlm->sprite.all_tex[3].line_len;
+		xlm->sprite.iend = xlm->sprite.all_tex[3].iend;
+	}
 }
 
 static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
@@ -155,7 +185,7 @@ static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
 	x_t * (xlm->sprite.bpp / 8));
 	if (xlm->player.digl && !xlm->player.super_stvol && (x == (xlm->param.width / 2) && y == (xlm->param.height / 2) && (int)*color >= 0))
 	{
-		if (xlm->move.rpm && xlm->action.damage > 0 && xlm->player.cartridges)
+		if (!ft_rhr("Gg", xlm->sprite.pos[xlm->sprite.spr[i]].dir) && xlm->move.rpm && xlm->action.damage > 0 && xlm->player.cartridges)
 		{
 			xlm->sprite.pos[xlm->sprite.spr[i]].hp -= xlm->action.damage;
 			if (xlm->sprite.pos[xlm->sprite.spr[i]].hp <= 0) // FIXME доделай всё под эту логику, убери лишнее и оптимизируй
@@ -165,10 +195,18 @@ static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
 				xlm->action.kill = xlm->sprite.spr[i];
 				sprite_init(xlm);
 				xlm->action.kill = -1;
+				xlm->action.damage = 0;
 				ft_draw_sprite(xlm);
 				return (0);
 			}
 			xlm->action.damage = 0;
+		}
+		else if (ft_rhr("G", xlm->sprite.pos[xlm->sprite.spr[i]].dir) && xlm->move.rpm && xlm->action.damage > 0 && xlm->player.cartridges)
+		{
+			xlm->sprite.pos[xlm->sprite.spr[i]].dir = 'i';
+			xlm->action.damage = 0;
+			ft_draw_sprite(xlm);
+			return (0);
 		}
 	}
 	else if (xlm->player.super_stvol && xlm->move.rpm && (int)*color)
@@ -224,6 +262,27 @@ static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
 				ft_draw_sprite(xlm);
 				return (0);
 			}
+		}
+	}
+	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'G' && (int)*color >= 0)
+	{
+		if (xlm->sprite.pos[xlm->sprite.spr[i]].timer > 0)
+			xlm->sprite.pos[xlm->sprite.spr[i]].timer--;
+		else
+		{
+			if (xlm->player.ammo > 0)
+			{
+				xlm->player.ammo--;
+				xlm->sprite.pos[xlm->sprite.spr[i]].timer = 100000;
+			}
+			else
+			{
+				xlm->player.hp--;
+				xlm->sprite.pos[xlm->sprite.spr[i]].timer = 100000;
+			}
+			xlm->sprite.pos[xlm->sprite.spr[i]].dir = 'g';
+			ft_draw_sprite(xlm);
+			return (0);
 		}
 	}
 	my_pixel_put(xlm, x, y, (int)*color);
@@ -299,5 +358,7 @@ void	ft_draw_sprite(t_all *xlm)
 		}
 		if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'v')
 			xlm->sprite.pos[xlm->sprite.spr[i]].dir = 'V';
+		else if (ft_rhr("gi", xlm->sprite.pos[xlm->sprite.spr[i]].dir))
+			xlm->sprite.pos[xlm->sprite.spr[i]].dir = 'G';
 	}
 }

@@ -51,7 +51,8 @@ int				cub3d(int argc, char **argv, int lvl)
 	printf("map_x:%d\nmap_y:%d\n", xlm.param.map_x, xlm.param.map_y);
 	check_map(&xlm);
 	printf("x:%f\ny:%f\n", xlm.width_square, xlm.height_square);
-	xlm.win = mlx_new_window(xlm.mlx, xlm.param.width, xlm.param.height, "dolbobob");
+	if (!xlm.param.save)
+		xlm.win = mlx_new_window(xlm.mlx, xlm.param.width, xlm.param.height, "dolbobob");
 	ft_texture(&xlm);
 	if (xlm.sprite.spr_len)
 		sprite_check(&xlm);
@@ -59,7 +60,8 @@ int				cub3d(int argc, char **argv, int lvl)
 	mlx_mouse_hide();
 	xlm.xxx = xlm.player.x;
 	xlm.yyy = xlm.player.y;
-
+	if (xlm.param.save)
+		key_hook(&xlm);
 //	t_move *lol;
 //	lol = &(xlm.move);
 	mlx_hook(xlm.win, 2, 0, &key_press, &xlm);

@@ -270,6 +270,7 @@ typedef struct	s_action
 	int			wall_damage;
 	int			wall_flag;
 	int			kill;
+	int			change_stvol;
 }				t_action;
 
 typedef struct s_hud
@@ -359,5 +360,6 @@ void	ft_draw_stvol(t_all *xlm);
 void	ft_draw_super_stvol(t_all *xlm);
 void	ft_draw_hud(t_all *xlm);
 void 	ft_draw_stdcf(t_all *xlm);
+void	ft_screenshot(t_all *xlm);
 
 #endif
