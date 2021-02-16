@@ -4,7 +4,7 @@
 
 #include "../includes/cub3d.h"
 
-static int	draw_floor(t_all *xlm, int y) //пол
+static int	draw_floor(t_all *xlm, int y)
 {
 	xlm->neo.rdir_x = xlm->player.dir_x - xlm->player.plan_x;
 	xlm->neo.rdir_y = xlm->player.dir_y - xlm->player.plan_y;
@@ -30,19 +30,20 @@ static int	draw_floor_2(t_all *xlm, int x, int y)
 
 	xlm->neo.celling_x = (int)xlm->neo.floor_x;
 	xlm->neo.celling_y = (int)xlm->neo.floor_y;
-	x_t = (int)(xlm->tex.skybox.width * (xlm->neo.floor_x - xlm->neo.celling_x)) &\
-	(xlm->tex.skybox.width - 1);
-	y_t = (int)(xlm->tex.skybox.height * (xlm->neo.floor_y - xlm->neo.celling_y)) &\
-	(xlm->tex.skybox.height - 1);
+	x_t = (int)(xlm->tex.skybox.width *\
+	(xlm->neo.floor_x - xlm->neo.celling_x)) & (xlm->tex.skybox.width - 1);
+	y_t = (int)(xlm->tex.skybox.height *\
+	(xlm->neo.floor_y - xlm->neo.celling_y)) & (xlm->tex.skybox.height - 1);
 	xlm->neo.floor_x += xlm->neo.f_step_x;
 	xlm->neo.floor_y += xlm->neo.f_step_y;
 	color = (unsigned int*)\
-	(xlm->tex.skybox.adr + xlm->tex.skybox.line_len * y_t + x_t * (xlm->tex.skybox.bpp / 8));
+	(xlm->tex.skybox.adr + xlm->tex.skybox.line_len * y_t + x_t *\
+	(xlm->tex.skybox.bpp / 8));
 	my_pixel_put(xlm, x, y, (int)*color);
 	return (1);
 }
 
-static int	draw_ceiling(t_all *xlm, int y) //потолок
+static int	draw_ceiling(t_all *xlm, int y)
 {
 	xlm->neo.rdir_x = xlm->player.dir_x - xlm->player.plan_x;
 	xlm->neo.rdir_y = xlm->player.dir_y - xlm->player.plan_y;

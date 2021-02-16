@@ -193,7 +193,7 @@ static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
 				xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x)] = '0';
 				xlm->sprite.pos[xlm->sprite.spr[i]].dir = '0';
 				xlm->action.kill = xlm->sprite.spr[i];
-				sprite_init(xlm);
+				sprite_check(xlm);
 				xlm->action.kill = -1;
 				xlm->action.damage = 0;
 				ft_draw_sprite(xlm);
@@ -217,7 +217,7 @@ static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
 			xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x)] = '0';
 			xlm->sprite.pos[xlm->sprite.spr[i]].dir = '0';
 			xlm->action.kill = xlm->sprite.spr[i];
-			sprite_init(xlm);
+			sprite_check(xlm);
 			xlm->action.kill = -1;
 			ft_draw_sprite(xlm);
 			return (0);

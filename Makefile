@@ -31,7 +31,9 @@ SRCS	=	./cub3d.c\
 			./draws/ft_draw_sprite.c\
 			./rendering/ft_rendering.c\
 			./draws/ft_draw_hud.c\
-			./other/ft_screenshot.c
+			./other/ft_screenshot.c\
+			./pudge_hook/ft_action.c\
+			./draws/ft_draw_map.c
 
 LIBSRCS	=	./libft/ft_strlen.c\
 			./libft/ft_memset.c\

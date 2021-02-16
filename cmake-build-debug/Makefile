@@ -251,6 +251,33 @@ draws/ft_draw_hud.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.s
 .PHONY : draws/ft_draw_hud.c.s
 
+draws/ft_draw_map.o: draws/ft_draw_map.c.o
+
+.PHONY : draws/ft_draw_map.o
+
+# target to build an object file
+draws/ft_draw_map.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.o
+.PHONY : draws/ft_draw_map.c.o
+
+draws/ft_draw_map.i: draws/ft_draw_map.c.i
+
+.PHONY : draws/ft_draw_map.i
+
+# target to preprocess a source file
+draws/ft_draw_map.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.i
+.PHONY : draws/ft_draw_map.c.i
+
+draws/ft_draw_map.s: draws/ft_draw_map.c.s
+
+.PHONY : draws/ft_draw_map.s
+
+# target to generate assembly for a file
+draws/ft_draw_map.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.s
+.PHONY : draws/ft_draw_map.c.s
+
 draws/ft_draw_sprite.o: draws/ft_draw_sprite.c.o
 
 .PHONY : draws/ft_draw_sprite.o
@@ -467,6 +494,33 @@ other/ft_other_fun.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.s
 .PHONY : other/ft_other_fun.c.s
 
+other/ft_screenshot.o: other/ft_screenshot.c.o
+
+.PHONY : other/ft_screenshot.o
+
+# target to build an object file
+other/ft_screenshot.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.o
+.PHONY : other/ft_screenshot.c.o
+
+other/ft_screenshot.i: other/ft_screenshot.c.i
+
+.PHONY : other/ft_screenshot.i
+
+# target to preprocess a source file
+other/ft_screenshot.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.i
+.PHONY : other/ft_screenshot.c.i
+
+other/ft_screenshot.s: other/ft_screenshot.c.s
+
+.PHONY : other/ft_screenshot.s
+
+# target to generate assembly for a file
+other/ft_screenshot.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.s
+.PHONY : other/ft_screenshot.c.s
+
 other/ft_sprite.o: other/ft_sprite.c.o
 
 .PHONY : other/ft_sprite.o
@@ -601,6 +655,33 @@ parser_and_valid/ft_valid.s: parser_and_valid/ft_valid.c.s
 parser_and_valid/ft_valid.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.s
 .PHONY : parser_and_valid/ft_valid.c.s
+
+pudge_hook/ft_action.o: pudge_hook/ft_action.c.o
+
+.PHONY : pudge_hook/ft_action.o
+
+# target to build an object file
+pudge_hook/ft_action.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_action.c.o
+.PHONY : pudge_hook/ft_action.c.o
+
+pudge_hook/ft_action.i: pudge_hook/ft_action.c.i
+
+.PHONY : pudge_hook/ft_action.i
+
+# target to preprocess a source file
+pudge_hook/ft_action.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_action.c.i
+.PHONY : pudge_hook/ft_action.c.i
+
+pudge_hook/ft_action.s: pudge_hook/ft_action.c.s
+
+.PHONY : pudge_hook/ft_action.s
+
+# target to generate assembly for a file
+pudge_hook/ft_action.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/pudge_hook/ft_action.c.s
+.PHONY : pudge_hook/ft_action.c.s
 
 pudge_hook/ft_hook.o: pudge_hook/ft_hook.c.o
 
@@ -758,6 +839,9 @@ help:
 	@echo "... draws/ft_draw_hud.o"
 	@echo "... draws/ft_draw_hud.i"
 	@echo "... draws/ft_draw_hud.s"
+	@echo "... draws/ft_draw_map.o"
+	@echo "... draws/ft_draw_map.i"
+	@echo "... draws/ft_draw_map.s"
 	@echo "... draws/ft_draw_sprite.o"
 	@echo "... draws/ft_draw_sprite.i"
 	@echo "... draws/ft_draw_sprite.s"
@@ -782,6 +866,9 @@ help:
 	@echo "... other/ft_other_fun.o"
 	@echo "... other/ft_other_fun.i"
 	@echo "... other/ft_other_fun.s"
+	@echo "... other/ft_screenshot.o"
+	@echo "... other/ft_screenshot.i"
+	@echo "... other/ft_screenshot.s"
 	@echo "... other/ft_sprite.o"
 	@echo "... other/ft_sprite.i"
 	@echo "... other/ft_sprite.s"
@@ -797,6 +884,9 @@ help:
 	@echo "... parser_and_valid/ft_valid.o"
 	@echo "... parser_and_valid/ft_valid.i"
 	@echo "... parser_and_valid/ft_valid.s"
+	@echo "... pudge_hook/ft_action.o"
+	@echo "... pudge_hook/ft_action.i"
+	@echo "... pudge_hook/ft_action.s"
 	@echo "... pudge_hook/ft_hook.o"
 	@echo "... pudge_hook/ft_hook.i"
 	@echo "... pudge_hook/ft_hook.s"

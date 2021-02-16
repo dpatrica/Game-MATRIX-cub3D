@@ -25,6 +25,12 @@ CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o: ../libft/libft.h
 CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o: ../minilibx_opengl/mlx.h
 
+CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.o: ../draws/ft_draw_map.c
+CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.o: ../includes/cub3d.h
+CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.o: ../libft/libft.h
+CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.o: ../minilibx_opengl/mlx.h
+
 CMakeFiles/superCUB3D.dir/draws/ft_draw_sprite.c.o: ../draws/ft_draw_sprite.c
 CMakeFiles/superCUB3D.dir/draws/ft_draw_sprite.c.o: ../includes/cub3d.h
 CMakeFiles/superCUB3D.dir/draws/ft_draw_sprite.c.o: ../libft/libft.h
@@ -73,6 +79,12 @@ CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../other/ft_other_fun.c
 
+CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.o: ../includes/cub3d.h
+CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.o: ../libft/libft.h
+CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.o: ../minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.o: ../other/ft_screenshot.c
+
 CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o: ../includes/cub3d.h
 CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o: ../libft/libft.h
 CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o: ../minilibx_mms_20200219/mlx.h
@@ -102,6 +114,12 @@ CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.o: ../libft/libft.h
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.o: ../minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.o: ../parser_and_valid/ft_valid.c
+
+CMakeFiles/superCUB3D.dir/pudge_hook/ft_action.c.o: ../includes/cub3d.h
+CMakeFiles/superCUB3D.dir/pudge_hook/ft_action.c.o: ../libft/libft.h
+CMakeFiles/superCUB3D.dir/pudge_hook/ft_action.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/superCUB3D.dir/pudge_hook/ft_action.c.o: ../minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/pudge_hook/ft_action.c.o: ../pudge_hook/ft_action.c
 
 CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o: ../includes/cub3d.h
 CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o: ../libft/libft.h

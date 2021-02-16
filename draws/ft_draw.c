@@ -33,13 +33,12 @@ void 	ft_draw_square(t_all *xlm, double x, double y, int color)
 	{
 		x = start_x;
 		while (x < (SQUARE_X + start_x))
-			my_pixel_put(xlm, x++, y, color);
-//			mlx_pixel_put(xlm->image, xlm->win, x++, y, color);
+			my_pixel_put(xlm, (int)x++, (int)y, color);
 		y++;
 	}
 }
 
-void	ft_draw_map(t_all *xlm, double x_print, double y_print)
+/*void	ft_draw_map(t_all *xlm, double x_print, double y_print)
 {
 	int	x;
 	int	y;
@@ -68,7 +67,7 @@ void	ft_draw_map(t_all *xlm, double x_print, double y_print)
 	}
 	ft_draw_square(xlm, START_X + (X * SQUARE_X) - (SQUARE_X / 2),\
 	START_Y + (Y * SQUARE_Y) - (SQUARE_Y / 2), 0xFF0000);
-}
+}*/
 
 void 	ft_draw_line(t_all *xlm, int x)
 {

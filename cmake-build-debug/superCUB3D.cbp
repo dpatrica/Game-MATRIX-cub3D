@@ -90,6 +90,9 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_hud.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_map.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_sprite.c">
 			<Option target="superCUB3D"/>
 		</Unit>
@@ -114,6 +117,9 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_screenshot.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_sprite.c">
 			<Option target="superCUB3D"/>
 		</Unit>
@@ -127,6 +133,9 @@
 			<Option target="superCUB3D"/>
 		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_valid.c">
+			<Option target="superCUB3D"/>
+		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_action.c">
 			<Option target="superCUB3D"/>
 		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_hook.c">

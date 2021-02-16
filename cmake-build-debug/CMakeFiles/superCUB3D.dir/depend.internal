@@ -25,6 +25,12 @@ CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_map.c
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/draws/ft_draw_sprite.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_sprite.c
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
@@ -73,6 +79,12 @@ CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c
+CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/other/ft_screenshot.c
 CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
@@ -103,6 +115,12 @@ CMakeFiles/superCUB3D.dir/parser_and_valid/ft_valid.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_valid.c
+CMakeFiles/superCUB3D.dir/pudge_hook/ft_action.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/pudge_hook/ft_action.c
 CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h

@@ -60,13 +60,19 @@ static void turn_player(t_all *xlm, double start_dir_x, double start_plane_x)
 
 static void move_player_2(t_all *xlm)
 {
-	if (xlm->move.left == 1 && !ft_rhr("12345YVvGgi", xlm->param.g_map[(int)(Y -\
-	((SPEED + 0.1) * xlm->player.dir_x))][(int)X]))
+	if (xlm->move.right == 1 && !ft_rhr("123457YVvGgi", xlm->param.g_map\
+	[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_x))][(int)X]))
+		Y += SPEED * xlm->player.dir_x;
+	if (xlm->move.right == 1 && !ft_rhr("123457YVvGgi", xlm->param.g_map\
+	[(int)Y][(int)(X - ((SPEED + 0.1) * xlm->player.dir_y))]))
+		X -= SPEED * xlm->player.dir_y;
+	if (xlm->move.left == 1 && !ft_rhr("123457YVvGgi", xlm->param.g_map\
+	[(int)(Y - ((SPEED + 0.1) * xlm->player.dir_x))][(int)X]))
 		Y -= SPEED * xlm->player.dir_x;
-	if (xlm->move.left == 1 && !ft_rhr("12345YVvGgi", xlm->param.g_map[(int)Y]\
-	[(int)(X + ((SPEED + 0.1) * xlm->player.dir_y))]))
+	if (xlm->move.left == 1 && !ft_rhr("123457YVvGgi", xlm->param.g_map\
+	[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_y))]))
 		X += SPEED * xlm->player.dir_y;
-	if (xlm->param.g_map[(int)Y][(int)X] == 'P')
+/*	if (xlm->param.g_map[(int)Y][(int)X] == 'P')
 	{
 		xlm->img.img ? mlx_destroy_image(xlm->mlx, xlm->img.img) : 0;
 		mlx_destroy_window(xlm->mlx, xlm->win);
@@ -75,12 +81,12 @@ static void move_player_2(t_all *xlm)
 		map = "../maps/map3.cub";
 		cub3d(2, &map, 2);
 		exit(0);
-/*		X = 15.5;
+*//*		X = 15.5;
 		Y = 3.5;
 		xlm->player.dir_x = cos(2 * M_PI);
 		xlm->player.dir_y = sin(0);
 		xlm->player.plan_x = 0;
-		xlm->player.plan_y = 0.66;*/
+		xlm->player.plan_y = 0.66;*//*
 	}
 	if (xlm->param.g_map[(int)Y][(int)X] == 'X')
 	{
@@ -165,35 +171,31 @@ static void move_player_2(t_all *xlm)
 		xlm->flag = 0;
 	}
 	if (xlm->flag && xlm->param.g_map[(int)Y][(int)X] == 'B')
-		Y -= 1;
+		Y -= 1;*/
 }
 
 static void move_player(t_all *xlm)
 {
 	if (xlm->move.open == 1 && ft_rhr("3", xlm->param.g_map[(int)(Y +\
 	((SPEED + 0.1) * xlm->player.dir_y))][(int)X]))
-		xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_y))][(int)X] = '0';
+		xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]\
+		= '0';
 	if (xlm->move.open == 1 && ft_rhr("3", xlm->param.g_map[(int)Y]\
 	[(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]))
-		xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))] = '0';
-	if (xlm->move.up == 1 && !ft_rhr("12345YVvGgi", xlm->param.g_map[(int)(Y +\
-	((SPEED + 0.1) * xlm->player.dir_y))][(int)X]))
+		xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]\
+		= '0';
+	if (xlm->move.up == 1 && !ft_rhr("123457YVvGgi", xlm->param.g_map\
+	[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]))
 		Y += SPEED * xlm->player.dir_y;
-	if (xlm->move.up == 1 && !ft_rhr("12345YVvGgi", xlm->param.g_map[(int)Y]\
-	[(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]))
+	if (xlm->move.up == 1 && !ft_rhr("123457YVvGgi", xlm->param.g_map\
+	[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]))
 		X += SPEED * xlm->player.dir_x;
-	if (xlm->move.down == 1 && !ft_rhr("12345YVvGgi", xlm->param.g_map[(int)(Y -\
-	((SPEED + 0.1) * xlm->player.dir_y))][(int)X]))
+	if (xlm->move.down == 1 && !ft_rhr("123457YVvGgi", xlm->param.g_map\
+	[(int)(Y - ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]))
 		Y -= SPEED * xlm->player.dir_y;
-	if (xlm->move.down == 1 && !ft_rhr("12345YVvGgi", xlm->param.g_map[(int)Y]\
-	[(int)(X - ((SPEED + 0.1) * xlm->player.dir_x))]))
+	if (xlm->move.down == 1 && !ft_rhr("123457YVvGgi", xlm->param.g_map\
+	[(int)Y] [(int)(X - ((SPEED + 0.1) * xlm->player.dir_x))]))
 		X -= SPEED * xlm->player.dir_x;
-	if (xlm->move.right == 1 && !ft_rhr("12345YVv", xlm->param.g_map[(int)(Y +\
-	((SPEED + 0.1) * xlm->player.dir_x))][(int)X]))
-		Y += SPEED * xlm->player.dir_x;
-	if (xlm->move.right == 1 && !ft_rhr("12345YVvGgi", xlm->param.g_map[(int)Y]\
-	[(int)(X - ((SPEED + 0.1) * xlm->player.dir_y))]))
-		X -= SPEED * xlm->player.dir_y;
 }
 
 void	ft_move(t_all *xlm)
@@ -202,6 +204,7 @@ void	ft_move(t_all *xlm)
 	move_player_2(xlm);
 	turn_player(xlm, xlm->player.dir_x, xlm->player.plan_x);
 	turn_player_2(xlm, xlm->player.dir_x, xlm->player.plan_x);
+	ft_action(xlm);
 	if (xlm->move.exit == 1)
 	{
 		xlm->img.img ? mlx_destroy_image(xlm->mlx, xlm->img.img) : 0;

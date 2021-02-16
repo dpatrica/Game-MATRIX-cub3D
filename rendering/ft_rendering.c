@@ -23,7 +23,7 @@ void ft_render(t_all *xlm)
 		ft_draw_sprite(xlm);
 		if (xlm->action.kill != -1)
 		{
-			sprite_init(xlm);
+			sprite_check(xlm);
 			xlm->action.kill = -1;
 		}
 	}
@@ -36,5 +36,5 @@ void ft_render(t_all *xlm)
 	if (xlm->param.lvl == 1)
 		ft_draw_hud(xlm);
 	if (xlm->player.map && xlm->move.map && xlm->height_square && xlm->width_square)
-		ft_draw_map(xlm, START_X, START_Y);
+		ft_draw_map(xlm);
 }

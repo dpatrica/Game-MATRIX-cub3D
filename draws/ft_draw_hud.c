@@ -41,7 +41,8 @@ static void	draw_hp_ar(t_all *xlm)
 	{
 		xlm->hud.y_start_hp = old_y_start;
 		while (xlm->hud.y_start_hp < xlm->hud.y_end_hp)
-			my_pixel_put(xlm, (int)xlm->hud.x_start_hp, (int)xlm->hud.y_start_hp++, rgb_color(255, 0, 0));
+			my_pixel_put(xlm, (int)xlm->hud.x_start_hp,\
+			(int)xlm->hud.y_start_hp++, rgb_color(255, 0, 0));
 		xlm->hud.x_start_hp += 1;
 	}
 	old_y_start = xlm->hud.y_start_ar;
@@ -50,7 +51,8 @@ static void	draw_hp_ar(t_all *xlm)
 	{
 		xlm->hud.y_start_ar = old_y_start;
 		while (xlm->hud.y_start_ar < xlm->hud.y_end_ar)
-			my_pixel_put(xlm, (int)xlm->hud.x_start_ar, (int)xlm->hud.y_start_ar++, rgb_color(0, 12, 255));
+			my_pixel_put(xlm, (int)xlm->hud.x_start_ar,\
+			(int)xlm->hud.y_start_ar++, rgb_color(0, 12, 255));
 		xlm->hud.x_start_ar += 1;
 	}
 }
@@ -85,8 +87,9 @@ static void	ft_draw_hud_y(t_all *xlm, int x)
 			xlm->neo.tex_y = xlm->sprite.all_tex[17].height - 1;
 		else if (xlm->neo.tex_y < 0)
 			xlm->neo.tex_y = 0;
-		color = (unsigned int*)(xlm->sprite.all_tex[17].adr + xlm->sprite.all_tex[17].line_len * \
-            xlm->neo.tex_y + xlm->neo.tex_x * (xlm->sprite.all_tex[17].bpp / 8));
+		color = (unsigned int*)(xlm->sprite.all_tex[17].adr +\
+		xlm->sprite.all_tex[17].line_len * xlm->neo.tex_y + xlm->neo.tex_x *\
+		(xlm->sprite.all_tex[17].bpp / 8));
 		check_pos_hud(xlm, x, y, (int)*color);
 		my_pixel_put(xlm, x, y, (int)*color);
 		xlm->hud.pos_y += xlm->hud.step_y;
@@ -98,16 +101,19 @@ void		ft_draw_hud(t_all *xlm)
 	int x;
 
 	obnulay(xlm);
-	xlm->hud.pos_y = (double)xlm->sprite.all_tex[17].height / (double)(xlm->param.height / 6);
+	xlm->hud.pos_y = (double)xlm->sprite.all_tex[17].height /\
+	((double)xlm->param.height / 6);
 	xlm->hud.step_y = xlm->hud.pos_y;
-	xlm->hud.pos_x = (double)xlm->sprite.all_tex[17].width /(double)(xlm->param.width / 4);
+	xlm->hud.pos_x = (double)xlm->sprite.all_tex[17].width /\
+	((double)xlm->param.width / 4);
 	xlm->hud.step_x = xlm->hud.pos_x;
 	x = -1;
 	while (++x < (xlm->param.width / 4))
 	{
 		ft_draw_hud_y(xlm, x);
 		xlm->hud.pos_x += xlm->hud.step_x;
-		xlm->hud.pos_y = (double)xlm->sprite.all_tex[17].height / (double)(xlm->param.height / 6);
+		xlm->hud.pos_y = (double)xlm->sprite.all_tex[17].height /\
+		((double)xlm->param.height / 6);
 	}
 	draw_hp_ar(xlm);
 }

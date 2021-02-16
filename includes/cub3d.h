@@ -289,6 +289,12 @@ typedef struct s_hud
 	double		y_end_ar;
 }				t_hud;
 
+typedef struct	s_minimap
+{
+	double		x_print;
+	double		y_print;
+}				t_minimap;
+
 typedef struct	s_all
 {
 	int 		flag;
@@ -300,6 +306,7 @@ typedef struct	s_all
 	double 		height_square;
 	int			start_x;
 	int			start_y;
+	t_minimap	map;
 	t_map		param;
 	t_player	player;
 	t_move		move;
@@ -327,7 +334,7 @@ int		ft_error(t_all *xlm, int error);
 int		drop_space(char **map);
 char	*freesher(char *s1, char *s2, char *s3);
 t_map	ft_valid(t_map param, int i, int j, int flaglen);
-void	ft_draw_map(t_all *xlm, double x_print, double y_print);
+void	ft_draw_map(t_all *xlm);
 void 	ft_draw_square(t_all *xlm, double x, double y, int color);
 int 	key_hook(t_all *xlm);
 int		key_press(int key, t_all *xlm);
@@ -353,7 +360,7 @@ void	ft_select_texture(t_all *xlm);
 void	ft_draw_sprite(t_all *xlm);
 void	check_map(t_all *xlm);
 void	ft_draw_aim(t_all *xlm);
-void	sprite_init(t_all *xlm);
+//void	sprite_init(t_all *xlm);
 int		button_press(int key, t_move *move);
 int		button_release(int key, t_move *move);
 void	ft_draw_stvol(t_all *xlm);
@@ -361,5 +368,6 @@ void	ft_draw_super_stvol(t_all *xlm);
 void	ft_draw_hud(t_all *xlm);
 void 	ft_draw_stdcf(t_all *xlm);
 void	ft_screenshot(t_all *xlm);
+void	ft_action(t_all *xlm);
 
 #endif
