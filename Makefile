@@ -21,7 +21,7 @@ SRCS	=	./cub3d.c\
 			./draws/ft_draw.c\
 			./pudge_hook/ft_hook.c\
 			./texture/ft_texture.c\
-			./other/ft_sprite.c\
+			./sprite/ft_sprite.c\
 			./other/ft_assignment_2.c\
 			./pudge_hook/ft_key_and_mouse.c\
 			./pudge_hook/ft_move.c\
@@ -33,7 +33,10 @@ SRCS	=	./cub3d.c\
 			./draws/ft_draw_hud.c\
 			./other/ft_screenshot.c\
 			./pudge_hook/ft_action.c\
-			./draws/ft_draw_map.c
+			./draws/ft_draw_map.c\
+			./texture/ft_weapon_texture.c\
+			./draws/ft_draw_tex_2.c\
+			./sprite/ft_count_damage_sprite.c
 
 LIBSRCS	=	./libft/ft_strlen.c\
 			./libft/ft_memset.c\

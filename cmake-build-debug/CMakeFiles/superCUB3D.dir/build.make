@@ -220,18 +220,18 @@ CMakeFiles/superCUB3D.dir/texture/ft_texture.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/superCUB3D.dir/texture/ft_texture.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpatrica/CLionProjects/superCUB3D/texture/ft_texture.c -o CMakeFiles/superCUB3D.dir/texture/ft_texture.c.s
 
-CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o: CMakeFiles/superCUB3D.dir/flags.make
-CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o: ../other/ft_sprite.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o   -c /Users/dpatrica/CLionProjects/superCUB3D/other/ft_sprite.c
+CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o: CMakeFiles/superCUB3D.dir/flags.make
+CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o: ../sprite/ft_sprite.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o   -c /Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_sprite.c
 
-CMakeFiles/superCUB3D.dir/other/ft_sprite.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/superCUB3D.dir/other/ft_sprite.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dpatrica/CLionProjects/superCUB3D/other/ft_sprite.c > CMakeFiles/superCUB3D.dir/other/ft_sprite.c.i
+CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_sprite.c > CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.i
 
-CMakeFiles/superCUB3D.dir/other/ft_sprite.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/superCUB3D.dir/other/ft_sprite.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpatrica/CLionProjects/superCUB3D/other/ft_sprite.c -o CMakeFiles/superCUB3D.dir/other/ft_sprite.c.s
+CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_sprite.c -o CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.s
 
 CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.o: CMakeFiles/superCUB3D.dir/flags.make
 CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.o: ../other/ft_assignment_2.c
@@ -402,6 +402,45 @@ CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_map.c -o CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.s
 
+CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.o: CMakeFiles/superCUB3D.dir/flags.make
+CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.o: ../texture/ft_weapon_texture.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.o   -c /Users/dpatrica/CLionProjects/superCUB3D/texture/ft_weapon_texture.c
+
+CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dpatrica/CLionProjects/superCUB3D/texture/ft_weapon_texture.c > CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.i
+
+CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpatrica/CLionProjects/superCUB3D/texture/ft_weapon_texture.c -o CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.s
+
+CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.o: CMakeFiles/superCUB3D.dir/flags.make
+CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.o: ../draws/ft_draw_tex_2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.o   -c /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_tex_2.c
+
+CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_tex_2.c > CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.i
+
+CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_tex_2.c -o CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.s
+
+CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.o: CMakeFiles/superCUB3D.dir/flags.make
+CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.o: ../sprite/ft_count_damage_sprite.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.o   -c /Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_count_damage_sprite.c
+
+CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_count_damage_sprite.c > CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.i
+
+CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_count_damage_sprite.c -o CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.s
+
 # Object files for target superCUB3D
 superCUB3D_OBJECTS = \
 "CMakeFiles/superCUB3D.dir/cub3d.c.o" \
@@ -415,7 +454,7 @@ superCUB3D_OBJECTS = \
 "CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o" \
 "CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o" \
 "CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o" \
-"CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o" \
+"CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o" \
 "CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.o" \
 "CMakeFiles/superCUB3D.dir/pudge_hook/ft_key_and_mouse.c.o" \
 "CMakeFiles/superCUB3D.dir/pudge_hook/ft_move.c.o" \
@@ -428,7 +467,10 @@ superCUB3D_OBJECTS = \
 "CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o" \
 "CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.o" \
 "CMakeFiles/superCUB3D.dir/pudge_hook/ft_action.c.o" \
-"CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.o"
+"CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.o" \
+"CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.o" \
+"CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.o" \
+"CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.o"
 
 # External object files for target superCUB3D
 superCUB3D_EXTERNAL_OBJECTS =
@@ -444,7 +486,7 @@ superCUB3D: CMakeFiles/superCUB3D.dir/other/ft_assignment.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/draws/ft_draw.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/pudge_hook/ft_hook.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o
-superCUB3D: CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o
+superCUB3D: CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/pudge_hook/ft_key_and_mouse.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/pudge_hook/ft_move.c.o
@@ -458,11 +500,14 @@ superCUB3D: CMakeFiles/superCUB3D.dir/draws/ft_draw_hud.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/pudge_hook/ft_action.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/draws/ft_draw_map.c.o
+superCUB3D: CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.o
+superCUB3D: CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.o
+superCUB3D: CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.o
 superCUB3D: CMakeFiles/superCUB3D.dir/build.make
 superCUB3D: ../libft/libft.a
 superCUB3D: ../minilibx_opengl/libmlx.a
 superCUB3D: CMakeFiles/superCUB3D.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C executable superCUB3D"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dpatrica/CLionProjects/superCUB3D/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking C executable superCUB3D"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/superCUB3D.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

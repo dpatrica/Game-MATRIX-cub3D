@@ -227,6 +227,7 @@ typedef struct	s_all_spr
 typedef struct	s_sprite
 {
 	t_pos		*pos;
+	int 		x_t;
 	double		spr_x;
 	double		spr_y;
 	double		inde;
@@ -369,5 +370,9 @@ void	ft_draw_hud(t_all *xlm);
 void 	ft_draw_stdcf(t_all *xlm);
 void	ft_screenshot(t_all *xlm);
 void	ft_action(t_all *xlm);
+void	select_weapon_tex(t_all *xlm);
+void	select_super_weapon_tex(t_all *xlm);
+void	ft_draw_tex_2(t_all *xlm, int x, int y);
+int		ft_count_damage_weapon(t_all *xlm, int i);
 
 #endif

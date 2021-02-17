@@ -102,6 +102,9 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_tex.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_tex_2.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/draws/ft_select_texture_for_draw.c">
 			<Option target="superCUB3D"/>
 		</Unit>
@@ -118,9 +121,6 @@
 			<Option target="superCUB3D"/>
 		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_screenshot.c">
-			<Option target="superCUB3D"/>
-		</Unit>
-		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_sprite.c">
 			<Option target="superCUB3D"/>
 		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/parser_and_valid/ft_pars_no_so_we_ea_s.c">
@@ -150,7 +150,16 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/rendering/ft_rendering.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_count_damage_sprite.c">
+			<Option target="superCUB3D"/>
+		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_sprite.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/texture/ft_texture.c">
+			<Option target="superCUB3D"/>
+		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/texture/ft_weapon_texture.c">
 			<Option target="superCUB3D"/>
 		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/CMakeLists.txt">

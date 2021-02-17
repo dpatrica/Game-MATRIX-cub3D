@@ -171,7 +171,7 @@ static void	chek_tex_spr(t_all *xlm, int i)
 	}
 }
 
-static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
+static int	draw_sprite(t_all *xlm, int x, int y, int i)
 {
 	unsigned int	*color;
 	int				y_t;
@@ -182,13 +182,15 @@ static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
 	y_t = ((temp * xlm->sprite.height) / xlm->sprite.spr_hi) / 256;
 	y_t = y_t < 0 ? 0 : y_t;
 	color = (unsigned int*)(xlm->sprite.adr + xlm->sprite.line_len * y_t +\
-	x_t * (xlm->sprite.bpp / 8));
+	xlm->sprite.x_t * (xlm->sprite.bpp / 8));
 	if (xlm->player.digl && !xlm->player.super_stvol && (x == (xlm->param.width / 2) && y == (xlm->param.height / 2) && (int)*color >= 0))
 	{
-		if (!ft_rhr("Gg", xlm->sprite.pos[xlm->sprite.spr[i]].dir) && xlm->move.rpm && xlm->action.damage > 0 && xlm->player.cartridges)
+		if (!ft_count_damage_weapon(xlm, i))
+			return (0);
+/*		if (!ft_rhr("Gg", xlm->sprite.pos[xlm->sprite.spr[i]].dir) && xlm->move.rpm && xlm->action.damage > 0 && xlm->player.cartridges)
 		{
 			xlm->sprite.pos[xlm->sprite.spr[i]].hp -= xlm->action.damage;
-			if (xlm->sprite.pos[xlm->sprite.spr[i]].hp <= 0) // FIXME доделай всё под эту логику, убери лишнее и оптимизируй
+			if (xlm->sprite.pos[xlm->sprite.spr[i]].hp <= 0)
 			{
 				xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x)] = '0';
 				xlm->sprite.pos[xlm->sprite.spr[i]].dir = '0';
@@ -207,12 +209,12 @@ static int	draw_sprite(t_all *xlm, int x_t, int x, int y, int i)
 			xlm->action.damage = 0;
 			ft_draw_sprite(xlm);
 			return (0);
-		}
+		}*/
 	}
 	else if (xlm->player.super_stvol && xlm->move.rpm && (int)*color)
 	{
 		xlm->sprite.pos[xlm->sprite.spr[i]].hp -= 0.005;
-		if (xlm->sprite.pos[xlm->sprite.spr[i]].hp <= 0)  // FIXME доделай всё под эту логику, убери лишнее и оптимизируй
+		if (xlm->sprite.pos[xlm->sprite.spr[i]].hp <= 0)
 		{
 			xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y)][(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x)] = '0';
 			xlm->sprite.pos[xlm->sprite.spr[i]].dir = '0';
@@ -331,7 +333,6 @@ void	ft_draw_sprite(t_all *xlm)
 	int		i;
 	int		x;
 	int		y;
-	int		x_t;
 
 	i = -1;
 	while (++i < xlm->sprite.spr_len)
@@ -341,15 +342,15 @@ void	ft_draw_sprite(t_all *xlm)
 		x = xlm->sprite.draw_up_x;
 		while (x < (xlm->sprite.draw_down_x - 1))
 		{
-			x_t = (int)(x - (-xlm->sprite.spr_wi / 2 + xlm->sprite.spr_scr)) *\
-			xlm->sprite.width / xlm->sprite.spr_wi;
-			x_t = x_t < 0 ? 0 : x_t;
+			xlm->sprite.x_t = (int)(x - (-xlm->sprite.spr_wi / 2 +\
+			xlm->sprite.spr_scr)) * xlm->sprite.width / xlm->sprite.spr_wi;
+			xlm->sprite.x_t = xlm->sprite.x_t < 0 ? 0 : xlm->sprite.x_t;
 			if (xlm->sprite.trans_y > 0 && x > 0 && x < xlm->param.width &&\
 			xlm->sprite.trans_y < xlm->sprite.wid_buf[x])
 			{
 				y = xlm->sprite.draw_up_y;
 				while (y < (xlm->sprite.draw_down_y - 1))
-					if ((temp = draw_sprite(xlm, x_t, x, y, i)))
+					if ((temp = draw_sprite(xlm, x, y, i)))
 						y += temp;
 					else
 						return ;

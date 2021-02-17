@@ -359,6 +359,33 @@ draws/ft_draw_tex.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_tex.c.s
 .PHONY : draws/ft_draw_tex.c.s
 
+draws/ft_draw_tex_2.o: draws/ft_draw_tex_2.c.o
+
+.PHONY : draws/ft_draw_tex_2.o
+
+# target to build an object file
+draws/ft_draw_tex_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.o
+.PHONY : draws/ft_draw_tex_2.c.o
+
+draws/ft_draw_tex_2.i: draws/ft_draw_tex_2.c.i
+
+.PHONY : draws/ft_draw_tex_2.i
+
+# target to preprocess a source file
+draws/ft_draw_tex_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.i
+.PHONY : draws/ft_draw_tex_2.c.i
+
+draws/ft_draw_tex_2.s: draws/ft_draw_tex_2.c.s
+
+.PHONY : draws/ft_draw_tex_2.s
+
+# target to generate assembly for a file
+draws/ft_draw_tex_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.s
+.PHONY : draws/ft_draw_tex_2.c.s
+
 draws/ft_select_texture_for_draw.o: draws/ft_select_texture_for_draw.c.o
 
 .PHONY : draws/ft_select_texture_for_draw.o
@@ -520,33 +547,6 @@ other/ft_screenshot.s: other/ft_screenshot.c.s
 other/ft_screenshot.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.s
 .PHONY : other/ft_screenshot.c.s
-
-other/ft_sprite.o: other/ft_sprite.c.o
-
-.PHONY : other/ft_sprite.o
-
-# target to build an object file
-other/ft_sprite.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o
-.PHONY : other/ft_sprite.c.o
-
-other/ft_sprite.i: other/ft_sprite.c.i
-
-.PHONY : other/ft_sprite.i
-
-# target to preprocess a source file
-other/ft_sprite.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_sprite.c.i
-.PHONY : other/ft_sprite.c.i
-
-other/ft_sprite.s: other/ft_sprite.c.s
-
-.PHONY : other/ft_sprite.s
-
-# target to generate assembly for a file
-other/ft_sprite.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_sprite.c.s
-.PHONY : other/ft_sprite.c.s
 
 parser_and_valid/ft_pars_no_so_we_ea_s.o: parser_and_valid/ft_pars_no_so_we_ea_s.c.o
 
@@ -791,6 +791,60 @@ rendering/ft_rendering.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/rendering/ft_rendering.c.s
 .PHONY : rendering/ft_rendering.c.s
 
+sprite/ft_count_damage_sprite.o: sprite/ft_count_damage_sprite.c.o
+
+.PHONY : sprite/ft_count_damage_sprite.o
+
+# target to build an object file
+sprite/ft_count_damage_sprite.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.o
+.PHONY : sprite/ft_count_damage_sprite.c.o
+
+sprite/ft_count_damage_sprite.i: sprite/ft_count_damage_sprite.c.i
+
+.PHONY : sprite/ft_count_damage_sprite.i
+
+# target to preprocess a source file
+sprite/ft_count_damage_sprite.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.i
+.PHONY : sprite/ft_count_damage_sprite.c.i
+
+sprite/ft_count_damage_sprite.s: sprite/ft_count_damage_sprite.c.s
+
+.PHONY : sprite/ft_count_damage_sprite.s
+
+# target to generate assembly for a file
+sprite/ft_count_damage_sprite.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.s
+.PHONY : sprite/ft_count_damage_sprite.c.s
+
+sprite/ft_sprite.o: sprite/ft_sprite.c.o
+
+.PHONY : sprite/ft_sprite.o
+
+# target to build an object file
+sprite/ft_sprite.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o
+.PHONY : sprite/ft_sprite.c.o
+
+sprite/ft_sprite.i: sprite/ft_sprite.c.i
+
+.PHONY : sprite/ft_sprite.i
+
+# target to preprocess a source file
+sprite/ft_sprite.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.i
+.PHONY : sprite/ft_sprite.c.i
+
+sprite/ft_sprite.s: sprite/ft_sprite.c.s
+
+.PHONY : sprite/ft_sprite.s
+
+# target to generate assembly for a file
+sprite/ft_sprite.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.s
+.PHONY : sprite/ft_sprite.c.s
+
 texture/ft_texture.o: texture/ft_texture.c.o
 
 .PHONY : texture/ft_texture.o
@@ -817,6 +871,33 @@ texture/ft_texture.s: texture/ft_texture.c.s
 texture/ft_texture.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_texture.c.s
 .PHONY : texture/ft_texture.c.s
+
+texture/ft_weapon_texture.o: texture/ft_weapon_texture.c.o
+
+.PHONY : texture/ft_weapon_texture.o
+
+# target to build an object file
+texture/ft_weapon_texture.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.o
+.PHONY : texture/ft_weapon_texture.c.o
+
+texture/ft_weapon_texture.i: texture/ft_weapon_texture.c.i
+
+.PHONY : texture/ft_weapon_texture.i
+
+# target to preprocess a source file
+texture/ft_weapon_texture.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.i
+.PHONY : texture/ft_weapon_texture.c.i
+
+texture/ft_weapon_texture.s: texture/ft_weapon_texture.c.s
+
+.PHONY : texture/ft_weapon_texture.s
+
+# target to generate assembly for a file
+texture/ft_weapon_texture.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.s
+.PHONY : texture/ft_weapon_texture.c.s
 
 # Help Target
 help:
@@ -851,6 +932,9 @@ help:
 	@echo "... draws/ft_draw_tex.o"
 	@echo "... draws/ft_draw_tex.i"
 	@echo "... draws/ft_draw_tex.s"
+	@echo "... draws/ft_draw_tex_2.o"
+	@echo "... draws/ft_draw_tex_2.i"
+	@echo "... draws/ft_draw_tex_2.s"
 	@echo "... draws/ft_select_texture_for_draw.o"
 	@echo "... draws/ft_select_texture_for_draw.i"
 	@echo "... draws/ft_select_texture_for_draw.s"
@@ -869,9 +953,6 @@ help:
 	@echo "... other/ft_screenshot.o"
 	@echo "... other/ft_screenshot.i"
 	@echo "... other/ft_screenshot.s"
-	@echo "... other/ft_sprite.o"
-	@echo "... other/ft_sprite.i"
-	@echo "... other/ft_sprite.s"
 	@echo "... parser_and_valid/ft_pars_no_so_we_ea_s.o"
 	@echo "... parser_and_valid/ft_pars_no_so_we_ea_s.i"
 	@echo "... parser_and_valid/ft_pars_no_so_we_ea_s.s"
@@ -899,9 +980,18 @@ help:
 	@echo "... rendering/ft_rendering.o"
 	@echo "... rendering/ft_rendering.i"
 	@echo "... rendering/ft_rendering.s"
+	@echo "... sprite/ft_count_damage_sprite.o"
+	@echo "... sprite/ft_count_damage_sprite.i"
+	@echo "... sprite/ft_count_damage_sprite.s"
+	@echo "... sprite/ft_sprite.o"
+	@echo "... sprite/ft_sprite.i"
+	@echo "... sprite/ft_sprite.s"
 	@echo "... texture/ft_texture.o"
 	@echo "... texture/ft_texture.i"
 	@echo "... texture/ft_texture.s"
+	@echo "... texture/ft_weapon_texture.o"
+	@echo "... texture/ft_weapon_texture.i"
+	@echo "... texture/ft_weapon_texture.s"
 .PHONY : help
 
 

@@ -49,6 +49,12 @@ CMakeFiles/superCUB3D.dir/draws/ft_draw_tex.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/draws/ft_draw_tex_2.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_draw_tex_2.c
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/draws/ft_select_texture_for_draw.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/draws/ft_select_texture_for_draw.c
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
@@ -85,12 +91,6 @@ CMakeFiles/superCUB3D.dir/other/ft_screenshot.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/other/ft_screenshot.c
-CMakeFiles/superCUB3D.dir/other/ft_sprite.c.o
- /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
- /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
- /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
- /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
- /Users/dpatrica/CLionProjects/superCUB3D/other/ft_sprite.c
 CMakeFiles/superCUB3D.dir/parser_and_valid/ft_pars_no_so_we_ea_s.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
@@ -145,9 +145,27 @@ CMakeFiles/superCUB3D.dir/rendering/ft_rendering.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/rendering/ft_rendering.c
+CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_count_damage_sprite.c
+CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_sprite.c
 CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o
  /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
  /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
  /Users/dpatrica/CLionProjects/superCUB3D/texture/ft_texture.c
+CMakeFiles/superCUB3D.dir/texture/ft_weapon_texture.c.o
+ /Users/dpatrica/CLionProjects/superCUB3D/includes/cub3d.h
+ /Users/dpatrica/CLionProjects/superCUB3D/libft/libft.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_mms_20200219/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/minilibx_opengl/mlx.h
+ /Users/dpatrica/CLionProjects/superCUB3D/texture/ft_weapon_texture.c

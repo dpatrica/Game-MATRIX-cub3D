@@ -38,6 +38,7 @@ static t_all	ft_fornulllll_3(t_all xlm)
 	xlm.action.change_stvol = 0;
 	xlm.map.x_print = 0;
 	xlm.map.y_print = 0;
+	xlm.sprite.x_t = 0;
 	return (xlm);
 }
 
