@@ -79,6 +79,12 @@ CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.o: ../minilibx_mms_20200219/ml
 CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.o: ../minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.o: ../other/ft_assignment_2.c
 
+CMakeFiles/superCUB3D.dir/other/ft_assignment_3.c.o: ../includes/cub3d.h
+CMakeFiles/superCUB3D.dir/other/ft_assignment_3.c.o: ../libft/libft.h
+CMakeFiles/superCUB3D.dir/other/ft_assignment_3.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/superCUB3D.dir/other/ft_assignment_3.c.o: ../minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/other/ft_assignment_3.c.o: ../other/ft_assignment_3.c
+
 CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../includes/cub3d.h
 CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../libft/libft.h
 CMakeFiles/superCUB3D.dir/other/ft_other_fun.c.o: ../minilibx_mms_20200219/mlx.h
@@ -151,11 +157,29 @@ CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.o: ../minilibx_mms_202
 CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.o: ../minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.o: ../sprite/ft_count_damage_sprite.c
 
+CMakeFiles/superCUB3D.dir/sprite/ft_move_atack_sprite.c.o: ../includes/cub3d.h
+CMakeFiles/superCUB3D.dir/sprite/ft_move_atack_sprite.c.o: ../libft/libft.h
+CMakeFiles/superCUB3D.dir/sprite/ft_move_atack_sprite.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/superCUB3D.dir/sprite/ft_move_atack_sprite.c.o: ../minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/sprite/ft_move_atack_sprite.c.o: ../sprite/ft_move_atack_sprite.c
+
 CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o: ../includes/cub3d.h
 CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o: ../libft/libft.h
 CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o: ../minilibx_opengl/mlx.h
 CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.o: ../sprite/ft_sprite.c
+
+CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture.c.o: ../includes/cub3d.h
+CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture.c.o: ../libft/libft.h
+CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture.c.o: ../minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture.c.o: ../texture/ft_sprite_texture.c
+
+CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture_2.c.o: ../includes/cub3d.h
+CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture_2.c.o: ../libft/libft.h
+CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture_2.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture_2.c.o: ../minilibx_opengl/mlx.h
+CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture_2.c.o: ../texture/ft_sprite_texture_2.c
 
 CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o: ../includes/cub3d.h
 CMakeFiles/superCUB3D.dir/texture/ft_texture.c.o: ../libft/libft.h

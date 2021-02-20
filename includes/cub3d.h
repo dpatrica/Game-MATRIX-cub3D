@@ -322,6 +322,7 @@ typedef struct	s_all
 int		cub3d(int argc, char **argv, int lvl);
 t_all	ft_fornull(t_all xlm);
 t_all	ft_fornull_2(t_all xlm);
+t_all	ft_fornull_3(t_all xlm);
 t_map	ft_parser(t_map param, char *map);
 t_map	ft_pars_reso(t_map param, char *map);
 t_map	ft_pars_frgb(t_map param, char *map);
@@ -358,7 +359,7 @@ void	ft_render(t_all *xlm);
 void	ft_draw_cefl(t_all *xlm);
 void	ft_draw_tex(t_all *xlm);
 void	ft_select_texture(t_all *xlm);
-void	ft_draw_sprite(t_all *xlm);
+void	ft_draw_sprite(t_all *xlm, int x, int y, int i);
 void	check_map(t_all *xlm);
 void	ft_draw_aim(t_all *xlm);
 //void	sprite_init(t_all *xlm);
@@ -374,5 +375,9 @@ void	select_weapon_tex(t_all *xlm);
 void	select_super_weapon_tex(t_all *xlm);
 void	ft_draw_tex_2(t_all *xlm, int x, int y);
 int		ft_count_damage_weapon(t_all *xlm, int i);
+int		ft_count_damage_super_weapon(t_all *xlm, int i);
+int		ft_move_atack_sprite(t_all *xlm, int color, int i);
+void	ft_chek_texture_sprite(t_all *xlm, int i);
+void	ft_chek_texture_sprite_6(t_all *xlm, int i);
 
 #endif

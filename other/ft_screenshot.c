@@ -14,9 +14,9 @@ static unsigned int	pixel_get(t_all *xlm, int x, int y)
 
 static void			data_to_fd(t_all *xlm, int fd)
 {
-	int x;
-	int y;
-	unsigned int data;
+	int				x;
+	int				y;
+	unsigned int	data;
 
 	y = xlm->param.height;
 	while (--y >= 0)

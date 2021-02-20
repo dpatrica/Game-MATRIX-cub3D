@@ -4,7 +4,7 @@
 
 #include "../includes/cub3d.h"
 
-static t_all	ft_fornulllll_3(t_all xlm)
+static t_all	ft_fornullllll_2(t_all xlm)
 {
 	xlm.start_x = 3;
 	xlm.start_y = 3;
@@ -30,16 +30,7 @@ static t_all	ft_fornulllll_3(t_all xlm)
 	xlm.hud.y_end_hp = 0;
 	xlm.hud.x_start_ar = 0;
 	xlm.hud.x_end_ar = 0;
-	xlm.hud.y_start_ar = 0;
-	xlm.hud.y_end_ar = 0;
-	xlm.flag = 1;
-	xlm.action.wall_damage = 5;
-	xlm.action.wall_flag = 0;
-	xlm.action.change_stvol = 0;
-	xlm.map.x_print = 0;
-	xlm.map.y_print = 0;
-	xlm.sprite.x_t = 0;
-	return (xlm);
+	return (ft_fornull_3(xlm));
 }
 
 static t_all	ft_fornulllll_2(t_all xlm)
@@ -68,7 +59,7 @@ static t_all	ft_fornulllll_2(t_all xlm)
 	xlm.param.valid = VALID;
 	xlm.height_square = 0;
 	xlm.move.map = 0;
-	return (ft_fornulllll_3(xlm));
+	return (ft_fornullllll_2(xlm));
 }
 
 static t_all	ft_fornullll_2(t_all xlm)

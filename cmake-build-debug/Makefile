@@ -494,6 +494,33 @@ other/ft_assignment_2.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_assignment_2.c.s
 .PHONY : other/ft_assignment_2.c.s
 
+other/ft_assignment_3.o: other/ft_assignment_3.c.o
+
+.PHONY : other/ft_assignment_3.o
+
+# target to build an object file
+other/ft_assignment_3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_assignment_3.c.o
+.PHONY : other/ft_assignment_3.c.o
+
+other/ft_assignment_3.i: other/ft_assignment_3.c.i
+
+.PHONY : other/ft_assignment_3.i
+
+# target to preprocess a source file
+other/ft_assignment_3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_assignment_3.c.i
+.PHONY : other/ft_assignment_3.c.i
+
+other/ft_assignment_3.s: other/ft_assignment_3.c.s
+
+.PHONY : other/ft_assignment_3.s
+
+# target to generate assembly for a file
+other/ft_assignment_3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/other/ft_assignment_3.c.s
+.PHONY : other/ft_assignment_3.c.s
+
 other/ft_other_fun.o: other/ft_other_fun.c.o
 
 .PHONY : other/ft_other_fun.o
@@ -818,6 +845,33 @@ sprite/ft_count_damage_sprite.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/sprite/ft_count_damage_sprite.c.s
 .PHONY : sprite/ft_count_damage_sprite.c.s
 
+sprite/ft_move_atack_sprite.o: sprite/ft_move_atack_sprite.c.o
+
+.PHONY : sprite/ft_move_atack_sprite.o
+
+# target to build an object file
+sprite/ft_move_atack_sprite.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/sprite/ft_move_atack_sprite.c.o
+.PHONY : sprite/ft_move_atack_sprite.c.o
+
+sprite/ft_move_atack_sprite.i: sprite/ft_move_atack_sprite.c.i
+
+.PHONY : sprite/ft_move_atack_sprite.i
+
+# target to preprocess a source file
+sprite/ft_move_atack_sprite.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/sprite/ft_move_atack_sprite.c.i
+.PHONY : sprite/ft_move_atack_sprite.c.i
+
+sprite/ft_move_atack_sprite.s: sprite/ft_move_atack_sprite.c.s
+
+.PHONY : sprite/ft_move_atack_sprite.s
+
+# target to generate assembly for a file
+sprite/ft_move_atack_sprite.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/sprite/ft_move_atack_sprite.c.s
+.PHONY : sprite/ft_move_atack_sprite.c.s
+
 sprite/ft_sprite.o: sprite/ft_sprite.c.o
 
 .PHONY : sprite/ft_sprite.o
@@ -844,6 +898,60 @@ sprite/ft_sprite.s: sprite/ft_sprite.c.s
 sprite/ft_sprite.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/sprite/ft_sprite.c.s
 .PHONY : sprite/ft_sprite.c.s
+
+texture/ft_sprite_texture.o: texture/ft_sprite_texture.c.o
+
+.PHONY : texture/ft_sprite_texture.o
+
+# target to build an object file
+texture/ft_sprite_texture.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture.c.o
+.PHONY : texture/ft_sprite_texture.c.o
+
+texture/ft_sprite_texture.i: texture/ft_sprite_texture.c.i
+
+.PHONY : texture/ft_sprite_texture.i
+
+# target to preprocess a source file
+texture/ft_sprite_texture.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture.c.i
+.PHONY : texture/ft_sprite_texture.c.i
+
+texture/ft_sprite_texture.s: texture/ft_sprite_texture.c.s
+
+.PHONY : texture/ft_sprite_texture.s
+
+# target to generate assembly for a file
+texture/ft_sprite_texture.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture.c.s
+.PHONY : texture/ft_sprite_texture.c.s
+
+texture/ft_sprite_texture_2.o: texture/ft_sprite_texture_2.c.o
+
+.PHONY : texture/ft_sprite_texture_2.o
+
+# target to build an object file
+texture/ft_sprite_texture_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture_2.c.o
+.PHONY : texture/ft_sprite_texture_2.c.o
+
+texture/ft_sprite_texture_2.i: texture/ft_sprite_texture_2.c.i
+
+.PHONY : texture/ft_sprite_texture_2.i
+
+# target to preprocess a source file
+texture/ft_sprite_texture_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture_2.c.i
+.PHONY : texture/ft_sprite_texture_2.c.i
+
+texture/ft_sprite_texture_2.s: texture/ft_sprite_texture_2.c.s
+
+.PHONY : texture/ft_sprite_texture_2.s
+
+# target to generate assembly for a file
+texture/ft_sprite_texture_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/superCUB3D.dir/build.make CMakeFiles/superCUB3D.dir/texture/ft_sprite_texture_2.c.s
+.PHONY : texture/ft_sprite_texture_2.c.s
 
 texture/ft_texture.o: texture/ft_texture.c.o
 
@@ -947,6 +1055,9 @@ help:
 	@echo "... other/ft_assignment_2.o"
 	@echo "... other/ft_assignment_2.i"
 	@echo "... other/ft_assignment_2.s"
+	@echo "... other/ft_assignment_3.o"
+	@echo "... other/ft_assignment_3.i"
+	@echo "... other/ft_assignment_3.s"
 	@echo "... other/ft_other_fun.o"
 	@echo "... other/ft_other_fun.i"
 	@echo "... other/ft_other_fun.s"
@@ -983,9 +1094,18 @@ help:
 	@echo "... sprite/ft_count_damage_sprite.o"
 	@echo "... sprite/ft_count_damage_sprite.i"
 	@echo "... sprite/ft_count_damage_sprite.s"
+	@echo "... sprite/ft_move_atack_sprite.o"
+	@echo "... sprite/ft_move_atack_sprite.i"
+	@echo "... sprite/ft_move_atack_sprite.s"
 	@echo "... sprite/ft_sprite.o"
 	@echo "... sprite/ft_sprite.i"
 	@echo "... sprite/ft_sprite.s"
+	@echo "... texture/ft_sprite_texture.o"
+	@echo "... texture/ft_sprite_texture.i"
+	@echo "... texture/ft_sprite_texture.s"
+	@echo "... texture/ft_sprite_texture_2.o"
+	@echo "... texture/ft_sprite_texture_2.i"
+	@echo "... texture/ft_sprite_texture_2.s"
 	@echo "... texture/ft_texture.o"
 	@echo "... texture/ft_texture.i"
 	@echo "... texture/ft_texture.s"

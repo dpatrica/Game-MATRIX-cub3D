@@ -36,7 +36,11 @@ SRCS	=	./cub3d.c\
 			./draws/ft_draw_map.c\
 			./texture/ft_weapon_texture.c\
 			./draws/ft_draw_tex_2.c\
-			./sprite/ft_count_damage_sprite.c
+			./sprite/ft_count_damage_sprite.c\
+			./sprite/ft_move_atack_sprite.c\
+			./texture/ft_sprite_texture.c\
+			./texture/ft_sprite_texture_2.c\
+			./other/ft_assignment_3.c
 
 LIBSRCS	=	./libft/ft_strlen.c\
 			./libft/ft_memset.c\

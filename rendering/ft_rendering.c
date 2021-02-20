@@ -20,7 +20,7 @@ void ft_render(t_all *xlm)
 	if (xlm->sprite.spr_len)
 	{
 		sprite_sort(xlm);
-		ft_draw_sprite(xlm);
+		ft_draw_sprite(xlm, 0, 0, -1);
 		if (xlm->action.kill != -1)
 		{
 			sprite_check(xlm);

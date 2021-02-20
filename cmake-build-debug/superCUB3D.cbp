@@ -117,6 +117,9 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment_2.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_assignment_3.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/other/ft_other_fun.c">
 			<Option target="superCUB3D"/>
 		</Unit>
@@ -153,7 +156,16 @@
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_count_damage_sprite.c">
 			<Option target="superCUB3D"/>
 		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_move_atack_sprite.c">
+			<Option target="superCUB3D"/>
+		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/sprite/ft_sprite.c">
+			<Option target="superCUB3D"/>
+		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/texture/ft_sprite_texture.c">
+			<Option target="superCUB3D"/>
+		</Unit>
+		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/texture/ft_sprite_texture_2.c">
 			<Option target="superCUB3D"/>
 		</Unit>
 		<Unit filename="/Users/dpatrica/CLionProjects/superCUB3D/texture/ft_texture.c">
