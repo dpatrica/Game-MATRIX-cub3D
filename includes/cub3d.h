@@ -351,7 +351,7 @@ int		rgb_color(int r, int g, int b);
 void	sprite_check(t_all *xlm);
 void	sprite_map_len(t_all *xlm);
 void	sprite_sort(t_all *xlm);
-//void 	check_screen(t_all *xlm);
+void 	check_screen(t_all *xlm);
 int 	mouse(int x, int y, t_all *xlm);
 void	ft_texture(t_all *xlm);
 void	ft_move(t_all *xlm);

@@ -29,28 +29,3 @@ int		key_hook(t_all *xlm)
 	return (0);
 }
 
-/*
-if (xlm->move.up == 1 &&\
-	(xlm->param.g_map[(int)(Y + (SPEED * xlm->player.dir_y))][(int)(X + (SPEED * xlm->player.dir_x))]) != '1')
-{
-Y += SPEED * xlm->player.dir_y;
-X += SPEED * xlm->player.dir_x;
-}
-if (xlm->move.down == 1 &&\
-	(xlm->param.g_map[(int)(Y - (SPEED * xlm->player.dir_y))][(int)(X - (SPEED * xlm->player.dir_x))]) != '1')
-{
-Y -= SPEED * xlm->player.dir_y;
-X -= SPEED * xlm->player.dir_x;
-}
-if (xlm->move.right == 1 &&\
-	(xlm->param.g_map[(int)(Y + (SPEED * xlm->player.dir_x))][(int)(X - (SPEED * xlm->player.dir_y))]) != '1')
-{
-X -= SPEED * xlm->player.dir_y;
-Y += SPEED * xlm->player.dir_x;
-}
-if (xlm->move.left == 1 &&\
-	(xlm->param.g_map[(int)(Y - (SPEED * xlm->player.dir_x))][(int)(X + (SPEED * xlm->player.dir_y))]) != '1')
-{
-X += SPEED * xlm->player.dir_y;
-Y -= SPEED * xlm->player.dir_x;
-}*/
