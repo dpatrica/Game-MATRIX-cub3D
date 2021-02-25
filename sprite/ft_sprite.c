@@ -90,7 +90,7 @@ void		sprite_map_len(t_all *xlm)
 	{
 		j = 0;
 		while (xlm->param.g_map[i][j])
-			if (ft_rhr("2VGACMYPXHDZ", xlm->param.g_map[i][j++])) // 2 - обычный спрайт / M - мапа / Y - Морфиус / P - синяя пилюля / X - красная пилюля / H - ХП / A - патроны / G - армор / D - дигл / Z - суперствол
+			if (ft_rhr("2VGACMYPXHDZ", xlm->param.g_map[i][j++]))
 				xlm->sprite.spr_len++;
 		if (j > xlm->param.map_x)
 			xlm->param.map_x = j;

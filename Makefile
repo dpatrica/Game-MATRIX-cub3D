@@ -126,8 +126,15 @@ $(LIBOBJS):	$(LIBH)
 clean:
 			$(RM) $(OBJS)
 			$(MAKE_FC)
+			$(MAKE) clean -C ./cub3D_bonus
 
 fclean:		clean
 			$(RM) $(NAME)
+			$(MAKE) fclean -C ./cub3D_bonus
 
 re:			fclean all
+
+bonus:
+			touch ./includes/cub3d.h
+			$(MAKE) -C ./cub3D_bonus
+			cp ./cub3D_bonus/cub3D .

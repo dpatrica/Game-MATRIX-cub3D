@@ -4,7 +4,7 @@
 
 #include "../includes/cub3d.h"
 
-static int	draw_sprite(t_all *xlm, int x, int y, int i)
+static int	draw_sprite(t_all *xlm, int x, int y)
 {
 	unsigned int	*color;
 	int				y_t;
@@ -16,25 +16,12 @@ static int	draw_sprite(t_all *xlm, int x, int y, int i)
 	y_t = y_t < 0 ? 0 : y_t;
 	color = (unsigned int*)(xlm->sprite.adr + xlm->sprite.line_len * y_t +\
 	xlm->sprite.x_t * (xlm->sprite.bpp / 8));
-	if (xlm->player.digl && !xlm->player.super_stvol && (x ==\
-	(xlm->param.width / 2) && y == (xlm->param.height / 2) && (int)*color >= 0))
-	{
-		if (!ft_count_damage_weapon(xlm, i))
-			return (0);
-	}
-	else if (xlm->player.super_stvol && xlm->move.rpm && (int)*color)
-		if (!ft_count_damage_super_weapon(xlm, i))
-			return (0);
-	if (ft_rhr("VG", xlm->sprite.pos[xlm->sprite.spr[i]].dir) &&\
-	(int)*color >= 0)
-		ft_move_atack_sprite(xlm, (int)*color, i);
 	my_pixel_put(xlm, x, y, (int)*color);
 	return (1);
 }
 
 static void	computation_param_spr(t_all *xlm, int i)
 {
-	ft_chek_texture_sprite(xlm, i);
 	xlm->sprite.spr_x = xlm->sprite.pos[xlm->sprite.spr[i]].x - X;
 	xlm->sprite.spr_y = xlm->sprite.pos[xlm->sprite.spr[i]].y - Y;
 	xlm->sprite.inde = 1.0 / (xlm->player.plan_x * xlm->player.dir_y -\
@@ -85,7 +72,7 @@ void	ft_draw_sprite(t_all *xlm, int x, int y, int i)
 			{
 				y = xlm->sprite.draw_up_y - 1;
 				while (++y < (xlm->sprite.draw_down_y - 1))
-					if (!draw_sprite(xlm, x, y, i))
+					if (!draw_sprite(xlm, x, y))
 						return ;
 			}
 		}

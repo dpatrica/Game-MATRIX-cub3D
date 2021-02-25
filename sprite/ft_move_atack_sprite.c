@@ -20,7 +20,7 @@ static int	count_timer_and_atack(t_all *xlm, char dir, int i)
 			xlm->player.hp--;
 			xlm->sprite.pos[xlm->sprite.spr[i]].timer = 100000;
 		}
-		xlm->sprite.pos[xlm->sprite.spr[i]].dir = dir;
+		xlm->sprite.pos[xlm->sprite.spr[i]].dir = (int)dir;
 		ft_draw_sprite(xlm, 0, 0, -1);
 		return (0);
 	}
