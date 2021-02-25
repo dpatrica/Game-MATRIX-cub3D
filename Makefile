@@ -90,6 +90,7 @@ LIBSRCS	=	./libft/ft_strlen.c\
 
 HEAD	=	./includes/cub3d.h
 NAME	= 	cub3D
+NAME_B	=	MATRIX_cub3D
 LIBA	=	./libft/libft.a
 LIBH	=	./libft/libft.h
 MLX		=	./minilibx_opengl/libmlx.a libmlx.dylib
@@ -105,6 +106,8 @@ O		=	-o
 AR		=	ar rc
 MAKE_L	=	$(MAKE) -C ./libft
 MAKE_FC	=	$(MAKE) fclean -C ./libft
+MK_MLX	=	$(MAKE) -C ./minilibx_opengl && $(MAKE) -C ./minilibx_mms_20200219
+M_C_MLX	=	$(MAKE) clean -C ./minilibx_opengl && $(MAKE) clean -C ./minilibx_mms_20200219
 
 all:		$(NAME)
 
@@ -114,6 +117,7 @@ all:		$(NAME)
 			$(GCC) $(FLAG) $(C) $< $(O) $(<:.c=.o)
 
 $(NAME):	$(LIBA) $(OBJS)
+			$(MK_MLX)
 			$(GCC) $(FLAG) $(FLAGMLX) $(O) $(NAME) $(MLX) $(LIBOBJS) $(OBJS)
 
 $(LIBA):	$(LIBOBJS)
@@ -126,15 +130,17 @@ $(LIBOBJS):	$(LIBH)
 clean:
 			$(RM) $(OBJS)
 			$(MAKE_FC)
+			$(M_C_MLX)
 			$(MAKE) clean -C ./cub3D_bonus
 
 fclean:		clean
 			$(RM) $(NAME)
 			$(MAKE) fclean -C ./cub3D_bonus
+			$(RM) $(NAME_B)
 
 re:			fclean all
 
 bonus:
-			touch ./includes/cub3d.h
-			$(MAKE) -C ./cub3D_bonus
-			cp ./cub3D_bonus/cub3D .
+			@$(MAKE) -C ./cub3D_bonus
+			@cp ./cub3D_bonus/MATRIX_cub3D .
+			@echo "\033[0;32mMatrix reloaded!\033[m"

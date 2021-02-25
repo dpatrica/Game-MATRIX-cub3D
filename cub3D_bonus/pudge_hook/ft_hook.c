@@ -23,6 +23,7 @@ int		key_hook(t_all *xlm)
 	{
 		xlm->img.img ? mlx_destroy_image(xlm->mlx, xlm->img.img) : 0;
 		mlx_destroy_window(xlm->mlx, xlm->win);
+		system("killall afplay");
 		ft_error(xlm, xlm->param.valid);
 		exit(0);
 	}

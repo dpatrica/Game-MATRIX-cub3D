@@ -4,8 +4,15 @@
 
 #include "./includes/cub3d.h"
 
+static void 	play_music(void)
+{
+	system("afplay ./cub3D_bonus/music/rob_dougan.mp3 &"); //killall afplay
+}
+
 static t_map	mainik(t_map param, int argc, char **argv)
 {
+	if (param.lvl == 1)
+		play_music();
 //	(void)argc;
 	if ((argc < 2) || (argc > 3))
 		param.valid = (argc > 3) ? MANY_ARGS : NO_ARGS;

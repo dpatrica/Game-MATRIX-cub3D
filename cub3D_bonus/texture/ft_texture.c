@@ -18,11 +18,13 @@ static void	get_agr(t_all *xlm, int i)
 	&xlm->tex.skybox.bpp, &xlm->tex.skybox.line_len, &xlm->tex.skybox.iend);
 	while (++i <= 27)
 	{
-		xlm->sprite.all_tex[i].adr = mlx_get_data_addr\
+		if (!(xlm->sprite.all_tex[i].adr = mlx_get_data_addr\
 		(xlm->sprite.all_tex[i].tex, &xlm->sprite.all_tex[i].bpp,\
-		&xlm->sprite.all_tex[i].line_len, &xlm->sprite.all_tex[i].iend);
-		if (!xlm->sprite.all_tex[i].adr)
-			break ;
+		&xlm->sprite.all_tex[i].line_len, &xlm->sprite.all_tex[i].iend)))
+		{
+			exit(0);
+			ft_error(xlm, TEXTURE_ERROR);
+		}
 	}
 	if (!xlm->sprite.all_tex[i > 27 ? 0 : i].adr || !xlm->tex.no.adr ||\
 	!xlm->tex.so.adr || !xlm->tex.we.adr || !xlm->tex.ea.adr ||\
@@ -135,5 +137,7 @@ void		ft_texture(t_all *xlm)
 		ft_error(xlm, TEXTURE_ERROR);
 		exit(0);
 	}
+	if (!xlm->sprite.all_tex[20].tex) // FIXME (добавь защиту!)
+		exit(0);
 	get_agr(xlm, -1);
 }
