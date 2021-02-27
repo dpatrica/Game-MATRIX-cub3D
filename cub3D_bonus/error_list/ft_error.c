@@ -138,7 +138,7 @@ int			ft_error(t_all *xlm, int error)
 			free(xlm->param.g_map[i++]);
 	xlm->param.g_map ? free(xlm->param.g_map) : 0;
 	if (error == VALID)
-		write(1, "!!!_ALL VALID AND EZ FREED_!!!", 30);
+		write(1, "Quit\n", 5);
 	else if (error == NO_ARGS)
 		write(1, "Error!\nNo arguments.", 20);
 	else if (error == MANY_ARGS)

@@ -35,6 +35,6 @@ void ft_render(t_all *xlm)
 		ft_draw_super_stvol(xlm);
 	if (xlm->param.lvl == 1)
 		ft_draw_hud(xlm);
-	if (xlm->player.map && xlm->move.map && xlm->height_square && xlm->width_square)
+//	if (xlm->player.map && xlm->move.map && xlm->height_square && xlm->width_square)
 		ft_draw_map(xlm);
 }

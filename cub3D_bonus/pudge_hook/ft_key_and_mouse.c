@@ -104,30 +104,28 @@ int 	mouse(int x, int y, t_all *xlm)
 	return (0);
 }
 
-int		button_press(int key, t_move *move)
+int		button_press(int key, t_all *xlm)
 {
+	(void)xlm;
+
 	printf("press:%d\n", key);
-	printf("%p\n", move);
-/*	if (move != NULL)
-	{
-		if (key == 1)
-			move->rpm = 1;
-		if (key == 2)
-			move->rpm = 1;
-	}*/
+	if (key == 1)
+		return (1);
+//		xlm->move.rpm = 1;
+	if (key == 2)
+		return (2);
+//		xlm->move.rpm = 1;
 	return (0);
 }
 
-int		button_release(int key, t_move *move)
+int		button_release(int key, t_all *xlm)
 {
+//	(void)xlm;
+
 	printf("release:%d\n", key);
-	printf("%p\n", move);
-/*	if (move != NULL)
-	{
-		if (key == 1)
-			move->rpm = 0;
-		if (key == 2)
-			move->rpm = 0;
-	}*/
+	if (key == 1)
+		xlm->move.rpm = 0;
+	if (key == 2)
+		xlm->move.rpm = 0;
 	return (0);
 }

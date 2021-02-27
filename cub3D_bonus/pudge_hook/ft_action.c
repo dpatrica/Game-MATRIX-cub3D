@@ -87,12 +87,14 @@ static void	ft_action_2(t_all *xlm)
 
 void		ft_action(t_all *xlm)
 {
+	char *map;
+
 	if (xlm->param.g_map[(int)Y][(int)X] == 'P')
 	{
 		xlm->img.img ? mlx_destroy_image(xlm->mlx, xlm->img.img) : 0;
 		mlx_destroy_window(xlm->mlx, xlm->win);
 		ft_error(xlm, VALID);
-		char *map;
+		write(1, "lvl UP!\n", 8);
 		map = "./maps/map3.cub";
 		cub3d(2, &map, 2);
 		exit(0);
@@ -102,7 +104,7 @@ void		ft_action(t_all *xlm)
 		xlm->img.img ? mlx_destroy_image(xlm->mlx, xlm->img.img) : 0;
 		mlx_destroy_window(xlm->mlx, xlm->win);
 		ft_error(xlm, VALID);
-		char *map;
+		write(1, "lvl UP!\n", 8);
 		map = "./maps/map2.cub";
 		cub3d(2, &map, 1);
 		exit(0);

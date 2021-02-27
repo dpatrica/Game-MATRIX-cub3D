@@ -4,7 +4,20 @@
 
 #include "../includes/cub3d.h"
 
-void	ft_texture_5(t_all *xlm)
+static void guardian(t_all *xlm)
+{
+	int i;
+
+	i = -1;
+	while (++i <= 27)
+		if (!xlm->sprite.all_tex[i].tex)
+		{
+			ft_error(xlm, TEXTURE_ERROR);
+			exit(0);
+		}
+}
+
+void		ft_texture_5(t_all *xlm)
 {
 	xlm->sprite.all_tex[23].tex = mlx_xpm_file_to_image(xlm->mlx,\
 	"./xpm/AgentHodyba.xpm",\
@@ -21,4 +34,5 @@ void	ft_texture_5(t_all *xlm)
 	xlm->sprite.all_tex[27].tex = mlx_xpm_file_to_image(xlm->mlx,\
 	"./xpm/capcan.xpm",\
 	&xlm->sprite.all_tex[27].width, &xlm->sprite.all_tex[27].height);
+	guardian(xlm);
 }
