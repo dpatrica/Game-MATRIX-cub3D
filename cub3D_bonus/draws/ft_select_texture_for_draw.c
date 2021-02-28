@@ -41,6 +41,26 @@ static void select_so(t_all *xlm)
 	xlm->neo.tex_line = xlm->tex.so.line_len;
 }
 
+static void select_other_texture_2(t_all *xlm)
+{
+	if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '9')
+	{
+		xlm->neo.tex_wid = xlm->sprite.all_tex[28].width;
+		xlm->neo.tex_hei = xlm->sprite.all_tex[28].height;
+		xlm->neo.adr = xlm->sprite.all_tex[28].adr;
+		xlm->neo.bpp = xlm->sprite.all_tex[28].bpp;
+		xlm->neo.tex_line = xlm->sprite.all_tex[28].line_len;
+	}
+	else if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == 'Q')
+	{
+		xlm->neo.tex_wid = xlm->sprite.all_tex[29].width;
+		xlm->neo.tex_hei = xlm->sprite.all_tex[29].height;
+		xlm->neo.adr = xlm->sprite.all_tex[29].adr;
+		xlm->neo.bpp = xlm->sprite.all_tex[29].bpp;
+		xlm->neo.tex_line = xlm->sprite.all_tex[29].line_len;
+	}
+}
+
 static void select_other_texture(t_all *xlm)
 {
 	if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '4')
@@ -58,6 +78,8 @@ static void select_other_texture(t_all *xlm)
 	}
 	else if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '5')
 		xlm->neo.adr = NULL;
+	else
+		select_other_texture_2(xlm);
 }
 
 void 		ft_select_texture(t_all *xlm)

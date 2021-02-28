@@ -4,6 +4,12 @@
 
 #include "./includes/cub3d.h"
 
+static int		exit_key(t_all *xlm)
+{
+	xlm->move.exit = 1;
+	return (0);
+}
+
 static t_map	mainik(t_map param, int argc, char **argv)
 {
 	if ((argc < 2) || (argc > 3))
@@ -60,6 +66,7 @@ int				cub3d(int argc, char **argv, int lvl)
 	mlx_hook(xlm.win, 2, 0, &key_press, &xlm);
 	mlx_hook(xlm.win, 3, 0, &key_release, &xlm);
 	mlx_hook(xlm.win, 6, 0, &mouse, &xlm);
+	mlx_hook(xlm.win, 17, 0, &exit_key, &xlm);
 	mlx_loop_hook(xlm.mlx, &key_hook, &xlm);
 	mlx_loop(xlm.mlx);
 	ft_error(&xlm, xlm.param.valid);

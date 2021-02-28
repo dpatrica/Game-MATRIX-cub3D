@@ -4,22 +4,6 @@
 
 #include "../includes/cub3d.h"
 
-static	int	key_press_2(int key, t_all *xlm)
-{
-	if (xlm->player.super_stvol && xlm->player.digl && key == 14)
-	{
-		xlm->action.change_stvol = 1;
-		xlm->player.super_stvol = 0;
-	}
-	else if (!xlm->player.super_stvol && xlm->action.change_stvol &&\
-	xlm->player.digl && key == 14)
-	{
-		xlm->action.change_stvol = 0;
-		xlm->player.super_stvol = 1;
-	}
-	return (0);
-}
-
 int			key_press(int key, t_all *xlm)
 {
 //	printf("%d\n", key);
@@ -39,11 +23,9 @@ int			key_press(int key, t_all *xlm)
 		xlm->move.map = 1;
 	if (key == 53)
 		xlm->move.exit = 1;
-	if (key == 12)
-		xlm->move.rpm = 1;
 	if (key == 49)
 		xlm->move.open = 1;
-	return (key_press_2(key, xlm));
+	return (0);
 }
 
 int		key_release(int key, t_all *xlm)
@@ -64,15 +46,8 @@ int		key_release(int key, t_all *xlm)
 		xlm->move.map = 0;
 	if (key == 53)
 		xlm->move.exit = 0;
-	if (key == 12)
-		xlm->move.rpm = 0;
 	if (key == 49)
 		xlm->move.open = 0;
-//	if (xlm->action.change_stvol && key == 14)
-//	{
-//		xlm->action.change_stvol = 0;
-//		xlm->player.super_stvol = 1;
-//	}
 	return (0);
 }
 
@@ -104,28 +79,33 @@ int 	mouse(int x, int y, t_all *xlm)
 	return (0);
 }
 
-int		button_press(int key, t_all *xlm)
+int		button_press(int key, int key2, int key3, t_all *xlm)
 {
-	(void)xlm;
+	(void)key2;
+	(void)key3;
 
-	printf("press:%d\n", key);
 	if (key == 1)
-		return (1);
-//		xlm->move.rpm = 1;
-	if (key == 2)
-		return (2);
-//		xlm->move.rpm = 1;
+		xlm->move.rpm = 1;
+	if (xlm->player.super_stvol && xlm->player.digl && (key == 4 || key == 5))
+	{
+		xlm->action.change_stvol = 1;
+		xlm->player.super_stvol = 0;
+	}
+	else if (!xlm->player.super_stvol && xlm->action.change_stvol &&\
+	xlm->player.digl && (key == 4 || key == 5))
+	{
+		xlm->action.change_stvol = 0;
+		xlm->player.super_stvol = 1;
+	}
 	return (0);
 }
 
-int		button_release(int key, t_all *xlm)
+int		button_release(int key, int key2, int key3, t_all *xlm)
 {
-//	(void)xlm;
+	(void)key2;
+	(void)key3;
 
-	printf("release:%d\n", key);
 	if (key == 1)
-		xlm->move.rpm = 0;
-	if (key == 2)
 		xlm->move.rpm = 0;
 	return (0);
 }

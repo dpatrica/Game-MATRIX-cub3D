@@ -17,6 +17,7 @@ void		select_weapon_tex(t_all *xlm)
 		if (xlm->move.mouse_cam < 1.1)
 			xlm->move.mouse_cam = 1.1;
 		xlm->player.cartridges--;
+		play_music(1);
 		xlm->action.shot = 0;
 	}
 	else
@@ -26,6 +27,9 @@ void		select_weapon_tex(t_all *xlm)
 		xlm->neo.adr = xlm->sprite.all_tex[9].adr;
 		xlm->neo.bpp = xlm->sprite.all_tex[9].bpp;
 		xlm->neo.tex_line = xlm->sprite.all_tex[9].line_len;
+		if (xlm->move.rpm && xlm->action.shot && !xlm->player.cartridges &&\
+		!(xlm->action.shot = 0))
+			play_music(2);
 	}
 }
 

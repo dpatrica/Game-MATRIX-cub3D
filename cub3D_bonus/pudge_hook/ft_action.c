@@ -38,15 +38,15 @@ static void	ft_action_3(t_all *xlm)
 	if (xlm->param.g_map[(int)Y][(int)X] == 'C')
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
-		xlm->player.cartridges += 10;
+		xlm->player.cartridges += 30;
+		play_music(3);
 		xlm->action.kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
 		sprite_check(xlm);
 		xlm->action.kill = -1;
 	}
-	if (xlm->param.g_map[(int)Y][(int)X] == 'D')
+	if (xlm->param.g_map[(int)Y][(int)X] == 'D' && (xlm->player.digl = 1))
 	{
 		xlm->param.g_map[(int)Y][(int)X] = '0';
-		xlm->player.digl = 1;
 		xlm->action.kill = xlm->sprite.spr[xlm->sprite.spr_len - 1];
 		sprite_check(xlm);
 		xlm->action.kill = -1;
@@ -110,4 +110,16 @@ void		ft_action(t_all *xlm)
 		exit(0);
 	}
 	ft_action_2(xlm);
+}
+
+void		play_music(int music_key)
+{
+	if (!music_key)
+		system("afplay ./cub3D_bonus/music/RobDougan_Clubbed_to_death.mp3 &"); //killall afplay
+	else if (music_key == 1)
+		system("afplay ./cub3D_bonus/music/vistrel.mp3 &");
+	else if (music_key == 2)
+		system("afplay ./cub3D_bonus/music/holostoi.mp3 &");
+	else if (music_key == 3)
+		system("afplay ./cub3D_bonus/music/podobral.mp3 &");
 }

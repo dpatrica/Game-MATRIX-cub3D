@@ -8,9 +8,9 @@ static int	ft_select_color(t_all *xlm, int x, int y)
 {
 	if (ft_rhr("137", xlm->param.g_map[y][x]))
 		ft_draw_square(xlm, xlm->map.x_print, xlm->map.y_print, 0x023203);
-	else if (ft_rhr("0NSWEAMHCDZVvGgi", xlm->param.g_map[y][x]))
+	else if (ft_rhr("2089QNSWEAMHCDZVvGgi", xlm->param.g_map[y][x]))
 		ft_draw_square(xlm, xlm->map.x_print, xlm->map.y_print, 0xFFFFFF);
-	else if (ft_rhr("2Y", xlm->param.g_map[y][x]))
+	else if (ft_rhr("Y", xlm->param.g_map[y][x]))
 		ft_draw_square(xlm, xlm->map.x_print, xlm->map.y_print, 0x9400D3);
 	xlm->map.x_print += SQUARE_X;
 	return (1);

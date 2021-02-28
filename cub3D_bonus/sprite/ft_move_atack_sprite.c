@@ -36,19 +36,19 @@ static void	move_sprite(t_all *xlm, int i)
 {
 	xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y)]\
 	[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x)] = '0';
-	if (xlm->sprite.spr_x > 0 && !ft_rhr("13457Vv",\
+	if (xlm->sprite.spr_x > 0 && !ft_rhr("1234578ACHVv",\
 	xlm->param.g_map[(int)xlm->sprite.pos[xlm->sprite.spr[i]].y]\
 	[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x - 1.1)]))
 		xlm->sprite.pos[xlm->sprite.spr[i]].x -= 0.00007;
-	else if (xlm->sprite.spr_x <= 0 && !ft_rhr("13457Vv",\
+	else if (xlm->sprite.spr_x <= 0 && !ft_rhr("1234578ACHVv",\
 	xlm->param.g_map[(int)xlm->sprite.pos[xlm->sprite.spr[i]].y]\
 	[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].x + 1.1)]))
 		xlm->sprite.pos[xlm->sprite.spr[i]].x += 0.00007;
-	if (xlm->sprite.spr_y > 0 && !ft_rhr("13457Vv",\
+	if (xlm->sprite.spr_y > 0 && !ft_rhr("1234578ACHVv",\
 	xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y - 1.1)]\
 	[(int)xlm->sprite.pos[xlm->sprite.spr[i]].x]))
 		xlm->sprite.pos[xlm->sprite.spr[i]].y -= 0.00007;
-	else if (xlm->sprite.spr_y <= 0 && !ft_rhr("13457Vv",\
+	else if (xlm->sprite.spr_y <= 0 && !ft_rhr("1234578ACHVv",\
 	xlm->param.g_map[(int)(xlm->sprite.pos[xlm->sprite.spr[i]].y + 1.1)]\
 	[(int)xlm->sprite.pos[xlm->sprite.spr[i]].x]))
 		xlm->sprite.pos[xlm->sprite.spr[i]].y += 0.00007;

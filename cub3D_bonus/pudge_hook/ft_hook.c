@@ -7,8 +7,8 @@
 int		key_hook(t_all *xlm)
 {
 	xlm->yyy += SPEED * xlm->player.dir_y;
-//	if (!xlm->param.save)
-//		mlx_mouse_move(xlm->win, (int)(xlm->param.width / 2), (int)(xlm->param.height / 2));
+	if (!xlm->param.save)
+		mlx_mouse_move(xlm->win, (int)(xlm->param.width / 2), (int)(xlm->param.height / 2));
 	ft_move(xlm);
 	xlm->img.img = mlx_new_image(xlm->mlx, xlm->param.width, xlm->param.height);
 	xlm->img.adr = mlx_get_data_addr(xlm->img.img, &xlm->img.bpp, &xlm->img.line_len, &xlm->img.iend);

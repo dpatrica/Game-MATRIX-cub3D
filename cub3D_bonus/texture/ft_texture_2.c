@@ -9,7 +9,7 @@ static void guardian(t_all *xlm)
 	int i;
 
 	i = -1;
-	while (++i <= 27)
+	while (++i <= 29)
 		if (!xlm->sprite.all_tex[i].tex)
 		{
 			ft_error(xlm, TEXTURE_ERROR);
@@ -34,5 +34,11 @@ void		ft_texture_5(t_all *xlm)
 	xlm->sprite.all_tex[27].tex = mlx_xpm_file_to_image(xlm->mlx,\
 	"./xpm/capcan.xpm",\
 	&xlm->sprite.all_tex[27].width, &xlm->sprite.all_tex[27].height);
+	xlm->sprite.all_tex[28].tex = mlx_xpm_file_to_image(xlm->mlx,\
+	"./xpm/ggwp.xpm",\
+	&xlm->sprite.all_tex[28].width, &xlm->sprite.all_tex[28].height);
+	xlm->sprite.all_tex[29].tex = mlx_xpm_file_to_image(xlm->mlx,\
+	"./xpm/cubby.xpm",\
+	&xlm->sprite.all_tex[29].width, &xlm->sprite.all_tex[29].height);
 	guardian(xlm);
 }

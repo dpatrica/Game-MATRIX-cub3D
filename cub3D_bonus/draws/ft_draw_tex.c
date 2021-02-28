@@ -50,7 +50,7 @@ static void computation_distance(t_all *xlm, int collision, int x)
 			xlm->neo.y += xlm->neo.step_y;
 			xlm->neo.side = 1;
 		}
-		if (ft_rhr("13457", xlm->param.g_map[xlm->neo.y][xlm->neo.x]))
+		if (ft_rhr("134579Q", xlm->param.g_map[xlm->neo.y][xlm->neo.x]))
 			collision = 1;
 	}
 	if (xlm->neo.side == 0)

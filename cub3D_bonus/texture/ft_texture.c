@@ -16,7 +16,7 @@ static void	get_agr(t_all *xlm, int i)
 	&xlm->tex.ea.line_len, &xlm->tex.ea.iend);
 	xlm->tex.skybox.adr = mlx_get_data_addr(xlm->tex.skybox.tex,\
 	&xlm->tex.skybox.bpp, &xlm->tex.skybox.line_len, &xlm->tex.skybox.iend);
-	while (++i <= 27)
+	while (++i <= 29)
 	{
 		xlm->sprite.all_tex[i].adr = mlx_get_data_addr\
 		(xlm->sprite.all_tex[i].tex, &xlm->sprite.all_tex[i].bpp,\

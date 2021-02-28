@@ -363,8 +363,8 @@ void	ft_draw_sprite(t_all *xlm, int x, int y, int i);
 void	check_map(t_all *xlm);
 void	ft_draw_aim(t_all *xlm);
 //void	sprite_init(t_all *xlm);
-int		button_press(int key, t_all *xlm);
-int		button_release(int key, t_all *xlm);
+int		button_press(int key, int key2, int key3, t_all *xlm);
+int		button_release(int key, int key2, int key3, t_all *xlm);
 void	ft_draw_stvol(t_all *xlm);
 void	ft_draw_super_stvol(t_all *xlm);
 void	ft_draw_hud(t_all *xlm);
@@ -380,5 +380,6 @@ int		ft_move_atack_sprite(t_all *xlm, int color, int i);
 void	ft_chek_texture_sprite(t_all *xlm, int i);
 void	ft_chek_texture_sprite_6(t_all *xlm, int i);
 void	ft_texture_5(t_all *xlm);
+void	play_music(int music_key);
 
 #endif
