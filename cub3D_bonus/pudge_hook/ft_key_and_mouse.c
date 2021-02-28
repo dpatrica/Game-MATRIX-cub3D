@@ -1,12 +1,19 @@
-//
-// Created by Daisey Patrica on 1/29/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_key_and_mouse.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:24:50 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:24:50 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-int			key_press(int key, t_all *xlm)
+int		key_press(int key, t_all *xlm)
 {
-//	printf("%d\n", key);
 	if (key == 13 || key == 126)
 		xlm->move.up = 1;
 	if (key == 1 || key == 125)
@@ -51,7 +58,7 @@ int		key_release(int key, t_all *xlm)
 	return (0);
 }
 
-int 	mouse(int x, int y, t_all *xlm)
+int		mouse(int x, int y, t_all *xlm)
 {
 	int mouse;
 
@@ -83,7 +90,6 @@ int		button_press(int key, int key2, int key3, t_all *xlm)
 {
 	(void)key2;
 	(void)key3;
-
 	if (key == 1)
 		xlm->move.rpm = 1;
 	if (xlm->player.super_stvol && xlm->player.digl && (key == 4 || key == 5))
@@ -104,7 +110,6 @@ int		button_release(int key, int key2, int key3, t_all *xlm)
 {
 	(void)key2;
 	(void)key3;
-
 	if (key == 1)
 		xlm->move.rpm = 0;
 	return (0);

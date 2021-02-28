@@ -1,10 +1,18 @@
-//
-// Created by Daisey Patrica on 1/29/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_draw_tex.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:02:25 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:02:26 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-static void computation_tex_pos(t_all *xlm)
+static void	computation_tex_pos(t_all *xlm)
 {
 	xlm->neo.tex_x = (int)(xlm->neo.wall_x * (double)(xlm->neo.tex_wid));
 	if ((xlm->neo.side == 0 && xlm->neo.rdir_x > 0) ||\
@@ -15,16 +23,19 @@ static void computation_tex_pos(t_all *xlm)
 	else if (xlm->neo.tex_x < 0)
 		xlm->neo.tex_x = 0;
 	xlm->neo.step = 1.0 * xlm->neo.tex_hei / xlm->neo.line_len;
-	xlm->neo.tex_pos = (xlm->neo.draw_up - xlm->param.height / xlm->move.mouse_cam + xlm->neo.line_len / 2) * xlm->neo.step;
+	xlm->neo.tex_pos = (xlm->neo.draw_up - xlm->param.height /\
+	xlm->move.mouse_cam + xlm->neo.line_len / 2) * xlm->neo.step;
 }
 
-static void computation_draws_wall(t_all *xlm)
+static void	computation_draws_wall(t_all *xlm)
 {
 	xlm->neo.line_len = (int)(xlm->param.height / fabs(xlm->neo.dist));
-	xlm->neo.draw_up = -xlm->neo.line_len / 2 + xlm->param.height / xlm->move.mouse_cam;
+	xlm->neo.draw_up = -xlm->neo.line_len / 2 + xlm->param.height /\
+	xlm->move.mouse_cam;
 	if (xlm->neo.draw_up < 0)
 		xlm->neo.draw_up = 0;
-	xlm->neo.draw_down = xlm->neo.line_len / 2 + xlm->param.height / xlm->move.mouse_cam;
+	xlm->neo.draw_down = xlm->neo.line_len / 2 + xlm->param.height /\
+	xlm->move.mouse_cam;
 	if (xlm->neo.draw_down >= xlm->param.height)
 		xlm->neo.draw_down = xlm->param.height - 1;
 	if (xlm->neo.side == 0)
@@ -34,7 +45,7 @@ static void computation_draws_wall(t_all *xlm)
 	xlm->neo.wall_x -= floor(xlm->neo.wall_x);
 }
 
-static void computation_distance(t_all *xlm, int collision, int x)
+static void	computation_distance(t_all *xlm, int collision, int x)
 {
 	while (collision == 0)
 	{
@@ -63,7 +74,7 @@ static void computation_distance(t_all *xlm, int collision, int x)
 		xlm->sprite.wid_buf[x] = xlm->neo.dist;
 }
 
-static void computation_side_step(t_all *xlm, int x)
+static void	computation_side_step(t_all *xlm, int x)
 {
 	xlm->neo.cam = 2 * x / (double)xlm->param.width - 1;
 	xlm->neo.rdir_x = xlm->player.dir_x + xlm->player.plan_x * xlm->neo.cam;
@@ -82,7 +93,7 @@ static void computation_side_step(t_all *xlm, int x)
 		xlm->neo.side_y = (xlm->neo.y + 1.0 - Y) * xlm->neo.del_y;
 }
 
-void	ft_draw_tex(t_all *xlm)
+void		ft_draw_tex(t_all *xlm)
 {
 	int				x;
 	int				y;

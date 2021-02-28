@@ -1,10 +1,18 @@
-//
-// Created by Daisey Patrica on 1/29/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_select_texture_for_draw.c                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:23:13 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:23:14 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-static void select_ea0_we1_no2(t_all *xlm, int flag)
+static void	select_ea0_we1_no2(t_all *xlm, int flag)
 {
 	if (!flag)
 	{
@@ -32,7 +40,7 @@ static void select_ea0_we1_no2(t_all *xlm, int flag)
 	}
 }
 
-static void select_so(t_all *xlm)
+static void	select_so(t_all *xlm)
 {
 	xlm->neo.tex_wid = xlm->tex.so.width;
 	xlm->neo.tex_hei = xlm->tex.so.height;
@@ -41,7 +49,7 @@ static void select_so(t_all *xlm)
 	xlm->neo.tex_line = xlm->tex.so.line_len;
 }
 
-static void select_other_texture_2(t_all *xlm)
+static void	select_other_texture_2(t_all *xlm)
 {
 	if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '9')
 	{
@@ -61,7 +69,7 @@ static void select_other_texture_2(t_all *xlm)
 	}
 }
 
-static void select_other_texture(t_all *xlm)
+static void	select_other_texture(t_all *xlm)
 {
 	if (xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '4')
 	{
@@ -82,7 +90,7 @@ static void select_other_texture(t_all *xlm)
 		select_other_texture_2(xlm);
 }
 
-void 		ft_select_texture(t_all *xlm)
+void		ft_select_texture(t_all *xlm)
 {
 	if (ft_rhr("17", xlm->param.g_map[xlm->neo.y][xlm->neo.x]) ||\
 	(xlm->param.g_map[xlm->neo.y][xlm->neo.x] == '3' && xlm->param.lvl))

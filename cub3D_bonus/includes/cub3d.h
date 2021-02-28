@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 12/6/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:23:32 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:23:32 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
@@ -59,20 +67,13 @@
 # define MAP_EMPTY_LINE_ERROR 44
 # define TEXTURE_ERROR 45
 # define SPR_MALLOC_ERROR 46
-//# define NO_ERROR
-//# define SO_ERROR
-//# define WE_ERROR
-//# define EA_ERROR
-//# define S_ERROR
-//# define F_ERROR
-//# define C_ERROR
 # include "../libft/libft.h"
 # include "../minilibx_opengl/mlx.h"
 # include "../minilibx_mms_20200219/mlx.h"
 # include <fcntl.h>
 # include <math.h>
 
-typedef struct s_matrix
+typedef struct	s_matrix
 {
 	int			x;
 	int			y;
@@ -82,15 +83,15 @@ typedef struct s_matrix
 	int			draw_down;
 	int			line_len;
 	int			side;
-	int 		screen_h;
-	int 		screen_w;
+	int			screen_h;
+	int			screen_w;
 	int			tex_hei;
-	int 		tex_wid;
-	int 		tex_x;
-	int 		tex_y;
+	int			tex_wid;
+	int			tex_x;
+	int			tex_y;
 	int			bpp;
-	int 		tex_line;
-	char 		*adr;
+	int			tex_line;
+	char		*adr;
 	double		side_x;
 	double		side_y;
 	double		l_x;
@@ -113,12 +114,12 @@ typedef struct s_matrix
 	double		dist;
 	double		wall_x;
 	double		step;
-	double 		tex_pos;
+	double		tex_pos;
 }				t_matrix;
 
-typedef struct s_move
+typedef struct	s_move
 {
-	int 		up;
+	int			up;
 	int			down;
 	int			right;
 	int			left;
@@ -127,9 +128,9 @@ typedef struct s_move
 	int			map;
 	int			rpm;
 	int			lpm;
-	double 		r_m_rot;
-	double 		l_m_rot;
-	double 		mouse_cam;
+	double		r_m_rot;
+	double		l_m_rot;
+	double		mouse_cam;
 	int			open;
 	int			exit;
 }				t_move;
@@ -138,17 +139,17 @@ typedef struct	s_player
 {
 	double		x;
 	double		y;
-	double 		hp;
-	double 		ammo;
-	int 		cartridges;
+	double		hp;
+	double		ammo;
+	int			cartridges;
 	int			map;
-	int 		digl;
-	int 		super_stvol;
+	int			digl;
+	int			super_stvol;
 	int			dir;
 	double		dir_x;
 	double		dir_y;
 	double		plan_x;
-	double 		plan_y;
+	double		plan_y;
 }				t_player;
 
 typedef struct	s_f
@@ -156,20 +157,21 @@ typedef struct	s_f
 	short int	r;
 	short int	g;
 	short int	b;
-	short int 	flag;
-	int 		rgb;
+	short int	flag;
+	int			rgb;
 }				t_f;
 
 typedef struct	s_struct
 {
-	int 		lvl;
+	char		*map_symbols;
+	int			lvl;
 	short int	valid;
 	int			width;
 	int			height;
 	int			scr_width;
 	int			scr_height;
-	int 		scr_swap_w;
-	int 		scr_swap_h;
+	int			scr_swap_w;
+	int			scr_swap_h;
 	int			map_x;
 	int			map_y;
 	char		**g_map;
@@ -179,7 +181,7 @@ typedef struct	s_struct
 	char		*ea;
 	char		*s;
 	t_f			f;
-	t_f 		c;
+	t_f			c;
 	short int	save;
 	t_player	resp_player;
 }				t_map;
@@ -189,24 +191,24 @@ typedef struct	s_image
 	void		*img;
 	char		*adr;
 	int			bpp;
-	int 		line_len;
+	int			line_len;
 	int			iend;
 }				t_image;
 
 typedef struct	s_wht
 {
-	void 		*tex;
+	void		*tex;
 	char		*adr;
-	int 		width;
-	int 		height;
+	int			width;
+	int			height;
 	int			bpp;
-	int 		line_len;
+	int			line_len;
 	int			iend;
 }				t_wht;
 
 typedef struct	s_pos
 {
-	int 		dir;
+	int			dir;
 	double		timer;
 	double		hp;
 	double		x;
@@ -215,19 +217,19 @@ typedef struct	s_pos
 
 typedef struct	s_all_spr
 {
-	void 		*tex;
+	void		*tex;
 	char		*adr;
-	int 		width;
-	int 		height;
+	int			width;
+	int			height;
 	int			bpp;
-	int 		line_len;
+	int			line_len;
 	int			iend;
 }				t_all_spr;
 
 typedef struct	s_sprite
 {
 	t_pos		*pos;
-	int 		x_t;
+	int			x_t;
 	double		spr_x;
 	double		spr_y;
 	double		inde;
@@ -235,23 +237,23 @@ typedef struct	s_sprite
 	double		trans_y;
 	t_all_spr	all_tex[32];
 	int			spr_scr;
-	int 		move_scr;
-	int 		spr_hi;
-	int 		spr_wi;
+	int			move_scr;
+	int			spr_hi;
+	int			spr_wi;
 	int			draw_up_x;
 	int			draw_up_y;
-	int 		draw_down_x;
-	int 		draw_down_y;
-	int 		spr_len;
-	int 		width;
-	int 		height;
-	int 		*spr;
+	int			draw_down_x;
+	int			draw_down_y;
+	int			spr_len;
+	int			width;
+	int			height;
+	int			*spr;
 	double		*spr_dist;
-	void 		*tex;
+	void		*tex;
 	char		*adr;
 	double		*wid_buf;
 	int			bpp;
-	int 		line_len;
+	int			line_len;
 	int			iend;
 }				t_sprite;
 
@@ -267,14 +269,14 @@ typedef struct	s_tex
 typedef struct	s_action
 {
 	int			shot;
-	int 		damage;
+	int			damage;
 	int			wall_damage;
 	int			wall_flag;
 	int			kill;
 	int			change_stvol;
 }				t_action;
 
-typedef struct s_hud
+typedef struct	s_hud
 {
 	double		step_x;
 	double		step_y;
@@ -298,13 +300,13 @@ typedef struct	s_minimap
 
 typedef struct	s_all
 {
-	int 		flag;
+	int			flag;
 	double		xxx;
 	double		yyy;
 	void		*mlx;
 	void		*win;
-	double 		width_square;
-	double 		height_square;
+	double		width_square;
+	double		height_square;
 	int			start_x;
 	int			start_y;
 	t_minimap	map;
@@ -319,67 +321,63 @@ typedef struct	s_all
 	t_hud		hud;
 }				t_all;
 
-int		cub3d(int argc, char **argv, int lvl);
-t_all	ft_fornull(t_all xlm);
-t_all	ft_fornull_2(t_all xlm);
-t_all	ft_fornull_3(t_all xlm);
-t_map	ft_parser(t_map param, char *map);
-t_map	ft_pars_reso(t_map param, char *map);
-t_map	ft_pars_frgb(t_map param, char *map);
-t_map	ft_pars_crgb(t_map param, char *map);
-t_map	ft_pars_no(t_map param, char *map);
-t_map	ft_pars_so(t_map param, char *map);
-t_map	ft_pars_we(t_map param, char *map);
-t_map	ft_pars_ea(t_map param, char *map);
-t_map	ft_pars_s(t_map param, char *map);
-int		ft_error(t_all *xlm, int error);
-int		drop_space(char **map);
-char	*freesher(char *s1, char *s2, char *s3);
-t_map	ft_valid(t_map param, int i, int j, int flaglen);
-void	ft_draw_map(t_all *xlm);
-void 	ft_draw_square(t_all *xlm, double x, double y, int color);
-int 	key_hook(t_all *xlm);
-int		key_press(int key, t_all *xlm);
-int		key_release(int key, t_all *xlm);
-//void	save_player(t_all *xlm);
-//void	ft_draw_beam(t_all *xlm);
-t_map	dir_cos_sin(t_map param);
-//int		ft_render(t_all *xlm);
-void 	ft_draw_line(t_all *xlm, int x);
-void	my_pixel_put(t_all *xlm, int x, int y, int color);
-int		rgb_color(int r, int g, int b);
-void	sprite_check(t_all *xlm);
-void	sprite_map_len(t_all *xlm);
-void	sprite_sort(t_all *xlm);
-void 	check_screen(t_all *xlm);
-int 	mouse(int x, int y, t_all *xlm);
-void	ft_texture(t_all *xlm);
-void	ft_move(t_all *xlm);
-void	ft_render(t_all *xlm);
-void	ft_draw_cefl(t_all *xlm);
-void	ft_draw_tex(t_all *xlm);
-void	ft_select_texture(t_all *xlm);
-void	ft_draw_sprite(t_all *xlm, int x, int y, int i);
-void	check_map(t_all *xlm);
-void	ft_draw_aim(t_all *xlm);
-//void	sprite_init(t_all *xlm);
-int		button_press(int key, int key2, int key3, t_all *xlm);
-int		button_release(int key, int key2, int key3, t_all *xlm);
-void	ft_draw_stvol(t_all *xlm);
-void	ft_draw_super_stvol(t_all *xlm);
-void	ft_draw_hud(t_all *xlm);
-void 	ft_draw_stdcf(t_all *xlm);
-void	ft_screenshot(t_all *xlm);
-void	ft_action(t_all *xlm);
-void	select_weapon_tex(t_all *xlm);
-void	select_super_weapon_tex(t_all *xlm);
-void	ft_draw_tex_2(t_all *xlm, int x, int y);
-int		ft_count_damage_weapon(t_all *xlm, int i);
-int		ft_count_damage_super_weapon(t_all *xlm, int i);
-int		ft_move_atack_sprite(t_all *xlm, int color, int i);
-void	ft_chek_texture_sprite(t_all *xlm, int i);
-void	ft_chek_texture_sprite_6(t_all *xlm, int i);
-void	ft_texture_5(t_all *xlm);
-void	play_music(int music_key);
+int				cub3d(int argc, char **argv, int lvl);
+t_all			ft_fornull(t_all xlm);
+t_all			ft_fornull_2(t_all xlm);
+t_all			ft_fornull_3(t_all xlm);
+t_map			ft_parser(t_map param, char *map);
+t_map			ft_pars_reso(t_map param, char *map);
+t_map			ft_pars_frgb(t_map param, char *map);
+t_map			ft_pars_crgb(t_map param, char *map);
+t_map			ft_pars_no(t_map param, char *map);
+t_map			ft_pars_so(t_map param, char *map);
+t_map			ft_pars_we(t_map param, char *map);
+t_map			ft_pars_ea(t_map param, char *map);
+t_map			ft_pars_s(t_map param, char *map);
+int				ft_error(t_all *xlm, int error);
+int				drop_space(char **map);
+char			*freesher(char *s1, char *s2, char *s3);
+t_map			ft_valid(t_map param, int i, int j, int flaglen);
+void			ft_draw_map(t_all *xlm);
+void			ft_draw_square(t_all *xlm, double x, double y, int color);
+int				key_hook(t_all *xlm);
+int				key_press(int key, t_all *xlm);
+int				key_release(int key, t_all *xlm);
+t_map			dir_cos_sin(t_map param);
+void			ft_draw_line(t_all *xlm, int x);
+void			my_pixel_put(t_all *xlm, int x, int y, int color);
+int				rgb_color(int r, int g, int b);
+void			sprite_check(t_all *xlm);
+void			sprite_map_len(t_all *xlm);
+void			sprite_sort(t_all *xlm);
+void			check_screen(t_all *xlm);
+int				mouse(int x, int y, t_all *xlm);
+void			ft_texture(t_all *xlm);
+void			ft_move(t_all *xlm);
+void			ft_render(t_all *xlm);
+void			ft_draw_cefl(t_all *xlm);
+void			ft_draw_tex(t_all *xlm);
+void			ft_select_texture(t_all *xlm);
+void			ft_draw_sprite(t_all *xlm, int x, int y, int i);
+void			check_map(t_all *xlm);
+void			ft_draw_aim(t_all *xlm);
+int				button_press(int key, int key2, int key3, t_all *xlm);
+int				button_release(int key, int key2, int key3, t_all *xlm);
+void			ft_draw_stvol(t_all *xlm);
+void			ft_draw_super_stvol(t_all *xlm);
+void			ft_draw_hud(t_all *xlm);
+void			ft_draw_stdcf(t_all *xlm);
+void			ft_screenshot(t_all *xlm);
+void			ft_action(t_all *xlm);
+void			select_weapon_tex(t_all *xlm);
+void			select_super_weapon_tex(t_all *xlm);
+void			ft_draw_tex_2(t_all *xlm, int x, int y);
+int				ft_count_damage_weapon(t_all *xlm, int i);
+int				ft_count_damage_super_weapon(t_all *xlm, int i);
+int				ft_move_atack_sprite(t_all *xlm, int color, int i);
+void			ft_chek_texture_sprite(t_all *xlm, int i);
+void			ft_chek_texture_sprite_6(t_all *xlm, int i);
+void			ft_texture_5(t_all *xlm);
+void			play_music(int music_key);
 
 #endif

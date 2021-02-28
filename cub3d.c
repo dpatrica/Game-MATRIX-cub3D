@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 12/8/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3d.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:05:25 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:05:25 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "./includes/cub3d.h"
 
@@ -14,9 +22,11 @@ static t_map	mainik(t_map param, int argc, char **argv)
 {
 	if ((argc < 2) || (argc > 3))
 		param.valid = (argc > 3) ? MANY_ARGS : NO_ARGS;
-	else if ((**(argv + 1) == '.') || (ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5)))
+	else if ((**(argv + 1) == '.') ||\
+	(ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5)))
 		param.valid = MAP_CUB_ERROR;
-	else if ((argc == 3) && (++param.save) && (ft_strncmp(argv[2], "--save", 7)))
+	else if ((argc == 3) && (++param.save) &&\
+	(ft_strncmp(argv[2], "--save", 7)))
 		param.valid = SAVE_ERROR;
 	if (!param.valid)
 		param = ft_parser(param, argv[1]);
@@ -25,14 +35,14 @@ static t_map	mainik(t_map param, int argc, char **argv)
 	return (param);
 }
 
-static void 	mainik_2(t_all *xlm)
+static void		mainik_2(t_all *xlm)
 {
 	check_screen(xlm);
 	sprite_map_len(xlm);
 	check_map(xlm);
 	if (!xlm->param.save)
-		xlm->win = mlx_new_window(xlm->mlx, xlm->param.width, xlm->param.height,\
-		"cub3D");
+		xlm->win = mlx_new_window(xlm->mlx, xlm->param.width,\
+		xlm->param.height, "cub3D");
 	ft_texture(xlm);
 	if (xlm->sprite.spr_len)
 		sprite_check(xlm);

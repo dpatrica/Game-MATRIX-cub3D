@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 12/6/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parser.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:03:56 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:03:56 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -107,9 +115,9 @@ t_map			ft_parser(t_map param, char *map)
 	short int	i;
 	int			j;
 
-	if (((fd = open(map, O_RDONLY)) < 0) && (param.valid = MAP_OPEN_ERROR))
-		return (param);
-	while ((i = get_next_line(fd, &map)) >= 0)
+	if ((fd = open(map, O_RDONLY)) < 0)
+		param.valid = MAP_OPEN_ERROR;
+	while (!param.valid && ((i = get_next_line(fd, &map)) >= 0))
 	{
 		j = drop_space(&map);
 		if (*map && *map != '1')
@@ -122,10 +130,10 @@ t_map			ft_parser(t_map param, char *map)
 		if (!*map && j)
 			param.valid = MAP_TRASH_ERROR;
 		free(map - j);
-		if (param.valid || (!i && (param.valid = NO_MAP_ERROR)))
-			break ;
+		param.valid = !i ? NO_MAP_ERROR : param.valid;
 	}
-	close(fd);
-	param.valid = (i == -1) ? GNL_ERROR : param.valid;
+	param.valid = (fd >= 0 && i == -1) ? GNL_ERROR : param.valid;
+	if (fd >= 0)
+		close(fd);
 	return (param);
 }

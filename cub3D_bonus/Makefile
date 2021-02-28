@@ -106,8 +106,8 @@ O		=	-o
 AR		=	ar rc
 MAKE_L	=	$(MAKE) -C ./libft
 MAKE_FC	=	$(MAKE) fclean -C ./libft
-MK_MLX	=	$(MAKE) -C ./minilibx_opengl && $(MAKE) -C ./minilibx_mms_20200219
-M_C_MLX	=	$(MAKE) clean -C ./minilibx_opengl && $(MAKE) clean -C ./minilibx_mms_20200219
+MK_MLX	=	$(MAKE) -C ./minilibx_opengl && $(MAKE) -C ./minilibx_mms_20200219 && cp ./minilibx_mms_20200219/libmlx.dylib .
+M_C_MLX	=	$(MAKE) clean -C ./minilibx_opengl && $(MAKE) clean -C ./minilibx_mms_20200219 && $(RM) libmlx.dylib
 
 all:		$(NAME)
 

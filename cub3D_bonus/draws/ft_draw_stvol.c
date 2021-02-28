@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 2/6/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_draw_stvol.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:22:52 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:22:52 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -41,7 +49,8 @@ void			ft_draw_stvol(t_all *xlm)
 		while (++y < (xlm->param.height - 1))
 			draw_stvol(xlm, x, y);
 		xlm->hud.pos_x += xlm->hud.step_x;
-		xlm->hud.pos_y = (double)xlm->neo.tex_hei / (double)(xlm->param.height / 2);
+		xlm->hud.pos_y = (double)xlm->neo.tex_hei /\
+		(double)(xlm->param.height / 2);
 	}
 }
 
@@ -82,6 +91,7 @@ void			ft_draw_super_stvol(t_all *xlm)
 		while (++y < (xlm->param.height - 1))
 			draw_super_stvol(xlm, x, y);
 		xlm->hud.pos_x += xlm->hud.step_x;
-		xlm->hud.pos_y = (double)xlm->neo.tex_hei / (double)(xlm->param.height / 2);
+		xlm->hud.pos_y = (double)xlm->neo.tex_hei /\
+		(double)(xlm->param.height / 2);
 	}
 }

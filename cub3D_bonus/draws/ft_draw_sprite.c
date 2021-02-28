@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 1/29/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_draw_sprite.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:22:48 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:22:48 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -46,12 +54,13 @@ static void	computation_param_spr(t_all *xlm, int i)
 	xlm->sprite.spr_scr = (int)((xlm->param.width / 2) *\
 	(1 + xlm->sprite.trans_x / xlm->sprite.trans_y));
 	xlm->sprite.move_scr = (int)(0.0 / xlm->sprite.trans_y);
-	xlm->sprite.spr_hi = abs((int)(xlm->param.height / xlm->sprite.trans_y)) / 1;
+	xlm->sprite.spr_hi = abs((int)(xlm->param.height / xlm->sprite.trans_y))\
+	/ 1;
 	xlm->sprite.draw_up_y = -xlm->sprite.spr_hi / 2 +\
 	xlm->param.height / xlm->move.mouse_cam + xlm->sprite.move_scr;
 }
 
-static void computation_draw_up_down(t_all *xlm)
+static void	computation_draw_up_down(t_all *xlm)
 {
 	if (xlm->sprite.draw_up_y < 0)
 		xlm->sprite.draw_up_y = 0;
@@ -59,7 +68,8 @@ static void computation_draw_up_down(t_all *xlm)
 	xlm->param.height / xlm->move.mouse_cam + xlm->sprite.move_scr;
 	if (xlm->sprite.draw_down_y >= xlm->param.height)
 		xlm->sprite.draw_down_y = xlm->param.height - 1;
-	xlm->sprite.spr_wi = abs((int)(xlm->param.height / xlm->sprite.trans_y)) / 1;
+	xlm->sprite.spr_wi = abs((int)(xlm->param.height / xlm->sprite.trans_y))\
+	/ 1;
 	xlm->sprite.draw_up_x = -xlm->sprite.spr_wi / 2 + xlm->sprite.spr_scr;
 	if (xlm->sprite.draw_up_x < 0)
 		xlm->sprite.draw_up_x = 0;
@@ -68,7 +78,7 @@ static void computation_draw_up_down(t_all *xlm)
 		xlm->sprite.draw_down_x = xlm->param.width - 1;
 }
 
-void	ft_draw_sprite(t_all *xlm, int x, int y, int i)
+void		ft_draw_sprite(t_all *xlm, int x, int y, int i)
 {
 	while (++i < xlm->sprite.spr_len)
 	{

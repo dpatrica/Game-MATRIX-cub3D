@@ -106,8 +106,8 @@ O		=	-o
 AR		=	ar rc
 MAKE_L	=	$(MAKE) -C ./libft
 MAKE_FC	=	$(MAKE) fclean -C ./libft
-MK_MLX	=	$(MAKE) -C ./minilibx_opengl && $(MAKE) -C ./minilibx_mms_20200219
-M_C_MLX	=	$(MAKE) clean -C ./minilibx_opengl && $(MAKE) clean -C ./minilibx_mms_20200219
+MK_MLX	=	$(MAKE) -C ./minilibx_opengl && $(MAKE) -C ./minilibx_mms_20200219 && cp ./minilibx_mms_20200219/libmlx.dylib .
+M_C_MLX	=	$(MAKE) clean -C ./minilibx_opengl && $(MAKE) clean -C ./minilibx_mms_20200219 && $(RM) libmlx.dylib
 
 all:		$(NAME)
 
@@ -135,12 +135,13 @@ clean:
 
 fclean:		clean
 			$(RM) $(NAME)
-			$(MAKE) fclean -C ./cub3D_bonus
 			$(RM) $(NAME_B)
+			$(MAKE) fclean -C ./cub3D_bonus
 
 re:			fclean all
 
 bonus:
 			@$(MAKE) -C ./cub3D_bonus
+			@cp ./cub3D_bonus/minilibx_mms_20200219/libmlx.dylib .
 			@cp ./cub3D_bonus/MATRIX_cub3D .
 			@echo "\033[0;32mMatrix reloaded!\033[m"

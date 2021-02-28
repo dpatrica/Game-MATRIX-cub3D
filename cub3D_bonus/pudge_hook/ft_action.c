@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 2/16/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_action.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:24:37 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:24:37 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -115,7 +123,7 @@ void		ft_action(t_all *xlm)
 void		play_music(int music_key)
 {
 	if (!music_key)
-		system("afplay ./cub3D_bonus/music/RobDougan_Clubbed_to_death.mp3 &"); //killall afplay
+		system("afplay ./cub3D_bonus/music/RobDougan_Clubbed_to_death.mp3 &");
 	else if (music_key == 1)
 		system("afplay ./cub3D_bonus/music/vistrel.mp3 &");
 	else if (music_key == 2)

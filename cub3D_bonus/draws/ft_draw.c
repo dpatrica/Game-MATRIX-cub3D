@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 16/12/2020.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_draw.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:23:08 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:23:08 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -22,10 +30,10 @@ void	ft_draw_aim(t_all *xlm)
 		my_pixel_put(xlm, x, y++, 0xFF0000);
 }
 
-void 	ft_draw_square(t_all *xlm, double x, double y, int color)
+void	ft_draw_square(t_all *xlm, double x, double y, int color)
 {
-	double 	start_x;
-	double 	start_y;
+	double	start_x;
+	double	start_y;
 
 	start_x = x;
 	start_y = y;
@@ -38,7 +46,7 @@ void 	ft_draw_square(t_all *xlm, double x, double y, int color)
 	}
 }
 
-void 	ft_draw_line(t_all *xlm, int x)
+void	ft_draw_line(t_all *xlm, int x)
 {
 	int y;
 	int draw_down;
@@ -54,7 +62,7 @@ void 	ft_draw_line(t_all *xlm, int x)
 	}
 }
 
-void 	ft_draw_stdcf(t_all *xlm)
+void	ft_draw_stdcf(t_all *xlm)
 {
 	int x;
 	int y;

@@ -1,10 +1,18 @@
-//
-// Created by Daisey Patrica on 2/17/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_draw_tex_2.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:22:58 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:22:58 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-static void count_wall_damage(t_all *xlm)
+static void	count_wall_damage(t_all *xlm)
 {
 	xlm->action.wall_damage--;
 	if (!xlm->action.wall_damage)
@@ -15,7 +23,7 @@ static void count_wall_damage(t_all *xlm)
 	xlm->action.wall_flag = 0;
 }
 
-void ft_draw_tex_2(t_all *xlm, int x, int y)
+void		ft_draw_tex_2(t_all *xlm, int x, int y)
 {
 	unsigned int	*color;
 

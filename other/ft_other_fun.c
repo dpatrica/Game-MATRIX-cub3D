@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 12/8/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_other_fun.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:03:31 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:03:31 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -11,7 +19,7 @@ int		drop_space(char **map)
 	i = 0;
 	while ((**map == ' ') && (++i))
 		(*map)++;
-	return(i);
+	return (i);
 }
 
 char	*freesher(char *s1, char *s2, char *s3)

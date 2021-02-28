@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 2/14/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_screenshot.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:24:05 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:24:06 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -9,7 +17,7 @@ static unsigned int	pixel_get(t_all *xlm, int x, int y)
 	char *dst;
 
 	dst = xlm->img.adr + (y * xlm->img.line_len + x * (xlm->img.bpp / 8));
-	return(*(unsigned int*)dst);
+	return (*(unsigned int*)dst);
 }
 
 static void			data_to_fd(t_all *xlm, int fd)

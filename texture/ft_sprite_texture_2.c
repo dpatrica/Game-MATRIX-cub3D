@@ -1,10 +1,18 @@
-//
-// Created by Daisey Patrica on 2/20/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sprite_texture_2.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:04:58 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:04:58 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-static void ft_chek_texture_sprite_8(t_all *xlm, int i)
+static void	ft_chek_texture_sprite_8(t_all *xlm, int i)
 {
 	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'g')
 	{
@@ -28,7 +36,7 @@ static void ft_chek_texture_sprite_8(t_all *xlm, int i)
 	}
 }
 
-static void ft_chek_texture_sprite_7(t_all *xlm, int i)
+static void	ft_chek_texture_sprite_7(t_all *xlm, int i)
 {
 	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'v')
 	{

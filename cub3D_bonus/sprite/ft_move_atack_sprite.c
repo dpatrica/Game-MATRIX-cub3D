@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 2/20/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_move_atack_sprite.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:25:15 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:25:15 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -63,8 +71,10 @@ int			ft_move_atack_sprite(t_all *xlm, int color, int i)
 		if (xlm->sprite.spr_dist[xlm->sprite.spr[i]] > 200)
 			move_sprite(xlm, i);
 		else
+		{
 			if (!count_timer_and_atack(xlm, 'v', i))
 				return (0);
+		}
 	}
 	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'G' && color >= 0)
 		if (!count_timer_and_atack(xlm, 'g', i))

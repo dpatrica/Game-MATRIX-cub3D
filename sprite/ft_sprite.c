@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 1/28/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sprite.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:04:51 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:04:51 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -65,7 +73,7 @@ void		sprite_check(t_all *xlm)
 				if (ft_rhr("2VGACMYPXHDZ", xlm->param.g_map[i][j]))
 				{
 					xlm->sprite.pos[xlm->sprite.spr_len].dir = \
-                (int) xlm->param.g_map[i][j];
+					(int)xlm->param.g_map[i][j];
 					xlm->sprite.pos[xlm->sprite.spr_len].x = j + 0.5;
 					xlm->sprite.pos[xlm->sprite.spr_len].y = i + 0.5;
 					xlm->sprite.spr_len++;

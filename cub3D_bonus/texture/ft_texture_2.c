@@ -1,10 +1,18 @@
-//
-// Created by Daisey Patrica on 2/22/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_texture_2.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:25:37 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:25:38 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-static void guardian(t_all *xlm)
+static void	guardian(t_all *xlm)
 {
 	int i;
 

@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 12/11/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_valid.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:24:29 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:24:29 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -66,14 +74,14 @@ static t_map	ft_valyas(t_map param, int i, int j, int flaglen)
 				param = ft_validm(param, i, j, 1);
 			else if (param.resp_player.dir && ft_rhr("NSWE", param.g_map[i][j]))
 				param.valid = DOUBLE_PLAYER_ERROR;
-			if (!(ft_rhr("1023456789QVGABCMYPXHDZNSWE", param.g_map[i][j - 1])) ||\
-			!(ft_rhr("1023456789QVGABCMYPXHDZNSWE", param.g_map[i - 1][j - 1])) ||\
-			!(ft_rhr("1023456789QVGABCMYPXHDZNSWE", param.g_map[i - 1][j])) ||\
-			!(ft_rhr("1023456789QVGABCMYPXHDZNSWE", param.g_map[i - 1][j + 1])) ||\
-			!(ft_rhr("1023456789QVGABCMYPXHDZNSWE", param.g_map[i][j + 1])) ||\
-			!(ft_rhr("1023456789QVGABCMYPXHDZNSWE", param.g_map[i + 1][j + 1])) ||\
-			!(ft_rhr("1023456789QVGABCMYPXHDZNSWE", param.g_map[i + 1][j])) ||\
-			!(ft_rhr("1023456789QVGABCMYPXHDZNSWE", param.g_map[i + 1][j - 1])))
+			if (!(ft_rhr(param.map_symbols, param.g_map[i][j - 1])) ||\
+			!(ft_rhr(param.map_symbols, param.g_map[i - 1][j - 1])) ||\
+			!(ft_rhr(param.map_symbols, param.g_map[i - 1][j])) ||\
+			!(ft_rhr(param.map_symbols, param.g_map[i - 1][j + 1])) ||\
+			!(ft_rhr(param.map_symbols, param.g_map[i][j + 1])) ||\
+			!(ft_rhr(param.map_symbols, param.g_map[i + 1][j + 1])) ||\
+			!(ft_rhr(param.map_symbols, param.g_map[i + 1][j])) ||\
+			!(ft_rhr(param.map_symbols, param.g_map[i + 1][j - 1])))
 				param.valid = MAP_NO_VALID;
 		}
 		else if (!(ft_rhr("1 ", param.g_map[i][j])))

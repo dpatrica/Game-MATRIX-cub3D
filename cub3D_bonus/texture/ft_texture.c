@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 1/28/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_texture.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:25:43 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:25:43 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -18,19 +26,20 @@ static void	get_agr(t_all *xlm, int i)
 	&xlm->tex.skybox.bpp, &xlm->tex.skybox.line_len, &xlm->tex.skybox.iend);
 	while (++i <= 29)
 	{
-		xlm->sprite.all_tex[i].adr = mlx_get_data_addr\
-		(xlm->sprite.all_tex[i].tex, &xlm->sprite.all_tex[i].bpp,\
-		&xlm->sprite.all_tex[i].line_len, &xlm->sprite.all_tex[i].iend);
+		xlm->sprite.all_tex[i].adr =\
+		mlx_get_data_addr(xlm->sprite.all_tex[i].tex,\
+		&xlm->sprite.all_tex[i].bpp, &xlm->sprite.all_tex[i].line_len,\
+		&xlm->sprite.all_tex[i].iend);
 	}
 	if (!xlm->tex.no.adr || !xlm->tex.so.adr || !xlm->tex.we.adr ||\
-	!xlm->tex.ea.adr ||	!xlm->tex.skybox.adr)
+	!xlm->tex.ea.adr || !xlm->tex.skybox.adr)
 	{
 		ft_error(xlm, TEXTURE_ERROR);
 		exit(0);
 	}
 }
 
-static void ft_texture_4(t_all *xlm)
+static void	ft_texture_4(t_all *xlm)
 {
 	xlm->sprite.all_tex[15].tex = mlx_xpm_file_to_image(xlm->mlx,\
 	"./xpm/superstvolNEW2_V3S.xpm",\
@@ -58,7 +67,7 @@ static void ft_texture_4(t_all *xlm)
 	&xlm->sprite.all_tex[22].width, &xlm->sprite.all_tex[22].height);
 }
 
-static void ft_texture_3(t_all *xlm)
+static void	ft_texture_3(t_all *xlm)
 {
 	xlm->sprite.all_tex[7].tex = mlx_xpm_file_to_image(xlm->mlx,\
 	"./xpm/apt.xpm",\
@@ -86,7 +95,7 @@ static void ft_texture_3(t_all *xlm)
 	&xlm->sprite.all_tex[14].width, &xlm->sprite.all_tex[14].height);
 }
 
-static void ft_texture_2(t_all *xlm)
+static void	ft_texture_2(t_all *xlm)
 {
 	xlm->tex.skybox.tex = mlx_xpm_file_to_image(xlm->mlx,\
 	"./xpm/matrix.xpm", &xlm->tex.skybox.width, &xlm->tex.skybox.height);

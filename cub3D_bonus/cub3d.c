@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 12/8/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3d.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:26:02 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:26:03 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "./includes/cub3d.h"
 
@@ -16,25 +24,27 @@ static t_map	mainik(t_map param, int argc, char **argv)
 		play_music(0);
 	if ((argc < 2) || (argc > 3))
 		param.valid = (argc > 3) ? MANY_ARGS : NO_ARGS;
-	else if (!param.lvl && ((**(argv + 1) == '.') || (ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5))))
+	else if (!param.lvl && ((**(argv + 1) == '.') ||\
+	(ft_strncmp(ft_strrchr(argv[1], '.'), ".cub", 5))))
 		param.valid = MAP_CUB_ERROR;
-	else if (!param.lvl && ((argc == 3) && (++param.save) && (ft_strncmp(argv[2], "--save", 7))))
+	else if (!param.lvl && ((argc == 3) && (++param.save) &&\
+	(ft_strncmp(argv[2], "--save", 7))))
 		param.valid = SAVE_ERROR;
 	if (!param.valid)
-		param = ft_parser(param, param.lvl ? *argv : argv[1]); //"../maps/map2.cub"); //(param.lvl ? *argv : "../maps/map.cub"));
+		param = ft_parser(param, param.lvl ? *argv : argv[1]);
 	if (!param.valid)
 		param = ft_valid(param, 0, 0, 0);
 	return (param);
 }
 
-static void 	mainik_2(t_all *xlm)
+static void		mainik_2(t_all *xlm)
 {
 	check_screen(xlm);
 	sprite_map_len(xlm);
 	check_map(xlm);
 	if (!xlm->param.save)
-		xlm->win = mlx_new_window(xlm->mlx, xlm->param.width, xlm->param.height,\
-		"MATRIX");
+		xlm->win = mlx_new_window(xlm->mlx, xlm->param.width,\
+		xlm->param.height, "MATRIX");
 	ft_texture(xlm);
 	if (xlm->sprite.spr_len)
 		sprite_check(xlm);

@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 2/16/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_action.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:04:11 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:04:11 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -81,12 +89,13 @@ static void	ft_action_2(t_all *xlm)
 
 void		ft_action(t_all *xlm)
 {
+	char *map;
+
 	if (xlm->param.g_map[(int)Y][(int)X] == 'P')
 	{
 		xlm->img.img ? mlx_destroy_image(xlm->mlx, xlm->img.img) : 0;
 		mlx_destroy_window(xlm->mlx, xlm->win);
 		ft_error(xlm, VALID);
-		char *map;
 		map = "./maps/map3.cub";
 		cub3d(2, &map, 2);
 		exit(0);
@@ -96,7 +105,6 @@ void		ft_action(t_all *xlm)
 		xlm->img.img ? mlx_destroy_image(xlm->mlx, xlm->img.img) : 0;
 		mlx_destroy_window(xlm->mlx, xlm->win);
 		ft_error(xlm, VALID);
-		char *map;
 		map = "./maps/map2.cub";
 		cub3d(2, &map, 1);
 		exit(0);

@@ -1,10 +1,18 @@
-//
-// Created by Daisey Patrica on 1/29/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_move.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:04:26 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:04:26 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-static void turn_player_2(t_all *xlm, double start_dir_x, double start_plane_x)
+static void	turn_player_2(t_all *xlm, double start_dir_x, double start_plane_x)
 {
 	if (xlm->move.r_m_rot == 1)
 	{
@@ -32,7 +40,7 @@ static void turn_player_2(t_all *xlm, double start_dir_x, double start_plane_x)
 	}
 }
 
-static void turn_player(t_all *xlm, double start_dir_x, double start_plane_x)
+static void	turn_player(t_all *xlm, double start_dir_x, double start_plane_x)
 {
 	if (xlm->move.r_rot == 1)
 	{
@@ -58,7 +66,7 @@ static void turn_player(t_all *xlm, double start_dir_x, double start_plane_x)
 	}
 }
 
-static void move_player_2(t_all *xlm)
+static void	move_player_2(t_all *xlm)
 {
 	if (xlm->move.right == 1 && !ft_rhr("123457YVvGgi", xlm->param.g_map\
 	[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_x))][(int)X]))
@@ -74,16 +82,16 @@ static void move_player_2(t_all *xlm)
 		X += SPEED * xlm->player.dir_y;
 }
 
-static void move_player(t_all *xlm)
+static void	move_player(t_all *xlm)
 {
 	if (xlm->move.open == 1 && ft_rhr("3", xlm->param.g_map[(int)(Y +\
 	((SPEED + 0.1) * xlm->player.dir_y))][(int)X]))
-		xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]\
-		= '0';
+		xlm->param.g_map[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_y))]\
+		[(int)X] = '0';
 	if (xlm->move.open == 1 && ft_rhr("3", xlm->param.g_map[(int)Y]\
 	[(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]))
-		xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) * xlm->player.dir_x))]\
-		= '0';
+		xlm->param.g_map[(int)Y][(int)(X + ((SPEED + 0.1) *\
+		xlm->player.dir_x))] = '0';
 	if (xlm->move.up == 1 && !ft_rhr("123457YVvGgi", xlm->param.g_map\
 	[(int)(Y + ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]))
 		Y += SPEED * xlm->player.dir_y;
@@ -94,11 +102,11 @@ static void move_player(t_all *xlm)
 	[(int)(Y - ((SPEED + 0.1) * xlm->player.dir_y))][(int)X]))
 		Y -= SPEED * xlm->player.dir_y;
 	if (xlm->move.down == 1 && !ft_rhr("123457YVvGgi", xlm->param.g_map\
-	[(int)Y] [(int)(X - ((SPEED + 0.1) * xlm->player.dir_x))]))
+	[(int)Y][(int)(X - ((SPEED + 0.1) * xlm->player.dir_x))]))
 		X -= SPEED * xlm->player.dir_x;
 }
 
-void	ft_move(t_all *xlm)
+void		ft_move(t_all *xlm)
 {
 	move_player(xlm);
 	move_player_2(xlm);

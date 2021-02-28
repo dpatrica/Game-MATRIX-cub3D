@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 1/28/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sprite.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:25:20 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:25:20 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -67,7 +75,7 @@ void		sprite_check(t_all *xlm)
 				if (ft_rhr("28VGACMYPXHDZ", xlm->param.g_map[i][j]))
 				{
 					xlm->sprite.pos[xlm->sprite.spr_len].dir = \
-                (int) xlm->param.g_map[i][j];
+					(int)xlm->param.g_map[i][j];
 					xlm->sprite.pos[xlm->sprite.spr_len].x = j + 0.5;
 					xlm->sprite.pos[xlm->sprite.spr_len].y = i + 0.5;
 					xlm->sprite.spr_len++;
@@ -92,7 +100,7 @@ void		sprite_map_len(t_all *xlm)
 	{
 		j = 0;
 		while (xlm->param.g_map[i][j])
-			if (ft_rhr("28VGACMYPXHDZ", xlm->param.g_map[i][j++])) // 2 - обычный спрайт / M - мапа / Y - Морфиус / P - синяя пилюля / X - красная пилюля / H - ХП / A - патроны / G - армор / D - дигл / Z - суперствол
+			if (ft_rhr("28VGACMYPXHDZ", xlm->param.g_map[i][j++]))
 				xlm->sprite.spr_len++;
 		if (j > xlm->param.map_x)
 			xlm->param.map_x = j;

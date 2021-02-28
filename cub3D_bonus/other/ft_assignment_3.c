@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 2/21/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_assignment_3.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:23:49 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:23:49 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -15,14 +23,16 @@ t_all	ft_fornull_3(t_all xlm)
 	xlm.map.x_print = 0;
 	xlm.map.y_print = 0;
 	xlm.sprite.x_t = 0;
+	xlm.param.map_symbols = "1023456789QVGABCMYPXHDZNSWE";
 	return (xlm);
 }
 
-void 	check_screen(t_all *xlm)
+void	check_screen(t_all *xlm)
 {
 	int	swap;
 
-	mlx_get_screen_size(xlm->mlx, &xlm->param.scr_width, &xlm->param.scr_height);
+	mlx_get_screen_size(xlm->mlx, &xlm->param.scr_width,\
+	&xlm->param.scr_height);
 	if (xlm->param.scr_width < xlm->param.width)
 	{
 		swap = xlm->param.scr_width;

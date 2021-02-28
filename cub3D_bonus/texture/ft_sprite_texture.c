@@ -1,10 +1,18 @@
-//
-// Created by Daisey Patrica on 2/20/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sprite_texture.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:25:32 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:25:32 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-static void ft_chek_texture_sprite_5(t_all *xlm, int i)
+static void	ft_chek_texture_sprite_5(t_all *xlm, int i)
 {
 	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'Z')
 	{
@@ -30,7 +38,7 @@ static void ft_chek_texture_sprite_5(t_all *xlm, int i)
 		ft_chek_texture_sprite_6(xlm, i);
 }
 
-static void ft_chek_texture_sprite_4(t_all *xlm, int i)
+static void	ft_chek_texture_sprite_4(t_all *xlm, int i)
 {
 	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'C')
 	{
@@ -56,7 +64,7 @@ static void ft_chek_texture_sprite_4(t_all *xlm, int i)
 		ft_chek_texture_sprite_5(xlm, i);
 }
 
-static void ft_chek_texture_sprite_3(t_all *xlm, int i)
+static void	ft_chek_texture_sprite_3(t_all *xlm, int i)
 {
 	if (xlm->sprite.pos[xlm->sprite.spr[i]].dir == 'M')
 	{

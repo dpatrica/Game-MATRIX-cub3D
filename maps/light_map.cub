@@ -1,12 +1,13 @@
 R 1000 500
-NO ./maps/map.cub
-SO ./maps/map.cub
-WE ./maps/map.cub
-EA ./maps/map.cub
-S ./maps/map.cub
+
+NO ./xpm/oboi.xpm
+SO ./xpm/oboi2.xpm
+WE ./xpm/oboi5.xpm
+EA ./xpm/oboi3.xpm
+S ./xpm/meshok.xpm
 
 C 225,0,1
-F 220,1,1
+F 1,255,1
 
 111111111111111111
 1110002000N000000111111111111111111111111111111

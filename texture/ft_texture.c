@@ -1,6 +1,14 @@
-//
-// Created by Daisey Patrica on 1/28/21.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_texture.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpatrica <dpatrica@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/28 09:05:08 by dpatrica          #+#    #+#             */
+/*   Updated: 2021/02/28 09:05:09 by dpatrica         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
@@ -16,8 +24,8 @@ static void	get_agr(t_all *xlm)
 	&xlm->tex.ea.line_len, &xlm->tex.ea.iend);
 	xlm->sprite.adr = mlx_get_data_addr(xlm->sprite.tex, &xlm->sprite.bpp,\
 	&xlm->sprite.line_len, &xlm->sprite.iend);
-	if (!xlm->tex.no.adr ||	!xlm->tex.so.adr || !xlm->tex.we.adr ||\
-	!xlm->tex.ea.adr ||	!xlm->sprite.adr)
+	if (!xlm->tex.no.adr || !xlm->tex.so.adr || !xlm->tex.we.adr ||\
+	!xlm->tex.ea.adr || !xlm->sprite.adr)
 	{
 		ft_error(xlm, TEXTURE_ERROR);
 		exit(0);
