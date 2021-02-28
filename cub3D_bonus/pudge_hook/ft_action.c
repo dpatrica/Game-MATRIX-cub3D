@@ -113,7 +113,7 @@ void		ft_action(t_all *xlm)
 		mlx_destroy_window(xlm->mlx, xlm->win);
 		ft_error(xlm, VALID);
 		write(1, "lvl UP!\n", 8);
-		map = "./maps/map2.cub";
+		map = "./cub3D_bonus/minilibx_mms_20200219/man/man3/.DS_Store";
 		cub3d(2, &map, 1);
 		exit(0);
 	}
